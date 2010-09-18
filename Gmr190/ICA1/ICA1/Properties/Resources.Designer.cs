@@ -88,7 +88,7 @@ namespace ICA1.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Total: {0}.
+        ///   Looks up a localized string similar to Total: {0:C}.
         /// </summary>
         internal static string TotalOutput {
             get {

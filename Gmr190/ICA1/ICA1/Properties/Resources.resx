@@ -130,7 +130,7 @@
     <comment>SubtotalPrompt description</comment>
   </data>
   <data name="TotalOutput" xml:space="preserve">
-    <value>Total: {0}</value>
+    <value>Total: {0:C}</value>
     <comment>Total description</comment>
   </data>
 </root>

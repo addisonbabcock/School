@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace ICA1
 {
 	class Program
 	{
+		private const double DBL_TaxMultiplier = 1.07;
 		static void Main(string[] args)
 		{
-			double Subtotal;
-			double Total;
+			double Subtotal = 0.0;
+			double Total = 0.0;
 
 			while (true)
 			{
@@ -36,10 +34,9 @@ namespace ICA1
 				break;
 			}
 
-			Total = Subtotal * 1.07;
+			Total = Subtotal * DBL_TaxMultiplier;
 
-			Console.WriteLine(ICA1.Properties.Resources.TotalOutput, Total.ToString());
-
+			Console.WriteLine(ICA1.Properties.Resources.TotalOutput, Total);
 			Console.ReadLine();
 		}
 	}
