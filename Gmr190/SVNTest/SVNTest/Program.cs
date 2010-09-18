@@ -9,6 +9,7 @@ namespace SVNTest
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello world!\n");
         }
     }
 }
