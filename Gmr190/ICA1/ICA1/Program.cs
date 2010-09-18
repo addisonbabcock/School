@@ -9,6 +9,19 @@ namespace ICA1
     {
         static void Main(string[] args)
         {
+            double Subtotal;
+            double Total;
+            string sSubtotal;
+
+            Console.WriteLine("Please enter the Subtotal: ");
+            sSubtotal = Console.ReadLine();
+            Subtotal = Convert.ToDouble(sSubtotal);
+
+            Total = Subtotal * 1.07;
+
+            Console.WriteLine("Total: {0}", Total);
+
+            Console.ReadLine();
         }
     }
 }
