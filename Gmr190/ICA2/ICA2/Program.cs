@@ -18,6 +18,11 @@ namespace ICA2
 				Console.WriteLine("Please enter the low temperature: ");
 				dLowTemperature = Convert.ToDouble(Console.ReadLine());
 
+				if (dLowTemperature > dHighTemperature)
+				{
+					throw new Exception("Temperatures are in the wrong order.");
+				}
+
 				dAverage = (dHighTemperature + dLowTemperature) / 2.0;
 
 				Console.WriteLine("Average: {0:f}, High: {1:f}, Low: {2:f}", dAverage, dHighTemperature, dLowTemperature);
