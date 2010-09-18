@@ -25,7 +25,7 @@ namespace ICA2
 
 				dAverage = (dHighTemperature + dLowTemperature) / 2.0;
 
-				Console.WriteLine("Average: {0:f}, High: {1:f}, Low: {2:f}", dAverage, dHighTemperature, dLowTemperature);
+				Console.WriteLine("Average: {0:f}°C, High: {1:f}°C, Low: {2:f}°C", dAverage, dHighTemperature, dLowTemperature);
 			}
 			catch (Exception e)
 			{
