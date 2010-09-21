@@ -21,6 +21,13 @@ namespace ICA3
 				PayRate = Convert.ToDouble(Console.ReadLine());
 
 				GrossPay = PayRate * HoursWorked;
+
+				//give time and a half for hours above 40
+				if (HoursWorked > 40)
+				{
+					GrossPay += PayRate * (HoursWorked - 40) * 1.5;
+				}
+
 				Tax = GrossPay * 0.40;
 				NetPay = GrossPay - Tax;
 
