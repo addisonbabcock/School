@@ -10,7 +10,7 @@ namespace ICA4
 		static void Main(string[] args)
 		{
 			string name;
-			string me = "ADDISON";
+			const string me = "ADDISON";
 
 			Console.Write("Please enter your name: ");
 			name = Console.ReadLine();
