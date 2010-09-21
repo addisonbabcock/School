@@ -29,7 +29,7 @@ namespace ICA3
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine("Something bad happened: ", e.Message);
+				Console.WriteLine("Something bad happened: " + e.Message);
 			}
 			finally
 			{
