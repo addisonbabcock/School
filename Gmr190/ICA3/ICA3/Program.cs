@@ -24,7 +24,7 @@ namespace ICA3
 				Tax = GrossPay * 0.40;
 				NetPay = GrossPay - Tax;
 
-				Console.WriteLine("Hours worked: {0:f}, Gross pay: {1:f}, Net pay: {2:f}, Tax: {3:f}",
+				Console.WriteLine("Hours worked: {0:f}, Gross pay: {1:C}, Net pay: {2:C}, Tax: {3:C}",
 					HoursWorked, GrossPay, NetPay, Tax);
 			}
 			catch (Exception e)
