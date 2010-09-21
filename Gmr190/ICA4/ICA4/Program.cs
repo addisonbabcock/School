@@ -9,21 +9,15 @@ namespace ICA4
 	{
 		static void Main(string[] args)
 		{
-			string name;
 			const string me = "ADDISON";
 
 			Console.Write("Please enter your name: ");
-			name = Console.ReadLine();
 
 			//are you me?
-			if (name.ToUpper() == me)
-			{
+			if (Console.ReadLine().ToUpper() == me)
 				Console.WriteLine("Hello me!");
-			}
 			else
-			{
 				Console.WriteLine("Hello someone else.");
-			}
 
 			Console.ReadKey();
 		}
