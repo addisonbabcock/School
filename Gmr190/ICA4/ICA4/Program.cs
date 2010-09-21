@@ -15,6 +15,7 @@ namespace ICA4
 			Console.Write("Please enter your name: ");
 			name = Console.ReadLine();
 
+			//are you me?
 			if (name.ToUpper() == me)
 			{
 				Console.WriteLine("Hello me!");
