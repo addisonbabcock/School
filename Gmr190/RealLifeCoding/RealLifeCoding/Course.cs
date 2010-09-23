@@ -15,6 +15,7 @@ namespace RealLifeCoding
 		string Instructor;
 		int StudentCount;
 
+		//Constructor
 		public Course (string _ID, string _Name, string _Classroom, int _StudentCount, string _Instructor)
 		{
 			ID = _ID;
@@ -25,6 +26,7 @@ namespace RealLifeCoding
 			SetStudentCount (_StudentCount);
 		}
 
+		//setters
 		public void SetStudentCount (int _StudentCount)
 		{
 			StudentCount = _StudentCount;
@@ -40,6 +42,7 @@ namespace RealLifeCoding
 			Classroom = _Classroom;
 		}
 
+		//getters
 		public string GetID ()
 		{
 			return ID;
