@@ -18,13 +18,10 @@ namespace ICA5
 				int num2 = 0;
 
 				Console.Write ("Please input number 1: ");
-				string sNum1 = Console.ReadLine ();
+				num1 = Convert.ToInt32 (Console.ReadLine ());
 
 				Console.Write ("Please input number 2: ");
-				string sNum2 = Console.ReadLine ();
-
-				num1 = Convert.ToInt32 (sNum1);
-				num2 = Convert.ToInt32 (sNum2);
+				num2 = Convert.ToInt32 (Console.ReadLine ());
 
 				if (num1 > num2)
 				{
