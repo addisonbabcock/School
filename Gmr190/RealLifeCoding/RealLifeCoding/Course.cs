@@ -67,5 +67,20 @@ namespace RealLifeCoding
 		{
 			return Classroom;
 		}
+
+		//overrides
+		public override string ToString ()
+		{
+			string accumulator = "";
+
+			accumulator += "ID: " + GetID ();
+			accumulator += "\nName: " + GetName ();
+			accumulator += "\nStudentCount: " + GetStudentCount ();
+			accumulator += "\nInstructor: " + GetInstructor ();
+			accumulator += "\nClassroom: " + GetClassroom ();
+			accumulator += "\n";
+
+			return accumulator;
+		}
 	}
 }
