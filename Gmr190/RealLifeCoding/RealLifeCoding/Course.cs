@@ -39,5 +39,30 @@ namespace RealLifeCoding
 		{
 			Classroom = _Classroom;
 		}
+
+		public string GetID ()
+		{
+			return ID;
+		}
+
+		public string GetName ()
+		{
+			return Name;
+		}
+
+		public int GetStudentCount ()
+		{
+			return StudentCount;
+		}
+
+		public string GetInstructor ()
+		{
+			return Instructor;
+		}
+
+		public string GetClassroom ()
+		{
+			return Classroom;
+		}
 	}
 }
