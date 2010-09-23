@@ -15,20 +15,20 @@ namespace RealLifeCoding
 		{
 			Course my101course = new Course ("GMR101", "Intro", "WB306", 11, "Jay");
 
-			Console.WriteLine ("ID: " + my101course.GetID ());
-			Console.WriteLine ("Name: " + my101course.GetName ());
-			Console.WriteLine ("Classroom: " + my101course.GetClassroom ());
-			Console.WriteLine ("Number of students: " + my101course.GetStudentCount ());
-			Console.WriteLine ("Instructor: " + my101course.GetInstructor ());
+			Console.WriteLine ("ID: {0}", my101course.GetID ());
+			Console.WriteLine ("Name: {0}", my101course.GetName ());
+			Console.WriteLine ("Classroom: {0}", my101course.GetClassroom ());
+			Console.WriteLine ("Number of students: {0}", my101course.GetStudentCount ());
+			Console.WriteLine ("Instructor: {0}", my101course.GetInstructor ());
 			Console.WriteLine ();
 
 			my101course.SetClassroom ("WB312");
 			my101course.SetStudentCount (22);
 			my101course.SetInstructor ("Someone");
 
-			Console.WriteLine ("Classroom: " + my101course.GetClassroom ());
-			Console.WriteLine ("Number of students: " + my101course.GetStudentCount ());
-			Console.WriteLine ("Instructor: " + my101course.GetInstructor ());
+			Console.WriteLine ("Classroom: {0}", my101course.GetClassroom ());
+			Console.WriteLine ("Number of students: {0}", my101course.GetStudentCount ());
+			Console.WriteLine ("Instructor: {0}", my101course.GetInstructor ());
 
 			Console.ReadKey ();
 		}
