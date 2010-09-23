@@ -13,22 +13,22 @@ namespace RealLifeCoding
 	{
 		static void Main (string [] args)
 		{
-			Course GMR = new Course ("GMR101", "Intro", "WB306", 11, "Jay");
+			Course my101course = new Course ("GMR101", "Intro", "WB306", 11, "Jay");
 
-			Console.WriteLine ("ID: " + GMR.GetID ());
-			Console.WriteLine ("Name: " + GMR.GetName ());
-			Console.WriteLine ("Classroom: " + GMR.GetClassroom ());
-			Console.WriteLine ("Number of students: " + GMR.GetStudentCount ());
-			Console.WriteLine ("Instructor: " + GMR.GetInstructor ());
+			Console.WriteLine ("ID: " + my101course.GetID ());
+			Console.WriteLine ("Name: " + my101course.GetName ());
+			Console.WriteLine ("Classroom: " + my101course.GetClassroom ());
+			Console.WriteLine ("Number of students: " + my101course.GetStudentCount ());
+			Console.WriteLine ("Instructor: " + my101course.GetInstructor ());
 			Console.WriteLine ();
 
-			GMR.SetClassroom ("WB312");
-			GMR.SetStudentCount (22);
-			GMR.SetInstructor ("Someone");
+			my101course.SetClassroom ("WB312");
+			my101course.SetStudentCount (22);
+			my101course.SetInstructor ("Someone");
 
-			Console.WriteLine ("Classroom: " + GMR.GetClassroom ());
-			Console.WriteLine ("Number of students: " + GMR.GetStudentCount ());
-			Console.WriteLine ("Instructor: " + GMR.GetInstructor ());
+			Console.WriteLine ("Classroom: " + my101course.GetClassroom ());
+			Console.WriteLine ("Number of students: " + my101course.GetStudentCount ());
+			Console.WriteLine ("Instructor: " + my101course.GetInstructor ());
 
 			Console.ReadKey ();
 		}
