@@ -9,15 +9,32 @@ namespace ICA6
 	{
 		static void Main (string [] args)
 		{
-			int iNumber = 0;
+			int health;
+			int damage;
 
-			while (iNumber < 5)
+			try
 			{
-				iNumber = iNumber + 1;
-				Console.WriteLine ("This is the {0}th time looping!", iNumber);
-			}
+				Console.Write ("Please enter your player's health: ");
+				health = Convert.ToInt32 (Console.ReadLine ());
 
-			Console.ReadKey ();
+				while (health > 0)
+				{
+					Console.Write ("Please enter the amount of damage: ");
+					damage = Convert.ToInt32 (Console.ReadLine ());
+
+					health -= damage;
+				}
+
+				Console.WriteLine ("Player is dead.");
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine ("Some error occured: " + e.Message);
+			}
+			finally
+			{
+				Console.ReadKey ();
+			}
 		}
 	}
 }
