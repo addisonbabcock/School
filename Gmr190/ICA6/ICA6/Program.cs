@@ -28,15 +28,13 @@ namespace ICA6
 		{
 			int health = 0;
 			int damage = 0;
-			string healthMessage = "Please enter your player's health: ";
-			string damageMessage = "Please enter the amount of damage: ";
 			Random rand = new Random ();
 
-			health = GrabInt (healthMessage);
+			health = GrabInt ("Please enter your player's health: ");
 
 			while (health > 0)
 			{
-				//damage = GrabInt (damageMessage);
+				//damage = GrabInt ("Please enter the amount of damage: ");
 				damage = rand.Next (health) + 1;
 				health -= damage;
 
