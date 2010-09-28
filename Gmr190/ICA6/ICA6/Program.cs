@@ -26,17 +26,21 @@ namespace ICA6
 
 		static void Main (string [] args)
 		{
-			int health;
-			int damage;
+			int health = 0;
+			int damage = 0;
 			string healthMessage = "Please enter your player's health: ";
 			string damageMessage = "Please enter the amount of damage: ";
+			Random rand = new Random ();
 
 			health = GrabInt (healthMessage);
 
 			while (health > 0)
 			{
-				damage = GrabInt (damageMessage);
+				//damage = GrabInt (damageMessage);
+				damage = rand.Next (health) + 1;
 				health -= damage;
+
+				Console.WriteLine ("Player health remaining: {0}", health);
 			}
 
 			Console.WriteLine ("Player is dead.");
