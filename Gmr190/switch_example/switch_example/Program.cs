@@ -7,15 +7,15 @@ namespace switch_example
 {
     class Program
     {
-        public static int GrabInt(string message)
+        public static double GrabDouble(string message)
         {
-            int ret = 0;
+            double ret = 0;
             while (true)
             {
                 try
                 {
                     Console.Write(message);
-                    ret = Convert.ToInt32(Console.ReadLine());
+                    ret = Convert.ToDouble(Console.ReadLine());
                 }
                 catch (Exception e)
                 {
@@ -34,12 +34,12 @@ namespace switch_example
             string op;
             double result = 0.0;
 
-            num1 = GrabInt("Please enter a number: ");
+            num1 = GrabDouble("Please enter a number: ");
 
             Console.Write("Please enter an operator: ");
             op = Console.ReadLine();
 
-            num2 = GrabInt("Please enter another number: ");
+            num2 = GrabDouble("Please enter another number: ");
 
             switch (op)
             {
@@ -56,14 +56,7 @@ namespace switch_example
                     break;
 
                 case "/":
-                    try
-                    {
-                        result = num1 / num2;
-                    }
-                    catch (DivideByZeroException e)
-                    {
-                        Console.WriteLine(e.Message);
-                    }
+                    result = num1 / num2;
                     break;
 
                 default:
