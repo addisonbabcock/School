@@ -1,0 +1,5 @@
+C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA01\Oct_01_ICA01\bin\Debug\Oct_01_ICA01.exe
+C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA01\Oct_01_ICA01\bin\Debug\Oct_01_ICA01.pdb
+C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA01\Oct_01_ICA01\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA01\Oct_01_ICA01\obj\Debug\Oct_01_ICA01.exe
+C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA01\Oct_01_ICA01\obj\Debug\Oct_01_ICA01.pdb
