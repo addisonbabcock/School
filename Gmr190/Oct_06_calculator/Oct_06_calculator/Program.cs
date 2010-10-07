@@ -79,8 +79,6 @@ namespace Oct_06_calculator
 			double a = 0.0;
 			double b = 0.0;
 			double result = 0.0;
-
-
 			char op = ' ';
 
 			a = InputDouble("Please enter a number: ", double.MinValue, double.MaxValue);
