@@ -31,7 +31,7 @@ namespace Oct_06_Tip_Calculator
 					if (IsInInclusiveRange(ret, min, max))
 						return ret;
 					else
-						Console.WriteLine("Input value {0} was outside of range {1}-{2}.", ret, min, max);
+						Console.WriteLine("Input value {0} was outside of range [{1}-{2}].", ret, min, max);
 				}
 				catch (Exception e)
 				{
