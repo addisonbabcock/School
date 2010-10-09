@@ -1,5 +1,0 @@
-C:\Documents and Settings\ababcock\Local Settings\Application Data\Temporary Projects\Assignment1\bin\Debug\Assignment1.exe
-C:\Documents and Settings\ababcock\Local Settings\Application Data\Temporary Projects\Assignment1\bin\Debug\Assignment1.pdb
-C:\Documents and Settings\ababcock\Local Settings\Application Data\Temporary Projects\Assignment1\obj\Debug\ResolveAssemblyReference.cache
-C:\Documents and Settings\ababcock\Local Settings\Application Data\Temporary Projects\Assignment1\obj\Debug\Assignment1.exe
-C:\Documents and Settings\ababcock\Local Settings\Application Data\Temporary Projects\Assignment1\obj\Debug\Assignment1.pdb
