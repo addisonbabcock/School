@@ -1,5 +1,0 @@
-C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA02\Oct_01_ICA02\bin\Debug\Oct_01_ICA02.exe
-C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA02\Oct_01_ICA02\bin\Debug\Oct_01_ICA02.pdb
-C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA02\Oct_01_ICA02\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA02\Oct_01_ICA02\obj\Debug\Oct_01_ICA02.exe
-C:\Users\ababcock1\Documents\Visual Studio 2008\Projects\Oct_01_ICA02\Oct_01_ICA02\obj\Debug\Oct_01_ICA02.pdb
