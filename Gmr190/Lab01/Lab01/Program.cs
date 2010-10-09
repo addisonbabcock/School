@@ -7,9 +7,9 @@ namespace Lab01
 {
 	class Program
 	{
-		private static Random rand;
-		private static List<int> key;
-		private static List<int> guess;
+		private static Random mRand;
+		private static List<int> mKey;
+		private static List<int> mGuess;
 
 		public static int GrabInt (string message, int min, int max)
 		{
@@ -60,13 +60,13 @@ namespace Lab01
 
 		static void Main (string[] args)
 		{
-			rand = new Random ();
-			key = new List<int> ();
-			guess = new List<int> ();
+			mRand = new Random ();
+			mKey = new List<int> ();
+			mGuess = new List<int> ();
 
-			GenerateKey (key);
+			GenerateKey (mKey);
 
-			ShowKey (key);
+			ShowKey (mKey);
 
 			ProcessMainLoop ();
 		}
@@ -80,9 +80,9 @@ namespace Lab01
 
 			do
 			{
-				GetGuess (guess);
-				exactMatches = CalculateExactMatches (key, guess);
-				closeMatches = CalculateCloseMatches (key, guess);
+				GetGuess (mGuess);
+				exactMatches = CalculateExactMatches (mKey, mGuess);
+				closeMatches = CalculateCloseMatches (mKey, mGuess);
 				ShowResults (exactMatches, closeMatches);
 
 				if (exactMatches == 4)
@@ -93,8 +93,11 @@ namespace Lab01
 				}
 
 				++guesses;
-				keepPlaying = ProcessMenu ("Would you like to keep playing (Y/N)? ", "YN");
-			} while (keepPlaying == 'Y' && guesses < 10);
+				if (guesses < 10)
+					keepPlaying = ProcessMenu ("Would you like to keep playing (Y/N)? ", "YN");
+				else
+					keepPlaying = 'N';
+			} while (keepPlaying == 'Y');
 		}
 
 		private static void ShowResults (int exactMatches, int closeMatches)
@@ -149,7 +152,7 @@ namespace Lab01
 			{
 				key.Clear ();
 				for (int i = 0; i < 4; ++i)
-					key.Add (rand.Next (10));
+					key.Add (mRand.Next (10));
 			} while (!VerifyUniqueness (key));
 		}
 
