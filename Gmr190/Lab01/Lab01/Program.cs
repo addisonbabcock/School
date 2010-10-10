@@ -87,7 +87,7 @@ namespace Lab01
 
 				if (exactMatches == 4)
 				{
-					Console.WriteLine ("Y O U  W I N !");
+					Console.WriteLine ("Y O U   W I N !");
 					Console.ReadKey ();
 					break;
 				}
