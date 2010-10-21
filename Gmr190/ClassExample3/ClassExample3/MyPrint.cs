@@ -18,6 +18,11 @@ namespace ClassExample3
 			Console.Write (_item.ToUpper () + ": ");
 		}
 
+		public void PrintTime ()
+		{
+			Console.WriteLine ("This report created at: " + DateTime.Today.ToLongDateString ());
+		}
+
 		public MyPrint ()
 		{
 		}

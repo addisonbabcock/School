@@ -11,6 +11,7 @@ namespace ClassExample3
 		{
 			MyPrint myPrint = new MyPrint ();
 			myPrint.PrintHeader ("System Information");
+			myPrint.PrintTime ();
 			myPrint.PrintItem ("cpu");
 			myPrint.PrintItem ("amd 2.2ghz");
 
