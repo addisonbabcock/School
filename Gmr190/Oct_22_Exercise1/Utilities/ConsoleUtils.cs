@@ -33,5 +33,32 @@ namespace Utilities
         {
             return GetInt(message, int.MinValue, int.MaxValue);
         }
+
+        public static double GetDouble(string message, double min, double max)
+        {
+            double returnVal = min;
+
+            while (true)
+            {
+                Console.Write(message);
+
+                try
+                {
+                    returnVal = Convert.ToDouble(Console.ReadLine());
+
+                    if (returnVal >= min && returnVal <= max)
+                        return returnVal;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Unacceptable input. " + e.Message);
+                }
+            }
+        }
+
+        public static double GetDouble(string message)
+        {
+            return GetDouble(message, double.MinValue, double.MaxValue);
+        }
     }
 }
