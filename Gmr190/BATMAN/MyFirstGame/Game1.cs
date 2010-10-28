@@ -143,6 +143,8 @@ namespace BATMAN
 			Rectangle batmanSource = new Rectangle (0, 0, BATMAN.Width, BATMAN.Height);
 			Vector2 batmanCenter = new Vector2 (BATMAN.Width * 0.5f, BATMAN.Height * 0.5f);
 			float rotate = (float)gameTime.TotalGameTime.TotalMilliseconds / 250.0f;
+			while (rotate > Math.PI * 2)
+				rotate -= (float)Math.PI * 2.0f;
 			spriteBatch.Draw (
 				BATMAN,
 				batmanLoc,
