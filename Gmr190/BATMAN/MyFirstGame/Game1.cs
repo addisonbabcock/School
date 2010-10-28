@@ -54,7 +54,7 @@ namespace BATMAN
 			//foreach (Vector2 vec in mHappyFaces)
 			for (int i = 0; i < mHappyFaces.Capacity; ++i)
 				mHappyFaces.Add (new Vector2 (
-					(float)mRNG.Next (graphics.PreferredBackBufferWidth),
+					(float)mRNG.Next (graphics.PreferredBackBufferWidth - 100),
 					(float)mRNG.Next (graphics.PreferredBackBufferHeight)));
 		}
 
@@ -158,7 +158,7 @@ namespace BATMAN
 			for (int i = 0; i < mHappyFaces.Count; ++i)
 			{
 				Vector2 vec = mHappyFaces [i];
-				vec.Y += (float)gameTime.ElapsedGameTime.Milliseconds;
+				vec.Y += (float)gameTime.ElapsedGameTime.Milliseconds / 2;
 				if (vec.Y > graphics.GraphicsDevice.Viewport.Height)
 					vec.Y = -100.0f;
 				mHappyFaces [i] = vec;
