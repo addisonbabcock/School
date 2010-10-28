@@ -28,16 +28,20 @@ namespace BATMAN
 
 		Random mRNG;
 
+		List <Vector2> mHappyFaces;
+
 
 		public Game1 ()
 		{
+			mRNG = new Random ();
 			graphics = new GraphicsDeviceManager (this);
 			graphics.PreferredBackBufferWidth = 800;
 			graphics.PreferredBackBufferHeight = 600;
+			graphics.SynchronizeWithVerticalRetrace = true;
 
 			Content.RootDirectory = "Content";
 
-			Window.AllowUserResizing = true;
+			Window.AllowUserResizing = false;
 			Window.ClientSizeChanged += new EventHandler (Window_ClientSizeChanged);
 
 			myBackground_Rect = new Rectangle (
@@ -45,6 +49,13 @@ namespace BATMAN
 				0,
 				graphics.PreferredBackBufferWidth,
 				graphics.PreferredBackBufferHeight);
+
+			mHappyFaces = new List<Vector2> (10);
+			//foreach (Vector2 vec in mHappyFaces)
+			for (int i = 0; i < mHappyFaces.Capacity; ++i)
+				mHappyFaces.Add (new Vector2 (
+					(float)mRNG.Next (graphics.PreferredBackBufferWidth),
+					(float)mRNG.Next (graphics.PreferredBackBufferHeight)));
 		}
 
 		void Window_ClientSizeChanged (object sender, EventArgs e)
@@ -81,8 +92,6 @@ namespace BATMAN
 			myBackgroundTexture = Content.Load<Texture2D> ("happy face");
 			mySadFace = Content.Load<Texture2D> ("sad_face");
 			BATMAN = Content.Load<Texture2D> ("batmanLogo");
-
-			mRNG = new Random ();
 		}
 
 		/// <summary>
@@ -125,24 +134,15 @@ namespace BATMAN
 			//Start Draw
 			spriteBatch.Begin ();
 
-			for (int i = 0; i < 10; ++i)
-			{
-				Rectangle sad_face = new Rectangle (
-					mRNG.Next (graphics.GraphicsDevice.Viewport.Width - 100),
-					mRNG.Next (graphics.GraphicsDevice.Viewport.Height - 100),
-					100,
-					100);
-				spriteBatch.Draw (mySadFace, sad_face, Color.White);
-			}
-
+			//BATMAN!
 			Rectangle batmanLoc = new Rectangle (
 				graphics.GraphicsDevice.Viewport.Width / 2,
 				graphics.GraphicsDevice.Viewport.Height / 2,
 				300,
 				300);
 			Rectangle batmanSource = new Rectangle (0, 0, BATMAN.Width, BATMAN.Height);
-			Vector2 batmanCenter = new Vector2 (BATMAN.Width, BATMAN.Height);
-			float rotate = (float)gameTime.TotalGameTime.TotalMilliseconds / 150.0f;
+			Vector2 batmanCenter = new Vector2 (BATMAN.Width * 0.5f, BATMAN.Height * 0.5f);
+			float rotate = (float)gameTime.TotalGameTime.TotalMilliseconds / 250.0f;
 			spriteBatch.Draw (
 				BATMAN,
 				batmanLoc,
@@ -152,6 +152,22 @@ namespace BATMAN
 				batmanCenter,
 				SpriteEffects.None,
 				0.0f);
+
+			for (int i = 0; i < mHappyFaces.Count; ++i)
+			{
+				Vector2 vec = mHappyFaces [i];
+				vec.Y += (float)gameTime.ElapsedGameTime.Milliseconds;
+				if (vec.Y > graphics.GraphicsDevice.Viewport.Height)
+					vec.Y = -100.0f;
+				mHappyFaces [i] = vec;
+
+				Rectangle sad_face = new Rectangle (
+					(int)vec.X,
+					(int)vec.Y,
+					100,
+					100);
+				spriteBatch.Draw (mySadFace, sad_face, Color.White);
+			}
 
 			//end draw
 			spriteBatch.End ();
