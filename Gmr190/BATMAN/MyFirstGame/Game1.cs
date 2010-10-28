@@ -138,8 +138,8 @@ namespace BATMAN
 			Rectangle batmanLoc = new Rectangle (
 				graphics.GraphicsDevice.Viewport.Width / 2,
 				graphics.GraphicsDevice.Viewport.Height / 2,
-				300,
-				300);
+				1000,
+				1000);
 			Rectangle batmanSource = new Rectangle (0, 0, BATMAN.Width, BATMAN.Height);
 			Vector2 batmanCenter = new Vector2 (BATMAN.Width * 0.5f, BATMAN.Height * 0.5f);
 			float rotate = (float)gameTime.TotalGameTime.TotalMilliseconds / 250.0f;
