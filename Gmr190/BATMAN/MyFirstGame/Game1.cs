@@ -43,8 +43,8 @@ namespace BATMAN
 			myBackground_Rect = new Rectangle (
 				0,
 				0,
-				800,
-				600);
+				graphics.PreferredBackBufferWidth,
+				graphics.PreferredBackBufferHeight);
         }
 
 		void Window_ClientSizeChanged (object sender, EventArgs e)
