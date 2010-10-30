@@ -22,8 +22,6 @@ namespace Oct_29_Exercise1
 				mDirection.Y += gravity.Y * (float)time.ElapsedGameTime.TotalSeconds;
 				mPos += mDirection;
 
-				Debug.WriteLine ("Position: " + mPos.X + ", " + mPos.Y);
-
 				mLife -= time.ElapsedGameTime;
 				if (mLife.TotalMilliseconds <= 0)
 				{
@@ -60,7 +58,6 @@ namespace Oct_29_Exercise1
 				Particle particle = mParticles [i];
 				if (particle.Update (time, mGravity))
 				{
-					Debug.WriteLine ("Removing particle at index " + i);
 					mParticles.Remove (particle);
 				}
 			}

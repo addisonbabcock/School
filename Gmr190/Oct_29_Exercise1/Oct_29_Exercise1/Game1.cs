@@ -18,6 +18,7 @@ namespace Oct_29_Exercise1
 		Texture2D mCat;
 		Texture2D mDog;
 		Texture2D mSquare;
+		SpriteFont mFont;
 
 		public Game1 ()
 		{
@@ -56,7 +57,7 @@ namespace Oct_29_Exercise1
 			}
 
 			ParticleEffect effect = new ParticleEffect (new Vector2 (0.0f, 8.91f), mSquare);
-			effect.AddParticles (100);
+			effect.AddParticles (25000);
 			mParticles.Add (effect);
 		}
 
@@ -72,6 +73,7 @@ namespace Oct_29_Exercise1
 			mCat = Content.Load<Texture2D> ("cats_012");
 			mDog = Content.Load<Texture2D> ("worlds-strongest-dog");
 			mSquare = Content.Load<Texture2D> ("square");
+			mFont = Content.Load<SpriteFont> ("MyFont");
 		}
 
 		/// <summary>
@@ -117,6 +119,10 @@ namespace Oct_29_Exercise1
 			//    sprite.Draw(spriteBatch);
 			foreach (ParticleEffect effect in mParticles)
 				effect.Draw (spriteBatch);
+			spriteBatch.DrawString (mFont,
+				((int)(1.0 / gameTime.ElapsedGameTime.TotalMilliseconds * 1000.0)).ToString ("{0}"),
+				new Vector2 (0.0f, 0.0f),
+				Color.Black);
 			spriteBatch.End ();
 
 			base.Draw (gameTime);
