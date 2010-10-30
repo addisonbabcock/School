@@ -8,47 +8,47 @@ using System.Diagnostics;
 
 namespace Oct_29_Exercise1
 {
-	public class Particle
-	{
-		Vector2 mPos;
-		Vector2 mDirection;
-		TimeSpan mLife;
-
-		public bool Update (GameTime time, Vector2 gravity)
-		{
-			mDirection.X += gravity.X * (float)time.ElapsedGameTime.TotalSeconds;
-			mDirection.Y += gravity.Y * (float)time.ElapsedGameTime.TotalSeconds;
-			mPos += mDirection;
-
-			Debug.WriteLine ("Position: " + mPos.X + ", " + mPos.Y);
-
-			mLife -= time.ElapsedGameTime;
-			if (mLife.TotalMilliseconds <= 0)
-			{
-				return true;
-			}
-
-			return false;
-		}
-
-		public void Draw (SpriteBatch spriteBatch, Texture2D tex)
-		{
-			spriteBatch.Draw (
-				tex,
-				new Rectangle ((int)mPos.X, (int)mPos.Y, 3, 3),
-				Color.White);
-		}
-
-		public Particle (Vector2 pos, Vector2 direction, TimeSpan life)
-		{
-			mPos = pos;
-			mDirection = direction;
-			mLife = life;
-		}
-	}
-
 	class ParticleEffect
 	{
+		private class Particle
+		{
+			Vector2 mPos;
+			Vector2 mDirection;
+			TimeSpan mLife;
+
+			public bool Update (GameTime time, Vector2 gravity)
+			{
+				mDirection.X += gravity.X * (float)time.ElapsedGameTime.TotalSeconds;
+				mDirection.Y += gravity.Y * (float)time.ElapsedGameTime.TotalSeconds;
+				mPos += mDirection;
+
+				Debug.WriteLine ("Position: " + mPos.X + ", " + mPos.Y);
+
+				mLife -= time.ElapsedGameTime;
+				if (mLife.TotalMilliseconds <= 0)
+				{
+					return true;
+				}
+
+				return false;
+			}
+
+			public void Draw (SpriteBatch spriteBatch, Texture2D tex)
+			{
+				spriteBatch.Draw (
+					tex,
+					new Rectangle ((int)mPos.X, (int)mPos.Y, 3, 3),
+					Color.White);
+			}
+
+			public Particle (Vector2 pos, Vector2 direction, TimeSpan life)
+			{
+				mPos = pos;
+				mDirection = direction;
+				mLife = life;
+			}
+		}
+
 		List<Particle> mParticles;
 		Vector2 mGravity;
 		Texture2D mTex;
