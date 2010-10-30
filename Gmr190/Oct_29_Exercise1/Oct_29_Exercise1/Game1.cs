@@ -13,9 +13,11 @@ namespace Oct_29_Exercise1
         GraphicsDeviceManager   graphics;
         SpriteBatch             spriteBatch;
         List<Sprite>            mSprites;
+        List<ParticleEffect>    mParticles;
 
         Texture2D               mCat;
         Texture2D               mDog;
+        Texture2D               mSquare;
 
         public Game1()
         {
@@ -34,6 +36,7 @@ namespace Oct_29_Exercise1
             base.Initialize();
 
             mSprites = new List<Sprite>();
+            mParticles = new List<ParticleEffect>();
 
             Vector2 catPos = new Vector2(
                 graphics.GraphicsDevice.Viewport.Width / 2, 
@@ -51,6 +54,10 @@ namespace Oct_29_Exercise1
                 double dogRotSpeed = -0.0025;
                 mSprites.Add(new Sprite(mDog, dogPos, dogSpeed, dogRotSpeed, false, graphics));
             }
+
+            ParticleEffect effect = new ParticleEffect(new Vector2 (0.0f, 8.91f), mSquare);
+            effect.AddParticles(100);
+            mParticles.Add(effect);
         }
 
         /// <summary>
@@ -64,6 +71,7 @@ namespace Oct_29_Exercise1
 
             mCat = Content.Load<Texture2D>("cats_012");
             mDog = Content.Load<Texture2D>("worlds-strongest-dog");
+            mSquare = Content.Load<Texture2D>("square");
         }
 
         /// <summary>
@@ -91,6 +99,9 @@ namespace Oct_29_Exercise1
 
             foreach (Sprite sprite in mSprites)
                 sprite.Update(gameTime);
+
+            foreach (ParticleEffect effect in mParticles)
+                effect.Update(gameTime);
         }
 
         /// <summary>
@@ -99,11 +110,13 @@ namespace Oct_29_Exercise1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Aqua);
 
-            spriteBatch.Begin();
-            foreach (Sprite sprite in mSprites)
-                sprite.Draw(spriteBatch);
+            spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.FrontToBack, SaveStateMode.SaveState);
+            //foreach (Sprite sprite in mSprites)
+            //    sprite.Draw(spriteBatch);
+            foreach (ParticleEffect effect in mParticles)
+                effect.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
