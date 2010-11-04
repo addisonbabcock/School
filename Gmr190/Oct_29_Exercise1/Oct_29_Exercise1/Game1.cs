@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -19,6 +20,8 @@ namespace Oct_29_Exercise1
 		Texture2D mDog;
 		Texture2D mSquare;
 		SpriteFont mFont;
+
+		TimeSpan mSpawnNewExplosion;
 
 		public Game1()
 		{
@@ -57,8 +60,9 @@ namespace Oct_29_Exercise1
 			}
 
 			ParticleEffect effect = new ParticleEffect(new Vector2(0.0f, 8.91f), mSquare);
-			effect.AddParticles(25000);
+			effect.AddParticles(50);
 			mParticles.Add(effect);
+			mSpawnNewExplosion = new TimeSpan(0, 0, 2);
 		}
 
 		/// <summary>
@@ -103,7 +107,20 @@ namespace Oct_29_Exercise1
 				sprite.Update(gameTime);
 
 			foreach (ParticleEffect effect in mParticles)
+			{
 				effect.Update(gameTime);
+			}
+
+			mSpawnNewExplosion -= gameTime.ElapsedGameTime;
+			if (mSpawnNewExplosion.TotalSeconds <= 0.0)
+			{
+				ParticleEffect effect = new ParticleEffect(
+					new Vector2(0.0f, 8.91f),
+					mSquare);
+				effect.AddParticles(50);
+				mParticles.Add(effect);
+				mSpawnNewExplosion = new TimeSpan(0, 0, 2);
+			}
 		}
 
 		/// <summary>
@@ -120,7 +137,7 @@ namespace Oct_29_Exercise1
 			foreach (ParticleEffect effect in mParticles)
 				effect.Draw(spriteBatch);
 			spriteBatch.DrawString(mFont,
-				((int)(1.0 / gameTime.ElapsedGameTime.TotalMilliseconds * 1000.0)).ToString("{0}"),
+				((int)(1.0 / gameTime.ElapsedGameTime.TotalMilliseconds * 1000.0)).ToString(),
 				new Vector2(0.0f, 0.0f),
 				Color.Black);
 			spriteBatch.End();
