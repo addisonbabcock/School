@@ -87,6 +87,7 @@
     <Compile Include="DataTypes.cs" />
     <Compile Include="Gem.cs" />
     <Compile Include="PlayArea.cs" />
+    <Compile Include="PlayAreaCoords.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Rejeweled.cs" />

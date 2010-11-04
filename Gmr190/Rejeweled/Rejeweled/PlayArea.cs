@@ -5,44 +5,16 @@ using System.Text;
 
 namespace Rejeweled
 {
-	class PlayAreaCoords
-	{
-		private int mX;
-		private int mY;
-
-		public int X
-		{
-			get { return mX; }
-			set { mX = value; }
-		}
-
-		public int Y
-		{
-			get { return mY; }
-			set { mY = value; }
-		}
-
-		PlayAreaCoords()
-		{
-			X = 0;
-			Y = 0;
-		}
-
-		PlayAreaCoords(int _x, int _y)
-		{
-			X = _x;
-			Y = _y;
-		}
-	}
-
 	class PlayArea
 	{
-		private GemGrid mMap;
+        public const int GridDimensionX = 10;
+        public const int GridDimensionY = 10;
+
+        private List<Gem> mGems;
 
 		public PlayArea()
 		{
-			mMap = new GemGrid();
-
+            mGems = new List<Gem>(GridDimensionX * GridDimensionY);
 		}
 	}
 }
