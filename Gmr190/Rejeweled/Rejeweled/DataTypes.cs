@@ -14,21 +14,19 @@ namespace Rejeweled
 		Power
 	}
 
-	enum GemAnimationState
-	{
-		SlidingDown,
-		SlidingUp,
-		SlidingLeft,
-		SlidingRight,
+    enum GemAnimationState
+    {
+        SlidingDown,
+        SlidingUp,
+        SlidingLeft,
+        SlidingRight,
 
-		Falling,
+        Falling,
 
-		Disappearing,
+        Disappearing,
 
-		Exploding,
+        Exploding,
 
-		Idle
-	}
-
-	
+        Idle
+    }
 }
