@@ -31,15 +31,19 @@ namespace Oct_29_Exercise1
 				return false;
 			}
 
-			public void Draw (SpriteBatch spriteBatch, Texture2D tex)
-			{
-				spriteBatch.Draw (
-					tex,
-					new Rectangle ((int)mPos.X, (int)mPos.Y, 3, 3),
-					Color.White);
-			}
+            public void Draw(SpriteBatch spriteBatch, Texture2D tex)
+            {
+                spriteBatch.Draw(
+                    tex,
+                    new Rectangle(
+                        (int)mPos.X,
+                        (int)mPos.Y,
+                        3,
+                        3),
+                    Color.White);
+            }
 
-			public Particle (Vector2 pos, Vector2 direction, TimeSpan life)
+            public Particle (Vector2 pos, Vector2 direction, TimeSpan life)
 			{
 				mPos = pos;
 				mDirection = direction;
