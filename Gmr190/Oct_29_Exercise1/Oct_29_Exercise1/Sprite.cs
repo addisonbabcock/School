@@ -13,7 +13,7 @@ namespace Oct_29_Exercise1
 		private bool mWrapPosition;
 		private GraphicsDeviceManager mGraphics;
 
-		public Sprite (
+		public Sprite(
 			Texture2D texture,
 			Vector2 pos,
 			Vector2 speed,
@@ -30,7 +30,7 @@ namespace Oct_29_Exercise1
 			mGraphics = graphics;
 		}
 
-		public void Update (GameTime time)
+		public void Update(GameTime time)
 		{
 			mPos.X += mSpeed.X * (float)time.ElapsedGameTime.TotalMilliseconds;
 			mPos.Y += mSpeed.Y * (float)time.ElapsedGameTime.TotalMilliseconds;
@@ -49,15 +49,15 @@ namespace Oct_29_Exercise1
 			}
 		}
 
-		public void Draw (SpriteBatch spriteBatch)
+		public void Draw(SpriteBatch spriteBatch)
 		{
-			spriteBatch.Draw (
+			spriteBatch.Draw(
 				mTexture,
 				mPos,
-				new Rectangle (0, 0, mTexture.Width, mTexture.Height),
+				new Rectangle(0, 0, mTexture.Width, mTexture.Height),
 				Color.White,
 				(float)mRot,
-				new Vector2 (
+				new Vector2(
 					mTexture.Width / 2,
 					mTexture.Height / 2),
 				1.0f,

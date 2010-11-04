@@ -16,7 +16,7 @@ namespace Oct_29_Exercise1
 			Vector2 mDirection;
 			TimeSpan mLife;
 
-			public bool Update (GameTime time, Vector2 gravity)
+			public bool Update(GameTime time, Vector2 gravity)
 			{
 				mDirection.X += gravity.X * (float)time.ElapsedGameTime.TotalSeconds;
 				mDirection.Y += gravity.Y * (float)time.ElapsedGameTime.TotalSeconds;
@@ -31,19 +31,19 @@ namespace Oct_29_Exercise1
 				return false;
 			}
 
-            public void Draw(SpriteBatch spriteBatch, Texture2D tex)
-            {
-                spriteBatch.Draw(
-                    tex,
-                    new Rectangle(
-                        (int)mPos.X,
-                        (int)mPos.Y,
-                        3,
-                        3),
-                    Color.White);
-            }
+			public void Draw(SpriteBatch spriteBatch, Texture2D tex)
+			{
+				spriteBatch.Draw(
+					tex,
+					new Rectangle(
+						(int)mPos.X,
+						(int)mPos.Y,
+						3,
+						3),
+					Color.White);
+			}
 
-            public Particle (Vector2 pos, Vector2 direction, TimeSpan life)
+			public Particle(Vector2 pos, Vector2 direction, TimeSpan life)
 			{
 				mPos = pos;
 				mDirection = direction;
@@ -55,45 +55,45 @@ namespace Oct_29_Exercise1
 		Vector2 mGravity;
 		Texture2D mTex;
 
-		public void Update (GameTime time)
+		public void Update(GameTime time)
 		{
 			for (int i = 0; i < mParticles.Count; ++i)
 			{
-				Particle particle = mParticles [i];
-				if (particle.Update (time, mGravity))
+				Particle particle = mParticles[i];
+				if (particle.Update(time, mGravity))
 				{
-					mParticles.Remove (particle);
+					mParticles.Remove(particle);
 				}
 			}
 		}
 
-		public void AddParticles (int particleCount)
+		public void AddParticles(int particleCount)
 		{
-			Random rand = new Random ();
+			Random rand = new Random();
 			for (int i = 0; i < particleCount; ++i)
 			{
-				mParticles.Add (
-					new Particle (
-						new Vector2 (400.0f, 50.0f),
-						new Vector2 (
-							(float)(rand.NextDouble () * 3.0) - 1.5f,
-							(float)(rand.NextDouble () * 3.0) - 1.5f),
-						new TimeSpan (0, 0, 0, 3, 0)));
+				mParticles.Add(
+					new Particle(
+						new Vector2(400.0f, 50.0f),
+						new Vector2(
+							(float)(rand.NextDouble() * 3.0) - 1.5f,
+							(float)(rand.NextDouble() * 3.0) - 1.5f),
+						new TimeSpan(0, 0, 0, 3, 0)));
 			}
 		}
 
-		public ParticleEffect (Vector2 gravity, Texture2D tex)
+		public ParticleEffect(Vector2 gravity, Texture2D tex)
 		{
-			mParticles = new List<Particle> ();
+			mParticles = new List<Particle>();
 			mGravity = gravity;
 			mTex = tex;
 		}
 
-		public void Draw (SpriteBatch spriteBatch)
+		public void Draw(SpriteBatch spriteBatch)
 		{
 			foreach (Particle particle in mParticles)
 			{
-				particle.Draw (spriteBatch, mTex);
+				particle.Draw(spriteBatch, mTex);
 			}
 		}
 	}
