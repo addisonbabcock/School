@@ -11,7 +11,7 @@ namespace Rejeweled
 		Yellow,
 		White,
 
-		Power
+		HyperCube
 	}
 
     enum GemAnimationState
