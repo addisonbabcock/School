@@ -23,9 +23,9 @@ namespace Rejeweled
 		List<List<Texture2D>> mGemTextures;
 		Gem mGem;
 
-		public Rejeweled()
+		public Rejeweled ()
 		{
-			graphics = new GraphicsDeviceManager(this);
+			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";
 		}
 
@@ -35,41 +35,47 @@ namespace Rejeweled
 		/// related content.  Calling base.Initialize will enumerate through any components
 		/// and initialize them as well.
 		/// </summary>
-		protected override void Initialize()
+		protected override void Initialize ()
 		{
 			// TODO: Add your initialization logic here
 
-			base.Initialize();
+			base.Initialize ();
 		}
 
 		/// <summary>
 		/// LoadContent will be called once per game and is the place to load
 		/// all of your content.
 		/// </summary>
-		protected override void LoadContent()
+		protected override void LoadContent ()
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
-			spriteBatch = new SpriteBatch(GraphicsDevice);
-			mGemTextures = new List<List<Texture2D>>();
+			spriteBatch = new SpriteBatch (GraphicsDevice);
+			mGemTextures = new List<List<Texture2D>> ();
 
 			for (int i = 0; i < 7; ++i)
 			{
-				mGemTextures.Add(new List<Texture2D>());
+				mGemTextures.Add (new List<Texture2D> ());
 				for (int j = 0; j < 20; ++j)
 				{
-					string gemName = "Gems\\Normal\\Gem" + i + "\\gem" + i + "_" + (j+1).ToString ("0#");
-					mGemTextures[i].Add(Content.Load<Texture2D>(gemName));
+					string gemName =
+						"Gems\\Normal\\Gem" +
+						i +
+						"\\gem" +
+						i +
+						"_" +
+						(j + 1).ToString ("0#");
+					mGemTextures [i].Add (Content.Load<Texture2D> (gemName));
 				}
 			}
 
-			mGem = new Gem(GemType.Yellow, mGemTextures[0]);
+			mGem = new Gem (GemType.Yellow, mGemTextures [0]);
 		}
 
 		/// <summary>
 		/// UnloadContent will be called once per game and is the place to unload
 		/// all content.
 		/// </summary>
-		protected override void UnloadContent()
+		protected override void UnloadContent ()
 		{
 			// TODO: Unload any non ContentManager content here
 		}
@@ -79,32 +85,32 @@ namespace Rejeweled
 		/// checking for collisions, gathering input, and playing audio.
 		/// </summary>
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
-		protected override void Update(GameTime gameTime)
+		protected override void Update (GameTime gameTime)
 		{
 			// Allows the game to exit
-			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-				this.Exit();
-			if (Keyboard.GetState().IsKeyDown(Keys.Escape))
-				Exit();
+			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+				this.Exit ();
+			if (Keyboard.GetState ().IsKeyDown (Keys.Escape))
+				Exit ();
 
-			mGem.Update(gameTime);
+			mGem.Update (gameTime);
 
-			base.Update(gameTime);
+			base.Update (gameTime);
 		}
 
 		/// <summary>
 		/// This is called when the game should draw itself.
 		/// </summary>
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
-		protected override void Draw(GameTime gameTime)
+		protected override void Draw (GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+			GraphicsDevice.Clear (Color.CornflowerBlue);
 
-			spriteBatch.Begin(SpriteBlendMode.AlphaBlend);
-			mGem.Draw(spriteBatch);
-			spriteBatch.End();
+			spriteBatch.Begin (SpriteBlendMode.AlphaBlend);
+			mGem.Draw (spriteBatch);
+			spriteBatch.End ();
 
-			base.Draw(gameTime);
+			base.Draw (gameTime);
 		}
 	}
 }

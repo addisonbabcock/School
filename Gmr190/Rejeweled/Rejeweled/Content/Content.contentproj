@@ -39,7 +39,6 @@
       <Name>gem0_01</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
-      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_02.png">
       <Name>gem0_02</Name>
