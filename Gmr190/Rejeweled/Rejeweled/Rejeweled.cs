@@ -20,6 +20,8 @@ namespace Rejeweled
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
+		List<List<Texture2D>> mGemTextures;
+		Gem mGem;
 
 		public Rejeweled()
 		{
@@ -48,8 +50,19 @@ namespace Rejeweled
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+			mGemTextures = new List<List<Texture2D>>();
 
-			// TODO: use this.Content to load your game content here
+			for (int i = 0; i < 7; ++i)
+			{
+				mGemTextures.Add(new List<Texture2D>());
+				for (int j = 0; j < 20; ++j)
+				{
+					string gemName = "Gems\\Normal\\Gem" + i + "\\gem" + i + "_" + (j+1).ToString ("0#");
+					mGemTextures[i].Add(Content.Load<Texture2D>(gemName));
+				}
+			}
+
+			mGem = new Gem(GemType.Yellow, mGemTextures[0]);
 		}
 
 		/// <summary>
@@ -71,8 +84,10 @@ namespace Rejeweled
 			// Allows the game to exit
 			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
 				this.Exit();
+			if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+				Exit();
 
-			// TODO: Add your update logic here
+			mGem.Update(gameTime);
 
 			base.Update(gameTime);
 		}
@@ -85,7 +100,9 @@ namespace Rejeweled
 		{
 			GraphicsDevice.Clear(Color.CornflowerBlue);
 
-			// TODO: Add your drawing code here
+			spriteBatch.Begin(SpriteBlendMode.AlphaBlend);
+			mGem.Draw(spriteBatch);
+			spriteBatch.End();
 
 			base.Draw(gameTime);
 		}

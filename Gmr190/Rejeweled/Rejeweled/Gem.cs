@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -15,9 +12,18 @@ namespace Rejeweled
 		private bool mIsExplosive;
         private PlayAreaCoords mBoardLocation;
 
-		public Gem(GemType type)
+		private List<Texture2D> mNormalTextures;
+		private int mCurrentTexture;
+		private TimeSpan mTextureSwapTime;
+
+		public Gem(GemType type, List<Texture2D> textures)
 		{
 			mType = type;
+
+			mNormalTextures = textures;
+			mCurrentTexture = 0;
+			mTextureSwapTime = new TimeSpan(0, 0, 0, 0, 50);
+
 			mAnimationState = GemAnimationState.Idle;
 			mIsExplosive = false;
             mBoardLocation = new PlayAreaCoords();
@@ -41,7 +47,7 @@ namespace Rejeweled
             set { mIsExplosive = value; }
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             //just shutting up compiler warnings for now...
             //fill this in later.
@@ -50,11 +56,29 @@ namespace Rejeweled
                 case GemAnimationState.Disappearing:
                     break;
             }
+
+			mTextureSwapTime -= gameTime.ElapsedGameTime;
+			if (mTextureSwapTime.TotalMilliseconds < 0.0)
+			{
+				mTextureSwapTime = new TimeSpan(0, 0, 0, 0, 50);
+				++mCurrentTexture;
+				if (mCurrentTexture >= mNormalTextures.Count)
+					mCurrentTexture = 0;
+			}
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+			Color color = new Color ();
+			color.A = 255;
+			color.R = 255;
+			color.G = 255;
+			color.B = 255;
 
+			spriteBatch.Draw(
+				mNormalTextures [mCurrentTexture],
+				new Rectangle(0, 0, 100, 100),
+				color);
         }
 	}
 }

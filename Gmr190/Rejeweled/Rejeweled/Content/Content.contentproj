@@ -39,101 +39,121 @@
       <Name>gem0_01</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_02.png">
       <Name>gem0_02</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_03.png">
       <Name>gem0_03</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_04.png">
       <Name>gem0_04</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_05.png">
       <Name>gem0_05</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_06.png">
       <Name>gem0_06</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_07.png">
       <Name>gem0_07</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_08.png">
       <Name>gem0_08</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_09.png">
       <Name>gem0_09</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_10.png">
       <Name>gem0_10</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_11.png">
       <Name>gem0_11</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_12.png">
       <Name>gem0_12</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_13.png">
       <Name>gem0_13</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_14.png">
       <Name>gem0_14</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_15.png">
       <Name>gem0_15</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_16.png">
       <Name>gem0_16</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_17.png">
       <Name>gem0_17</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_18.png">
       <Name>gem0_18</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_19.png">
       <Name>gem0_19</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
     <Compile Include="Gems\Normal\Gem0\gem0_20.png">
       <Name>gem0_20</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <ProcessorParameters_ColorKeyColor>255, 0, 0, 0</ProcessorParameters_ColorKeyColor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
