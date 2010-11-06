@@ -35,8 +35,721 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gems\Normal\Gem0\gem0_01.png">
+      <Name>gem0_01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_02.png">
+      <Name>gem0_02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_03.png">
+      <Name>gem0_03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_04.png">
+      <Name>gem0_04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_05.png">
+      <Name>gem0_05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_06.png">
+      <Name>gem0_06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_07.png">
+      <Name>gem0_07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_08.png">
+      <Name>gem0_08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_09.png">
+      <Name>gem0_09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_10.png">
+      <Name>gem0_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_11.png">
+      <Name>gem0_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_12.png">
+      <Name>gem0_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_13.png">
+      <Name>gem0_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_14.png">
+      <Name>gem0_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_15.png">
+      <Name>gem0_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_16.png">
+      <Name>gem0_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_17.png">
+      <Name>gem0_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_18.png">
+      <Name>gem0_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_19.png">
+      <Name>gem0_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem0\gem0_20.png">
+      <Name>gem0_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gems\Normal\Gem1\gem1_01.png">
+      <Name>gem1_01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_02.png">
+      <Name>gem1_02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_03.png">
+      <Name>gem1_03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_04.png">
+      <Name>gem1_04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_05.png">
+      <Name>gem1_05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_06.png">
+      <Name>gem1_06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_07.png">
+      <Name>gem1_07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_08.png">
+      <Name>gem1_08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_09.png">
+      <Name>gem1_09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_10.png">
+      <Name>gem1_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_11.png">
+      <Name>gem1_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_12.png">
+      <Name>gem1_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_13.png">
+      <Name>gem1_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_14.png">
+      <Name>gem1_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_15.png">
+      <Name>gem1_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_16.png">
+      <Name>gem1_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_17.png">
+      <Name>gem1_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_18.png">
+      <Name>gem1_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_19.png">
+      <Name>gem1_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem1\gem1_20.png">
+      <Name>gem1_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gems\Normal\Gem2\gem2_01.png">
+      <Name>gem2_01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_02.png">
+      <Name>gem2_02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_03.png">
+      <Name>gem2_03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_04.png">
+      <Name>gem2_04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_05.png">
+      <Name>gem2_05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_06.png">
+      <Name>gem2_06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_07.png">
+      <Name>gem2_07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_08.png">
+      <Name>gem2_08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_09.png">
+      <Name>gem2_09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_10.png">
+      <Name>gem2_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_11.png">
+      <Name>gem2_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_12.png">
+      <Name>gem2_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_13.png">
+      <Name>gem2_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_14.png">
+      <Name>gem2_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_15.png">
+      <Name>gem2_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_16.png">
+      <Name>gem2_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_17.png">
+      <Name>gem2_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_18.png">
+      <Name>gem2_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_19.png">
+      <Name>gem2_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem2\gem2_20.png">
+      <Name>gem2_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gems\Normal\Gem3\gem3_01.png">
+      <Name>gem3_01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_02.png">
+      <Name>gem3_02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_03.png">
+      <Name>gem3_03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_04.png">
+      <Name>gem3_04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_05.png">
+      <Name>gem3_05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_06.png">
+      <Name>gem3_06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_07.png">
+      <Name>gem3_07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_08.png">
+      <Name>gem3_08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_09.png">
+      <Name>gem3_09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_10.png">
+      <Name>gem3_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_11.png">
+      <Name>gem3_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_12.png">
+      <Name>gem3_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_13.png">
+      <Name>gem3_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_14.png">
+      <Name>gem3_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_15.png">
+      <Name>gem3_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_16.png">
+      <Name>gem3_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_17.png">
+      <Name>gem3_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_18.png">
+      <Name>gem3_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_19.png">
+      <Name>gem3_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem3\gem3_20.png">
+      <Name>gem3_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gems\Normal\Gem4\gem4_01.png">
+      <Name>gem4_01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_02.png">
+      <Name>gem4_02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_03.png">
+      <Name>gem4_03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_04.png">
+      <Name>gem4_04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_05.png">
+      <Name>gem4_05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_06.png">
+      <Name>gem4_06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_07.png">
+      <Name>gem4_07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_08.png">
+      <Name>gem4_08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_09.png">
+      <Name>gem4_09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_10.png">
+      <Name>gem4_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_11.png">
+      <Name>gem4_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_12.png">
+      <Name>gem4_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_13.png">
+      <Name>gem4_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_14.png">
+      <Name>gem4_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_15.png">
+      <Name>gem4_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_16.png">
+      <Name>gem4_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_17.png">
+      <Name>gem4_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_18.png">
+      <Name>gem4_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_19.png">
+      <Name>gem4_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem4\gem4_20.png">
+      <Name>gem4_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gems\Normal\Gem5\gem5_01.png">
+      <Name>gem5_01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_02.png">
+      <Name>gem5_02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_03.png">
+      <Name>gem5_03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_04.png">
+      <Name>gem5_04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_05.png">
+      <Name>gem5_05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_06.png">
+      <Name>gem5_06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_07.png">
+      <Name>gem5_07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_08.png">
+      <Name>gem5_08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_09.png">
+      <Name>gem5_09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_10.png">
+      <Name>gem5_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_11.png">
+      <Name>gem5_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_12.png">
+      <Name>gem5_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_13.png">
+      <Name>gem5_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_14.png">
+      <Name>gem5_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_15.png">
+      <Name>gem5_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_16.png">
+      <Name>gem5_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_17.png">
+      <Name>gem5_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_18.png">
+      <Name>gem5_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_19.png">
+      <Name>gem5_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem5\gem5_20.png">
+      <Name>gem5_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gems\Normal\Gem6\gem6_01.png">
+      <Name>gem6_01</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_02.png">
+      <Name>gem6_02</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_03.png">
+      <Name>gem6_03</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_04.png">
+      <Name>gem6_04</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_05.png">
+      <Name>gem6_05</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_06.png">
+      <Name>gem6_06</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_07.png">
+      <Name>gem6_07</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_08.png">
+      <Name>gem6_08</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_09.png">
+      <Name>gem6_09</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_10.png">
+      <Name>gem6_10</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_11.png">
+      <Name>gem6_11</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_12.png">
+      <Name>gem6_12</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_13.png">
+      <Name>gem6_13</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_14.png">
+      <Name>gem6_14</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_15.png">
+      <Name>gem6_15</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_16.png">
+      <Name>gem6_16</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_17.png">
+      <Name>gem6_17</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_18.png">
+      <Name>gem6_18</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_19.png">
+      <Name>gem6_19</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Gems\Normal\Gem6\gem6_20.png">
+      <Name>gem6_20</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Gems\Explosive\" />
-    <Folder Include="Gems\Normal\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\v3.0\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
