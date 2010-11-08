@@ -47,6 +47,11 @@ namespace Rejeweled
             set { mIsExplosive = value; }
         }
 
+		public GemType Type
+		{
+			get { return mType; }
+		}
+
         public void Update(GameTime gameTime)
         {
             //just shutting up compiler warnings for now...
@@ -77,7 +82,11 @@ namespace Rejeweled
 
 			spriteBatch.Draw(
 				mNormalTextures [mCurrentTexture],
-				new Rectangle(0, 0, 100, 100),
+				new Rectangle(
+					0,
+					0,
+					100,
+					100),
 				color);
         }
 	}

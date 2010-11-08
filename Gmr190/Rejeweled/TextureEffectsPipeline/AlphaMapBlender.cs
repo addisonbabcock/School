@@ -47,7 +47,7 @@ namespace TextureEffectsPipeline
 
 			for (int x = 0; x < colorBitmap.Width && x < alphaBitmap.Width; ++x)
 			{
-				for (int y = 0; y < alphaBitmap.Height && y < alphaBitmap.Height; ++y)
+				for (int y = 0; y < colorBitmap.Height && y < alphaBitmap.Height; ++y)
 				{
 					Color pixel = colorBitmap.GetPixel (x, y);
 					Color alphaMapPixel = alphaBitmap.GetPixel (x, y);
