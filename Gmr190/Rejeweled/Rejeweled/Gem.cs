@@ -9,7 +9,7 @@ namespace Rejeweled
 	{
 		private GemType mType;
 		private GemAnimationState mAnimationState;
-		private bool mIsExplosive;
+		private bool mIsPoweredUp;
         private PlayAreaCoords mBoardLocation;
 
 		private List<Texture2D> mNormalTextures;
@@ -25,7 +25,7 @@ namespace Rejeweled
 			mTextureSwapTime = new TimeSpan(0, 0, 0, 0, 50);
 
 			mAnimationState = GemAnimationState.Idle;
-			mIsExplosive = false;
+			mIsPoweredUp = false;
             mBoardLocation = new PlayAreaCoords();
 		}
 
@@ -41,10 +41,10 @@ namespace Rejeweled
             return mBoardLocation == coords;
         }
 
-        public bool IsExplosive
+        public bool IsPoweredUp
         {
-            get { return mIsExplosive; }
-            set { mIsExplosive = value; }
+            get { return mIsPoweredUp; }
+            set { mIsPoweredUp = value; }
         }
 
 		public GemType Type

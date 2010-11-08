@@ -10,8 +10,8 @@ namespace Rejeweled
 {
 	class PlayArea
 	{
-        public const int GridDimensionX = 10;
-        public const int GridDimensionY = 10;
+        public const int GridDimensionX = 1;
+        public const int GridDimensionY = 1;
 
         private List<Gem> mGems;
 		private Dictionary<GemType, int> mGemTypeToID;
@@ -37,7 +37,7 @@ namespace Rejeweled
 			{
 				for (int y = 0; y < GridDimensionY; ++y)
 				{
-					int gemID = mRNG.Next (0, mGemTypeToID.Count);
+					int gemID = 3;// mRNG.Next (0, mGemTypeToID.Count);
 					mGems.Add (new Gem (mGemTypeToID.First (i => i.Value == gemID).Key, mGemTextures [gemID]));
 				}
 			}
