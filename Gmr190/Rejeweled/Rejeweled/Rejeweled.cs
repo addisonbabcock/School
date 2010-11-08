@@ -21,7 +21,7 @@ namespace Rejeweled
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		List<List<Texture2D>> mGemTextures;
-		Gem mGem;
+		PlayArea mPlayArea;
 
 		public Rejeweled ()
 		{
@@ -58,7 +58,7 @@ namespace Rejeweled
 				for (int j = 0; j < 20; ++j)
 				{
 					string gemName =
-						"Gems\\Normal\\Gem" +
+						"Gems\\Alpha\\Gem" +
 						i +
 						"\\gem" +
 						i +
@@ -68,7 +68,7 @@ namespace Rejeweled
 				}
 			}
 
-			mGem = new Gem (GemType.Yellow, mGemTextures [0]);
+			mPlayArea = new PlayArea (mGemTextures);
 		}
 
 		/// <summary>
@@ -93,8 +93,8 @@ namespace Rejeweled
 			if (Keyboard.GetState ().IsKeyDown (Keys.Escape))
 				Exit ();
 
-			mGem.Update (gameTime);
-
+			mPlayArea.Update (gameTime);
+			
 			base.Update (gameTime);
 		}
 
@@ -107,7 +107,7 @@ namespace Rejeweled
 			GraphicsDevice.Clear (Color.CornflowerBlue);
 
 			spriteBatch.Begin (SpriteBlendMode.AlphaBlend);
-			mGem.Draw (spriteBatch);
+			mPlayArea.Draw (spriteBatch);
 			spriteBatch.End ();
 
 			base.Draw (gameTime);

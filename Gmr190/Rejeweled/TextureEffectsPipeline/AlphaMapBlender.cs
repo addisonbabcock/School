@@ -25,27 +25,25 @@ namespace TextureEffectsPipeline
 	/// TODO: change the ContentProcessor attribute to specify the correct
 	/// display name for this processor.
 	/// </summary>
-	[ContentProcessor (DisplayName = "TextureEffectsPipeline.AlphaMapBlender")]
+	[ContentProcessor]
 	public class AlphaMapBlender : TextureProcessor
 	{
 		public override TextureContent Process (TextureContent input, ContentProcessorContext context)
 		{
-			TextureContent colorMap = input;
+			TextureContent alphaMap = input;
 
-			string colorMapFileName = colorMap.Identity.SourceFilename;
-			string alphaMapFileName =
-				Path.GetDirectoryName (colorMapFileName) +
+			string alphaMapFileName = alphaMap.Identity.SourceFilename;
+			string colorMapFileName = 
+				Path.GetDirectoryName (alphaMapFileName).Replace ("Alpha_Powerup", "Texture").Replace ("Alpha", "Texture") + 
 				"\\" +
-				Path.GetFileNameWithoutExtension (colorMapFileName) +
-				"_alpha_map" +
-				Path.GetExtension (colorMapFileName);
+				Path.GetFileName (alphaMapFileName);
 
-			TextureContent alphaMap = context.BuildAndLoadAsset<TextureContent, TextureContent> (
-				new ExternalReference<TextureContent> (alphaMapFileName),
+			TextureContent colorMap = context.BuildAndLoadAsset<TextureContent, TextureContent> (
+				new ExternalReference<TextureContent> (colorMapFileName),
 				null);
 
 			PixelBitmapContent<Color> colorBitmap = (PixelBitmapContent<Color>)colorMap.Faces [0] [0];
-			PixelBitmapContent<Color> alphaBitmap = (PixelBitmapContent<Color>)colorMap.Faces [0] [0];
+			PixelBitmapContent<Color> alphaBitmap = (PixelBitmapContent<Color>)alphaMap.Faces [0] [0];
 
 			for (int x = 0; x < colorBitmap.Width && x < alphaBitmap.Width; ++x)
 			{
@@ -55,13 +53,13 @@ namespace TextureEffectsPipeline
 					Color alphaMapPixel = alphaBitmap.GetPixel (x, y);
 					byte alpha = (byte)((alphaMapPixel.R + alphaMapPixel.G + alphaMapPixel.B) / 3);
 
-					colorBitmap.SetPixel (
+					alphaBitmap.SetPixel (
 						x, y,
 						new Color (pixel, alpha));
 				}
 			}
 
-			return base.Process (colorMap, context);
+			return base.Process (alphaMap, context);
 		}
 	}
 }

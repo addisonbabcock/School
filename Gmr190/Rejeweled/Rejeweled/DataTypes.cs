@@ -10,8 +10,7 @@ namespace Rejeweled
 		Purple,
 		Yellow,
 		White,
-
-		HyperCube
+		Orange,
 	}
 
     enum GemAnimationState
