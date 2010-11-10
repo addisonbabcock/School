@@ -22,6 +22,7 @@ namespace Rejeweled
 		SpriteBatch spriteBatch;
 		List<List<Texture2D>> mGemTextures;
 		PlayArea mPlayArea;
+		MouseParser mMouseParser;
 
 		public Rejeweled ()
 		{
@@ -74,6 +75,7 @@ namespace Rejeweled
 			}
 
 			mPlayArea = new PlayArea (mGemTextures);
+			mMouseParser = new MouseParser ();
 		}
 
 		/// <summary>
@@ -97,6 +99,7 @@ namespace Rejeweled
 				this.Exit ();
 			if (Keyboard.GetState ().IsKeyDown (Keys.Escape))
 				Exit ();
+			mMouseParser.Update (Mouse.GetState ());
 
 			mPlayArea.Update (gameTime);
 			
