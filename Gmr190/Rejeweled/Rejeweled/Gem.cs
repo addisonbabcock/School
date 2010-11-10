@@ -16,6 +16,10 @@ namespace Rejeweled
 		private int mCurrentTexture;
 		private TimeSpan mTextureSwapTime;
 
+		private const int mGemSizeX = 72;
+		private const int mGemSizeY = 72;
+		private Vector2 mScreenOffset = new Vector2 (0.0f, 0.0f);
+
 		public Gem(GemType type, List<Texture2D> textures)
 		{
 			mType = type;
@@ -72,6 +76,24 @@ namespace Rejeweled
 			}
         }
 
+		public PlayAreaCoords BoardLocation
+		{
+			get { return mBoardLocation; }
+			set { mBoardLocation = value; }
+		}
+
+		public Rectangle OnScreenLocation
+		{
+			get
+			{
+				return new Rectangle (
+					(int)(mBoardLocation.X * mGemSizeX + mScreenOffset.X),
+					(int)(mBoardLocation.Y * mGemSizeY + mScreenOffset.Y),
+					mGemSizeX,
+					mGemSizeY);
+			}
+		}
+
         public void Draw(SpriteBatch spriteBatch)
         {
 			Color color = new Color ();
@@ -82,11 +104,7 @@ namespace Rejeweled
 
 			spriteBatch.Draw(
 				mNormalTextures [mCurrentTexture],
-				new Rectangle(
-					0,
-					0,
-					100,
-					100),
+				OnScreenLocation,
 				color);
         }
 	}

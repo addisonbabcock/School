@@ -25,8 +25,13 @@ namespace Rejeweled
 
 		public Rejeweled ()
 		{
-			graphics = new GraphicsDeviceManager (this);
 			Content.RootDirectory = "Content";
+
+			graphics = new GraphicsDeviceManager (this);
+			graphics.PreferredBackBufferWidth = 800;
+			graphics.PreferredBackBufferHeight = 800;
+
+			IsMouseVisible = true;
 		}
 
 		/// <summary>
