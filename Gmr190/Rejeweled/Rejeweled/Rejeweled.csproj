@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="DataTypes.cs" />
     <Compile Include="Gem.cs" />
+    <Compile Include="IRenderable.cs" />
     <Compile Include="MouseParser.cs" />
     <Compile Include="PlayArea.cs" />
     <Compile Include="PlayAreaCoords.cs" />

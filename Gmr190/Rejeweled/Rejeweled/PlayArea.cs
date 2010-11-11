@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Rejeweled
 {
-	class PlayArea
+	class PlayArea : IRenderable
 	{
         public const int GridDimensionX = 10;
         public const int GridDimensionY = 10;
@@ -45,7 +45,7 @@ namespace Rejeweled
 			}
 		}
 
-		public void Update (GameTime gameTime)
+		public override void Update(GameTime gameTime)
 		{
 			foreach (Gem gem in mGems)
 			{
@@ -53,7 +53,7 @@ namespace Rejeweled
 			}
 		}
 
-		public void Draw (SpriteBatch spriteBatch)
+		public override void Draw(SpriteBatch spriteBatch)
 		{
 			foreach (Gem gem in mGems)
 			{

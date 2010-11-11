@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Rejeweled
 {
-	class Gem
+	class Gem : IRenderable
 	{
 		private GemType mType;
 		private GemAnimationState mAnimationState;
@@ -56,7 +56,7 @@ namespace Rejeweled
 			get { return mType; }
 		}
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             //just shutting up compiler warnings for now...
             //fill this in later.
@@ -94,7 +94,7 @@ namespace Rejeweled
 			}
 		}
 
-        public void Draw(SpriteBatch spriteBatch)
+		public override void Draw(SpriteBatch spriteBatch)
         {
 			Color color = new Color ();
 			color.A = 255;
