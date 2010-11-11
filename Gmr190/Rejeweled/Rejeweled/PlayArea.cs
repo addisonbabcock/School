@@ -70,6 +70,7 @@ namespace Rejeweled
 			if (clickedGem == null)
 			{
 				Debug.WriteLine ("Did not find a gem at the mouse click.");
+				return;
 			}
 
 			if (selectedGem != null)

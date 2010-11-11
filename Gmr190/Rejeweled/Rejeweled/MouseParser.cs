@@ -119,12 +119,15 @@ namespace Rejeweled
 					}
 				}
 
+				if (mPreviousState.LeftButton == ButtonState.Released && currentMouseState.LeftButton == ButtonState.Pressed)
+				{
+					mDragOrigin = currentMouseState;
+				}
+
 				//look for dragging
 				if (mPreviousState.LeftButton == ButtonState.Pressed && currentMouseState.LeftButton == ButtonState.Pressed &&
-					(mPreviousState.X != currentMouseState.X || mPreviousState.Y != currentMouseState.Y))
+					(Math.Abs (mPreviousState.X - currentMouseState.X) > 1 || Math.Abs (mPreviousState.Y - currentMouseState.Y) > 1))
 				{
-					if (!mIsDragging)
-						mDragOrigin = mPreviousState;
 					mIsDragging = true;
 				}
 
