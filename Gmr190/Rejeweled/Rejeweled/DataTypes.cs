@@ -12,20 +12,4 @@ namespace Rejeweled
 		White,
 		Orange,
 	}
-
-    enum GemAnimationState
-    {
-        SlidingDown,
-        SlidingUp,
-        SlidingLeft,
-        SlidingRight,
-
-        Falling,
-
-        Disappearing,
-
-        Exploding,
-
-        Idle
-    }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -101,9 +102,50 @@ namespace Rejeweled
 				Exit ();
 			mMouseParser.Update (Mouse.GetState ());
 
+			MouseEvent mouseEvent = null;
+			do
+			{
+				mouseEvent = mMouseParser.GetNextEvent ();
+				HandleMouseEvent (mouseEvent);
+			} while (mouseEvent != null);
+
 			mPlayArea.Update (gameTime);
 			
 			base.Update (gameTime);
+		}
+
+		private void HandleMouseEvent (MouseEvent mouseEvent)
+		{
+			if (mouseEvent == null)
+				return;
+
+			switch (mouseEvent.MouseEventType)
+			{
+				case MouseEvent.EventType.MouseClick:
+					HandleMouseClick (mouseEvent);
+					break;
+
+				case MouseEvent.EventType.MouseDrag:
+					HandleMouseDrag (mouseEvent);
+					break;
+
+				default:
+					Debug.WriteLine ("Managed to get here somehow?");
+					break;
+			}
+		}
+
+		private void HandleMouseClick (MouseEvent mouseEvent)
+		{
+			Debug.WriteLine ("Mouse click at coords: " + (int)mouseEvent.MouseLocation.X + ", " + (int)mouseEvent.MouseLocation.Y);
+			mPlayArea.MouseClicked (mouseEvent);
+		}
+
+		private void HandleMouseDrag (MouseEvent mouseEvent)
+		{
+			Debug.WriteLine ("Mouse drag from " +
+				(int)mouseEvent.DragStart.X + ", " + (int)mouseEvent.DragStart.Y + " to " +
+				(int)mouseEvent.DragEnd.X + ", " + (int)mouseEvent.DragEnd.Y);
 		}
 
 		/// <summary>

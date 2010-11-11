@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,30 @@ namespace Rejeweled
 			foreach (Gem gem in mGems)
 			{
 				gem.Draw (spriteBatch);
+			}
+		}
+
+		public void MouseClicked (MouseEvent mouseEvent)
+		{
+			Gem clickedGem = mGems.Find (i => i.Contains (mouseEvent.MouseLocation));
+			Gem selectedGem = mGems.Find (i => i.IsSelected);
+
+			if (clickedGem == null)
+			{
+				Debug.WriteLine ("Did not find a gem at the mouse click.");
+			}
+
+			if (selectedGem != null)
+			{
+				selectedGem.IsSelected = false;
+				if (selectedGem != clickedGem)
+				{
+					clickedGem.Swap (selectedGem);
+				}
+			}
+			else
+			{
+				clickedGem.IsSelected = true;
 			}
 		}
 	}

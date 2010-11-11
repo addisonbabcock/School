@@ -30,7 +30,12 @@ namespace Rejeweled
 
 		public Vector2 MouseLocation
 		{
-			get { return mMouseLocation; }
+			get 
+			{
+				if (MouseEventType == EventType.MouseClick)
+					return mMouseLocation;
+				throw new InvalidOperationException ("Attempted to access MouseLocation when the event type is not MouseClick.");
+			}
 		}
 
 		public Vector2 DragStart
@@ -59,12 +64,11 @@ namespace Rejeweled
 			mMouseLocation = location;
 		}
 
-		public MouseEvent (Vector2 dragStart, Vector2 dragEnd, Vector2 location)
+		public MouseEvent (Vector2 dragStart, Vector2 dragEnd)
 		{
 			mEvent = EventType.MouseDrag;
 			mDragStart = dragStart;
 			mDragEnd = dragEnd;
-			mMouseLocation = location;
 		}
 	}
 
@@ -86,18 +90,33 @@ namespace Rejeweled
 				if (mPreviousState.LeftButton == ButtonState.Pressed && currentMouseState.LeftButton == ButtonState.Released &&
 					mPreviousState.X == currentMouseState.X && mPreviousState.Y == currentMouseState.Y)
 				{
-					//deal with a left mouse click here
-					mEvents.Enqueue (
-						new MouseEvent (
-							MouseEvent.EventType.MouseClick,
-							new Vector2 (
-								(float)currentMouseState.X,
-								(float)currentMouseState.Y)));
+					//deal with a left mouse click
+					if (!mIsDragging)
+					{
+						mEvents.Enqueue (
+							new MouseEvent (
+								MouseEvent.EventType.MouseClick,
+								new Vector2 (
+									(float)currentMouseState.X,
+									(float)currentMouseState.Y)));
+					}
 				}
 
 				//was clicked and is now released
 				if (mPreviousState.LeftButton == ButtonState.Pressed && currentMouseState.LeftButton == ButtonState.Released)
 				{
+					if (mIsDragging)
+					{
+						//queue drag event
+						mEvents.Enqueue (
+							new MouseEvent (
+								new Vector2 (
+									(float)mDragOrigin.X,
+									(float)mDragOrigin.Y),
+								new Vector2 (
+									(float)currentMouseState.X,
+									(float)currentMouseState.Y)));
+					}
 				}
 
 				//look for dragging
@@ -108,6 +127,11 @@ namespace Rejeweled
 						mDragOrigin = mPreviousState;
 					mIsDragging = true;
 				}
+
+				if (currentMouseState.LeftButton == ButtonState.Released)
+				{
+					mIsDragging = false;
+				}
 			}
 
 			//MUST BE LAST!
@@ -117,6 +141,14 @@ namespace Rejeweled
 		public MouseParser ()
 		{
 			mEvents = new Queue<MouseEvent> ();
+		}
+
+		public MouseEvent GetNextEvent ()
+		{
+			MouseEvent mouseEvent = null;
+			if (mEvents.Count > 0)
+				mouseEvent = mEvents.Dequeue ();
+			return mouseEvent;
 		}
 	}
 }

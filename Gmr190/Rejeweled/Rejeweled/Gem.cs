@@ -8,7 +8,7 @@ namespace Rejeweled
 	class Gem
 	{
 		private GemType mType;
-		private GemAnimationState mAnimationState;
+		private bool mIsSelected;
 		private bool mIsPoweredUp;
         private PlayAreaCoords mBoardLocation;
 
@@ -28,8 +28,8 @@ namespace Rejeweled
 			mCurrentTexture = 0;
 			mTextureSwapTime = new TimeSpan(0, 0, 0, 0, 50);
 
-			mAnimationState = GemAnimationState.Idle;
 			mIsPoweredUp = false;
+			mIsSelected = false;
             mBoardLocation = new PlayAreaCoords();
 		}
 
@@ -45,11 +45,22 @@ namespace Rejeweled
             return mBoardLocation == coords;
         }
 
+		public bool Contains (Vector2 coords)
+		{
+			return OnScreenLocation.Intersects (new Rectangle ((int)coords.X, (int)coords.Y, 1, 1));
+		}
+
         public bool IsPoweredUp
         {
             get { return mIsPoweredUp; }
             set { mIsPoweredUp = value; }
         }
+
+		public bool IsSelected
+		{
+			get { return mIsSelected; }
+			set { mIsSelected = value; }
+		}
 
 		public GemType Type
 		{
@@ -58,21 +69,20 @@ namespace Rejeweled
 
         public void Update(GameTime gameTime)
         {
-            //just shutting up compiler warnings for now...
-            //fill this in later.
-            switch (mAnimationState)
-            {
-                case GemAnimationState.Disappearing:
-                    break;
-            }
-
-			mTextureSwapTime -= gameTime.ElapsedGameTime;
-			if (mTextureSwapTime.TotalMilliseconds < 0.0)
+			if (mIsSelected)
 			{
-				mTextureSwapTime = new TimeSpan(0, 0, 0, 0, 50);
-				++mCurrentTexture;
-				if (mCurrentTexture >= mNormalTextures.Count)
-					mCurrentTexture = 0;
+				mTextureSwapTime -= gameTime.ElapsedGameTime;
+				if (mTextureSwapTime.TotalMilliseconds < 0.0)
+				{
+					mTextureSwapTime = new TimeSpan (0, 0, 0, 0, 50);
+					++mCurrentTexture;
+					if (mCurrentTexture >= mNormalTextures.Count)
+						mCurrentTexture = 0;
+				}
+			}
+			else
+			{
+				mCurrentTexture = 0;
 			}
         }
 
