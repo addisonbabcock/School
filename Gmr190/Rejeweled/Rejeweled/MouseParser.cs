@@ -23,17 +23,17 @@ namespace Rejeweled
 		private Vector2 mDragStart;
 		private Vector2 mDragEnd;
 
-		EventType MouseEventType
+		public EventType MouseEventType
 		{
 			get { return mEvent; }
 		}
 
-		Vector2 MouseLocation
+		public Vector2 MouseLocation
 		{
 			get { return mMouseLocation; }
 		}
 
-		Vector2 DragStart
+		public Vector2 DragStart
 		{
 			get
 			{
@@ -43,7 +43,7 @@ namespace Rejeweled
 			}
 		}
 
-		Vector2 DragEnd
+		public Vector2 DragEnd
 		{
 			get
 			{
@@ -112,6 +112,11 @@ namespace Rejeweled
 
 			//MUST BE LAST!
 			mPreviousState = currentMouseState;
+		}
+
+		public MouseParser ()
+		{
+			mEvents = new Queue<MouseEvent> ();
 		}
 	}
 }
