@@ -774,6 +774,7 @@
       <Name>gem0_04</Name>
       <Importer>TextureImporter</Importer>
       <Processor>AlphaMapBlender</Processor>
+      <ProcessorParameters_ColorKeyEnabled>False</ProcessorParameters_ColorKeyEnabled>
     </Compile>
     <Compile Include="Gems\Alpha\Gem0\gem0_05.png">
       <Name>gem0_05</Name>

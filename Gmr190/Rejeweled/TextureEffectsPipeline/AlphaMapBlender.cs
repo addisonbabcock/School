@@ -20,11 +20,25 @@ namespace TextureEffectsPipeline
 	[ContentProcessor]
 	public class AlphaMapBlender : TextureProcessor
 	{
+		public override bool ColorKeyEnabled
+		{
+			get
+			{
+				return false;// base.ColorKeyEnabled;
+			}
+			set
+			{
+				//base.ColorKeyEnabled = value;
+			}
+		}
+
 		public override TextureContent Process (TextureContent input, ContentProcessorContext context)
 		{
 			TextureContent alphaMap = input;
 
 			string alphaMapFileName = alphaMap.Identity.SourceFilename;
+
+			//super hack!
 			string colorMapFileName = 
 				Path.GetDirectoryName (alphaMapFileName).Replace ("Alpha_Powerup", "Texture").Replace ("Alpha", "Texture") + 
 				"\\" +
