@@ -124,7 +124,7 @@ namespace Rejeweled
 					mDragOrigin = currentMouseState;
 				}
 
-				//look for dragging
+				//look for dragging, but allow for the mouse to move slightly before calling it a drag
 				if (mPreviousState.LeftButton == ButtonState.Pressed && currentMouseState.LeftButton == ButtonState.Pressed &&
 					(Math.Abs (mPreviousState.X - currentMouseState.X) > 1 || Math.Abs (mPreviousState.Y - currentMouseState.Y) > 1))
 				{
