@@ -10,15 +10,21 @@ namespace Rejeweled
 		private GemType mType;
 		private bool mIsSelected;
 		private bool mIsPoweredUp;
-        private PlayAreaCoords mBoardLocation;
+ //       private PlayAreaCoords mBoardLocation;
 
 		private List<Texture2D> mNormalTextures;
 		private int mCurrentTexture;
 		private TimeSpan mTextureSwapTime;
 
-		private const int mGemSizeX = 72;
-		private const int mGemSizeY = 72;
+		private const int mGemSizeX = 80;
+		private const int mGemSizeY = 80;
 		private Vector2 mScreenOffset = new Vector2 (0.0f, 0.0f);
+
+		private bool mIsMoving;
+		private PlayAreaCoords mMoveFrom;
+		private PlayAreaCoords mMoveTo;
+		private Timer mMoveTimer;
+		private Vector2 mActualPosition;
 
 		public Gem(GemType type, List<Texture2D> textures)
 		{
@@ -30,23 +36,47 @@ namespace Rejeweled
 
 			mIsPoweredUp = false;
 			mIsSelected = false;
-            mBoardLocation = new PlayAreaCoords();
+           // mBoardLocation = new PlayAreaCoords();
+
+			mIsMoving = false;
+			mMoveFrom = new PlayAreaCoords();
+			mMoveTo = new PlayAreaCoords();
+			mMoveTimer = new Timer(new TimeSpan(1));
+			
 		}
 
         public void Swap(Gem with)
         {
-            PlayAreaCoords temp = with.mBoardLocation;
-            with.mBoardLocation = mBoardLocation;
-            mBoardLocation = temp;
+            PlayAreaCoords temp = with.mMoveTo;
+			with.MoveTo(mMoveTo);
+			MoveTo(temp);
         }
+
+		public void MoveTo(PlayAreaCoords newLoc)
+		{
+			if (newLoc != mMoveTo)
+			{
+				mMoveFrom = mMoveTo;
+				mMoveTo = newLoc;
+				mMoveTimer = new Timer(new TimeSpan(0, 0, 0, 0, 250));
+				mIsMoving = true;
+				mActualPosition = new Vector2 ((float)OnScreenLocation.X, (float)OnScreenLocation.Y);
+			}
+
+			//mBoardLocation = newLoc;
+		}
 
         public bool IsAt(PlayAreaCoords coords)
         {
-            return mBoardLocation == coords;
+            return mMoveTo == coords;
         }
 
 		public bool Contains (Vector2 coords)
 		{
+			//we don't want people to be able to click gems while they are moving
+			if (mIsMoving)
+				return false;
+
 			return OnScreenLocation.Intersects (new Rectangle ((int)coords.X, (int)coords.Y, 1, 1));
 		}
 
@@ -69,12 +99,33 @@ namespace Rejeweled
 
         public void Update(GameTime gameTime)
         {
+			UpdateSpin(gameTime);
+			UpdateMovement(gameTime);
+        }
+
+		private void UpdateMovement(GameTime gameTime)
+		{
+			if (mIsMoving)
+			{
+				bool moveDone = mMoveTimer.Update(gameTime.ElapsedGameTime);
+				CalculateScreenPosition();
+
+				if (moveDone)
+				{
+					System.Diagnostics.Debug.WriteLine("Gem movement animation complete.");
+					mIsMoving = false;
+				}
+			}
+		}
+
+		private void UpdateSpin(GameTime gameTime)
+		{
 			if (mIsSelected)
 			{
 				mTextureSwapTime -= gameTime.ElapsedGameTime;
-				if (mTextureSwapTime.TotalMilliseconds < 0.0)
+				while (mTextureSwapTime.TotalMilliseconds < 0.0)
 				{
-					mTextureSwapTime = new TimeSpan (0, 0, 0, 0, 50);
+					mTextureSwapTime += new TimeSpan(0, 0, 0, 0, 50);
 					++mCurrentTexture;
 					if (mCurrentTexture >= mNormalTextures.Count)
 						mCurrentTexture = 0;
@@ -84,12 +135,12 @@ namespace Rejeweled
 			{
 				mCurrentTexture = 0;
 			}
-        }
+		}
 
 		public PlayAreaCoords BoardLocation
 		{
-			get { return mBoardLocation; }
-			set { mBoardLocation = value; }
+			get { return mMoveTo; }
+			set { mMoveFrom = value; }
 		}
 
 		public Rectangle OnScreenLocation
@@ -97,25 +148,29 @@ namespace Rejeweled
 			get
 			{
 				return new Rectangle (
-					(int)(mBoardLocation.X * mGemSizeX + mScreenOffset.X),
-					(int)(mBoardLocation.Y * mGemSizeY + mScreenOffset.Y),
+					(int)mActualPosition.X,
+					(int)mActualPosition.Y,
 					mGemSizeX,
 					mGemSizeY);
 			}
 		}
 
+		private void CalculateScreenPosition()
+		{
+			float percent = (float)mMoveTimer.PercentComplete();
+			Vector2 moveFrom = mMoveFrom;
+			Vector2 moveTo = mMoveTo;
+
+			mActualPosition.X = moveFrom.X + ((moveTo.X - moveFrom.X) * percent);
+			mActualPosition.Y = moveFrom.Y + ((moveTo.Y - moveFrom.Y) * percent);
+		}
+
 		public void Draw(SpriteBatch spriteBatch)
         {
-			Color color = new Color ();
-			color.A = 255;
-			color.R = 255;
-			color.G = 255;
-			color.B = 255;
-
 			spriteBatch.Draw(
 				mNormalTextures [mCurrentTexture],
-				OnScreenLocation,
-				color);
+				mActualPosition,
+				Color.White);
         }
 	}
 }

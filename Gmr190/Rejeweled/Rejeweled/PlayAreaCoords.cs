@@ -1,4 +1,6 @@
-﻿namespace Rejeweled
+﻿using Microsoft.Xna.Framework;
+
+namespace Rejeweled
 {
     class PlayAreaCoords
     {
@@ -48,5 +50,12 @@
         {
             return base.Equals(obj);
         }
+
+		public static implicit operator Vector2 (PlayAreaCoords coords)
+		{
+			return new Vector2 (
+				coords.X * 80 + 0,
+				coords.Y * 80 + 0);
+		}
     }
 }

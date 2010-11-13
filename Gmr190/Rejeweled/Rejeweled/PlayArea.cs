@@ -40,7 +40,7 @@ namespace Rejeweled
 				{
 					int gemID = mRNG.Next (0, mGemTypeToID.Count);
 					Gem gem = new Gem (mGemTypeToID.First (i => i.Value == gemID).Key, mGemTextures [gemID]);
-					gem.BoardLocation = new PlayAreaCoords (x, y);
+					gem.MoveTo (new PlayAreaCoords (x, y));
 					mGems.Add (gem);
 				}
 			}
