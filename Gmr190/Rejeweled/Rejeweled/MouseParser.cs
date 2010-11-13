@@ -93,6 +93,7 @@ namespace Rejeweled
 					//deal with a left mouse click
 					if (!mIsDragging)
 					{
+						System.Diagnostics.Debug.WriteLine("Click event queued.");
 						mEvents.Enqueue (
 							new MouseEvent (
 								MouseEvent.EventType.MouseClick,
@@ -108,6 +109,7 @@ namespace Rejeweled
 					if (mIsDragging)
 					{
 						//queue drag event
+						System.Diagnostics.Debug.WriteLine("Drag event queued.");
 						mEvents.Enqueue (
 							new MouseEvent (
 								new Vector2 (
