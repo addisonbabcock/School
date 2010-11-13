@@ -114,6 +114,7 @@ namespace Rejeweled
 				{
 					System.Diagnostics.Debug.WriteLine("Gem movement animation complete.");
 					mIsMoving = false;
+					mIsSelected = false; //lettign the gem keep spinning it is moving makes things look a little better
 				}
 			}
 		}

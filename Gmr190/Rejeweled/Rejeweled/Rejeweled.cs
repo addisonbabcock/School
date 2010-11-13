@@ -146,6 +146,7 @@ namespace Rejeweled
 			Debug.WriteLine ("Mouse drag from " +
 				(int)mouseEvent.DragStart.X + ", " + (int)mouseEvent.DragStart.Y + " to " +
 				(int)mouseEvent.DragEnd.X + ", " + (int)mouseEvent.DragEnd.Y);
+			mPlayArea.MouseDragged(mouseEvent);
 		}
 
 		/// <summary>

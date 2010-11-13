@@ -75,15 +75,33 @@ namespace Rejeweled
 
 			if (selectedGem != null)
 			{
-				selectedGem.IsSelected = false;
 				if (selectedGem != clickedGem)
 				{
-					clickedGem.Swap (selectedGem);
+					clickedGem.Swap(selectedGem);
+				}
+				else
+				{
+					selectedGem.IsSelected = false;
 				}
 			}
 			else
 			{
 				clickedGem.IsSelected = true;
+			}
+		}
+
+		public void MouseDragged(MouseEvent mouseEvent)
+		{
+			Gem fromGem = mGems.Find(i => i.Contains(mouseEvent.DragStart));
+			Gem toGem = mGems.Find(i => i.Contains(mouseEvent.DragEnd));
+
+			if (fromGem != null && toGem != null)
+			{
+				fromGem.Swap(toGem);
+			}
+			else
+			{
+				Debug.WriteLine("Could not find two gems to drag...");
 			}
 		}
 	}
