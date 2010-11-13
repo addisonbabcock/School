@@ -75,7 +75,10 @@ namespace Rejeweled
 		{
 			//we don't want people to be able to click gems while they are moving
 			if (mIsMoving)
+			{
+				System.Diagnostics.Debug.WriteLine("Blocked a call to contains because the gem is moving.");
 				return false;
+			}
 
 			return OnScreenLocation.Intersects (new Rectangle ((int)coords.X, (int)coords.Y, 1, 1));
 		}
