@@ -87,12 +87,11 @@ namespace Rejeweled
 			if (mPreviousState != null)
 			{
 				//look for clicks
-				if (mPreviousState.LeftButton == ButtonState.Pressed && currentMouseState.LeftButton == ButtonState.Released &&
-					mPreviousState.X == currentMouseState.X && mPreviousState.Y == currentMouseState.Y)
+				if (mPreviousState.LeftButton == ButtonState.Pressed && currentMouseState.LeftButton == ButtonState.Released)
 				{
-					//deal with a left mouse click
-					if (!mIsDragging)
+					if (mPreviousState.X == currentMouseState.X && mPreviousState.Y == currentMouseState.Y && !mIsDragging)
 					{
+						//deal with a left mouse click
 						System.Diagnostics.Debug.WriteLine("Click event queued.");
 						mEvents.Enqueue (
 							new MouseEvent (
@@ -101,15 +100,11 @@ namespace Rejeweled
 									(float)currentMouseState.X,
 									(float)currentMouseState.Y)));
 					}
-				}
 
-				//was clicked and is now released
-				if (mPreviousState.LeftButton == ButtonState.Pressed && currentMouseState.LeftButton == ButtonState.Released)
-				{
 					if (mIsDragging)
 					{
 						//queue drag event
-						System.Diagnostics.Debug.WriteLine("Drag event queued.");
+						System.Diagnostics.Debug.WriteLine ("Drag event queued.");
 						mEvents.Enqueue (
 							new MouseEvent (
 								new Vector2 (
