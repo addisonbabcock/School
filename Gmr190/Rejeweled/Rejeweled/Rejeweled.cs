@@ -32,10 +32,19 @@ namespace Rejeweled
 			graphics = new GraphicsDeviceManager (this);
 			graphics.PreferredBackBufferWidth = 1024;
 			graphics.PreferredBackBufferHeight = 768;
-			graphics.IsFullScreen = true;
+			//graphics.IsFullScreen = true;
+			Window.AllowUserResizing = true;
+			Window.ClientSizeChanged += new EventHandler(Window_ClientSizeChanged);
 			graphics.ApplyChanges();
 
+			GlobalVars.UpdateViewport(graphics.GraphicsDevice.Viewport);
+
 			IsMouseVisible = true;
+		}
+
+		void Window_ClientSizeChanged(object sender, EventArgs e)
+		{
+			GlobalVars.UpdateViewport(graphics.GraphicsDevice.Viewport);
 		}
 
 		/// <summary>
@@ -98,10 +107,17 @@ namespace Rejeweled
 		protected override void Update (GameTime gameTime)
 		{
 			// Allows the game to exit
+			KeyboardState kbState = Keyboard.GetState ();
+
 			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
 				this.Exit ();
-			if (Keyboard.GetState ().IsKeyDown (Keys.Escape))
+			if (kbState.IsKeyDown (Keys.Escape))
 				Exit ();
+			if (kbState.IsKeyDown(Keys.F11))
+			{
+				graphics.IsFullScreen = !graphics.IsFullScreen;
+				graphics.ApplyChanges();
+			}
 			mMouseParser.Update (Mouse.GetState ());
 
 			MouseEvent mouseEvent = null;
