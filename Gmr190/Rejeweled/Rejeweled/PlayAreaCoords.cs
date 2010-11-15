@@ -54,8 +54,8 @@ namespace Rejeweled
 		public static implicit operator Vector2 (PlayAreaCoords coords)
 		{
 			return new Vector2 (
-				coords.X * 80 + 0,
-				coords.Y * 80 + 0);
+				coords.X * GlobalVars.GemSizeX + 0,
+				coords.Y * GlobalVars.GemSizeY + 0);
 		}
     }
 }

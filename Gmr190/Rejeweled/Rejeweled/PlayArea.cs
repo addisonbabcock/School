@@ -11,9 +11,6 @@ namespace Rejeweled
 {
 	class PlayArea
 	{
-        public const int GridDimensionX = 10;
-        public const int GridDimensionY = 10;
-
         private List<Gem> mGems;
 		private Dictionary<GemType, int> mGemTypeToID;
 		private List<List<Texture2D>> mGemTextures;
@@ -23,7 +20,7 @@ namespace Rejeweled
 		{
 			mGemTextures = gemTextures;
 			mRNG = new Random ();
-            mGems = new List<Gem>(GridDimensionX * GridDimensionY);
+			mGems = new List<Gem>(GlobalVars.GridDimensionX * GlobalVars.GridDimensionY);
 			mGemTypeToID = new Dictionary<GemType, int> ();
 
 			mGemTypeToID [GemType.Yellow] = 0;
@@ -34,9 +31,9 @@ namespace Rejeweled
 			mGemTypeToID [GemType.Orange] = 5;
 			mGemTypeToID [GemType.Green] = 6;
 
-			for (int x = 0; x < GridDimensionX; ++x)
+			for (int x = 0; x < GlobalVars.GridDimensionX; ++x)
 			{
-				for (int y = 0; y < GridDimensionY; ++y)
+				for (int y = 0; y < GlobalVars.GridDimensionY; ++y)
 				{
 					int gemID = mRNG.Next (0, mGemTypeToID.Count);
 					Gem gem = new Gem (mGemTypeToID.First (i => i.Value == gemID).Key, mGemTextures [gemID]);
@@ -48,7 +45,7 @@ namespace Rejeweled
 
 		public PlayAreaCoords Size
 		{
-			get { return new PlayAreaCoords (GridDimensionX, GridDimensionY); }
+			get { return new PlayAreaCoords(GlobalVars.GridDimensionX, GlobalVars.GridDimensionY); }
 		}
 
 		public void Update(GameTime gameTime)

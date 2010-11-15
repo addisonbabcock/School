@@ -30,8 +30,10 @@ namespace Rejeweled
 			Content.RootDirectory = "Content";
 
 			graphics = new GraphicsDeviceManager (this);
-			graphics.PreferredBackBufferWidth = 800;
-			graphics.PreferredBackBufferHeight = 800;
+			graphics.PreferredBackBufferWidth = 1024;
+			graphics.PreferredBackBufferHeight = 768;
+			graphics.IsFullScreen = true;
+			graphics.ApplyChanges();
 
 			IsMouseVisible = true;
 		}

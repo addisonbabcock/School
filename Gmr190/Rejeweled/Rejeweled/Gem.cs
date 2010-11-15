@@ -16,8 +16,6 @@ namespace Rejeweled
 		private int mCurrentTexture;
 		private TimeSpan mTextureSwapTime;
 
-		private const int mGemSizeX = 80;
-		private const int mGemSizeY = 80;
 		private Vector2 mScreenOffset = new Vector2 (0.0f, 0.0f);
 
 		private bool mIsMoving;
@@ -154,8 +152,8 @@ namespace Rejeweled
 				return new Rectangle (
 					(int)mActualPosition.X,
 					(int)mActualPosition.Y,
-					mGemSizeX,
-					mGemSizeY);
+					GlobalVars.GemSizeX,
+					GlobalVars.GemSizeY);
 			}
 		}
 
@@ -173,7 +171,7 @@ namespace Rejeweled
         {
 			spriteBatch.Draw(
 				mNormalTextures [mCurrentTexture],
-				mActualPosition,
+				OnScreenLocation,
 				Color.White);
         }
 	}
