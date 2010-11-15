@@ -46,6 +46,11 @@ namespace Rejeweled
 			}
 		}
 
+		public PlayAreaCoords Size
+		{
+			get { return new PlayAreaCoords (GridDimensionX, GridDimensionY); }
+		}
+
 		public void Update(GameTime gameTime)
 		{
 			foreach (Gem gem in mGems)
