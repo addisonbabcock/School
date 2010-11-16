@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rejeweled", "Rejeweled\Reje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureEffectsPipeline", "TextureEffectsPipeline\TextureEffectsPipeline.csproj", "{2BC12F89-FF9C-4DAA-AF3E-F41CFE6ABD8D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RejeweledSetup", "RejeweledSetup\RejeweledSetup.vdproj", "{963E2ADC-D23A-4F06-A61D-4E686287AC06}"
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -47,13 +45,6 @@ Global
 		{FC8FEE54-EC4D-4D75-AC17-55B0AD344EEB}.Release|x86.ActiveCfg = Release|x86
 		{FC8FEE54-EC4D-4D75-AC17-55B0AD344EEB}.Release|Xbox 360.ActiveCfg = Release|x86
 		{FC8FEE54-EC4D-4D75-AC17-55B0AD344EEB}.Release|Zune.ActiveCfg = Release|x86
-		{963E2ADC-D23A-4F06-A61D-4E686287AC06}.Debug|x86.ActiveCfg = Debug
-		{963E2ADC-D23A-4F06-A61D-4E686287AC06}.Debug|Xbox 360.ActiveCfg = Debug
-		{963E2ADC-D23A-4F06-A61D-4E686287AC06}.Debug|Zune.ActiveCfg = Debug
-		{963E2ADC-D23A-4F06-A61D-4E686287AC06}.Release|x86.ActiveCfg = Release
-		{963E2ADC-D23A-4F06-A61D-4E686287AC06}.Release|x86.Build.0 = Release
-		{963E2ADC-D23A-4F06-A61D-4E686287AC06}.Release|Xbox 360.ActiveCfg = Release
-		{963E2ADC-D23A-4F06-A61D-4E686287AC06}.Release|Zune.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
