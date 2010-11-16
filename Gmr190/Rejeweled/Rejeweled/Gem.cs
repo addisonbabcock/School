@@ -24,6 +24,10 @@ namespace Rejeweled
 		private Timer mMoveTimer;
 		private Vector2 mActualPosition;
 
+		private bool mIsMarked;
+		private Timer mMarkTimer;
+		private Color mColor;
+
 		public Gem(GemType type, List<Texture2D> textures)
 		{
 			mType = type;
@@ -40,6 +44,10 @@ namespace Rejeweled
 			mMoveFrom = new PlayAreaCoords();
 			mMoveTo = new PlayAreaCoords();
 			mMoveTimer = new Timer(new TimeSpan(1));
+
+			mIsMarked = false;
+			mMarkTimer = new Timer(new TimeSpan (0, 0, 0, 0,250));
+			mColor = Color.White;
 		}
 
         public void Swap(Gem with)
@@ -101,7 +109,17 @@ namespace Rejeweled
         {
 			UpdateSpin(gameTime);
 			UpdateMovement(gameTime);
+			UpdateDisappearing(gameTime);
         }
+
+		private void UpdateDisappearing(GameTime gameTime)
+		{
+			if (mIsMarked)
+			{
+				mMarkTimer.Update(gameTime.ElapsedGameTime);
+				mColor = new Color(1.0f, 1.0f, 1.0f, 1.0f - (float)mMarkTimer.PercentComplete());
+			}
+		}
 
 		private void UpdateMovement(GameTime gameTime)
 		{
@@ -171,7 +189,16 @@ namespace Rejeweled
 			spriteBatch.Draw(
 				mNormalTextures [mCurrentTexture],
 				OnScreenLocation,
-				Color.White);
+				mColor);
         }
+
+		public void Matched()
+		{
+			if (!mIsMarked)
+			{
+				mIsMarked = true;
+				System.Diagnostics.Debug.WriteLine("Gem at " + BoardLocation.X + ", " + BoardLocation.Y + " is matched!");
+			}
+		}
 	}
 }

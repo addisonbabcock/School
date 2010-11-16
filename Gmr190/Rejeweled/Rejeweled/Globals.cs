@@ -20,6 +20,7 @@ namespace Rejeweled
 		private static int mGemSizeY = 60;
 		private static int mGridDimensionX = 10;
 		private static int mGridDimensionY = 10;
+		private static int mMinMatch = 3;
 
 		private static Viewport mViewport;
 
@@ -49,6 +50,11 @@ namespace Rejeweled
 		public static int GridDimensionY
 		{
 			get { return mGridDimensionY; }
+		}
+
+		public static int MinMatch
+		{
+			get { return mMinMatch; }
 		}
 	}
 }
