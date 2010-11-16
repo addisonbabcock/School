@@ -58,18 +58,16 @@ namespace Rejeweled
 		{
 			if (matchesBelow >= GlobalVars.MinMatch)
 			{
+				System.Diagnostics.Debug.WriteLine("Matching " + matchesBelow + " going down from " + x + ", " + y);
 				for (int i = 0; i < matchesBelow; ++i)
 				{
-					mGemMatrix[x, y + 1].Matched();
+					mGemMatrix[x, y + i].Matched();
 				}
 			}
 		}
 
 		private int CheckBelow(int x, int y, int matchCount)
 		{
-			if (matchCount >= 5)
-				return matchCount;
-
 			if (y < GlobalVars.GridDimensionY - 1)
 			{
 				if (mGemMatrix[x, y].Type == mGemMatrix[x, y + 1].Type)
@@ -80,9 +78,6 @@ namespace Rejeweled
 
 		private int CheckRight(int x, int y, int matchCount)
 		{
-			if (matchCount >= 5)
-				return matchCount;
-
 			if (x < GlobalVars.GridDimensionX - 1)
 			{
 				if (mGemMatrix[x, y].Type == mGemMatrix[x + 1, y].Type)
