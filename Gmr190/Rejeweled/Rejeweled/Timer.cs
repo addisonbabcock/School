@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Rejeweled
 {
+	/// <summary>
+	/// A utility class for tracking the passing of time. Useful for various animations.
+	/// </summary>
 	class Timer
 	{
 		TimeSpan mTimeRemaining;

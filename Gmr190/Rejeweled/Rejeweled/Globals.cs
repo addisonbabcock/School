@@ -3,17 +3,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Rejeweled
 {
-	enum GemType
-	{
-		Blue,
-		Green,
-		Red,
-		Purple,
-		Yellow,
-		White,
-		Orange,
-	}
-
+	/// <summary>
+	/// The global variables required by Rejeweled.
+	/// </summary>
 	public static class GlobalVars
 	{
 		private static int mGemSizeX = 60;

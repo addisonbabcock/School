@@ -9,6 +9,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Rejeweled
 {
+	/// <summary>
+	/// Represents a collection of gems.
+	/// </summary>
 	class PlayArea
 	{
         private List<Gem> mGems;

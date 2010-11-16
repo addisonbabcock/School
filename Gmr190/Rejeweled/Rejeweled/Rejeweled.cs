@@ -15,7 +15,7 @@ using Microsoft.Xna.Framework.Storage;
 namespace Rejeweled
 {
 	/// <summary>
-	/// This is the main type for your game
+	/// This is the main type for Rejeweled. 
 	/// </summary>
 	public class Rejeweled : Microsoft.Xna.Framework.Game
 	{

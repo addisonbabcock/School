@@ -6,7 +6,21 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Rejeweled
 {
 	/// <summary>
-	/// This is where most of the action is. 
+	/// The color of a gem.
+	/// </summary>
+	enum GemType
+	{
+		Blue,
+		Green,
+		Red,
+		Purple,
+		Yellow,
+		White,
+		Orange,
+	}
+
+	/// <summary>
+	/// This is where most of the action is. Represents a individual gem on the screen.
 	/// </summary>
 	class Gem
 	{

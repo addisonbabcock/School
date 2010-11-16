@@ -5,6 +5,9 @@ using System.Text;
 
 namespace Rejeweled
 {
+	/// <summary>
+	/// A utility class for enforcing the rules of Rejeweled.
+	/// </summary>
 	class RuleChecker
 	{
 		Gem[,] mGemMatrix;
@@ -14,6 +17,10 @@ namespace Rejeweled
 			mGemMatrix = new Gem[GlobalVars.GridDimensionX, GlobalVars.GridDimensionY];
 		}
 
+		/// <summary>
+		/// Helper method to update the gem matrix to the current game state.
+		/// </summary>
+		/// <param name="playArea">The Rejeweled PlayArea</param>
 		private void BuildGemMatrix(PlayArea playArea)
 		{
 			List<Gem> gemList = playArea.Gems;
@@ -24,6 +31,11 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Looks for matches of GlobalVars.MinMatch or more on the PlayArea and begins the disappearing animation for the matching gems.
+		/// </summary>
+		/// <param name="playArea">The PlayArea to check for matches.</param>
+		/// <returns>True if matches were found.</returns>
 		public bool FindMatches (PlayArea playArea)
 		{
 			bool matchesFound = false;
@@ -49,6 +61,12 @@ namespace Rejeweled
 			return matchesFound;
 		}
 
+		/// <summary>
+		/// Look for matches starting at x, y. Recursive function.
+		/// </summary>
+		/// <param name="x">Starting X coordinate.</param>
+		/// <param name="y">Starting Y coordinate.</param>
+		/// <param name="matchesRight">Reserved. Pass in a 1.</param>
 		private void MarkGemsAsDisappearingRight(int x, int y, int matchesRight)
 		{
 			if (matchesRight >= GlobalVars.MinMatch)
