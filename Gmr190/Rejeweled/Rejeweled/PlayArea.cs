@@ -18,6 +18,8 @@ namespace Rejeweled
 
 		private RuleChecker mRules;
 		bool mCheckRulesNextUpdate;
+		Gem mSwapGem1;
+		Gem mSwapGem2;
 
 		public PlayArea(List <List<Texture2D>> gemTextures)
 		{
@@ -43,6 +45,9 @@ namespace Rejeweled
 			}
 
 			mRules = new RuleChecker();
+
+			mSwapGem1 = null;
+			mSwapGem2 = null;
 		}
 
 		private Gem GetNewGem(int x, int y)
@@ -80,7 +85,14 @@ namespace Rejeweled
 		{
 			if (mCheckRulesNextUpdate)
 			{
-				mRules.FindMatches(this);
+				if (!mRules.FindMatches(this))
+				{
+					//these can be null during startup
+					if (mSwapGem1 != null && mSwapGem2 != null)
+						mSwapGem1.Swap(mSwapGem2);
+				}
+				mSwapGem1 = null;
+				mSwapGem2 = null;
 				mCheckRulesNextUpdate = false;
 			}
 
@@ -114,6 +126,8 @@ namespace Rejeweled
 				if (selectedGem != clickedGem)
 				{
 					clickedGem.Swap(selectedGem);
+					mSwapGem1 = selectedGem;
+					mSwapGem2 = clickedGem;
 				}
 				else
 				{
@@ -134,6 +148,8 @@ namespace Rejeweled
 			if (fromGem != null && toGem != null)
 			{
 				fromGem.Swap(toGem);
+				mSwapGem1 = toGem;
+				mSwapGem2 = fromGem;
 			}
 			else
 			{

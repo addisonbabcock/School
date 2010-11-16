@@ -24,8 +24,9 @@ namespace Rejeweled
 			}
 		}
 
-		public void FindMatches (PlayArea playArea)
+		public bool FindMatches (PlayArea playArea)
 		{
+			bool matchesFound = false;
 			BuildGemMatrix(playArea);
 
 			for (int x = 0; x < GlobalVars.GridDimensionX; ++x)
@@ -39,8 +40,13 @@ namespace Rejeweled
 
 					MarkGemsAsDisappearingBelow(x, y, matchesBelow);
 					MarkGemsAsDisappearingRight(x, y, matchesRight);
+
+					if (matchesBelow >= GlobalVars.MinMatch || matchesRight >= GlobalVars.MinMatch)
+						matchesFound = true;
 				}
 			}
+
+			return matchesFound;
 		}
 
 		private void MarkGemsAsDisappearingRight(int x, int y, int matchesRight)
