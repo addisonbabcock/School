@@ -64,7 +64,6 @@ namespace Rejeweled
 		{
 			if (matchesBelow >= GlobalVars.MinMatch)
 			{
-				System.Diagnostics.Debug.WriteLine("Matching " + matchesBelow + " going down from " + x + ", " + y);
 				for (int i = 0; i < matchesBelow; ++i)
 				{
 					mGemMatrix[x, y + i].Matched();
@@ -74,21 +73,27 @@ namespace Rejeweled
 
 		private int CheckBelow(int x, int y, int matchCount)
 		{
+			//bound check
 			if (y < GlobalVars.GridDimensionY - 1)
 			{
+				//are the gems the same type? if so check the next one below
 				if (mGemMatrix[x, y].Type == mGemMatrix[x, y + 1].Type)
 					return CheckBelow(x, y + 1, matchCount + 1);
 			}
+			//out of bounds or different type, bail out
 			return matchCount;
 		}
 
 		private int CheckRight(int x, int y, int matchCount)
 		{
+			//bounds check
 			if (x < GlobalVars.GridDimensionX - 1)
 			{
+				//are the gems the same type? if so check the next one to the right
 				if (mGemMatrix[x, y].Type == mGemMatrix[x + 1, y].Type)
 					return CheckRight(x + 1, y, matchCount + 1);
 			}
+			//otu of bounds or different type, bail out
 			return matchCount;
 		}
 	}

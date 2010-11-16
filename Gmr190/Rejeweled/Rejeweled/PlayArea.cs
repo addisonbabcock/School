@@ -88,8 +88,8 @@ namespace Rejeweled
 				if (!mRules.FindMatches(this))
 				{
 					//these can be null during startup
-					if (mSwapGem1 != null && mSwapGem2 != null)
-						mSwapGem1.Swap(mSwapGem2);
+					if (mSwapGem1 != null && mSwapGem2 != null && GlobalVars.EnforceMoveMustResultInMatch)
+						mSwapGem1.Swap(mSwapGem2); //if the move doesnt result in a match, move the gems back.
 				}
 				mSwapGem1 = null;
 				mSwapGem2 = null;

@@ -21,6 +21,7 @@ namespace Rejeweled
 		private static int mGridDimensionX = 10;
 		private static int mGridDimensionY = 10;
 		private static int mMinMatch = 3;
+		private static bool mEnforceMoveMustResultInMatch = true;
 
 		private static Viewport mViewport;
 
@@ -55,6 +56,11 @@ namespace Rejeweled
 		public static int MinMatch
 		{
 			get { return mMinMatch; }
+		}
+
+		public static bool EnforceMoveMustResultInMatch
+		{
+			get { return mEnforceMoveMustResultInMatch; }
 		}
 	}
 }

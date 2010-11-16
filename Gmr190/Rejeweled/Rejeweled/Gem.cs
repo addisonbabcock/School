@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Rejeweled
 {
+	/// <summary>
+	/// This is where most of the action is. 
+	/// </summary>
 	class Gem
 	{
 		private GemType mType;
@@ -71,14 +74,10 @@ namespace Rejeweled
 			}
 		}
 
-        public bool IsAt(PlayAreaCoords coords)
-        {
-            return mMoveTo == coords;
-        }
-
 		public bool Contains (Vector2 coords)
 		{
 			//we don't want people to be able to click gems while they are moving
+			//this is kind of hacky, should maybe be done in another way...
 			if (mIsMoving)
 			{
 				System.Diagnostics.Debug.WriteLine("Blocked a call to contains because the gem is moving.");
