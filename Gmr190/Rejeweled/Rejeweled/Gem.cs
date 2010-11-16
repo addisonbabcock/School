@@ -43,6 +43,7 @@ namespace Rejeweled
 		private Vector2 mActualPosition;
 
 		private bool mIsMarked;
+		private bool mIsDisappeared;
 		private Timer mMarkTimer;
 		private Color mColor;
 
@@ -64,6 +65,7 @@ namespace Rejeweled
 			mMoveTo = new PlayAreaCoords();
 			mMoveTimer = new Timer(new TimeSpan(1));
 
+			mIsDisappeared = false;
 			mIsMarked = false;
 			mMarkTimer = new Timer(new TimeSpan (0, 0, 0, 0,250));
 			mColor = Color.White;
@@ -122,6 +124,11 @@ namespace Rejeweled
 			set { mIsSelected = value; }
 		}
 
+		public bool IsDisappeared
+		{
+			get { return mIsDisappeared; }
+		}
+
 		public GemType Type
 		{
 			get { return mType; }
@@ -142,7 +149,10 @@ namespace Rejeweled
 				mColor = new Color(1.0f, 1.0f, 1.0f, 1.0f - (float)mMarkTimer.PercentComplete());
 
 				if (disappeared)
+				{
+					mIsDisappeared = true;
 					mPlayArea.GemDisappearAnimationComplete(this);
+				}
 			}
 		}
 

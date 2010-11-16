@@ -21,8 +21,11 @@ namespace Rejeweled
 
 		private RuleChecker mRules;
 		bool mCheckRulesNextUpdate;
+
 		Gem mSwapGem1;
 		Gem mSwapGem2;
+
+		List<int> mReplaceGemIndexes;
 
 		public PlayArea(List <List<Texture2D>> gemTextures)
 		{
@@ -51,6 +54,8 @@ namespace Rejeweled
 			}
 
 			mRules = new RuleChecker();
+			mCheckRulesNextUpdate = false;
+			mReplaceGemIndexes = new List<int>();
 
 			mSwapGem1 = null;
 			mSwapGem2 = null;
@@ -72,24 +77,7 @@ namespace Rejeweled
 		{
 			//hmmm this will need to be refactored so we can count the number
 			//of missing gems in a column.
-			int gemIndex = mGems.FindIndex(i => i == gem);
-			PlayAreaCoords gemLoc = new PlayAreaCoords(gem.BoardLocation.X, 0);
-			Gem newGem = GetNewGem();
-			newGem.MoveTo(gemLoc);
-			newGem.SetStartingLocation(new PlayAreaCoords(gemLoc.X, -1));
-
-			for (int y = 0; y < gemLoc.Y; ++y)
-			{
-				PlayAreaCoords findCoords = new PlayAreaCoords (gemLoc.X, y);
-				Gem moveGem = mGems.Find(i => i.BoardLocation == findCoords);
-				if (moveGem != null)
-				{
-					PlayAreaCoords moveCoords = new PlayAreaCoords (findCoords.X, findCoords.Y + 1);
-					System.Diagnostics.Debug.WriteLine("Dropping gem from " + findCoords.ToString() + " to " + moveCoords.ToString());
-					moveGem.MoveTo(moveCoords);
-				}
-			}
-			mGems[gemIndex] = newGem;
+			mReplaceGemIndexes.Add(mGems.FindIndex(i => i == gem));
 		}
 
 		public List<Gem> Gems
@@ -104,6 +92,11 @@ namespace Rejeweled
 
 		public void Update(GameTime gameTime)
 		{
+			if (mReplaceGemIndexes.Count > 0)
+			{
+				ReplaceDisappearingGems();
+			}
+
 			if (mCheckRulesNextUpdate)
 			{
 				if (!mRules.FindMatches(this))
@@ -121,6 +114,45 @@ namespace Rejeweled
 			{
 				mGems[i].Update (gameTime);
 			}
+		}
+
+		private void ReplaceDisappearingGems()
+		{
+			List<int> missingGemsInColumn = CountMissingGemsByColumn();
+
+			foreach (int index in mReplaceGemIndexes)
+			{
+				PlayAreaCoords gemLoc = new PlayAreaCoords(mGems [index].BoardLocation.X, 0);
+				Gem newGem = GetNewGem();
+				newGem.MoveTo(gemLoc);
+				newGem.SetStartingLocation(new PlayAreaCoords(gemLoc.X, -1));
+
+				for (int y = 0; y < gemLoc.Y; ++y)
+				{
+					PlayAreaCoords findCoords = new PlayAreaCoords(gemLoc.X, y);
+					Gem moveGem = mGems.Find(i => i.BoardLocation == findCoords);
+					if (moveGem != null)
+					{
+						PlayAreaCoords moveCoords = new PlayAreaCoords(findCoords.X, findCoords.Y + 1);
+						System.Diagnostics.Debug.WriteLine("Dropping gem from " + findCoords.ToString() + " to " + moveCoords.ToString());
+						moveGem.MoveTo(moveCoords);
+					}
+				}
+				mGems[index] = newGem;
+			}
+			mReplaceGemIndexes.Clear();
+		}
+
+		private List<int> CountMissingGemsByColumn()
+		{
+			List <int> missingGemsByColumn = new List<int>(GlobalVars.GridDimensionX);
+
+			for (int column = 0; column < GlobalVars.GridDimensionX; ++column)
+			{
+				missingGemsByColumn.Add(mGems.Count(i => i.BoardLocation.X == column && i.IsDisappeared));
+			}
+
+			return missingGemsByColumn;
 		}
 
 		public void Draw(SpriteBatch spriteBatch)
