@@ -60,7 +60,7 @@ namespace Rejeweled
 			{
 				for (int i = 0; i < matchesBelow; ++i)
 				{
-					mGemMatrix[x + i, y].Matched();
+					mGemMatrix[x, y + 1].Matched();
 				}
 			}
 		}
