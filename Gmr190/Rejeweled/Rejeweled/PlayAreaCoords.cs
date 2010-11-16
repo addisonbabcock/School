@@ -57,5 +57,10 @@ namespace Rejeweled
 				coords.X * GlobalVars.GemSizeX + 0,
 				coords.Y * GlobalVars.GemSizeY + 0);
 		}
+
+		public override string ToString()
+		{
+			return X.ToString() + ", " + Y.ToString();
+		}
     }
 }

@@ -70,12 +70,25 @@ namespace Rejeweled
 
 		public void GemDisappearAnimationComplete(Gem gem)
 		{
+			//hmmm this will need to be refactored so we can count the number
+			//of missing gems in a column.
 			int gemIndex = mGems.FindIndex(i => i == gem);
-			PlayAreaCoords gemLoc = new PlayAreaCoords(gem.BoardLocation.X, gem.BoardLocation.Y);
+			PlayAreaCoords gemLoc = new PlayAreaCoords(gem.BoardLocation.X, 0);
 			Gem newGem = GetNewGem();
 			newGem.MoveTo(gemLoc);
-			newGem.SetStartingLocation(new PlayAreaCoords(gemLoc.X, gemLoc.Y - GlobalVars.GridDimensionY));
+			newGem.SetStartingLocation(new PlayAreaCoords(gemLoc.X, -1));
 
+			for (int y = 0; y < gemLoc.Y; ++y)
+			{
+				PlayAreaCoords findCoords = new PlayAreaCoords (gemLoc.X, y);
+				Gem moveGem = mGems.Find(i => i.BoardLocation == findCoords);
+				if (moveGem != null)
+				{
+					PlayAreaCoords moveCoords = new PlayAreaCoords (findCoords.X, findCoords.Y + 1);
+					System.Diagnostics.Debug.WriteLine("Dropping gem from " + findCoords.ToString() + " to " + moveCoords.ToString());
+					moveGem.MoveTo(moveCoords);
+				}
+			}
 			mGems[gemIndex] = newGem;
 		}
 
