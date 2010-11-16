@@ -16,6 +16,9 @@ namespace Rejeweled
 		private List<List<Texture2D>> mGemTextures;
 		private Random mRNG;
 
+		private RuleChecker mRules;
+		bool mCheckRulesNextUpdate;
+
 		public PlayArea(List <List<Texture2D>> gemTextures)
 		{
 			mGemTextures = gemTextures;
@@ -35,12 +38,32 @@ namespace Rejeweled
 			{
 				for (int y = 0; y < GlobalVars.GridDimensionY; ++y)
 				{
-					int gemID = mRNG.Next (0, mGemTypeToID.Count);
-					Gem gem = new Gem (mGemTypeToID.First (i => i.Value == gemID).Key, mGemTextures [gemID]);
-					gem.MoveTo (new PlayAreaCoords (x, y));
-					mGems.Add (gem);
+					mGems.Add(GetNewGem (x, y));
 				}
 			}
+
+			mRules = new RuleChecker();
+		}
+
+		private Gem GetNewGem(int x, int y)
+		{
+			int gemID = mRNG.Next(0, mGemTypeToID.Count);
+			Gem gem = new Gem(mGemTypeToID.First(i => i.Value == gemID).Key, mGemTextures[gemID], this);
+			gem.MoveTo(new PlayAreaCoords(x, y));
+			return gem;
+		}
+
+		public void GemMoveAnimationCompleted()
+		{
+			mCheckRulesNextUpdate = true;
+		}
+
+		public void GemDisappearAnimationComplete(Gem gem)
+		{
+			int gemIndex = mGems.FindIndex(i => i == gem);
+			PlayAreaCoords gemLoc = new PlayAreaCoords(gem.BoardLocation.X, gem.BoardLocation.Y);
+			//mGems.Remove(gem);
+			mGems[gemIndex] = GetNewGem(gemLoc.X, gemLoc.Y);
 		}
 
 		public List<Gem> Gems
@@ -55,9 +78,15 @@ namespace Rejeweled
 
 		public void Update(GameTime gameTime)
 		{
-			foreach (Gem gem in mGems)
+			if (mCheckRulesNextUpdate)
 			{
-				gem.Update (gameTime);
+				mRules.FindMatches(this);
+				mCheckRulesNextUpdate = false;
+			}
+
+			for (int i = 0; i < mGems.Count; ++i)
+			{
+				mGems[i].Update (gameTime);
 			}
 		}
 

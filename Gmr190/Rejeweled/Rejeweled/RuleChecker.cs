@@ -35,7 +35,7 @@ namespace Rejeweled
 					//because we are checking starting at the top left,
 					//we only need to check to the right and down.
 					int matchesRight = CheckRight(x, y, 1);
-					int matchesBelow = CheckDown(x, y, 1);
+					int matchesBelow = CheckBelow(x, y, 1);
 
 					MarkGemsAsDisappearingBelow(x, y, matchesBelow);
 					MarkGemsAsDisappearingRight(x, y, matchesRight);
@@ -65,18 +65,24 @@ namespace Rejeweled
 			}
 		}
 
-		private int CheckDown(int x, int y, int matchCount)
+		private int CheckBelow(int x, int y, int matchCount)
 		{
+			if (matchCount >= 5)
+				return matchCount;
+
 			if (y < GlobalVars.GridDimensionY - 1)
 			{
 				if (mGemMatrix[x, y].Type == mGemMatrix[x, y + 1].Type)
-					return CheckDown(x, y + 1, matchCount + 1);
+					return CheckBelow(x, y + 1, matchCount + 1);
 			}
 			return matchCount;
 		}
 
 		private int CheckRight(int x, int y, int matchCount)
 		{
+			if (matchCount >= 5)
+				return matchCount;
+
 			if (x < GlobalVars.GridDimensionX - 1)
 			{
 				if (mGemMatrix[x, y].Type == mGemMatrix[x + 1, y].Type)

@@ -10,7 +10,8 @@ namespace Rejeweled
 		private GemType mType;
 		private bool mIsSelected;
 		private bool mIsPoweredUp;
- //       private PlayAreaCoords mBoardLocation;
+        private PlayAreaCoords mBoardLocation;
+		private PlayArea mPlayArea;
 
 		private List<Texture2D> mNormalTextures;
 		private int mCurrentTexture;
@@ -28,9 +29,10 @@ namespace Rejeweled
 		private Timer mMarkTimer;
 		private Color mColor;
 
-		public Gem(GemType type, List<Texture2D> textures)
+		public Gem(GemType type, List<Texture2D> textures, PlayArea playArea)
 		{
 			mType = type;
+			mPlayArea = playArea;
 
 			mNormalTextures = textures;
 			mCurrentTexture = 0;
@@ -38,7 +40,7 @@ namespace Rejeweled
 
 			mIsPoweredUp = false;
 			mIsSelected = false;
-           // mBoardLocation = new PlayAreaCoords();
+            mBoardLocation = new PlayAreaCoords();
 
 			mIsMoving = false;
 			mMoveFrom = new PlayAreaCoords();
@@ -61,14 +63,12 @@ namespace Rejeweled
 		{
 			if (newLoc != mMoveTo)
 			{
-				mMoveFrom = mMoveTo;
+				mMoveFrom = BoardLocation;
 				mMoveTo = newLoc;
 				mMoveTimer = new Timer(new TimeSpan(0, 0, 0, 0, 250));
 				mIsMoving = true;
 				mActualPosition = new Vector2 ((float)OnScreenLocation.X, (float)OnScreenLocation.Y);
 			}
-
-			//mBoardLocation = newLoc;
 		}
 
         public bool IsAt(PlayAreaCoords coords)
@@ -116,8 +116,11 @@ namespace Rejeweled
 		{
 			if (mIsMarked)
 			{
-				mMarkTimer.Update(gameTime.ElapsedGameTime);
+				bool disappeared = mMarkTimer.Update(gameTime.ElapsedGameTime);
 				mColor = new Color(1.0f, 1.0f, 1.0f, 1.0f - (float)mMarkTimer.PercentComplete());
+
+				if (disappeared)
+					mPlayArea.GemDisappearAnimationComplete(this);
 			}
 		}
 
@@ -133,6 +136,8 @@ namespace Rejeweled
 					System.Diagnostics.Debug.WriteLine("Gem movement animation complete.");
 					mIsMoving = false;
 					mIsSelected = false; //lettign the gem keep spinning it is moving makes things look a little better
+					BoardLocation = mMoveTo;
+					mPlayArea.GemMoveAnimationCompleted();
 				}
 			}
 		}
@@ -158,8 +163,8 @@ namespace Rejeweled
 
 		public PlayAreaCoords BoardLocation
 		{
-			get { return mMoveTo; }
-			set { mMoveFrom = value; }
+			get { return mBoardLocation; }
+			set { mBoardLocation = value; }
 		}
 
 		public Rectangle OnScreenLocation

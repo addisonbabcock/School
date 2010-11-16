@@ -130,7 +130,7 @@ namespace Rejeweled
 				HandleMouseEvent (mouseEvent);
 				
 				//temporary, move me somewhere more appropriate.
-				mRuleChecker.FindMatches(mPlayArea);
+				//mRuleChecker.FindMatches(mPlayArea);
 			} while (mouseEvent != null);
 
 			mPlayArea.Update (gameTime);
