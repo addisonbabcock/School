@@ -76,6 +76,15 @@ namespace Rejeweled
 			MoveTo(temp);
         }
 
+		/// <summary>
+		/// Be very careful when calling this because it will affect any animations which are underway.
+		/// </summary>
+		/// <param name="coords"></param>
+		public void SetStartingLocation(PlayAreaCoords coords)
+		{
+			mMoveFrom = coords;
+		}
+
 		public void MoveTo(PlayAreaCoords newLoc)
 		{
 			if (newLoc != mMoveTo)

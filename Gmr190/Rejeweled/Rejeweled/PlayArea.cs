@@ -43,7 +43,9 @@ namespace Rejeweled
 			{
 				for (int y = 0; y < GlobalVars.GridDimensionY; ++y)
 				{
-					mGems.Add(GetNewGem (x, y));
+					Gem newGem = GetNewGem (new PlayAreaCoords (x, y));
+					newGem.SetStartingLocation(new PlayAreaCoords (x, y - GlobalVars.GridDimensionY));
+					mGems.Add(newGem);
 				}
 			}
 
@@ -53,11 +55,11 @@ namespace Rejeweled
 			mSwapGem2 = null;
 		}
 
-		private Gem GetNewGem(int x, int y)
+		private Gem GetNewGem(PlayAreaCoords coords)
 		{
 			int gemID = mRNG.Next(0, mGemTypeToID.Count);
 			Gem gem = new Gem(mGemTypeToID.First(i => i.Value == gemID).Key, mGemTextures[gemID], this);
-			gem.MoveTo(new PlayAreaCoords(x, y));
+			gem.MoveTo(coords);
 			return gem;
 		}
 
@@ -71,7 +73,8 @@ namespace Rejeweled
 			int gemIndex = mGems.FindIndex(i => i == gem);
 			PlayAreaCoords gemLoc = new PlayAreaCoords(gem.BoardLocation.X, gem.BoardLocation.Y);
 			//mGems.Remove(gem);
-			mGems[gemIndex] = GetNewGem(gemLoc.X, gemLoc.Y);
+			mGems[gemIndex] = GetNewGem(gemLoc);
+			mGems[gemIndex].SetStartingLocation(new PlayAreaCoords(gemLoc.X, -1));
 		}
 
 		public List<Gem> Gems
