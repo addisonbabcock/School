@@ -128,9 +128,6 @@ namespace Rejeweled
 			{
 				mouseEvent = mMouseParser.GetNextEvent ();
 				HandleMouseEvent (mouseEvent);
-				
-				//temporary, move me somewhere more appropriate.
-				//mRuleChecker.FindMatches(mPlayArea);
 			} while (mouseEvent != null);
 
 			mPlayArea.Update (gameTime);
