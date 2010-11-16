@@ -14,6 +14,7 @@ namespace Rejeweled
 		private static int mGridDimensionY = 10;
 		private static int mMinMatch = 3;
 		private static bool mEnforceMoveMustResultInMatch = true;
+		private static Color mClearColor = Color.White;
 
 		private static Viewport mViewport;
 
@@ -53,6 +54,11 @@ namespace Rejeweled
 		public static bool EnforceMoveMustResultInMatch
 		{
 			get { return mEnforceMoveMustResultInMatch; }
+		}
+
+		public static Color ClearColor
+		{
+			get { return mClearColor; }
 		}
 	}
 }
