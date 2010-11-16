@@ -43,6 +43,11 @@ namespace Rejeweled
 			}
 		}
 
+		public List<Gem> Gems
+		{
+			get { return mGems; }
+		}
+
 		public PlayAreaCoords Size
 		{
 			get { return new PlayAreaCoords(GlobalVars.GridDimensionX, GlobalVars.GridDimensionY); }

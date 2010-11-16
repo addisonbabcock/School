@@ -84,7 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTypes.cs" />
+    <Compile Include="Globals.cs" />
     <Compile Include="Gem.cs" />
     <Compile Include="MouseParser.cs" />
     <Compile Include="PlayArea.cs" />

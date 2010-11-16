@@ -24,6 +24,7 @@ namespace Rejeweled
 		List<List<Texture2D>> mGemTextures;
 		PlayArea mPlayArea;
 		MouseParser mMouseParser;
+		RuleChecker mRuleChecker;
 
 		public Rejeweled ()
 		{
@@ -40,6 +41,8 @@ namespace Rejeweled
 			GlobalVars.UpdateViewport(graphics.GraphicsDevice.Viewport);
 
 			IsMouseVisible = true;
+
+			mRuleChecker = new RuleChecker();
 		}
 
 		void Window_ClientSizeChanged(object sender, EventArgs e)
@@ -125,6 +128,9 @@ namespace Rejeweled
 			{
 				mouseEvent = mMouseParser.GetNextEvent ();
 				HandleMouseEvent (mouseEvent);
+				
+				//temporary, move me somewhere more appropriate.
+				mRuleChecker.FindMatches(mPlayArea);
 			} while (mouseEvent != null);
 
 			mPlayArea.Update (gameTime);

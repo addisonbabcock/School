@@ -40,7 +40,6 @@ namespace Rejeweled
 			mMoveFrom = new PlayAreaCoords();
 			mMoveTo = new PlayAreaCoords();
 			mMoveTimer = new Timer(new TimeSpan(1));
-			
 		}
 
         public void Swap(Gem with)
