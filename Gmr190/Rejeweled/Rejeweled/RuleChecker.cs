@@ -120,7 +120,7 @@ namespace Rejeweled
 			int moveX = Math.Abs(from.X - to.X);
 			int moveY = Math.Abs(from.Y - to.Y);
 
-			if ((moveX == 1 && moveY == 0) || (moveX == 0 && moveY == 1))
+			if ((moveX == 1 && moveY == 0) || (moveX == 0 && moveY == 1) || !GlobalVars.EnforceMoveMustBeAdjacent)
 				return true;
 
 			return false;
