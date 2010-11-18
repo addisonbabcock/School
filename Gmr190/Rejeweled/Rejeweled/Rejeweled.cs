@@ -22,6 +22,7 @@ namespace Rejeweled
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		List<List<Texture2D>> mGemTextures;
+		List<List<Texture2D>> mPowerupTextures;
 		PlayArea mPlayArea;
 		MouseParser mMouseParser;
 		RuleChecker mRuleChecker;
@@ -72,10 +73,13 @@ namespace Rejeweled
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 			mGemTextures = new List<List<Texture2D>> ();
+			mPowerupTextures = new List<List<Texture2D>>();
 
 			for (int i = 0; i < 7; ++i)
 			{
 				mGemTextures.Add (new List<Texture2D> ());
+				mPowerupTextures.Add(new List<Texture2D>());
+
 				for (int j = 0; j < 20; ++j)
 				{
 					string gemName =
@@ -85,7 +89,16 @@ namespace Rejeweled
 						i +
 						"_" +
 						(j + 1).ToString ("0#");
-					mGemTextures [i].Add (Content.Load<Texture2D> (gemName));
+					string powerUpName =
+						"Gems\\Alpha_Powerup\\Gem" +
+						i +
+						"\\gem" +
+						i +
+						"_" +
+						(j + 1).ToString("0#");
+
+					mGemTextures[i].Add(Content.Load<Texture2D>(gemName));
+					mPowerupTextures[i].Add(Content.Load<Texture2D>(powerUpName));
 				}
 			}
 
