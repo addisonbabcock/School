@@ -21,8 +21,8 @@ namespace Rejeweled
 
         public PlayAreaCoords()
         {
-            X = 0;
-            Y = 0;
+            X = -1;
+            Y = -1;
         }
 
         public PlayAreaCoords(int _x, int _y)

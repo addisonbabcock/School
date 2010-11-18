@@ -114,5 +114,16 @@ namespace Rejeweled
 			//otu of bounds or different type, bail out
 			return matchCount;
 		}
+
+		public bool IsValidMove(PlayAreaCoords from, PlayAreaCoords to)
+		{
+			int moveX = Math.Abs(from.X - to.X);
+			int moveY = Math.Abs(from.Y - to.Y);
+
+			if ((moveX == 1 && moveY == 0) || (moveX == 0 && moveY == 1))
+				return true;
+
+			return false;
+		}
 	}
 }

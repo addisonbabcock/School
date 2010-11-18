@@ -135,6 +135,8 @@ namespace Rejeweled
 
 					if (currentGem != null)
 						currentGem.MoveTo(new PlayAreaCoords(column, y + missingGemsBelow));
+					else
+						System.Diagnostics.Debug.WriteLine("This really shouldn't happen... could not find gem at location " + currentGemCoords.ToString());
 				}
 
 				for (int i = 0; i < missingGemsInColumn[column].Count && replaceGemIndex < mReplaceGemIndexes.Count; ++i)
@@ -217,7 +219,7 @@ namespace Rejeweled
 
 			if (selectedGem != null)
 			{
-				if (selectedGem != clickedGem)
+				if (mRules.IsValidMove (clickedGem.BoardLocation, selectedGem.BoardLocation))
 				{
 					clickedGem.Swap(selectedGem);
 					mSwapGem1 = selectedGem;
@@ -239,7 +241,7 @@ namespace Rejeweled
 			Gem fromGem = mGems.Find(i => i.Contains(mouseEvent.DragStart));
 			Gem toGem = mGems.Find(i => i.Contains(mouseEvent.DragEnd));
 
-			if (fromGem != null && toGem != null)
+			if (fromGem != null && toGem != null && mRules.IsValidMove (fromGem.BoardLocation, toGem.BoardLocation))
 			{
 				fromGem.Swap(toGem);
 				mSwapGem1 = toGem;
