@@ -118,9 +118,38 @@ namespace Rejeweled
 
 		private void ReplaceDisappearingGems()
 		{
-			List<int> missingGemsInColumn = CountMissingGemsByColumn();
+			List<List<Gem>> missingGemsInColumn = GetMissingGemsByColumn();
+			int replaceGemIndex = 0;
 
-			foreach (int index in mReplaceGemIndexes)
+			//for each column...
+			//foreach (List <Gem> missingGems in missingGemsInColumn)
+			for (int column = 0; column < GlobalVars.GridDimensionX; ++column)
+			{
+				//for each gem in the column, starting at the bottom
+				for (int y = 0; y < GlobalVars.GridDimensionY; ++y)
+				{
+					//count the gems above this gem
+					PlayAreaCoords currentGemCoords = new PlayAreaCoords (column, y);
+					Gem currentGem = mGems.Find(i => i.BoardLocation == currentGemCoords);
+					int missingGemsBelow = missingGemsInColumn[column].Count(i => i.BoardLocation.X == column && i.BoardLocation.Y > y);
+
+					if (currentGem != null)
+						currentGem.MoveTo(new PlayAreaCoords(column, y + missingGemsBelow));
+				}
+
+				for (int i = 0; i < missingGemsInColumn[column].Count && replaceGemIndex < mReplaceGemIndexes.Count; ++i)
+				{
+					PlayAreaCoords newGemMoveToLoc = new PlayAreaCoords(column, i);
+					PlayAreaCoords newGemMoveFromLoc = new PlayAreaCoords(column, i - missingGemsInColumn[column].Count);
+					Gem newGem = GetNewGem();
+					newGem.MoveTo(newGemMoveToLoc);
+					newGem.SetStartingLocation(newGemMoveFromLoc);
+					mGems[mReplaceGemIndexes[replaceGemIndex]] = newGem;
+					++replaceGemIndex;
+				}
+			}
+
+			/*foreach (int index in mReplaceGemIndexes)
 			{
 				PlayAreaCoords gemLoc = new PlayAreaCoords(mGems [index].BoardLocation.X, 0);
 				Gem newGem = GetNewGem();
@@ -139,8 +168,20 @@ namespace Rejeweled
 					}
 				}
 				mGems[index] = newGem;
-			}
+			}*/
 			mReplaceGemIndexes.Clear();
+		}
+
+		private List<List<Gem>> GetMissingGemsByColumn()
+		{
+			List<List<Gem>> missingGems = new List<List<Gem>>(10);
+
+			for (int column = 0; column < GlobalVars.GridDimensionX; ++column)
+			{
+				missingGems.Add(mGems.FindAll(i => i.BoardLocation.X == column && i.IsDisappeared));
+			}
+
+			return missingGems;
 		}
 
 		private List<int> CountMissingGemsByColumn()

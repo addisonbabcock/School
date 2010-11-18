@@ -223,6 +223,11 @@ namespace Rejeweled
 
 		public void Draw(SpriteBatch spriteBatch)
         {
+			if (OnScreenLocation.X == 0 && OnScreenLocation.Y < 0)
+			{
+				string herp;
+				herp = "derp";
+			}
 			spriteBatch.Draw(
 				mNormalTextures [mCurrentTexture],
 				OnScreenLocation,
