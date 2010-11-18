@@ -27,6 +27,10 @@ namespace Rejeweled
 
 		List<int> mReplaceGemIndexes;
 
+		/// <summary>
+		/// Constructs a PlayArea complete with a set of Gems.
+		/// </summary>
+		/// <param name="gemTextures">The textures that the Gems on this board will use.</param>
 		public PlayArea(List <List<Texture2D>> gemTextures)
 		{
 			mGemTextures = gemTextures;
@@ -61,6 +65,10 @@ namespace Rejeweled
 			mSwapGem2 = null;
 		}
 
+		/// <summary>
+		/// Constructs a new Gem with a random color.
+		/// </summary>
+		/// <returns></returns>
 		private Gem GetNewGem()
 		{
 			int gemID = mRNG.Next(0, mGemTypeToID.Count);
@@ -68,11 +76,18 @@ namespace Rejeweled
 			return gem;
 		}
 
+		/// <summary>
+		/// Callback from Gem. When this is called, we will check the rules next update.
+		/// </summary>
 		public void GemMoveAnimationCompleted()
 		{
 			mCheckRulesNextUpdate = true;
 		}
 
+		/// <summary>
+		/// Callback from Gem. Accumulates all the vanished Gems to be removed next update call.
+		/// </summary>
+		/// <param name="gem"></param>
 		public void GemDisappearAnimationComplete(Gem gem)
 		{
 			//hmmm this will need to be refactored so we can count the number
@@ -80,16 +95,26 @@ namespace Rejeweled
 			mReplaceGemIndexes.Add(mGems.FindIndex(i => i == gem));
 		}
 
+		/// <summary>
+		/// Gets all the Gems on this PlayArea.
+		/// </summary>
 		public List<Gem> Gems
 		{
 			get { return mGems; }
 		}
 
+		/// <summary>
+		/// Gets the size of this PlayArea.
+		/// </summary>
 		public PlayAreaCoords Size
 		{
 			get { return new PlayAreaCoords(GlobalVars.GridDimensionX, GlobalVars.GridDimensionY); }
 		}
 
+		/// <summary>
+		/// Updates the PlayArea and all its components.
+		/// </summary>
+		/// <param name="gameTime">How much time has passed since the last call.</param>
 		public void Update(GameTime gameTime)
 		{
 			if (mReplaceGemIndexes.Count > 0)
@@ -101,7 +126,8 @@ namespace Rejeweled
 			{
 				if (!mRules.FindMatches(this))
 				{
-					//these can be null during startup
+					//these can be null during startup because Gems can be lined up before the player has 
+					//had a chance to do any swapping.
 					if (mSwapGem1 != null && mSwapGem2 != null && GlobalVars.EnforceMoveMustResultInMatch)
 						mSwapGem1.Swap(mSwapGem2); //if the move doesnt result in a match, move the gems back.
 				}
@@ -116,6 +142,9 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Replaces all the vanished Gems with new ones and slides the Gems above them downwards.
+		/// </summary>
 		private void ReplaceDisappearingGems()
 		{
 			List<List<Gem>> missingGemsInColumn = GetMissingGemsByColumn();
@@ -136,6 +165,7 @@ namespace Rejeweled
 					if (currentGem != null)
 						currentGem.MoveTo(new PlayAreaCoords(column, y + missingGemsBelow));
 					else
+						//unfortunately this actually does seem to happen... wtf
 						System.Diagnostics.Debug.WriteLine("This really shouldn't happen... could not find gem at location " + currentGemCoords.ToString());
 				}
 
@@ -151,29 +181,13 @@ namespace Rejeweled
 				}
 			}
 
-			/*foreach (int index in mReplaceGemIndexes)
-			{
-				PlayAreaCoords gemLoc = new PlayAreaCoords(mGems [index].BoardLocation.X, 0);
-				Gem newGem = GetNewGem();
-				newGem.MoveTo(gemLoc);
-				newGem.SetStartingLocation(new PlayAreaCoords(gemLoc.X, -1));
-
-				for (int y = 0; y < gemLoc.Y; ++y)
-				{
-					PlayAreaCoords findCoords = new PlayAreaCoords(gemLoc.X, y);
-					Gem moveGem = mGems.Find(i => i.BoardLocation == findCoords);
-					if (moveGem != null)
-					{
-						PlayAreaCoords moveCoords = new PlayAreaCoords(findCoords.X, findCoords.Y + 1);
-						System.Diagnostics.Debug.WriteLine("Dropping gem from " + findCoords.ToString() + " to " + moveCoords.ToString());
-						moveGem.MoveTo(moveCoords);
-					}
-				}
-				mGems[index] = newGem;
-			}*/
 			mReplaceGemIndexes.Clear();
 		}
 
+		/// <summary>
+		/// Constructs a list of the Gems which have vanished in each column.
+		/// </summary>
+		/// <returns></returns>
 		private List<List<Gem>> GetMissingGemsByColumn()
 		{
 			List<List<Gem>> missingGems = new List<List<Gem>>(10);
@@ -186,18 +200,10 @@ namespace Rejeweled
 			return missingGems;
 		}
 
-		private List<int> CountMissingGemsByColumn()
-		{
-			List <int> missingGemsByColumn = new List<int>(GlobalVars.GridDimensionX);
-
-			for (int column = 0; column < GlobalVars.GridDimensionX; ++column)
-			{
-				missingGemsByColumn.Add(mGems.Count(i => i.BoardLocation.X == column && i.IsDisappeared));
-			}
-
-			return missingGemsByColumn;
-		}
-
+		/// <summary>
+		/// Draws the PlayArea.
+		/// </summary>
+		/// <param name="spriteBatch">The SpriteBatch which will be used for rendering.</param>
 		public void Draw(SpriteBatch spriteBatch)
 		{
 			foreach (Gem gem in mGems)
@@ -206,6 +212,10 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Finds the clicked Gem and swaps it with a selected Gem.
+		/// </summary>
+		/// <param name="mouseEvent"></param>
 		public void MouseClicked (MouseEvent mouseEvent)
 		{
 			Gem clickedGem = mGems.Find (i => i.Contains (mouseEvent.MouseLocation));
@@ -236,6 +246,10 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Finds the Gems where the mouse started and ended then swaps them.
+		/// </summary>
+		/// <param name="mouseEvent"></param>
 		public void MouseDragged(MouseEvent mouseEvent)
 		{
 			Gem fromGem = mGems.Find(i => i.Contains(mouseEvent.DragStart));

@@ -148,6 +148,10 @@ namespace Rejeweled
 			base.Update (gameTime);
 		}
 
+		/// <summary>
+		/// Deals with a mouse click or drag and passes the message along.
+		/// </summary>
+		/// <param name="mouseEvent">The mouse event to be handled.</param>
 		private void HandleMouseEvent (MouseEvent mouseEvent)
 		{
 			if (mouseEvent == null)
@@ -169,12 +173,20 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Deals with a mouse click event.
+		/// </summary>
+		/// <param name="mouseEvent">The mouse click event to handle.</param>
 		private void HandleMouseClick (MouseEvent mouseEvent)
 		{
 			Debug.WriteLine ("Mouse click at coords: " + (int)mouseEvent.MouseLocation.X + ", " + (int)mouseEvent.MouseLocation.Y);
 			mPlayArea.MouseClicked (mouseEvent);
 		}
 
+		/// <summary>
+		/// Deals with a mouse drag event.
+		/// </summary>
+		/// <param name="mouseEvent">The mouse drag event to handle.</param>
 		private void HandleMouseDrag (MouseEvent mouseEvent)
 		{
 			Debug.WriteLine ("Mouse drag from " +

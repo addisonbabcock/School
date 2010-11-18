@@ -50,6 +50,7 @@ namespace Rejeweled
 					int matchesRight = CheckRight(x, y, 1);
 					int matchesBelow = CheckBelow(x, y, 1);
 
+					//REFACTOR: The results should be returned to the caller instead of being acted on in here.
 					MarkGemsAsDisappearingBelow(x, y, matchesBelow);
 					MarkGemsAsDisappearingRight(x, y, matchesRight);
 
@@ -115,11 +116,18 @@ namespace Rejeweled
 			return matchCount;
 		}
 
+		/// <summary>
+		/// Checks if the Gems can be swapped without violating the rules.
+		/// </summary>
+		/// <param name="from"></param>
+		/// <param name="to"></param>
+		/// <returns></returns>
 		public bool IsValidMove(PlayAreaCoords from, PlayAreaCoords to)
 		{
 			int moveX = Math.Abs(from.X - to.X);
 			int moveY = Math.Abs(from.Y - to.Y);
 
+			//gems can only swap with gems that are adjacent (left and right or up and down, no diagonals).
 			if ((moveX == 1 && moveY == 0) || (moveX == 0 && moveY == 1) || !GlobalVars.EnforceMoveMustBeAdjacent)
 				return true;
 

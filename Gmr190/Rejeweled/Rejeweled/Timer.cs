@@ -13,12 +13,21 @@ namespace Rejeweled
 		TimeSpan mTimeRemaining;
 		TimeSpan mLength;
 
+		/// <summary>
+		/// Constructs a Timer.
+		/// </summary>
+		/// <param name="length">How long the timer should last.</param>
 		public Timer(TimeSpan length)
 		{
 			mLength = new TimeSpan(length.Ticks);
 			mTimeRemaining = new TimeSpan(length.Ticks);
 		}
 
+		/// <summary>
+		/// Call this every frame to count down the timer.
+		/// </summary>
+		/// <param name="timePassed">How much time has passed since the last call to update.</param>
+		/// <returns>True if the timer has completed.</returns>
 		public bool Update(TimeSpan timePassed)
 		{
 			bool retVal = false;
@@ -35,6 +44,10 @@ namespace Rejeweled
 			return retVal;
 		}
 
+		/// <summary>
+		/// Calculates how close the timer is to being completed as a percentage.
+		/// </summary>
+		/// <returns>A percentage value (0.0 - 1.0) representing how close the timer is to being complete.</returns>
 		public double PercentComplete()
 		{
 			return 1.0 - (mTimeRemaining.TotalMilliseconds / mLength.TotalMilliseconds);

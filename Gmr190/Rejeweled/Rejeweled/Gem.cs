@@ -47,6 +47,12 @@ namespace Rejeweled
 		private Timer mMarkTimer;
 		private Color mColor;
 
+		/// <summary>
+		/// Constructs a Gem object.
+		/// </summary>
+		/// <param name="type">The color of the gem.</param>
+		/// <param name="textures">The textures the gem should use.</param>
+		/// <param name="playArea">The PlayArea this gem belongs to. Required for some callbacks.</param>
 		public Gem(GemType type, List<Texture2D> textures, PlayArea playArea)
 		{
 			mType = type;
@@ -71,6 +77,10 @@ namespace Rejeweled
 			mColor = Color.White;
 		}
 
+		/// <summary>
+		/// Begins the animation to swap a gem with another gem.
+		/// </summary>
+		/// <param name="with">The gem to swap this with.</param>
         public void Swap(Gem with)
         {
             PlayAreaCoords temp = with.mMoveTo;
@@ -80,13 +90,18 @@ namespace Rejeweled
 
 		/// <summary>
 		/// Be very careful when calling this because it will affect any animations which are underway.
+		/// Sets the starting location for the movement animation.
 		/// </summary>
-		/// <param name="coords"></param>
+		/// <param name="coords">Where to start the move animation from.</param>
 		public void SetStartingLocation(PlayAreaCoords coords)
 		{
 			mMoveFrom = coords;
 		}
 
+		/// <summary>
+		/// Sets up the movement animation.
+		/// </summary>
+		/// <param name="newLoc">Where the gem should move to.</param>
 		public void MoveTo(PlayAreaCoords newLoc)
 		{
 			if (newLoc != mMoveTo)
@@ -99,6 +114,11 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Checks if the coordinates passed in are inside the Gem. Useful for detecting clicks.
+		/// </summary>
+		/// <param name="coords">The coordinates to check.</param>
+		/// <returns>True if the coordinates are inside the Gem and the Gem is not moving.</returns>
 		public bool Contains (Vector2 coords)
 		{
 			//we don't want people to be able to click gems while they are moving
@@ -112,28 +132,44 @@ namespace Rejeweled
 			return OnScreenLocation.Intersects (new Rectangle ((int)coords.X, (int)coords.Y, 1, 1));
 		}
 
+		/// <summary>
+		/// Gets or sets the Gems power up status.
+		/// </summary>
         public bool IsPoweredUp
         {
             get { return mIsPoweredUp; }
             set { mIsPoweredUp = value; }
         }
 
+		/// <summary>
+		/// Gets or sets the Gems selected status. Being selected will cause the gem to rotate.
+		/// </summary>
 		public bool IsSelected
 		{
 			get { return mIsSelected; }
 			set { mIsSelected = value; }
 		}
 
+		/// <summary>
+		/// Gets the status of the Gems disappear animation. True if the gem has completely disappeared.
+		/// </summary>
 		public bool IsDisappeared
 		{
 			get { return mIsDisappeared; }
 		}
 
+		/// <summary>
+		/// Gets the color of the gem.
+		/// </summary>
 		public GemType Type
 		{
 			get { return mType; }
 		}
 
+		/// <summary>
+		/// Updates the Gems animations. Call this once per frame.
+		/// </summary>
+		/// <param name="gameTime">How much time has passed since the last call to update.</param>
         public void Update(GameTime gameTime)
         {
 			UpdateSpin(gameTime);
@@ -141,6 +177,10 @@ namespace Rejeweled
 			UpdateDisappearing(gameTime);
         }
 
+		/// <summary>
+		/// Updates the Gems disappearing animation. Will call PlayArea.GemDisappearAnimationComplete when the animation is done.
+		/// </summary>
+		/// <param name="gameTime">How much time has passed since the last call.</param>
 		private void UpdateDisappearing(GameTime gameTime)
 		{
 			if (mIsMarked)
@@ -148,7 +188,8 @@ namespace Rejeweled
 				bool disappeared = mMarkTimer.Update(gameTime.ElapsedGameTime);
 				mColor = new Color(1.0f, 1.0f, 1.0f, 1.0f - (float)mMarkTimer.PercentComplete());
 
-				if (disappeared)
+//				if (disappeared)
+				if (mMarkTimer.PercentComplete () > 0.5)
 				{
 					mIsDisappeared = true;
 					mPlayArea.GemDisappearAnimationComplete(this);
@@ -156,6 +197,10 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Updates the Gems movement animation. Must be called once per frame. Will call PlayArea.GemMoveanimationCompleted () when done.
+		/// </summary>
+		/// <param name="gameTime">How much time has passed since the last call.</param>
 		private void UpdateMovement(GameTime gameTime)
 		{
 			if (mIsMoving)
@@ -174,6 +219,10 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Updates the Gems rotate animation if the Gem is selected. Must be called once per frame.
+		/// </summary>
+		/// <param name="gameTime">How much time has passed since the last call.</param>
 		private void UpdateSpin(GameTime gameTime)
 		{
 			if (mIsSelected)
@@ -193,12 +242,18 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Where this Gem is located on the board. Not on screen coordinates.
+		/// </summary>
 		public PlayAreaCoords BoardLocation
 		{
 			get { return mBoardLocation; }
 			set { mBoardLocation = value; }
 		}
 
+		/// <summary>
+		/// Where the gem is being drawn on the screen.
+		/// </summary>
 		public Rectangle OnScreenLocation
 		{
 			get
@@ -211,6 +266,9 @@ namespace Rejeweled
 			}
 		}
 
+		/// <summary>
+		/// Updates the gems on screen position based on the movement timer.
+		/// </summary>
 		private void CalculateScreenPosition()
 		{
 			float percent = (float)mMoveTimer.PercentComplete();
@@ -221,19 +279,21 @@ namespace Rejeweled
 			mActualPosition.Y = moveFrom.Y + ((moveTo.Y - moveFrom.Y) * percent);
 		}
 
+		/// <summary>
+		/// Draws the Gem on the screen taking into account all the various animations.
+		/// </summary>
+		/// <param name="spriteBatch">The SpriteBatch that the Gem will be drawn with.</param>
 		public void Draw(SpriteBatch spriteBatch)
         {
-			if (OnScreenLocation.X == 0 && OnScreenLocation.Y < 0)
-			{
-				string herp;
-				herp = "derp";
-			}
 			spriteBatch.Draw(
 				mNormalTextures [mCurrentTexture],
 				OnScreenLocation,
 				mColor);
         }
 
+		/// <summary>
+		/// Mark the gem as being part of a line and begins the disappear animation.
+		/// </summary>
 		public void Matched()
 		{
 			if (!mIsMarked)
