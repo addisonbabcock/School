@@ -87,6 +87,7 @@
     <Compile Include="DrawableGameComponents\BackgroundManager.cs" />
     <Compile Include="Utilities\Globals.cs" />
     <Compile Include="Gem.cs" />
+    <Compile Include="Utilities\KeyboardParser.cs" />
     <Compile Include="Utilities\MouseParser.cs" />
     <Compile Include="DrawableGameComponents\PlayArea.cs" />
     <Compile Include="Utilities\PlayAreaCoords.cs" />

@@ -31,12 +31,12 @@ namespace Rejeweled
 
 		protected TimeSpan FadeTime
 		{
-			get { return new TimeSpan(0, 0, 0, 0, 750); }
+			get { return new TimeSpan(0, 0, 0, 0, 500); }
 		}
 
 		protected TimeSpan PauseTime
 		{
-			get { return new TimeSpan(0, 0, 10); }
+			get { return new TimeSpan(0, 0, 15); }
 		}
 
 		public BackgroundManager(Game game, Random rng)
