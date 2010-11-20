@@ -26,6 +26,7 @@ namespace Rejeweled
 		PlayArea mPlayArea;
 		MouseParser mMouseParser;
 		RuleChecker mRuleChecker;
+		Random mRNG;
 
 		public Rejeweled ()
 		{
@@ -44,6 +45,10 @@ namespace Rejeweled
 			IsMouseVisible = true;
 
 			mRuleChecker = new RuleChecker();
+			mRNG = new Random();
+
+			BackgroundManager bgManager = new BackgroundManager(this, mRNG);
+			Components.Add(bgManager);
 		}
 
 		void Window_ClientSizeChanged(object sender, EventArgs e)
@@ -102,7 +107,7 @@ namespace Rejeweled
 				}
 			}
 
-			mPlayArea = new PlayArea (mGemTextures);
+			mPlayArea = new PlayArea (mGemTextures, mRNG);
 			mMouseParser = new MouseParser ();
 		}
 
@@ -202,12 +207,11 @@ namespace Rejeweled
 		protected override void Draw (GameTime gameTime)
 		{
 			GraphicsDevice.Clear (GlobalVars.ClearColor);
+			base.Draw(gameTime);
 
 			spriteBatch.Begin (SpriteBlendMode.AlphaBlend);
 			mPlayArea.Draw (spriteBatch);
 			spriteBatch.End ();
-
-			base.Draw (gameTime);
 		}
 	}
 }

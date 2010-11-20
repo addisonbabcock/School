@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundManager.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="Gem.cs" />
     <Compile Include="MouseParser.cs" />

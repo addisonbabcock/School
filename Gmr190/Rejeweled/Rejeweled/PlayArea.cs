@@ -31,10 +31,10 @@ namespace Rejeweled
 		/// Constructs a PlayArea complete with a set of Gems.
 		/// </summary>
 		/// <param name="gemTextures">The textures that the Gems on this board will use.</param>
-		public PlayArea(List <List<Texture2D>> gemTextures)
+		public PlayArea(List <List<Texture2D>> gemTextures, Random rng)
 		{
 			mGemTextures = gemTextures;
-			mRNG = new Random ();
+			mRNG = rng;
 			mGems = new List<Gem>(GlobalVars.GridDimensionX * GlobalVars.GridDimensionY);
 			mGemTypeToID = new Dictionary<GemType, int> ();
 
