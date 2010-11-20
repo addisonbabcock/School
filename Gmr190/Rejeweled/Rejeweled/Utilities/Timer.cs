@@ -50,7 +50,7 @@ namespace Rejeweled
 		/// <returns>A percentage value (0.0 - 1.0) representing how close the timer is to being complete.</returns>
 		public double PercentComplete()
 		{
-			return 1.0 - (mTimeRemaining.TotalMilliseconds / mLength.TotalMilliseconds);
+			return Math.Min (1.0, Math.Max (0.0, 1.0 - (mTimeRemaining.TotalMilliseconds / mLength.TotalMilliseconds)));
 		}
 	}
 }
