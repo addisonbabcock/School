@@ -1,5 +1,9 @@
 ﻿Created by Addison Babcock for GMR190.
 
+Code by Addison Babcock, November 2010.
+Compile with Visual Studio 2008 and XNA 3.0.
+
+
 Gem Images from:
 Begemed 2
 http://www.yoyogames.com/games/5647/download
