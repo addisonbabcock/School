@@ -106,18 +106,9 @@ namespace Rejeweled
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update (GameTime gameTime)
 		{
-			// Allows the game to exit
-			KeyboardState kbState = Keyboard.GetState ();
-
 			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
 				this.Exit ();
-			/*if (kbState.IsKeyDown (Keys.Escape))
-				Exit ();
-			if (kbState.IsKeyDown(Keys.F11))
-			{
-				graphics.IsFullScreen = !graphics.IsFullScreen;
-				graphics.ApplyChanges();
-			}*/
+
 			mMouseParser.Update (Mouse.GetState ());
 			mKeyboardParser.Update(Keyboard.GetState());
 
