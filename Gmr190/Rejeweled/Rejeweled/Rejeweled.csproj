@@ -94,6 +94,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Rejeweled.cs" />
     <Compile Include="RuleChecker.cs" />
+    <Compile Include="ScoreManager.cs" />
     <Compile Include="Timer.cs" />
   </ItemGroup>
   <ItemGroup>

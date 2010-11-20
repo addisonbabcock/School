@@ -12,12 +12,14 @@ namespace Rejeweled
 	/// <summary>
 	/// Represents a collection of gems.
 	/// </summary>
-	class PlayArea
+	class PlayArea : Microsoft.Xna.Framework.DrawableGameComponent
 	{
         private List<Gem> mGems;
 		private Dictionary<GemType, int> mGemTypeToID;
 		private List<List<Texture2D>> mGemTextures;
+		private List<List<Texture2D>> mPowerupTextures;
 		private Random mRNG;
+		private SpriteBatch mSpriteBatch;
 
 		private RuleChecker mRules;
 		bool mCheckRulesNextUpdate;
@@ -31,13 +33,15 @@ namespace Rejeweled
 		/// Constructs a PlayArea complete with a set of Gems.
 		/// </summary>
 		/// <param name="gemTextures">The textures that the Gems on this board will use.</param>
-		public PlayArea(List <List<Texture2D>> gemTextures, Random rng)
+		public PlayArea(Game game, Random rng)
+			: base (game)
 		{
-			mGemTextures = gemTextures;
+			mGemTextures = new List<List<Texture2D>>();
+			mPowerupTextures = new List<List<Texture2D>>();
 			mRNG = rng;
 			mGems = new List<Gem>(GlobalVars.GridDimensionX * GlobalVars.GridDimensionY);
-			mGemTypeToID = new Dictionary<GemType, int> ();
 
+			mGemTypeToID = new Dictionary<GemType, int> ();
 			mGemTypeToID [GemType.Yellow] = 0;
 			mGemTypeToID [GemType.White] = 1;
 			mGemTypeToID [GemType.Blue] = 2;
@@ -46,23 +50,58 @@ namespace Rejeweled
 			mGemTypeToID [GemType.Orange] = 5;
 			mGemTypeToID [GemType.Green] = 6;
 
-			for (int x = 0; x < GlobalVars.GridDimensionX; ++x)
-			{
-				for (int y = 0; y < GlobalVars.GridDimensionY; ++y)
-				{
-					Gem newGem = GetNewGem ();
-					newGem.MoveTo(new PlayAreaCoords(x, y));
-					newGem.SetStartingLocation(new PlayAreaCoords(x, y - GlobalVars.GridDimensionY));
-					mGems.Add(newGem);
-				}
-			}
-
 			mRules = new RuleChecker();
 			mCheckRulesNextUpdate = false;
 			mReplaceGemIndexes = new List<int>();
 
 			mSwapGem1 = null;
 			mSwapGem2 = null;
+		}
+
+		public void CreateNewBoard()
+		{
+			for (int x = 0; x < GlobalVars.GridDimensionX; ++x)
+			{
+				for (int y = 0; y < GlobalVars.GridDimensionY; ++y)
+				{
+					Gem newGem = GetNewGem();
+					newGem.MoveTo(new PlayAreaCoords(x, y));
+					newGem.SetStartingLocation(new PlayAreaCoords(x, y - GlobalVars.GridDimensionY));
+					mGems.Add(newGem);
+				}
+			}
+		}
+
+		protected override void LoadContent ()
+		{
+			mSpriteBatch = new SpriteBatch(Game.GraphicsDevice);
+			base.LoadContent();
+			 for (int i = 0; i < 7; ++i)
+			 {
+				 mGemTextures.Add(new List<Texture2D>());
+				 mPowerupTextures.Add(new List<Texture2D>());
+
+				 for (int j = 0; j < 20; ++j)
+				 {
+					 string gemName =
+						 "Gems\\Alpha\\Gem" +
+						 i +
+						 "\\gem" +
+						 i +
+						 "_" +
+						 (j + 1).ToString("0#");
+					 string powerUpName =
+						 "Gems\\Alpha_Powerup\\Gem" +
+						 i +
+						 "\\gem" +
+						 i +
+						 "_" +
+						 (j + 1).ToString("0#");
+
+					 mGemTextures[i].Add(Game.Content.Load<Texture2D>(gemName));
+					 mPowerupTextures[i].Add(Game.Content.Load<Texture2D>(powerUpName));
+				 }
+			 }
 		}
 
 		/// <summary>
@@ -115,7 +154,7 @@ namespace Rejeweled
 		/// Updates the PlayArea and all its components.
 		/// </summary>
 		/// <param name="gameTime">How much time has passed since the last call.</param>
-		public void Update(GameTime gameTime)
+		public override void Update(GameTime gameTime)
 		{
 			if (mReplaceGemIndexes.Count > 0)
 			{
@@ -204,12 +243,15 @@ namespace Rejeweled
 		/// Draws the PlayArea.
 		/// </summary>
 		/// <param name="spriteBatch">The SpriteBatch which will be used for rendering.</param>
-		public void Draw(SpriteBatch spriteBatch)
+		public override void Draw(GameTime gameTime)
 		{
+			base.Draw(gameTime);
+			mSpriteBatch.Begin(SpriteBlendMode.AlphaBlend);
 			foreach (Gem gem in mGems)
 			{
-				gem.Draw (spriteBatch);
+				gem.Draw(mSpriteBatch);
 			}
+			mSpriteBatch.End();
 		}
 
 		/// <summary>

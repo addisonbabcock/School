@@ -21,8 +21,6 @@ namespace Rejeweled
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-		List<List<Texture2D>> mGemTextures;
-		List<List<Texture2D>> mPowerupTextures;
 		PlayArea mPlayArea;
 		MouseParser mMouseParser;
 		RuleChecker mRuleChecker;
@@ -49,6 +47,12 @@ namespace Rejeweled
 
 			BackgroundManager bgManager = new BackgroundManager(this, mRNG);
 			Components.Add(bgManager);
+
+			mPlayArea = new PlayArea(this, mRNG);
+			Components.Add(mPlayArea);
+
+			ScoreManager scManager = new ScoreManager(this);
+			Components.Add(scManager);
 		}
 
 		void Window_ClientSizeChanged(object sender, EventArgs e)
@@ -77,38 +81,11 @@ namespace Rejeweled
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
-			mGemTextures = new List<List<Texture2D>> ();
-			mPowerupTextures = new List<List<Texture2D>>();
-
-			for (int i = 0; i < 7; ++i)
-			{
-				mGemTextures.Add (new List<Texture2D> ());
-				mPowerupTextures.Add(new List<Texture2D>());
-
-				for (int j = 0; j < 20; ++j)
-				{
-					string gemName =
-						"Gems\\Alpha\\Gem" +
-						i +
-						"\\gem" +
-						i +
-						"_" +
-						(j + 1).ToString ("0#");
-					string powerUpName =
-						"Gems\\Alpha_Powerup\\Gem" +
-						i +
-						"\\gem" +
-						i +
-						"_" +
-						(j + 1).ToString("0#");
-
-					mGemTextures[i].Add(Content.Load<Texture2D>(gemName));
-					mPowerupTextures[i].Add(Content.Load<Texture2D>(powerUpName));
-				}
-			}
-
-			mPlayArea = new PlayArea (mGemTextures, mRNG);
 			mMouseParser = new MouseParser ();
+
+			base.LoadContent();
+
+			mPlayArea.CreateNewBoard();
 		}
 
 		/// <summary>
@@ -148,8 +125,6 @@ namespace Rejeweled
 				HandleMouseEvent (mouseEvent);
 			} while (mouseEvent != null);
 
-			mPlayArea.Update (gameTime);
-			
 			base.Update (gameTime);
 		}
 
@@ -208,10 +183,6 @@ namespace Rejeweled
 		{
 			GraphicsDevice.Clear (GlobalVars.ClearColor);
 			base.Draw(gameTime);
-
-			spriteBatch.Begin (SpriteBlendMode.AlphaBlend);
-			mPlayArea.Draw (spriteBatch);
-			spriteBatch.End ();
 		}
 	}
 }
