@@ -23,6 +23,7 @@ namespace Rejeweled
 		SpriteBatch spriteBatch;
 		PlayArea mPlayArea;
 		MouseParser mMouseParser;
+		KeyboardParser mKeyboardParser;
 		RuleChecker mRuleChecker;
 		Random mRNG;
 
@@ -82,6 +83,7 @@ namespace Rejeweled
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch (GraphicsDevice);
 			mMouseParser = new MouseParser ();
+			mKeyboardParser = new KeyboardParser();
 
 			base.LoadContent();
 
@@ -109,14 +111,15 @@ namespace Rejeweled
 
 			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
 				this.Exit ();
-			if (kbState.IsKeyDown (Keys.Escape))
+			/*if (kbState.IsKeyDown (Keys.Escape))
 				Exit ();
 			if (kbState.IsKeyDown(Keys.F11))
 			{
 				graphics.IsFullScreen = !graphics.IsFullScreen;
 				graphics.ApplyChanges();
-			}
+			}*/
 			mMouseParser.Update (Mouse.GetState ());
+			mKeyboardParser.Update(Keyboard.GetState());
 
 			MouseEvent mouseEvent = null;
 			do
@@ -125,7 +128,64 @@ namespace Rejeweled
 				HandleMouseEvent (mouseEvent);
 			} while (mouseEvent != null);
 
+			KeyboardEvent kbEvent = null;
+			do
+			{
+				kbEvent = mKeyboardParser.GetNextEvent();
+				HandleKeyboardEvent(kbEvent);
+			} while (kbEvent != null);
+
 			base.Update (gameTime);
+		}
+
+		private void HandleKeyboardEvent(KeyboardEvent kbEvent)
+		{
+			if (kbEvent == null)
+				return;
+
+			switch (kbEvent.Type)
+			{
+				case KeyboardEvent.EventType.KeyBeingHeld:
+					HandleKeyBeingHeld(kbEvent);
+					break;
+
+				case KeyboardEvent.EventType.KeyPushed:
+					HandleKeyPushed(kbEvent);
+					break;
+
+				case KeyboardEvent.EventType.KeyReleased:
+					HandleKeyReleased(kbEvent);
+					break;
+
+				default:
+					Debug.WriteLine("Unknown keyboard event?");
+					break;
+			}
+		}
+
+		private void HandleKeyReleased(KeyboardEvent kbEvent)
+		{
+			//nothing to do...
+		}
+
+		private void HandleKeyPushed(KeyboardEvent kbEvent)
+		{
+			switch (kbEvent.Key)
+			{
+				case Keys.Escape:
+					Exit();
+					break;
+
+				case Keys.F11:
+					graphics.IsFullScreen = !graphics.IsFullScreen;
+					graphics.ApplyChanges();
+					break;
+			}
+		}
+
+		private void HandleKeyBeingHeld(KeyboardEvent kbEvent)
+		{
+			//nothing to do...
 		}
 
 		/// <summary>
