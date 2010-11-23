@@ -2237,15 +2237,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fonts\verdana_bold.spritefont">
-      <Name>verdana_bold</Name>
+    <Compile Include="Fonts\score_title.spritefont">
+      <Name>score_title</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fonts\Bauhaus_93.spritefont">
-      <Name>Bauhaus_93</Name>
+    <Compile Include="Fonts\score.spritefont">
+      <Name>score</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fonts\score_floater.spritefont">
+      <Name>score_floater</Name>
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
     </Compile>

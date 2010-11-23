@@ -25,7 +25,6 @@ namespace Rejeweled
         ScoreManager mScoreManager;
 		MouseParser mMouseParser;
 		KeyboardParser mKeyboardParser;
-		RuleChecker mRuleChecker;
 		Random mRNG;
 
 		public Rejeweled ()
@@ -44,7 +43,6 @@ namespace Rejeweled
 
 			IsMouseVisible = true;
 
-			mRuleChecker = new RuleChecker();
 			mRNG = new Random();
 
 			BackgroundManager bgManager = new BackgroundManager(this, mRNG);
@@ -54,6 +52,7 @@ namespace Rejeweled
 			Components.Add(mPlayArea);
 
             mScoreManager = new ScoreManager(this);
+            mPlayArea.ScoreManager = mScoreManager;
             Components.Add(mScoreManager);
 		}
 

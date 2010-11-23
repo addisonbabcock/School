@@ -87,5 +87,12 @@ namespace Rejeweled
 		{
 			return X.ToString() + ", " + Y.ToString();
 		}
+
+        public int Compare(PlayAreaCoords playAreaCoords)
+        {
+            if (X != playAreaCoords.X)
+                return X - playAreaCoords.X;
+            return Y - playAreaCoords.Y;
+        }
     }
 }

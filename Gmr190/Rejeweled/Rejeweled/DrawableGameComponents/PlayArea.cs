@@ -29,6 +29,8 @@ namespace Rejeweled
 
 		List<int> mReplaceGemIndexes;
 
+        private ScoreManager mScoreManager;
+
 		/// <summary>
 		/// Constructs a PlayArea complete with a set of Gems.
 		/// </summary>
@@ -195,6 +197,14 @@ namespace Rejeweled
                     matches[i][j].Matched();
                 }
             }
+
+            ScoreManager.CalculateScore(matches);
+        }
+
+        public ScoreManager ScoreManager
+        {
+            get {return mScoreManager;}
+            set {mScoreManager = value;}
         }
 
         /// <summary>

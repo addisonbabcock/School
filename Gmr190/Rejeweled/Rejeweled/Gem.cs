@@ -302,5 +302,5 @@ namespace Rejeweled
 				System.Diagnostics.Debug.WriteLine("Gem at " + BoardLocation.X + ", " + BoardLocation.Y + " is matched!");
 			}
 		}
-	}
+    }
 }
