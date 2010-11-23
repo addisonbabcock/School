@@ -9,8 +9,8 @@ using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 
 // TODO: replace these with the processor input and output types.
-using TInput = System.String;
-using TOutput = System.String;
+using TInput = Microsoft.Xna.Framework.Content.Pipeline.Graphics.Texture2DContent;
+using TOutput = Microsoft.Xna.Framework.Content.Pipeline.Graphics.Texture2DContent;
 
 namespace TextureEffectsPipeline
 {
@@ -20,6 +20,8 @@ namespace TextureEffectsPipeline
 	[ContentProcessor]
 	public class AlphaMapBlender : TextureProcessor
 	{
+		private string mTextureDirectory = "Texture";
+
 		public override bool ColorKeyEnabled
 		{
 			get
@@ -32,6 +34,12 @@ namespace TextureEffectsPipeline
 			}
 		}
 
+		public string TextureDirectory
+		{
+			get { return mTextureDirectory; }
+			set { mTextureDirectory = value; }
+		}
+
 		public override TextureContent Process (TextureContent input, ContentProcessorContext context)
 		{
 			TextureContent alphaMap = input;
@@ -39,8 +47,8 @@ namespace TextureEffectsPipeline
 			string alphaMapFileName = alphaMap.Identity.SourceFilename;
 
 			//super hack!
-			string colorMapFileName = 
-				Path.GetDirectoryName (alphaMapFileName).Replace ("Alpha_Powerup", "Texture").Replace ("Alpha", "Texture") + 
+			string colorMapFileName =
+				Path.GetDirectoryName(alphaMapFileName).Replace("Alpha_Powerup", mTextureDirectory).Replace("Alpha", mTextureDirectory) + 
 				"\\" +
 				Path.GetFileName (alphaMapFileName);
 
