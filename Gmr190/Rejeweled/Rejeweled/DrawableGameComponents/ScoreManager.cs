@@ -21,10 +21,13 @@ namespace Rejeweled
 
         private SpriteBatch mSpriteBatch;
 
+        private int mScore;
+
 		public ScoreManager(Game game)
 			: base(game)
 		{
 			// TODO: Construct any child components here
+            mScore = 0;
 		}
 
 		public override void Initialize()
@@ -58,11 +61,15 @@ namespace Rejeweled
             mSpriteBatch.DrawString(mVerdanaBold, "Score", TitlePos + ShadowOffset, Color.Black);
             mSpriteBatch.DrawString(mVerdanaBold, "Score", TitlePos, Color.White);
 
-            mSpriteBatch.DrawString(mBauhaus93, "123456", ScorePos + ShadowOffset, Color.Black);
-            mSpriteBatch.DrawString(mBauhaus93, "123456", ScorePos, Color.White);
+            mSpriteBatch.DrawString(mBauhaus93, mScore.ToString (), ScorePos + ShadowOffset, Color.Black);
+            mSpriteBatch.DrawString(mBauhaus93, mScore.ToString (), ScorePos, Color.White);
 
             mSpriteBatch.End();
 		}
+
+        /*public void CalculateScore(List<List<Gem>> validMoves)
+        {
+        }*/
 
         private Vector2 TitlePos
         {

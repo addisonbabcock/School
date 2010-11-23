@@ -11,10 +11,12 @@ namespace Rejeweled
 	class RuleChecker
 	{
 		Gem[,] mGemMatrix;
+        List<List<Gem>> mMatchedGems;
 
 		public RuleChecker()
 		{
 			mGemMatrix = new Gem[GlobalVars.GridDimensionX, GlobalVars.GridDimensionY];
+            mMatchedGems = new List<List<Gem>>();
 		}
 
 		/// <summary>
@@ -36,10 +38,10 @@ namespace Rejeweled
 		/// </summary>
 		/// <param name="playArea">The PlayArea to check for matches.</param>
 		/// <returns>True if matches were found.</returns>
-		public bool FindMatches (PlayArea playArea)
+		public List<List<Gem>> FindMatches (PlayArea playArea)
 		{
-			bool matchesFound = false;
 			BuildGemMatrix(playArea);
+            mMatchedGems.Clear();
 
 			for (int x = 0; x < GlobalVars.GridDimensionX; ++x)
 			{
@@ -50,17 +52,45 @@ namespace Rejeweled
 					int matchesRight = CheckRight(x, y, 1);
 					int matchesBelow = CheckBelow(x, y, 1);
 
-					//REFACTOR: The results should be returned to the caller instead of being acted on in here.
-					MarkGemsAsDisappearingBelow(x, y, matchesBelow);
-					MarkGemsAsDisappearingRight(x, y, matchesRight);
-
-					if (matchesBelow >= GlobalVars.MinMatch || matchesRight >= GlobalVars.MinMatch)
-						matchesFound = true;
-				}
+                    List<Gem> matchedGems = GetGemsRight(x, y, matchesRight);
+                    if (matchedGems.Count >= GlobalVars.MinMatch)
+                        mMatchedGems.Add(matchedGems);
+                    matchedGems = GetGemsBelow(x, y, matchesBelow);
+                    if (matchedGems.Count >= GlobalVars.MinMatch)
+                        mMatchedGems.Add(matchedGems);
+    			}
 			}
 
-			return matchesFound;
+			return mMatchedGems;
 		}
+
+        private List<Gem> GetGemsBelow(int x, int y, int matchesBelow)
+        {
+            List<Gem> matches = new List<Gem>();
+            if (matchesBelow >= GlobalVars.MinMatch)
+            {
+                for (int i = 0; i < matchesBelow; ++i)
+                {
+                    matches.Add(mGemMatrix[x, y + i]);
+                }
+            }
+
+            return matches;
+        }
+
+        private List<Gem> GetGemsRight(int x, int y, int matchesRight)
+        {
+            List<Gem> matches = new List<Gem>();
+            if (matchesRight >= GlobalVars.MinMatch)
+            {
+                for (int i = 0; i < matchesRight; ++i)
+                {
+                    matches.Add(mGemMatrix[x + i, y]);
+                }
+            }
+
+            return matches;
+        }
 
 		/// <summary>
 		/// Look for matches starting at x, y. Recursive function.

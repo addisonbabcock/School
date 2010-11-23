@@ -163,13 +163,18 @@ namespace Rejeweled
 
 			if (mCheckRulesNextUpdate)
 			{
-				if (!mRules.FindMatches(this))
-				{
-					//these can be null during startup because Gems can be lined up before the player has 
-					//had a chance to do any swapping.
-					if (mSwapGem1 != null && mSwapGem2 != null && GlobalVars.EnforceMoveMustResultInMatch)
-						mSwapGem1.Swap(mSwapGem2); //if the move doesnt result in a match, move the gems back.
-				}
+                List<List<Gem>> matches = mRules.FindMatches(this);
+                if (matches.Count == 0)
+                {
+                    //these can be null during startup because Gems can be lined up before the player has 
+                    //had a chance to do any swapping.
+                    if (mSwapGem1 != null && mSwapGem2 != null && GlobalVars.EnforceMoveMustResultInMatch)
+                        mSwapGem1.Swap(mSwapGem2); //if the move doesnt result in a match, move the gems back.
+                }
+                else
+                {
+                    RemoveMatchedGems(matches);
+                }
 				mSwapGem1 = null;
 				mSwapGem2 = null;
 				mCheckRulesNextUpdate = false;
@@ -181,10 +186,21 @@ namespace Rejeweled
 			}
 		}
 
-		/// <summary>
-		/// Replaces all the vanished Gems with new ones and slides the Gems above them downwards.
-		/// </summary>
-		private void ReplaceDisappearingGems()
+        private void RemoveMatchedGems(List<List<Gem>> matches)
+        {
+            for (int i = 0; i < matches.Count; ++i)
+            {
+                for (int j = 0; j < matches[i].Count; ++j)
+                {
+                    matches[i][j].Matched();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Replaces all the vanished Gems with new ones and slides the Gems above them downwards.
+        /// </summary>
+        private void ReplaceDisappearingGems()
 		{
 			List<List<Gem>> missingGemsInColumn = GetMissingGemsByColumn();
 			int replaceGemIndex = 0;
