@@ -97,5 +97,10 @@ namespace Rejeweled
 		{
 			get { return mClearColor; }
 		}
+
+        public static Microsoft.Xna.Framework.Vector2 ScreenSize
+        {
+            get { return new Microsoft.Xna.Framework.Vector2(mViewport.Width, mViewport.Height); }
+        }
 	}
 }

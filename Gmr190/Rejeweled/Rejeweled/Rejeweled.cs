@@ -22,6 +22,7 @@ namespace Rejeweled
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		PlayArea mPlayArea;
+        ScoreManager mScoreManager;
 		MouseParser mMouseParser;
 		KeyboardParser mKeyboardParser;
 		RuleChecker mRuleChecker;
@@ -52,8 +53,8 @@ namespace Rejeweled
 			mPlayArea = new PlayArea(this, mRNG);
 			Components.Add(mPlayArea);
 
-			ScoreManager scManager = new ScoreManager(this);
-			Components.Add(scManager);
+            mScoreManager = new ScoreManager(this);
+            Components.Add(mScoreManager);
 		}
 
 		void Window_ClientSizeChanged(object sender, EventArgs e)
