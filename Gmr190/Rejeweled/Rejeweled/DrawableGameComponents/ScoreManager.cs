@@ -127,17 +127,37 @@ namespace Rejeweled
 
         public void CalculateScore(List<List<Gem>> validMoves)
         {
+            List<List<Gem>> uniqueMoves = new List<List<Gem>>(validMoves);
             //get everything sorted to remove duplicates easier
-            foreach (List<Gem> move in validMoves)
+            foreach (List<Gem> move in uniqueMoves)
             {
                 move.Sort((first, second) => first.BoardLocation.Compare (second.BoardLocation));
             }
-            validMoves.Sort((first, second) => first[0].BoardLocation.Compare(second[0].BoardLocation));
+            uniqueMoves.Sort((first, second) =>
+                second.Count - first.Count != 0 ?
+                second.Count - first.Count : 
+                first[0].BoardLocation.Compare(second[0].BoardLocation));
 
-            //need to remove duplicates here too.
-            //though im not sure we will actually get any!
+            //Removing duplicates from the list to prevent multiple scores from showing up
+            //for the same set of gems.
+            //I'm defining a duplicate as being a move that has 2 or more gems from another
+            //move. This should be reasonably safe because of the game rules.
+            //If it turns out this isn't a safe assumption, another potential algorithm would be
+            //to search for moves that are a subset of another move.
+            for (int i = 0; i < uniqueMoves.Count; ++i)
+            {
+                for (int j = i + 1; j < uniqueMoves.Count; ++j)
+                {
+                    List<Gem> duplicateGems = new List<Gem> (uniqueMoves[i].Intersect(uniqueMoves[j]));
+                    if (duplicateGems.Count >= 2)
+                    {
+                        uniqueMoves.RemoveAt(j);
+                        --j;
+                    }
+                }
+            }
 
-            foreach (List<Gem> move in validMoves)
+            foreach (List<Gem> move in uniqueMoves)
             {
                 int add = 0;
                 switch (move.Count)
