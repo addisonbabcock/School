@@ -22,6 +22,12 @@
   <ItemGroup>
     <Compile Include="Product.wxs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Doc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doc\HowTo.txt" />
+  </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.

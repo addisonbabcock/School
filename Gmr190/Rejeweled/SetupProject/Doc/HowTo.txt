@@ -1,0 +1,4 @@
+This project is compiled using WiX. It will create an MSI installer when the solution is built in release mode.
+
+http://wix.codeplex.com/
+http://www.tramontana.co.hu/wix/lesson1.php#1.1
