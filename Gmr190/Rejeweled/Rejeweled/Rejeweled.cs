@@ -34,6 +34,7 @@ namespace Rejeweled
 			graphics = new GraphicsDeviceManager (this);
 			graphics.PreferredBackBufferWidth = 1024;
 			graphics.PreferredBackBufferHeight = 768;
+			graphics.IsFullScreen = GlobalVars.StartInFullScreenMode;
 			Window.AllowUserResizing = false; //was planning on supporting this but meh
 			Window.ClientSizeChanged += new EventHandler(Window_ClientSizeChanged);
 			Window.Title = "Rejeweled";

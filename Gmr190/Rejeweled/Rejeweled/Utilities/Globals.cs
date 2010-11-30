@@ -16,6 +16,7 @@ namespace Rejeweled
 		private static bool mEnforceMoveMustResultInMatch = true;
 		private static bool mEnforceMoveMustBeAdjacent = true;
 		private static Color mClearColor = Color.White;
+		private static bool mStartInFullScreen = true;
 
 		private static Viewport mViewport;
 
@@ -102,5 +103,10 @@ namespace Rejeweled
         {
             get { return new Microsoft.Xna.Framework.Vector2(mViewport.Width, mViewport.Height); }
         }
+
+		public static bool StartInFullScreenMode
+		{
+			get { return mStartInFullScreen; }
+		}
 	}
 }
