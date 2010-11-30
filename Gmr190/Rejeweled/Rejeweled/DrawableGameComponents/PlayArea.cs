@@ -228,7 +228,8 @@ namespace Rejeweled
 					if (currentGem != null)
 						currentGem.MoveTo(new PlayAreaCoords(column, row + missingGemsBelow));
 					else
-						//unfortunately this actually does seem to happen... wtf
+						//unfortunately this actually does seem to happen... wtf...
+                        //TODO: figure this out...
 						System.Diagnostics.Debug.WriteLine("This really shouldn't happen... could not find gem at location " + currentGemCoords.ToString());
 				}
 
