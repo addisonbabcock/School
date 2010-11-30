@@ -131,8 +131,6 @@ namespace Rejeweled
 		/// <param name="gem"></param>
 		public void GemDisappearAnimationComplete(Gem gem)
 		{
-			//hmmm this will need to be refactored so we can count the number
-			//of missing gems in a column.
 			mReplaceGemIndexes.Add(mGems.FindIndex(i => i == gem));
 		}
 
@@ -220,15 +218,15 @@ namespace Rejeweled
 			for (int column = 0; column < GlobalVars.GridDimensionX; ++column)
 			{
 				//for each gem in the column, starting at the bottom
-				for (int y = 0; y < GlobalVars.GridDimensionY; ++y)
+				for (int row = 0; row < GlobalVars.GridDimensionY; ++row)
 				{
 					//count the gems above this gem
-					PlayAreaCoords currentGemCoords = new PlayAreaCoords (column, y);
+					PlayAreaCoords currentGemCoords = new PlayAreaCoords (column, row);
 					Gem currentGem = mGems.Find(i => i.BoardLocation == currentGemCoords);
-					int missingGemsBelow = missingGemsInColumn[column].Count(i => i.BoardLocation.X == column && i.BoardLocation.Y > y);
+					int missingGemsBelow = missingGemsInColumn[column].Count(i => i.BoardLocation.X == column && i.BoardLocation.Y > row);
 
 					if (currentGem != null)
-						currentGem.MoveTo(new PlayAreaCoords(column, y + missingGemsBelow));
+						currentGem.MoveTo(new PlayAreaCoords(column, row + missingGemsBelow));
 					else
 						//unfortunately this actually does seem to happen... wtf
 						System.Diagnostics.Debug.WriteLine("This really shouldn't happen... could not find gem at location " + currentGemCoords.ToString());
