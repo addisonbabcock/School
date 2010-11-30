@@ -41,7 +41,7 @@ namespace Rejeweled
         public void Draw(SpriteBatch mSpriteBatch)
         {
             float fadeAlpha = (float)(1.0 - mFadeTimer.PercentComplete ());
-            mSpriteBatch.DrawString(mFont, mAmount, mPos + ShadowOffset, new Color(Color.Red, fadeAlpha));
+            mSpriteBatch.DrawString(mFont, mAmount, mPos + ShadowOffset, new Color(Color.Black, fadeAlpha));
             mSpriteBatch.DrawString(mFont, mAmount, mPos, new Color(Color.White, fadeAlpha));
         }
 
@@ -94,8 +94,6 @@ namespace Rejeweled
 
 		public override void Update(GameTime gameTime)
 		{
-			// TODO: Add your update code here
-
             foreach (ScoreFloater floater in mFloaters)
             {
                 floater.Update(gameTime);
