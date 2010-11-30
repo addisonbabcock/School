@@ -34,9 +34,10 @@ namespace Rejeweled
 			graphics = new GraphicsDeviceManager (this);
 			graphics.PreferredBackBufferWidth = 1024;
 			graphics.PreferredBackBufferHeight = 768;
-			Window.AllowUserResizing = true;
+			Window.AllowUserResizing = false; //was planning on supporting this but meh
 			Window.ClientSizeChanged += new EventHandler(Window_ClientSizeChanged);
 			Window.Title = "Rejeweled";
+            Mouse.WindowHandle = Window.Handle;
 			graphics.ApplyChanges();
 
 			GlobalVars.UpdateViewport(graphics.GraphicsDevice.Viewport);
