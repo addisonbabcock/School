@@ -110,8 +110,11 @@ namespace Rejeweled
 			if (GamePad.GetState (PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
 				this.Exit ();
 
-			mMouseParser.Update (Mouse.GetState ());
-			mKeyboardParser.Update(Keyboard.GetState());
+            if (IsActive)
+            {
+                mMouseParser.Update(Mouse.GetState());
+                mKeyboardParser.Update(Keyboard.GetState());
+            }
 
 			MouseEvent mouseEvent = null;
 			do
