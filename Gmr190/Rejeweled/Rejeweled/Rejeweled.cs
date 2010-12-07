@@ -38,7 +38,6 @@ namespace Rejeweled
 			Window.AllowUserResizing = false; //was planning on supporting this but meh
 			Window.ClientSizeChanged += new EventHandler(Window_ClientSizeChanged);
 			Window.Title = "Rejeweled";
-            Mouse.WindowHandle = Window.Handle;
 			graphics.ApplyChanges();
 
 			GlobalVars.UpdateViewport(graphics.GraphicsDevice.Viewport);
