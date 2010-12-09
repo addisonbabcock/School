@@ -8020,7 +8020,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Rejeweled"
         "ProductCode" = "8:{ACCFF93A-FCBF-4BBA-A241-F62445CEF731}"
-        "PackageCode" = "8:{70371B59-14D9-4FD1-A669-C3EFA5FBC212}"
+        "PackageCode" = "8:{6E93B703-8385-4625-BE62-9613F0EBE191}"
         "UpgradeCode" = "8:{DCCC5108-6743-406E-8DE7-777158EC2460}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"

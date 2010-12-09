@@ -110,7 +110,6 @@
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
     <None Include="Notes\Notes.txt" />
-    <None Include="Rejeweled_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
