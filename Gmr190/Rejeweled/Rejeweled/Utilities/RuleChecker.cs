@@ -92,12 +92,6 @@ namespace Rejeweled
             return matches;
         }
 
-		/// <summary>
-		/// Look for matches starting at x, y. Recursive function.
-		/// </summary>
-		/// <param name="x">Starting X coordinate.</param>
-		/// <param name="y">Starting Y coordinate.</param>
-		/// <param name="matchesRight">Reserved. Pass in a 1.</param>
 		private void MarkGemsAsDisappearingRight(int x, int y, int matchesRight)
 		{
 			if (matchesRight >= GlobalVars.MinMatch)
