@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include "Path.h"
-#include "e:\lab04_test.h"
+//#include "e:\lab04_test.h"
 
 using namespace std;
 
@@ -54,7 +54,7 @@ void Lab4TestAddison ()
 int main ()
 {
 	_CrtSetDbgFlag (_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	Lab04Test();
-//	Lab4TestAddison ();
+//	Lab04Test();
+	Lab4TestAddison ();
 	return 0;
 }
