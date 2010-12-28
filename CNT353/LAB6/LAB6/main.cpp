@@ -1,6 +1,6 @@
 #include "BlackJack.h"
 #include <crtdbg.h>
-#include "e:\lab06_test.h"
+//#include "e:\lab06_test.h"
 
 void Lab06TestAddison ()
 {
@@ -26,8 +26,8 @@ void Lab06TestAddison ()
 int main ()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-//	Lab06TestAddison ();
-	Lab06Test();
+	Lab06TestAddison ();
+//	Lab06Test();
 	cin.get ();
 	return 0;
 }
