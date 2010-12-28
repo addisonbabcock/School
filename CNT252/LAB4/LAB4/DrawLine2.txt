@@ -1,0 +1,47 @@
+
+void DrawLine2 (SByteLine * const sLn)
+{
+	char cXInc = 0,
+		 cYInc = 0;
+
+	SBytePoint sCurPt = {sLn->m_sStart.m_byX,
+						 sLn->m_sStart.m_byY};
+
+	SBytePoint sTempPt;
+
+	char cDX = sLn->m_sEnd.m_byX - sLn->m_sStart.m_byX;
+	char cDY = sLn->m_sEnd.m_byY - sLn->m_sStart.m_byY;
+
+	float fM = 0;
+
+	if (abs (cDX) >= abs (cDY))
+	{
+		if (cDX < 0)
+		{
+			sTempPt = sLn->m_sEnd;
+			sLn->m_sEnd = sLn->m_sStart;
+			sLn->m_sStart = sTempPt;
+		}
+
+		cXInc = 1;
+		fM = static_cast <float> (cDY) / static_cast <float> (cDX);
+		//fM *= cXInc;
+
+		for (; sCurPt.m_byX != sLn->m_sEnd.m_byX; sCurPt.m_byX += cXInc)
+		{
+			sCurPt.m_byY = round (fM * sCurPt.m_byX) + sLn->m_sStart.m_byY;
+			SetPoint (&sCurPt);
+		}
+	}
+	else
+	{
+		cYInc = (cDY >= 0) ? 1 : -1;
+		fM = static_cast <float> (cDX) / static_cast <float> (cDY);
+
+		for (; sCurPt.m_byY != sLn->m_sEnd.m_byY; sCurPt.m_byY += cYInc)
+		{
+			sCurPt.m_byX = round (fM * sCurPt.m_byY) + sLn->m_sStart.m_byX;
+			SetPoint (&sCurPt);
+		}
+	}
+}
