@@ -146,6 +146,8 @@ int main ()
 		cout << "Warning, output could not be saved to a file.\n"
 			 << "The file \"results.txt\" may be in use.\n\n";
 	OutFile.close ();
+
+	cin.get ();
     
 	return 0;
 }

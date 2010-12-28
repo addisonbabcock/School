@@ -22,5 +22,6 @@ using namespace std;
 void DisplayArray (const int iArray [], const int iSize, const char cDelimiter);
 int GetRandInt (int iLowerBound, int iUpperBound);
 void FlushCINBuffer ();
+void SeedRandomGenerator (void);
 
 #endif // UTILITIES_H
