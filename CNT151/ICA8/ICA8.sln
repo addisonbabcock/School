@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ICA8", "ICA8.vcxproj", "{0FBACD44-4F2A-4B33-A9B2-CB488989E023}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FBACD44-4F2A-4B33-A9B2-CB488989E023}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0FBACD44-4F2A-4B33-A9B2-CB488989E023}.Debug|Win32.Build.0 = Debug|Win32
+		{0FBACD44-4F2A-4B33-A9B2-CB488989E023}.Release|Win32.ActiveCfg = Release|Win32
+		{0FBACD44-4F2A-4B33-A9B2-CB488989E023}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
