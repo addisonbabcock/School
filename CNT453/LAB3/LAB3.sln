@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LAB3", "LAB2\LAB2.vcproj", "{B5FB7152-3DA2-4B7B-845C-51885043C3CC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Setup1\Setup1.vdproj", "{4BA5C21F-DDEC-4EC4-A459-7E3E63EBC8F5}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5FB7152-3DA2-4B7B-845C-51885043C3CC}.Debug|Win32.ActiveCfg = Release|Win32
+		{B5FB7152-3DA2-4B7B-845C-51885043C3CC}.Debug|Win32.Build.0 = Release|Win32
+		{B5FB7152-3DA2-4B7B-845C-51885043C3CC}.Release|Win32.ActiveCfg = Release|Win32
+		{B5FB7152-3DA2-4B7B-845C-51885043C3CC}.Release|Win32.Build.0 = Release|Win32
+		{4BA5C21F-DDEC-4EC4-A459-7E3E63EBC8F5}.Debug|Win32.ActiveCfg = Debug
+		{4BA5C21F-DDEC-4EC4-A459-7E3E63EBC8F5}.Release|Win32.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
