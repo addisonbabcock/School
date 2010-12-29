@@ -5,6 +5,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LAB3", "LAB2\LAB2.vcproj", 
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Setup1\Setup1.vdproj", "{4BA5C21F-DDEC-4EC4-A459-7E3E63EBC8F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9438F18A-AA51-40A6-A7E7-A947D303D482}"
+	ProjectSection(SolutionItems) = preProject
+		adw.jpg = adw.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
