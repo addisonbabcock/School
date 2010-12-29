@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ICA3", "ICA3\ICA3.vcproj", "{529C7F81-E5BF-48CE-95B4-BA9A53375156}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{529C7F81-E5BF-48CE-95B4-BA9A53375156}.Debug|Win32.ActiveCfg = Debug|Win32
+		{529C7F81-E5BF-48CE-95B4-BA9A53375156}.Debug|Win32.Build.0 = Debug|Win32
+		{529C7F81-E5BF-48CE-95B4-BA9A53375156}.Release|Win32.ActiveCfg = Release|Win32
+		{529C7F81-E5BF-48CE-95B4-BA9A53375156}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
