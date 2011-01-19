@@ -17,10 +17,13 @@ namespace _2011_01_18_Fibonacci
 
 		static void Main (string [] args)
 		{
-			for (uint i = 0; i < 10; ++i)
+		/*	for (uint i = 0; i < 10; ++i)
 			{
 				Console.WriteLine ("{0}", Fibonacci (i));
 			}
+			*/
+
+			Console.WriteLine ("{0}", Fibonacci (8));
 
 			Console.ReadKey ();
 		}
