@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2011_01_20_MatrixMultiplication", "2011_01_20_MatrixMultiplication\2011_01_20_MatrixMultiplication.csproj", "{F4657EA7-CE98-4E1D-8928-B2BFFB70C064}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2011_01_20_ArrayResizer", "2011_01_20_ArrayResizer\2011_01_20_ArrayResizer.csproj", "{3F15E5E6-0F8A-414A-A685-25AB0DA39CA3}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +19,10 @@ Global
 		{F4657EA7-CE98-4E1D-8928-B2BFFB70C064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4657EA7-CE98-4E1D-8928-B2BFFB70C064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4657EA7-CE98-4E1D-8928-B2BFFB70C064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F15E5E6-0F8A-414A-A685-25AB0DA39CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F15E5E6-0F8A-414A-A685-25AB0DA39CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F15E5E6-0F8A-414A-A685-25AB0DA39CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F15E5E6-0F8A-414A-A685-25AB0DA39CA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
