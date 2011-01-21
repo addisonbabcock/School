@@ -9,7 +9,7 @@ namespace _2011_01_20_ArrayResizer
 	{
 		static void Main (string [] args)
 		{
-			int [] arr = { 1, 2, 3, 4 };
+			int [] arr = { 1, 2, 3, 4, 5, 6 };
 
 			//reallocate
 			int [] temp = new int [arr.Length + 1];
@@ -17,9 +17,12 @@ namespace _2011_01_20_ArrayResizer
 			{
 				temp [i] = arr [i];
 			}
-			temp [arr.Length] = 5;
+			temp [arr.Length] = 7;
 
 			arr = temp;
+
+			foreach (int i in arr)
+				Console.Write ("{0} ", i);
 
 			Console.ReadKey ();
 		}
