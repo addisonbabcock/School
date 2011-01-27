@@ -3,6 +3,7 @@
     public enum EntityName
     {
         MinerBob,
-        Elsa
+        Elsa,
+		BarFly
     }
 }
