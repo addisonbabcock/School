@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="BarFly.cs" />
     <Compile Include="BarFlyStates\Inebriated.cs" />
+    <Compile Include="BarFlyStates\Sober.cs" />
     <Compile Include="BaseGameEntity.cs" />
     <Compile Include="EntityManager.cs" />
     <Compile Include="EntityName.cs" />

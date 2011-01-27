@@ -8,10 +8,12 @@ namespace WestWorldWithMessagingRefactored
 	public class BarFly : BaseGameEntity
 	{
 		private readonly StateMachine<BarFly> stateMachine;
+		private int currentBeerCount;
 
         public BarFly(int id) : base(id)
         {
-			stateMachine = new StateMachine<BarFly> (this, Inebriated.Instance);
+			currentBeerCount = 0;
+			stateMachine = new StateMachine<BarFly> (this, Sober.Instance);
 			OutputMessageColor = ConsoleColor.Blue;
 		}
 
@@ -28,7 +30,7 @@ namespace WestWorldWithMessagingRefactored
 
 		public override void Update ()
 		{
-			//throw new NotImplementedException ();
+			currentBeerCount++;
 			GetFSM().Update();
 		}
 	}

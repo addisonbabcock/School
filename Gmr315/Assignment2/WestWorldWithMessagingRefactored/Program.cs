@@ -20,7 +20,7 @@ namespace WestWorldWithMessagingRefactored
             MinersWife Elsa = new MinersWife((int) EntityName.Elsa);
 
 			//create the barfly
-			BarFly BarFly = new BarFly((int)EntityName.BarFly);
+			BarFly BarFly = new BarFly((int) EntityName.BarFly);
 
             // register them with the entity manager
             EntityManager.Instance.RegisterEntity(Bob);

@@ -71,6 +71,10 @@ namespace WestWorldWithMessagingRefactored
 
                     return "Elsa";
 
+				case EntityName.BarFly:
+
+					return "BarFly";
+
                 default:
 
                     return "UNKNOWN!";
