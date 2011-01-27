@@ -9,6 +9,7 @@ namespace WestWorldWithMessagingRefactored
 	{
 		private readonly StateMachine<BarFly> stateMachine;
 		private int currentBeerCount;
+		private bool minerVisible;
 
         public BarFly(int id) : base(id)
         {
@@ -38,8 +39,26 @@ namespace WestWorldWithMessagingRefactored
 			return currentBeerCount;
 		}
 
+		public bool IsMinerVisible()
+		{
+			return minerVisible;
+		}
+
 		public override bool HandleMessage(Message message)
 		{
+			switch (message.MessageType)
+			{
+				case MessageType.MinerEnteringTheBar:
+					minerVisible = true;
+					OutputStatusMessage("Yeah? Wha do ya want?");
+					return true;
+
+				case MessageType.MinerLeavingTheBar:
+					OutputStatusMessage("Yeah that's what I thought.");
+					minerVisible = false;
+					return true;
+			}
+
 			return GetFSM().HandleMessage(message);
 		}
 

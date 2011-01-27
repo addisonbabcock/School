@@ -9,12 +9,10 @@ namespace WestWorldWithMessagingRefactored.BarFlyStates
 		private static HungOver instance;
 
 		private Random rng;
-		private bool minerInTheBar;
 
 		private HungOver()
 		{
 			rng = new Random();
-			minerInTheBar = false;
 		}
 
 		public static HungOver Instance
@@ -25,24 +23,6 @@ namespace WestWorldWithMessagingRefactored.BarFlyStates
 					instance = new HungOver();
 				return instance;
 			}
-		}
-
-		public override bool OnMessage(BarFly entity, Message message)
-		{
-			switch (message.MessageType)
-			{
-				case MessageType.MinerEnteringTheBar:
-					entity.OutputStatusMessage("Yeah? Wha do ya want?");
-					minerInTheBar = true;
-					return true;
-
-				case MessageType.MinerLeavingTheBar:
-					entity.OutputStatusMessage("Yeah that's what I thought.");
-					minerInTheBar = false;
-					return true;
-			}
-
-			return base.OnMessage(entity, message);
 		}
 
 		public override void Enter(BarFly entity)
@@ -58,7 +38,7 @@ namespace WestWorldWithMessagingRefactored.BarFlyStates
 			if (rng.Next(2) == 0)
 			{
 				//fight the miner
-				if (minerInTheBar)
+				if (entity.IsMinerVisible())
 				{
 					MessageDispatcher.Instance.DispatchMessage(
 						0.0, 
