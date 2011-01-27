@@ -33,6 +33,12 @@ namespace WestWorldWithMessagingRefactored.MinersStates
             {
                 miner.ChangeLocation(Location.Saloon);
                 miner.OutputStatusMessage("Boy, ah sure is thusty! Walking to the saloon");
+				MessageDispatcher.Instance.DispatchMessage(
+					0.0,
+					(int)EntityName.MinerBob,
+					(int)EntityName.BarFly,
+					MessageType.MinerEnteringTheBar,
+					MessageDispatcher.NoAdditionalInfo);
             }
         }
 
@@ -47,6 +53,12 @@ namespace WestWorldWithMessagingRefactored.MinersStates
         public override void Exit(Miner miner)
         {
             miner.OutputStatusMessage("Leaving the saloon, feelin' good");
+			MessageDispatcher.Instance.DispatchMessage(
+				0.0,
+				(int)EntityName.MinerBob,
+				(int)EntityName.BarFly,
+				MessageType.MinerLeavingTheBar,
+				MessageDispatcher.NoAdditionalInfo);
         }
     }
 }

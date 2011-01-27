@@ -5,5 +5,8 @@
         UnknownMessage,
         HiHoneyImHome,
         StewReady,
+		IChallengeYouToADuel,
+		MinerEnteringTheBar,
+		MinerLeavingTheBar,
     }
 }
