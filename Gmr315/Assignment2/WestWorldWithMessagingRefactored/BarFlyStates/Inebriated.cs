@@ -24,17 +24,17 @@ namespace WestWorldWithMessagingRefactored.BarFlyStates
 
 		public override void Enter(BarFly entity)
 		{
-			entity.OutputStatusMessage("Entering inebriated state.");
+			entity.OutputStatusMessage("I feel gooooood!");
 		}
 
 		public override void Execute(BarFly entity)
 		{
-			entity.OutputStatusMessage("Executing inebriated state.");
+			entity.OutputStatusMessage("I am invincible!");
 		}
 
 		public override void Exit(BarFly entity)
 		{
-			entity.OutputStatusMessage("Leaving inebriated state.");
+			entity.OutputStatusMessage("I might have had too much to drink... *hick*");
 		}
 	}
 }

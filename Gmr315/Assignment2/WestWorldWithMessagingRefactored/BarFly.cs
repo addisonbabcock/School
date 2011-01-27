@@ -22,9 +22,13 @@ namespace WestWorldWithMessagingRefactored
 			return stateMachine;
 		}
 
+		public int HowDrunkAmI()
+		{
+			return currentBeerCount;
+		}
+
 		public override bool HandleMessage(Message message)
 		{
-			//throw new NotImplementedException ();
 			return GetFSM().HandleMessage(message);
 		}
 
