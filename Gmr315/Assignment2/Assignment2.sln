@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorld1", "Chapter2\WestWorld1.csproj", "{8DA2E0CB-DB59-41CF-8BEE-218930949F6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorldWithMessaging", "WestWorldWithMessaging\WestWorldWithMessaging.csproj", "{EEAB55E7-4FA8-4855-A940-BF5D6D7975FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorldWithWoman", "WestWorldWithWoman\WestWorldWithWoman.csproj", "{04D03FDC-1A6E-426D-82E6-58B7C5FAF7DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorldWithMessagingRefactored", "WestWorldWithMessagingRefactored\WestWorldWithMessagingRefactored.csproj", "{457E9588-F88F-49BB-9AD2-2EF9D5D397BE}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DA2E0CB-DB59-41CF-8BEE-218930949F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA2E0CB-DB59-41CF-8BEE-218930949F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA2E0CB-DB59-41CF-8BEE-218930949F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA2E0CB-DB59-41CF-8BEE-218930949F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEAB55E7-4FA8-4855-A940-BF5D6D7975FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEAB55E7-4FA8-4855-A940-BF5D6D7975FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEAB55E7-4FA8-4855-A940-BF5D6D7975FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEAB55E7-4FA8-4855-A940-BF5D6D7975FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D03FDC-1A6E-426D-82E6-58B7C5FAF7DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D03FDC-1A6E-426D-82E6-58B7C5FAF7DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D03FDC-1A6E-426D-82E6-58B7C5FAF7DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D03FDC-1A6E-426D-82E6-58B7C5FAF7DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{457E9588-F88F-49BB-9AD2-2EF9D5D397BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{457E9588-F88F-49BB-9AD2-2EF9D5D397BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{457E9588-F88F-49BB-9AD2-2EF9D5D397BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{457E9588-F88F-49BB-9AD2-2EF9D5D397BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
