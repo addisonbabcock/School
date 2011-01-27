@@ -22,6 +22,11 @@ namespace WestWorldWithMessagingRefactored
 			return stateMachine;
 		}
 
+		public void Drink()
+		{
+			++currentBeerCount;
+		}
+
 		public int HowDrunkAmI()
 		{
 			return currentBeerCount;
@@ -34,7 +39,6 @@ namespace WestWorldWithMessagingRefactored
 
 		public override void Update ()
 		{
-			currentBeerCount++;
 			GetFSM().Update();
 		}
 	}

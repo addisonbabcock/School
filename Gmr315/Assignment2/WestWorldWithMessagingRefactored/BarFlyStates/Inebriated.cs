@@ -30,6 +30,11 @@ namespace WestWorldWithMessagingRefactored.BarFlyStates
 		public override void Execute(BarFly entity)
 		{
 			entity.OutputStatusMessage("I am invincible!");
+			entity.Drink();
+			if (entity.HowDrunkAmI() >= 20)
+			{
+				entity.GetFSM().ChangeState(Sleeping.Instance);
+			}
 		}
 
 		public override void Exit(BarFly entity)
