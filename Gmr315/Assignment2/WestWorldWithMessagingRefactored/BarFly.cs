@@ -27,6 +27,12 @@ namespace WestWorldWithMessagingRefactored
 			++currentBeerCount;
 		}
 
+		public void Sleep()
+		{
+			currentBeerCount -= 3;
+			currentBeerCount = Math.Min(currentBeerCount, 0);
+		}
+
 		public int HowDrunkAmI()
 		{
 			return currentBeerCount;

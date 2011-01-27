@@ -28,7 +28,7 @@ namespace WestWorldWithMessagingRefactored
 			EntityManager.Instance.RegisterEntity(BarFly);
 
             //simply run the miner through a few Update calls
-            for (int i = 0; i < 30; ++i)
+            for (int i = 0; i < 100; ++i)
             {
                 Bob.Update();
                 Elsa.Update();

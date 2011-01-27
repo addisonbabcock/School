@@ -4,40 +4,40 @@ using WestWorldWithMessagingRefactored.Messaging;
 
 namespace WestWorldWithMessagingRefactored.BarFlyStates
 {
-	public class Sleeping : State<BarFly>
+	public class HungOver : State<BarFly>
 	{
-		private static Sleeping instance;
+		private static HungOver instance;
 
-		private Sleeping()
+		private HungOver()
 		{
 		}
 
-		public static Sleeping Instance
+		public static HungOver Instance
 		{
 			get
 			{
 				if (instance == null)
-					instance = new Sleeping();
+					instance = new HungOver();
 				return instance;
 			}
 		}
 
 		public override void Enter(BarFly entity)
 		{
-			entity.OutputStatusMessage("So tirrred...");
+			entity.OutputStatusMessage("Owwww my head");
 		}
 
 		public override void Execute(BarFly entity)
 		{
-			entity.OutputStatusMessage("ZZZZzZZZzZzzzzzz");
-			entity.Sleep();
-			if (entity.HowDrunkAmI() == 0)
-				entity.GetFSM().ChangeState(HungOver.Instance);
+			entity.OutputStatusMessage("Need to drink to ease the pain...");
+			entity.Drink();
+			if (entity.HowDrunkAmI() >= 5)
+				entity.GetFSM().ChangeState(Sober.Instance);
 		}
 
 		public override void Exit(BarFly entity)
 		{
-			entity.OutputStatusMessage("Done sleeping.");
+			entity.OutputStatusMessage("Much better!");
 		}
 	}
 }

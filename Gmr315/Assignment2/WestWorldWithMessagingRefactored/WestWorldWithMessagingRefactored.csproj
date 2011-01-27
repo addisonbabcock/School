@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarFly.cs" />
+    <Compile Include="BarFlyStates\Hungover.cs" />
     <Compile Include="BarFlyStates\Inebriated.cs" />
     <Compile Include="BarFlyStates\Sleeping.cs" />
     <Compile Include="BarFlyStates\Sober.cs" />
