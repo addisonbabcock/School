@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReversePolishNotationCalculator", "ReversePolishNotationCalculator\ReversePolishNotationCalculator.csproj", "{10FC63BA-E806-4F5B-AD9A-4CD83D426C84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialCalulator", "FactorialCalulator\FactorialCalulator.csproj", "{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -17,6 +19,10 @@ Global
 		{10FC63BA-E806-4F5B-AD9A-4CD83D426C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10FC63BA-E806-4F5B-AD9A-4CD83D426C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10FC63BA-E806-4F5B-AD9A-4CD83D426C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
