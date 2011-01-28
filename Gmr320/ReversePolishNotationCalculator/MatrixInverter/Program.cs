@@ -33,6 +33,8 @@ namespace MatrixInverter
 			  j := j + 1
 			end while*/
 
+			//INCOMPLETE!!!
+
 			int i = 0, j = 0;
 			while (i < original.Length && j < original.Length)
 			{
@@ -41,6 +43,8 @@ namespace MatrixInverter
 				{
 				}
 			}
+
+			return new int [10, 10];
 		}
 
 		static void Main (string [] args)
