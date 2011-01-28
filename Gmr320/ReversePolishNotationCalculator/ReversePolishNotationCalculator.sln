@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReversePolishNotationCalcul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialCalulator", "FactorialCalulator\FactorialCalulator.csproj", "{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixTransposer", "MatrixTransposer\MatrixTransposer.csproj", "{2FC80E2D-DE30-4013-93F0-E693498069DE}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -23,6 +25,10 @@ Global
 		{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CB10EF6-B1A5-43F4-9FBB-FDE97D93D6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC80E2D-DE30-4013-93F0-E693498069DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC80E2D-DE30-4013-93F0-E693498069DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC80E2D-DE30-4013-93F0-E693498069DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC80E2D-DE30-4013-93F0-E693498069DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
