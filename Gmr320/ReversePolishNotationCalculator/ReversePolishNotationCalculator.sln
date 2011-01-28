@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactorialCalulator", "Facto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixTransposer", "MatrixTransposer\MatrixTransposer.csproj", "{2FC80E2D-DE30-4013-93F0-E693498069DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixInverter", "MatrixInverter\MatrixInverter.csproj", "{7E971915-AF1B-497B-B8EC-0B9333866E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayList", "ArrayList\ArrayList.csproj", "{86E2C2C0-31F7-4D72-B7CF-7D8C69E4BAA0}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -29,6 +33,14 @@ Global
 		{2FC80E2D-DE30-4013-93F0-E693498069DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FC80E2D-DE30-4013-93F0-E693498069DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FC80E2D-DE30-4013-93F0-E693498069DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E971915-AF1B-497B-B8EC-0B9333866E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E971915-AF1B-497B-B8EC-0B9333866E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E971915-AF1B-497B-B8EC-0B9333866E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E971915-AF1B-497B-B8EC-0B9333866E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E2C2C0-31F7-4D72-B7CF-7D8C69E4BAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E2C2C0-31F7-4D72-B7CF-7D8C69E4BAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E2C2C0-31F7-4D72-B7CF-7D8C69E4BAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E2C2C0-31F7-4D72-B7CF-7D8C69E4BAA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
