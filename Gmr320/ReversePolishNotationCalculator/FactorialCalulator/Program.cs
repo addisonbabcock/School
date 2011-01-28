@@ -7,7 +7,8 @@ namespace FactorialCalulator
 {
 	class Program
 	{
-		static UInt64 Factorial (UInt64 a)
+		//Completes in O(N) time.
+		static int Factorial (int a)
 		{
 			if (a == 0)
 				return 1;
@@ -17,8 +18,12 @@ namespace FactorialCalulator
 
 		static void Main (string [] args)
 		{
-			for (int i = 0; i < 10; ++i)
-				Console.WriteLine ("{0} - {1}", i, Factorial ((UInt64)i));
+//			for (int i = 0; i < 10; ++i)
+//				Console.WriteLine ("{0} - {1}", i, Factorial ((i));
+
+			Console.WriteLine ("Enter a positive number: ");
+			int input = Convert.ToInt32 (Console.ReadLine ());
+			Console.WriteLine ("{0}", Factorial (input));
 			Console.ReadKey ();
 		}
 	}
