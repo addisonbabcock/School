@@ -62,6 +62,7 @@
     <Compile Include="Miner.cs" />
     <Compile Include="MinersStates\EatStew.cs" />
     <Compile Include="MinersStates\EnterMineAndDigForNugget.cs" />
+    <Compile Include="MinersStates\FightBarFly.cs" />
     <Compile Include="MinersStates\GoHomeAndSleepUntilRested.cs" />
     <Compile Include="MinersStates\QuenchThirst.cs" />
     <Compile Include="MinersStates\VisitBankAndDepositGold.cs" />

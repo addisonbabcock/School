@@ -60,5 +60,16 @@ namespace WestWorldWithMessagingRefactored.MinersStates
 				MessageType.MinerLeavingTheBar,
 				MessageDispatcher.NoAdditionalInfo);
         }
+
+		public override bool OnMessage (Miner entity, Message message)
+		{
+			if (message.MessageType == MessageType.IChallengeYouToADuel)
+			{
+				entity.GetFSM ().ChangeState (FightBarFly.Instance);
+				return true;
+			}
+
+			return base.OnMessage (entity, message);
+		}
     }
 }

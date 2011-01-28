@@ -8,5 +8,9 @@
 		IChallengeYouToADuel,
 		MinerEnteringTheBar,
 		MinerLeavingTheBar,
+		MinerAttacksWithPunch,
+		MinerAttacksWithChair,
+		MinerAttacksWithHeadSmash,
+		BarFlyPassesOut,
     }
 }
