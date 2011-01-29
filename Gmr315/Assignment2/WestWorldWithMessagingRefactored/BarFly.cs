@@ -31,7 +31,8 @@ namespace WestWorldWithMessagingRefactored
 		public void Sleep()
 		{
 			currentBeerCount -= 3;
-			currentBeerCount = Math.Min(currentBeerCount, 0);
+			if (currentBeerCount < 0)
+				currentBeerCount = 0;
 		}
 
 		public int HowDrunkAmI()
@@ -56,6 +57,21 @@ namespace WestWorldWithMessagingRefactored
 				case MessageType.MinerLeavingTheBar:
 					OutputStatusMessage("Yeah that's what I thought.");
 					minerVisible = false;
+					return true;
+
+				case MessageType.MinerAttacksWithChair:
+					OutputStatusMessage ("What is this wrestling!?!");
+					GetFSM ().ChangeState (Sleeping.Instance);
+					return true;
+
+				case MessageType.MinerAttacksWithPunch:
+					OutputStatusMessage ("Not in the face!");
+					GetFSM ().ChangeState (Sleeping.Instance);
+					return true;
+
+				case MessageType.MinerAttacksWithHeadSmash:
+					OutputStatusMessage ("That hurts!");
+					GetFSM ().ChangeState (Sleeping.Instance);
 					return true;
 			}
 

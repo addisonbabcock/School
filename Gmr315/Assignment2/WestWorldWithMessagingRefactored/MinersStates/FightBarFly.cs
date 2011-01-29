@@ -20,7 +20,7 @@ namespace WestWorldWithMessagingRefactored.MinersStates
 			get
 			{
 				if (instance == null)
-					instance = new HungOver();
+					instance = new FightBarFly();
 				return instance;
 			}
 		}
@@ -57,12 +57,22 @@ namespace WestWorldWithMessagingRefactored.MinersStates
 			}
 			else
 			{
+				//smash the bar flys head into the bar
+				entity.OutputStatusMessage ("FALCON HEAD SMASH!");
+				MessageDispatcher.Instance.DispatchMessage (
+					0.0,
+					(int)EntityName.MinerBob,
+					(int)EntityName.BarFly,
+					MessageType.MinerAttacksWithHeadSmash,
+					MessageDispatcher.NoAdditionalInfo);
 			}
+
+			entity.GetFSM ().RevertToPreviousState ();
 		}
 
 		public override void Exit (Miner entity)
 		{
-			throw new NotImplementedException ();
+			entity.OutputStatusMessage ("Try again ye wee man");
 		}
 	}
 }
