@@ -49,7 +49,7 @@ namespace MatrixInverter
 
 		static void Main (string [] args)
 		{
-
+			Console.WriteLine ("Never did bother to finish this... ignore it.");
 		}
 	}
 }

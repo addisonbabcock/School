@@ -23,7 +23,7 @@ namespace FactorialCalulator
 
 			Console.WriteLine ("Enter a positive number: ");
 			int input = Convert.ToInt32 (Console.ReadLine ());
-			Console.WriteLine ("{0}", Factorial (input));
+			Console.WriteLine ("{0}! = {1}", input, Factorial (input));
 			Console.ReadKey ();
 		}
 	}

@@ -29,7 +29,14 @@ namespace MatrixTransposer
 			for (int i = 1; i <= 9; ++i)
 				matrix.Add (i);
 
+			Console.WriteLine ("Original 3x3 matrix: ");
+			foreach (var i in matrix)
+				Console.Write ("{0} ", i);
+			Console.WriteLine ();
+
 			var transposed = Transpose (matrix);
+
+			Console.WriteLine ("Transposed 3x3 matrix:");
 			foreach (var trans in transposed)
 				Console.Write ("{0} ", trans);
 			Console.WriteLine ();
@@ -39,7 +46,14 @@ namespace MatrixTransposer
 			for (int i = 1; i <= 16; ++i)
 				bigMatrix.Add (i);
 
+			Console.WriteLine ("Original 4x4 matrix:");
+			foreach (var i in bigMatrix)
+				Console.Write ("{0} ", i);
+			Console.WriteLine ();
+
 			var bigTranspose = Transpose (bigMatrix);
+
+			Console.WriteLine ("Transposed 4x4 matrix:");
 			foreach (var trans in bigTranspose)
 				Console.Write ("{0} ", trans);
 			Console.ReadKey ();

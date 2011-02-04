@@ -79,18 +79,21 @@ namespace ArrayList
 			for (int i = 0; i < 10; ++i)
 				fakeList.AddToEnd (i);
 
+			Console.WriteLine ("Filled list with 0 to 9");
 			for (int i = 0; i < fakeList.Count (); ++i)
 				Console.Write ("{0} ", fakeList.Get (i));
 			Console.WriteLine ();
 
 			fakeList.AddToAnywhere (4, 100);
 
+			Console.WriteLine ("Inserted 100 to position 4");
 			for (int i = 0; i < fakeList.Count (); ++i)
 				Console.Write ("{0} ", fakeList.Get (i));
 			Console.WriteLine ();
 
 			fakeList.RemoveFromAnywhere (4);
-	
+
+			Console.WriteLine ("Removed 100 from position 4");
 			for (int i = 0; i < fakeList.Count (); ++i)
 				Console.Write ("{0} ", fakeList.Get (i));
 			Console.WriteLine ();
