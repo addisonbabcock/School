@@ -73,7 +73,7 @@ namespace Assignment_3
 		//move towards a given vehicle
 		public static Vector2 Pursuit (Vehicle vehicle, Vehicle evader)
 		{
-			throw new Exception ("Students must implement this...");
+			
 		}
 
 
