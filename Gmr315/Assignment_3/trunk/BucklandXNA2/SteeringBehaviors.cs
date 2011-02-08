@@ -28,12 +28,11 @@ namespace Assignment_3
 		public static Vector2 Seek (Vehicle vehicle, Vector2 targetPosition)
 		{
 			Vector2 desiredVelocity = targetPosition - vehicle.CurrentPosition;
-			desiredVelocity.Normalize ();
-			desiredVelocity = desiredVelocity * (float)vehicle.MaxSpeed;
 
-			if (desiredVelocity.Length () > (float)vehicle.MaxSpeed + 1.0f)
+			if (desiredVelocity.LengthSquared () > (float)vehicle.MaxSpeed)
 			{
-				int breakpoint = 123;
+				desiredVelocity.Normalize ();
+				desiredVelocity = desiredVelocity * (float)vehicle.MaxSpeed;
 			}
 
 			return desiredVelocity;
@@ -42,8 +41,12 @@ namespace Assignment_3
 		//move away from target
 		public static Vector2 Flee (Vehicle vehicle, Vector2 targetPosition)
 		{
-			//throw new Exception ("Students must implement this...");
-			return -Seek (vehicle, targetPosition);
+			Vector2 desiredVelocity = vehicle.CurrentPosition - targetPosition;
+			desiredVelocity.Normalize ();
+			desiredVelocity = desiredVelocity * (float)vehicle.MaxSpeed;
+
+			return desiredVelocity;
+			
 		}
 
 		//move randomly
