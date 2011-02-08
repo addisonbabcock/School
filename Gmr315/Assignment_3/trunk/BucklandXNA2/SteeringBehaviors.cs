@@ -26,14 +26,17 @@ namespace Assignment_3
 		//head towards a moving target
 		//seek can overshoot
 		public static Vector2 Seek (Vehicle vehicle, Vector2 targetPosition)
-		{			
-			//throw new Exception ("Students must implement this...");
-			Vector2 desiredVelocity = (targetPosition - vehicle.CurrentPosition);
-			if (desiredVelocity.LengthSquared () < 1.0)
-				desiredVelocity = new Vector2 (0.0f, 0.0f);
-			else
-				desiredVelocity.Normalize ();
-			return desiredVelocity * (float)vehicle.MaxSpeed;
+		{
+			Vector2 desiredVelocity = targetPosition - vehicle.CurrentPosition;
+			desiredVelocity.Normalize ();
+			desiredVelocity = desiredVelocity * (float)vehicle.MaxSpeed;
+
+			if (desiredVelocity.Length () > (float)vehicle.MaxSpeed + 1.0f)
+			{
+				int breakpoint = 123;
+			}
+
+			return desiredVelocity;
 		}
 
 		//move away from target
