@@ -26,15 +26,21 @@ namespace Assignment_3
 		//head towards a moving target
 		//seek can overshoot
 		public static Vector2 Seek (Vehicle vehicle, Vector2 targetPosition)
-		{
-			throw new Exception ("Students must implement this...");
+		{			
+			//throw new Exception ("Students must implement this...");
+			Vector2 desiredVelocity = (targetPosition - vehicle.CurrentPosition);
+			if (desiredVelocity.LengthSquared () < 1.0)
+				desiredVelocity = new Vector2 (0.0f, 0.0f);
+			else
+				desiredVelocity.Normalize ();
+			return desiredVelocity * (float)vehicle.MaxSpeed;
 		}
 
 		//move away from target
 		public static Vector2 Flee (Vehicle vehicle, Vector2 targetPosition)
 		{
-			throw new Exception ("Students must implement this...");
-
+			//throw new Exception ("Students must implement this...");
+			return -Seek (vehicle, targetPosition);
 		}
 
 		//move randomly
