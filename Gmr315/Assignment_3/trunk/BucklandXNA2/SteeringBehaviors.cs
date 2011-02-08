@@ -20,7 +20,21 @@ namespace Assignment_3
 		public static Vector2 Arrive (Vehicle vehicle, Vector2 targetPosition,
 								  Deceleration deceleration)
 		{
-			throw new Exception ("Students must implement this...");
+			Vector2 directionToTarget = targetPosition - vehicle.CurrentPosition;
+			float distance = directionToTarget.Length ();
+
+			if (distance > 0.0f)
+			{
+				float speed = distance / ((float)deceleration * 0.3f);
+
+				speed = Math.Min (speed, vehicle.MaxSpeed);
+
+				Vector2 desiredVelocity = directionToTarget * speed / distance;
+
+				return desiredVelocity - vehicle.CurrentVelocity;
+			}
+
+			return new Vector2 ();
 		}
 
 		//head towards a moving target
