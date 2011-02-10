@@ -48,6 +48,10 @@ namespace Assignment_3
 				desiredVelocity.Normalize ();
 				desiredVelocity = desiredVelocity * (float)vehicle.MaxSpeed;
 			}
+			else
+			{
+				desiredVelocity = new Vector2 ();
+			}
 
 			return desiredVelocity;
 		}
@@ -67,13 +71,13 @@ namespace Assignment_3
 		//the fancy circle in front of you thing
 		public static Vector2 Wander (Vehicle vehicle)
 		{
-			throw new Exception ("Students must implement this...");
+			return vehicle.CurrentPosition;
 		}
 
 		//move towards a given vehicle
 		public static Vector2 Pursuit (Vehicle vehicle, Vehicle evader)
 		{
-			
+			return vehicle.CurrentPosition;
 		}
 
 
