@@ -38,7 +38,6 @@ namespace Assignment_3
 		}
 
 		//head towards a moving target
-		//seek can overshoot
 		public static Vector2 Seek (Vehicle vehicle, Vector2 targetPosition)
 		{
 			Vector2 desiredVelocity = targetPosition - vehicle.CurrentPosition;
@@ -77,7 +76,13 @@ namespace Assignment_3
 		//move towards a given vehicle
 		public static Vector2 Pursuit (Vehicle vehicle, Vehicle evader)
 		{
-			return vehicle.CurrentPosition;
+			float timeToTarget = 
+				(vehicle.CurrentPosition - evader.CurrentPosition).Length () * 
+				(vehicle.MaxSpeed + evader.MaxSpeed);
+			Vector2 predictedPos = 
+				evader.CurrentPosition + evader.CurrentVelocity * timeToTarget;
+
+			return Seek (vehicle, predictedPos);
 		}
 
 
