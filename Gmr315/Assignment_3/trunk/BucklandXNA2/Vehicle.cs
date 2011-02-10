@@ -173,7 +173,7 @@ namespace Assignment_3
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            float timeDelta = (float) gameTime.ElapsedGameTime.TotalSeconds*8;
+            float timeDelta = (float) gameTime.ElapsedGameTime.TotalSeconds;
             Vector2 steerForce = Vector2.Zero;
 
             switch (SteeringBehavior)
@@ -230,11 +230,14 @@ namespace Assignment_3
             {
                 return;
             }
+
+			timeDelta *= 5f;
+
             steerForce = Truncate(steerForce, MaxForce);
             Acceleration = steerForce/Mass;
-            CurrentVelocity = CurrentVelocity + Acceleration;
-            CurrentVelocity = Truncate(CurrentVelocity, MaxSpeed)*timeDelta;
-            CurrentPosition = Vector2.Add(CurrentVelocity, CurrentPosition);
+			CurrentVelocity = CurrentVelocity + Acceleration * timeDelta;
+            CurrentVelocity = Truncate(CurrentVelocity, MaxSpeed);
+			CurrentPosition = Vector2.Add (CurrentVelocity * timeDelta, CurrentPosition);
 
             MakeSurePositionIsInBounds();
         }

@@ -23,15 +23,21 @@ namespace Assignment_3
 			Vector2 directionToTarget = targetPosition - vehicle.CurrentPosition;
 			float distance = directionToTarget.Length ();
 
-			if (distance > 0.0f)
+			if (distance > 8.0f)
 			{
-				float speed = distance / ((float)deceleration * 0.3f);
+				float speed = distance / ((float)deceleration * 0.1f);
 
 				speed = Math.Min (speed, vehicle.MaxSpeed);
 
 				Vector2 desiredVelocity = directionToTarget * speed / distance;
+				Vector2 steerForce = desiredVelocity - vehicle.CurrentVelocity;
 
-				return desiredVelocity - vehicle.CurrentVelocity;
+				if (steerForce.Length () > Vehicle.MaxForce)
+				{
+					System.Diagnostics.Debug.WriteLine ("Looks like steering force will be truncated...");
+				}
+
+				return steerForce;
 			}
 
 			return new Vector2 ();
