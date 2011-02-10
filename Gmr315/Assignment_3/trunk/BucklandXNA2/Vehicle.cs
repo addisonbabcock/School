@@ -231,7 +231,7 @@ namespace Assignment_3
                 return;
             }
 
-			timeDelta *= 2f;
+			timeDelta *= 8f;
 
             steerForce = Truncate(steerForce, MaxForce);
             Acceleration = steerForce/Mass;

@@ -16,18 +16,18 @@ namespace XELibrary
         private float fps;
         private float frameCount;
         private float timeSinceLastUpdate;
-
+/*
 #if DEBUG
         public FPS(Game game)
             : this(game, false, false, game.TargetElapsedTime)
         {
         }
-#else
+#else*/
         public FPS(Game game)
             : this(game, true, false, game.TargetElapsedTime)
         {
         }
-#endif
+//#endif
 
         public FPS(Game game, bool synchWithVerticalRetrace, bool isFixedTimeStep)
             : this(game, synchWithVerticalRetrace, isFixedTimeStep, game.TargetElapsedTime)
