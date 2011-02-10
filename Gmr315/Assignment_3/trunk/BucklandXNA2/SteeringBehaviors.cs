@@ -76,9 +76,8 @@ namespace Assignment_3
 		//move towards a given vehicle
 		public static Vector2 Pursuit (Vehicle vehicle, Vehicle evader)
 		{
-			float timeToTarget = 
-				(vehicle.CurrentPosition - evader.CurrentPosition).Length () * 
-				(vehicle.MaxSpeed + evader.MaxSpeed);
+			float timeToTarget =
+				(vehicle.CurrentPosition - evader.CurrentPosition).Length () / evader.MaxSpeed;
 			Vector2 predictedPos = 
 				evader.CurrentPosition + evader.CurrentVelocity * timeToTarget;
 
