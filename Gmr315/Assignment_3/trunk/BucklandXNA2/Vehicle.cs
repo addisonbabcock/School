@@ -128,7 +128,7 @@ namespace Assignment_3
             Rotation = 0;
             CurrentVelocity = new Vector2(0, 0);
             CarColor = Color.Red;
-            MaxSpeed = 150;
+            MaxSpeed = 20;
             MaxForce = 150;
             Mass = 20f;
             Acceleration = Vector2.Zero;

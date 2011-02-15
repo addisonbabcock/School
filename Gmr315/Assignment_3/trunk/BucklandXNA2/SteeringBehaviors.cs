@@ -16,6 +16,8 @@ namespace Assignment_3
 			slow = 1
 		}
 
+		public static Random RNG = new Random ();
+
 		//go straight there
 		public static Vector2 Arrive (Vehicle vehicle, Vector2 targetPosition,
 								  Deceleration deceleration)
@@ -76,7 +78,20 @@ namespace Assignment_3
 		//the fancy circle in front of you thing
 		public static Vector2 Wander (Vehicle vehicle)
 		{
-			return vehicle.CurrentPosition;
+			Vector2 circleCenter = new Vector2 (
+				vehicle.Heading.X * Vehicle.WanderDistance + vehicle.CurrentPosition.X,
+				vehicle.Heading.Y * Vehicle.WanderDistance + vehicle.CurrentPosition.Y);
+
+			double randomAngle = 360.0 * RNG.NextDouble ();
+			Vector2 pointOnCircle = new Vector2 (
+				(float)Math.Cos (randomAngle) * Vehicle.WanderDistance,
+				(float)Math.Sin (randomAngle) * Vehicle.WanderDistance);
+			pointOnCircle += circleCenter;
+
+			pointOnCircle.Normalize ();
+			pointOnCircle *= vehicle.MaxSpeed;
+
+			return pointOnCircle;
 		}
 
 		//move towards a given vehicle
