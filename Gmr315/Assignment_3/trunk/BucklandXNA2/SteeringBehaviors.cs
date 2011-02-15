@@ -71,7 +71,6 @@ namespace Assignment_3
 			desiredVelocity = desiredVelocity * (float)vehicle.MaxSpeed;
 
 			return desiredVelocity;
-			
 		}
 
 		//move randomly

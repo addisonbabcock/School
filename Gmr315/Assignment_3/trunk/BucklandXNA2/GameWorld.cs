@@ -80,12 +80,15 @@ namespace Assignment_3
             float closestDistanceToCrossHair = float.MaxValue;
             foreach (Vehicle vehicle in _vehicles)
             {
-                float distance = Vector2.Subtract(vehicle.CurrentPosition, CrossHair.CurrentPosition).LengthSquared();
-                if (distance < closestDistanceToCrossHair)
-                {
-                    closestDistanceToCrossHair = distance;
-                    nearestVehicle = vehicle;
-                }
+				if (vehicle.Enabled)
+				{
+					float distance = Vector2.Subtract (vehicle.CurrentPosition, CrossHair.CurrentPosition).LengthSquared ();
+					if (distance < closestDistanceToCrossHair)
+					{
+						closestDistanceToCrossHair = distance;
+						nearestVehicle = vehicle;
+					}
+				}
             }
             CrossHair.TargetPosition = nearestVehicle.CurrentPosition;
 
