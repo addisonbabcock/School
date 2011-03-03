@@ -10,9 +10,9 @@ namespace SoccerXNA.Teams.AddisonTeam.TeamStates
     public class PrepareForKickOff : State<AbstractSoccerTeam>
     {
         private static PrepareForKickOff instance;
-        private readonly int[] BlueRegions = new[] { 1, 6, 8, 3, 5 };
+        private readonly int[] BlueRegions = new[] { 1, 6, 8, 1, 4 };
 
-        private readonly int[] RedRegions = new[] { 16, 9, 11, 12, 14 };
+        private readonly int[] RedRegions = new[] { 16, 9, 11, 16, 13 };
 
         private PrepareForKickOff()
         {

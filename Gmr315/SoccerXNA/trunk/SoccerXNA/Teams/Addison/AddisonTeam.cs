@@ -106,7 +106,7 @@ namespace SoccerXNA.Teams.AddisonTeam
 
 
 				m_Players.Add (new FieldPlayer (Game, this,
-									   3,
+									   1,
 									   Wait.Instance (),
 									   GlobalPlayerState.Instance (),
 									   new Vector2 (0, 1),
@@ -120,7 +120,7 @@ namespace SoccerXNA.Teams.AddisonTeam
 
 
 				m_Players.Add (new FieldPlayer (Game, this,
-									   5,
+									   4,
 									   Wait.Instance (),
 									   GlobalPlayerState.Instance (),
 									   new Vector2 (0, 1),
@@ -181,7 +181,7 @@ namespace SoccerXNA.Teams.AddisonTeam
 
 
 				m_Players.Add (new FieldPlayer (Game, this,
-										   12,
+										   16,
 										   Wait.Instance (),
 										   GlobalPlayerState.Instance (),
 										   new Vector2 (0, -1),
@@ -195,7 +195,7 @@ namespace SoccerXNA.Teams.AddisonTeam
 
 
 				m_Players.Add (new FieldPlayer (Game, this,
-										   14,
+										   13,
 										   Wait.Instance (),
 										   GlobalPlayerState.Instance (),
 										   new Vector2 (0, -1),
