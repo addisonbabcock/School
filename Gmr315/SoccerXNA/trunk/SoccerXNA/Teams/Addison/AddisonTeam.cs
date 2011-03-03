@@ -267,7 +267,7 @@ namespace SoccerXNA.Teams.AddisonTeam
 			//can intercept it.
 			if (time >= 0)
 			{
-				if (isPassSafeFromAllOpponents (BallPos, ShotTarget, null, power))
+			//	if (isPassSafeFromAllOpponents (BallPos, ShotTarget, null, power))
 				{
 					return true;
 				}
