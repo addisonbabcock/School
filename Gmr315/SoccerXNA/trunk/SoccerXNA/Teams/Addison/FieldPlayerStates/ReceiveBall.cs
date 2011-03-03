@@ -43,18 +43,19 @@ namespace SoccerXNA.Teams.AddisonTeam.FieldPlayerStates
             //player is close to the receiving player, and whether or not the receiving
             //player is in the opponents 'hot region' (the third of the pitch closest
             //to the opponent's goal
-            const float PassThreatRadius = 70.0f;
+            //const float PassThreatRadius = 35.0f;
 
-            if ((player.InHotRegion() ||
+
+			//no need to wait for a pass to slowly trickle in... go get it!
+            /*if ((player.InHotRegion() ||
                  Utils.RandFloat() < Prm.ChanceOfUsingArriveTypeReceiveBehavior) &&
                 !player.Team().isOpponentWithinRadius(player.Pos(), PassThreatRadius))
             {
                 player.Steering().ArriveOn();
 
                 Debug.WriteLine("Player " + player.ID() + " enters receive state (Using Arrive)");
-
             }
-            else
+            else*/
             {
                 player.Steering().PursuitOn();
 

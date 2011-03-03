@@ -5,9 +5,9 @@ using System.Text;
 using Common.FSM;
 using Common.Misc;
 using Microsoft.Xna.Framework;
-using SoccerXNA.Teams.BucklandTeam.FieldPlayerStates;
-using SoccerXNA.Teams.BucklandTeam.GoalKeeperStates;
-using SoccerXNA.Teams.BucklandTeam.TeamStates;
+using SoccerXNA.Teams.AddisonTeam.FieldPlayerStates;
+using SoccerXNA.Teams.AddisonTeam.GoalKeeperStates;
+using SoccerXNA.Teams.AddisonTeam.TeamStates;
 
 namespace SoccerXNA.Teams.AddisonTeam
 {
