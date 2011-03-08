@@ -7,7 +7,7 @@ using Common.Messaging;
 
 namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
 {
-    public class TendGoal : State<GoalKeeper>
+	public class TendGoal : State<AddisonGoaltender>
     {
         private static readonly ParamLoader Prm = ParamLoader.Instance;
         private static TendGoal instance;
@@ -25,7 +25,7 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             return instance;
         }
 
-        public override void Enter(GoalKeeper keeper)
+		public override void Enter (AddisonGoaltender keeper)
         {
             //turn interpose on
             keeper.Steering().InterposeOn(Prm.GoalKeeperTendingDistance);
@@ -35,7 +35,7 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             keeper.Steering().SetTarget(keeper.GetRearInterposeTarget());
         }
 
-        public override void Execute(GoalKeeper keeper)
+		public override void Execute (AddisonGoaltender keeper)
         {
             //the rear interpose target will change as the ball's position changes
             //so it must be updated each update-step 
@@ -56,7 +56,9 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
 
             //if ball is within a predefined distance, the keeper moves out from
             //position to try and intercept it.
-            if (keeper.BallWithinRangeForIntercept() && !keeper.Team().InControl())
+
+			//Keeper would ignore his own team scoring on him... fixed.
+            if (keeper.BallWithinRangeForIntercept())// && !keeper.Team().InControl())
             {
                 keeper.GetFSM().ChangeState(InterceptBall.Instance());
             }
@@ -71,12 +73,12 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             }
         }
 
-        public override void Exit(GoalKeeper keeper)
+		public override void Exit (AddisonGoaltender keeper)
         {
             keeper.Steering().InterposeOff();
         }
 
-        public override bool OnMessage(GoalKeeper keeper, Telegram message)
+		public override bool OnMessage (AddisonGoaltender keeper, Telegram message)
         {
             return false;
         }

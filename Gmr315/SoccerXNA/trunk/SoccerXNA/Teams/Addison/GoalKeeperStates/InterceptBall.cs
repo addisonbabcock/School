@@ -8,7 +8,7 @@ using Common.Misc;
 
 namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
 {
-    public class InterceptBall : State<GoalKeeper>
+	public class InterceptBall : State<AddisonGoaltender>
     {
         private static InterceptBall instance;
 
@@ -25,13 +25,13 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             return instance;
         }
 
-        public override void Enter(GoalKeeper keeper)
+		public override void Enter (AddisonGoaltender keeper)
         {
             keeper.Steering().PursuitOn();
             Debug.WriteLine("Goalie " + keeper.ID() + " enters InterceptBall");
         }
 
-        public override void Execute(GoalKeeper keeper)
+		public override void Execute (AddisonGoaltender keeper)
         {
             //if the goalkeeper moves to far away from the goal he should return to his
             //home region UNLESS he is the closest player to the ball, in which case,
@@ -57,12 +57,12 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             }
         }
 
-        public override void Exit(GoalKeeper keeper)
+		public override void Exit (AddisonGoaltender keeper)
         {
             keeper.Steering().PursuitOff();
         }
 
-        public override bool OnMessage(GoalKeeper keeper, Telegram message)
+		public override bool OnMessage (AddisonGoaltender keeper, Telegram message)
         {
             return false;
         }

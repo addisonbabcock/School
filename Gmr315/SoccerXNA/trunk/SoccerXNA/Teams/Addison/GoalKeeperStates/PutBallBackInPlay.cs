@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
 {
-    public class PutBallBackInPlay : State<GoalKeeper>
+	public class PutBallBackInPlay : State<AddisonGoaltender>
     {
         private static PutBallBackInPlay instance;
 
@@ -25,7 +25,7 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             return instance;
         }
 
-        public override void Enter(GoalKeeper keeper)
+		public override void Enter (AddisonGoaltender keeper)
         {
             //let the team know that the keeper is in control
             keeper.Team().SetControllingPlayer(keeper);
@@ -35,7 +35,7 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             keeper.Team().ReturnAllFieldPlayersToHome();
         }
 
-        public override void Execute(GoalKeeper keeper)
+		public override void Execute (AddisonGoaltender keeper)
         {
             ParamLoader Prm = ParamLoader.Instance;
             MessageDispatcher Dispatcher = MessageDispatcher.Instance();
@@ -72,11 +72,11 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             keeper.SetVelocity(new Vector2());
         }
 
-        public override void Exit(GoalKeeper keeper)
+		public override void Exit (AddisonGoaltender keeper)
         {
         }
 
-        public override bool OnMessage(GoalKeeper keeper, Telegram message)
+		public override bool OnMessage (AddisonGoaltender keeper, Telegram message)
         {
             return false;
         }

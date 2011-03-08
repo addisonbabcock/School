@@ -7,7 +7,7 @@ using Common.Messaging;
 
 namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
 {
-    public class ReturnHome : State<GoalKeeper>
+	public class ReturnHome : State<AddisonGoaltender>
     {
         private static ReturnHome instance;
 
@@ -24,12 +24,12 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             return instance;
         }
 
-        public override void Enter(GoalKeeper keeper)
+		public override void Enter (AddisonGoaltender keeper)
         {
             keeper.Steering().InterposeOff();
         }
 
-        public override void Execute(GoalKeeper keeper)
+		public override void Execute (AddisonGoaltender keeper)
         {
             keeper.Steering().SetTarget(keeper.HomeRegion().Center());
 
@@ -41,12 +41,12 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             }
         }
 
-        public override void Exit(GoalKeeper keeper)
+		public override void Exit (AddisonGoaltender keeper)
         {
             keeper.Steering().ArriveOff();
         }
 
-        public override bool OnMessage(GoalKeeper keeper, Telegram message)
+		public override bool OnMessage (AddisonGoaltender keeper, Telegram message)
         {
             return false;
         }

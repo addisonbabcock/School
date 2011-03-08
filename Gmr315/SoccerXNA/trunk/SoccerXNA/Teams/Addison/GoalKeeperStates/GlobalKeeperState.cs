@@ -7,7 +7,7 @@ using Common.Messaging;
 
 namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
 {
-    public class GlobalKeeperState : State<GoalKeeper>
+	public class GlobalKeeperState : State<AddisonGoaltender>
     {
         private static GlobalKeeperState instance;
 
@@ -24,19 +24,19 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
             return instance;
         }
 
-        public override void Enter(GoalKeeper keeper)
+		public override void Enter (AddisonGoaltender keeper)
         {
         }
 
-        public override void Execute(GoalKeeper keeper)
+		public override void Execute (AddisonGoaltender keeper)
         {
         }
 
-        public override void Exit(GoalKeeper keeper)
+		public override void Exit (AddisonGoaltender keeper)
         {
         }
 
-        public override bool OnMessage(GoalKeeper keeper, Telegram telegram)
+		public override bool OnMessage (AddisonGoaltender keeper, Telegram telegram)
         {
             switch (telegram.Msg)
             {

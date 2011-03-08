@@ -60,7 +60,7 @@ namespace SoccerXNA.Teams.AddisonTeam
 			if (Color () == team_color.blue)
 			{
 				//goalkeeper
-				m_Players.Add (new GoalKeeper (Game, this,
+				m_Players.Add (new AddisonGoaltender (Game, this,
 										   1,
 										   TendGoal.Instance (),
 										   GlobalKeeperState.Instance (),
@@ -138,7 +138,7 @@ namespace SoccerXNA.Teams.AddisonTeam
 			{
 
 				//goalkeeper
-				m_Players.Add (new GoalKeeper (Game, this,
+				m_Players.Add (new AddisonGoaltender (Game, this,
 										   16,
 										   TendGoal.Instance (),
 										   GlobalKeeperState.Instance (),

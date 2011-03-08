@@ -70,6 +70,7 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Data" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -99,6 +100,7 @@
     <Compile Include="SoccerPitch.cs" />
     <Compile Include="SteeringBehaviors.cs" />
     <Compile Include="SupportSpotCalculator.cs" />
+    <Compile Include="Teams\Addison\AddisonGoaltender.cs" />
     <Compile Include="Teams\Addison\AddisonTeam.cs" />
     <Compile Include="Teams\Addison\FieldPlayerStates\ChaseBall.cs" />
     <Compile Include="Teams\Addison\FieldPlayerStates\Dribble.cs" />
