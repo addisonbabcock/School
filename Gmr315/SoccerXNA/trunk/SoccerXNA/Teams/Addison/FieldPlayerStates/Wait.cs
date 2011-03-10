@@ -73,15 +73,16 @@ namespace SoccerXNA.Teams.AddisonTeam.FieldPlayerStates
                 //if the ball is nearer this player than any other team member  AND
                 //there is not an assigned receiver AND neither goalkeeper has
                 //the ball, go chase it
-                if (player.isClosestTeamMemberToBall() &&
-                    player.Team().Receiver() == null &&
+                if (((player.isClosestTeamMemberToBall() &&
+                    player.Team().Receiver() == null) ||
+					(!player.Team().InControl()) &&
+					Vector2.Distance (player.Ball().Pos(), player.Pos()) < 100.0f) &&
                     !player.Pitch().GoalKeeperHasBall())
                 {
                     player.GetFSM().ChangeState(ChaseBall.Instance());
-
                     return;
                 }
-            }
+			}
         }
 
         public override void Exit(FieldPlayer player)
