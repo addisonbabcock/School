@@ -137,6 +137,24 @@
     <Compile Include="Teams\BucklandTeam\TeamStates\PrepareForKickOff.cs" />
     <Compile Include="Teams\ITeam.cs" />
     <Compile Include="Teams\SoccerTeamFactory.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\ChaseBall.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\Defense.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\Dribble.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\GlobalPlayerState.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\KickBall.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\ReceiveBall.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\ReturnToHomeRegion.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\SupportAttacker.cs" />
+    <Compile Include="Teams\Tomahawks\FieldPlayerStates\Wait.cs" />
+    <Compile Include="Teams\Tomahawks\GoalKeeperStates\GlobalKeeperState.cs" />
+    <Compile Include="Teams\Tomahawks\GoalKeeperStates\InterceptBall.cs" />
+    <Compile Include="Teams\Tomahawks\GoalKeeperStates\PutBallBackInPlay.cs" />
+    <Compile Include="Teams\Tomahawks\GoalKeeperStates\ReturnHome.cs" />
+    <Compile Include="Teams\Tomahawks\GoalKeeperStates\TendGoal.cs" />
+    <Compile Include="Teams\Tomahawks\TeamStates\Attacking.cs" />
+    <Compile Include="Teams\Tomahawks\TeamStates\Defending.cs" />
+    <Compile Include="Teams\Tomahawks\TeamStates\PrepareForKickOff.cs" />
+    <Compile Include="Teams\Tomahawks\Thomahawks.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
