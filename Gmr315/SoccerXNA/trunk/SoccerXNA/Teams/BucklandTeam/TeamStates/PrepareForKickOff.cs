@@ -50,24 +50,28 @@ namespace SoccerXNA.Teams.BucklandTeam.TeamStates
 
         public override void Execute(AbstractSoccerTeam team)
         {
-            //if both teams in position, start the game
-            if (team.AllPlayersAtHome() && team.Opponents().AllPlayersAtHome()
-                || (team.AllPlayersAtHome() && team.Pitch().OneTeamReady()))
-            {
-                team.GetFSM().ChangeState(Defending.Instance());
-            }
-        }
+			if (team.AllPlayersAtHome () && team.Opponents ().AllPlayersAtHome ()
+				|| (team.AllPlayersAtHome () && team.Pitch ().OneTeamReady ()))
+			{
+				if (team.Color () == AbstractSoccerTeam.team_color.blue)
+				{
+					team.Pitch ().SetBlueTeamReady ();
+				}
+				else
+				{
+					team.Pitch ().SetRedTeamReady ();
+				}
+
+			}
+
+			if (team.Pitch ().GameOn ())
+			{
+				team.GetFSM ().ChangeState (Defending.Instance ());
+			}
+		}
 
         public override void Exit(AbstractSoccerTeam team)
         {
-            if (team.Color() == AbstractSoccerTeam.team_color.blue)
-            {
-                team.Pitch().SetBlueTeamReady();
-            }
-            else
-            {
-                team.Pitch().SetRedTeamReady();
-            }
         }
 
         public override bool OnMessage(AbstractSoccerTeam team, Telegram message)

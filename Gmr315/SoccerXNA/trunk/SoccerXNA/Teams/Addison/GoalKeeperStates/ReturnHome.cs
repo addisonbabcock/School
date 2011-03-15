@@ -27,6 +27,7 @@ namespace SoccerXNA.Teams.AddisonTeam.GoalKeeperStates
 		public override void Enter (AddisonGoaltender keeper)
         {
             keeper.Steering().InterposeOff();
+			keeper.Steering ().ArriveOn ();
         }
 
 		public override void Execute (AddisonGoaltender keeper)
