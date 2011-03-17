@@ -1,0 +1,2 @@
+Soccer XNA bugs
+  - Occassional bug where goalie leaves the goal for unknown reason.  Unable to track it down.
