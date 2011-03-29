@@ -1,0 +1,308 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectGuid>{9DAA19D7-B957-49BB-B9C2-E5CB5477272F}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Raven</RootNamespace>
+    <AssemblyName>Raven</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <XnaFrameworkVersion>v3.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <XnaCrossPlatformGroupID>13d2b11d-e9b4-43a6-ac80-49440d9827a5</XnaCrossPlatformGroupID>
+    <ApplicationIcon>Game.ico</ApplicationIcon>
+    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>false</XnaCompressContent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>true</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="lua51, Version=0.0.0.0, Culture=neutral, PublicKeyToken=1e1fb15b02227b8a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lua\lua51.dll</HintPath>
+    </Reference>
+    <Reference Include="LuaInterface, Version=2.0.0.16708, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lua\LuaInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=3.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86">
+      <Private>False</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=3.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractBot.cs" />
+    <Compile Include="AbstractSteering.cs" />
+    <Compile Include="AbstractTargetingSystem.cs" />
+    <Compile Include="AbstractWeaponSystem.cs" />
+    <Compile Include="armory\Blaster.cs" />
+    <Compile Include="armory\Bolt.cs" />
+    <Compile Include="armory\Pellet.cs" />
+    <Compile Include="armory\RailGun.cs" />
+    <Compile Include="armory\Raven_Projectile.cs" />
+    <Compile Include="armory\Raven_Weapon.cs" />
+    <Compile Include="armory\Rocket.cs" />
+    <Compile Include="armory\RocketLauncher.cs" />
+    <Compile Include="armory\ShotGun.cs" />
+    <Compile Include="armory\Slug.cs" />
+    <Compile Include="Bots\BotFactory.cs" />
+    <Compile Include="Bots\GrahameBot\Grahame_Bot.cs" />
+    <Compile Include="Bots\GrahameBot\Grahame_BotScriptor.cs" />
+    <Compile Include="Bots\GrahameBot\Grahame_BotSteering.cs" />
+    <Compile Include="Bots\GrahameBot\Grahame_TargetingSystem.cs" />
+    <Compile Include="Bots\GrahameBot\Grahame_WeaponSystem.cs" />
+    <Compile Include="Bots\ToreyBot\Torey_Bot.cs" />
+    <Compile Include="Bots\ToreyBot\Torey_BotScriptor.cs" />
+    <Compile Include="Bots\ToreyBot\Torey_BotSteering.cs" />
+    <Compile Include="Bots\ToreyBot\Torey_TargetingSystem.cs" />
+    <Compile Include="Bots\ToreyBot\Torey_WeaponSystem.cs" />
+    <Compile Include="Bots\RyanBot\Ryan_Bot.cs" />
+    <Compile Include="Bots\RyanBot\Ryan_BotScriptor.cs" />
+    <Compile Include="Bots\RyanBot\Ryan_BotSteering.cs" />
+    <Compile Include="Bots\RyanBot\Ryan_TargetingSystem.cs" />
+    <Compile Include="Bots\RyanBot\Ryan_WeaponSystem.cs" />
+    <Compile Include="Bots\LoganBot\Logan_Bot.cs" />
+    <Compile Include="Bots\LoganBot\Logan_BotScriptor.cs" />
+    <Compile Include="Bots\LoganBot\Logan_BotSteering.cs" />
+    <Compile Include="Bots\LoganBot\Logan_TargetingSystem.cs" />
+    <Compile Include="Bots\LoganBot\Logan_WeaponSystem.cs" />
+    <Compile Include="Bots\CraigBot\Craig_Bot.cs" />
+    <Compile Include="Bots\CraigBot\Craig_BotScriptor.cs" />
+    <Compile Include="Bots\CraigBot\Craig_BotSteering.cs" />
+    <Compile Include="Bots\CraigBot\Craig_TargetingSystem.cs" />
+    <Compile Include="Bots\CraigBot\Craig_WeaponSystem.cs" />
+    <Compile Include="Bots\ScottBot\Scott_Bot.cs" />
+    <Compile Include="Bots\ScottBot\Scott_BotScriptor.cs" />
+    <Compile Include="Bots\ScottBot\Scott_BotSteering.cs" />
+    <Compile Include="Bots\ScottBot\Scott_TargetingSystem.cs" />
+    <Compile Include="Bots\ScottBot\Scott_WeaponSystem.cs" />
+    <Compile Include="Bots\TravisBot\Travis_Bot.cs" />
+    <Compile Include="Bots\TravisBot\Travis_BotScriptor.cs" />
+    <Compile Include="Bots\TravisBot\Travis_BotSteering.cs" />
+    <Compile Include="Bots\TravisBot\Travis_TargetingSystem.cs" />
+    <Compile Include="Bots\TravisBot\Travis_WeaponSystem.cs" />
+    <Compile Include="Bots\DanBot\Dan_Bot.cs" />
+    <Compile Include="Bots\DanBot\Dan_BotScriptor.cs" />
+    <Compile Include="Bots\DanBot\Dan_BotSteering.cs" />
+    <Compile Include="Bots\DanBot\Dan_TargetingSystem.cs" />
+    <Compile Include="Bots\DanBot\Dan_WeaponSystem.cs" />
+    <Compile Include="Bots\IBot.cs" />
+    <Compile Include="Bots\RavenBot\Raven_Bot.cs" />
+    <Compile Include="Bots\RavenBot\Raven_BotScriptor.cs" />
+    <Compile Include="Bots\RavenBot\Raven_BotSteering.cs" />
+    <Compile Include="Bots\RavenBot\Raven_TargetingSystem.cs" />
+    <Compile Include="Bots\RavenBot\Raven_WeaponSystem.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="goals\AttackTargetGoal_Evaluator.cs" />
+    <Compile Include="goals\ExploreGoal_Evaluator.cs" />
+    <Compile Include="goals\GetHealthGoal_Evaluator.cs" />
+    <Compile Include="goals\GetWeaponGoal_Evaluator.cs" />
+    <Compile Include="goals\GoalEvaluator.cs" />
+    <Compile Include="goals\Goal_AdjustRange.cs" />
+    <Compile Include="goals\Goal_AttackTarget.cs" />
+    <Compile Include="goals\Goal_DodgeSideToSide.cs" />
+    <Compile Include="goals\Goal_Evaluator.cs" />
+    <Compile Include="goals\Goal_Explore.cs" />
+    <Compile Include="goals\Goal_FindTarget.cs" />
+    <Compile Include="goals\Goal_FollowPath.cs" />
+    <Compile Include="goals\Goal_GetItem.cs" />
+    <Compile Include="goals\Goal_HuntTarget.cs" />
+    <Compile Include="goals\Goal_MoveToItem.cs" />
+    <Compile Include="goals\Goal_MoveToPosition.cs" />
+    <Compile Include="goals\Goal_NegotiateDoor.cs" />
+    <Compile Include="goals\Goal_SayPhrase.cs" />
+    <Compile Include="goals\Goal_SeekToPosition.cs" />
+    <Compile Include="goals\Goal_Think.cs" />
+    <Compile Include="goals\Goal_TraverseEdge.cs" />
+    <Compile Include="goals\Goal_Wander.cs" />
+    <Compile Include="goals\Raven_Feature.cs" />
+    <Compile Include="goals\Raven_Goal_Types.cs" />
+    <Compile Include="GraveMarkers.cs" />
+    <Compile Include="lua\Raven_Scriptor.cs" />
+    <Compile Include="MemoryRecord.cs" />
+    <Compile Include="navigation\FindActiveTrigger.cs" />
+    <Compile Include="navigation\Graph_SearchAStar_TS.cs" />
+    <Compile Include="navigation\Graph_SearchDijkstras_TS.cs" />
+    <Compile Include="navigation\Graph_SearchTimeSliced.cs" />
+    <Compile Include="navigation\ITerminatingCondition.cs" />
+    <Compile Include="navigation\PathEdge.cs" />
+    <Compile Include="navigation\PathManager.cs" />
+    <Compile Include="navigation\PathTarget.cs" />
+    <Compile Include="navigation\Raven_PathPlanner.cs" />
+    <Compile Include="navigation\TimeSliceResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Raven_Door.cs" />
+    <Compile Include="Raven_Game.cs" />
+    <Compile Include="Raven_Map.cs" />
+    <Compile Include="Raven_Messages.cs" />
+    <Compile Include="Raven_ObjectEnumerations.cs" />
+    <Compile Include="Raven_SensoryMemory.cs" />
+    <Compile Include="Raven_Target.cs" />
+    <Compile Include="Raven_UserOptions.cs" />
+    <Compile Include="triggers\Trigger_HealthGiver.cs" />
+    <Compile Include="triggers\Trigger_OnButtonSendMsg.cs" />
+    <Compile Include="triggers\Trigger_SoundNotify.cs" />
+    <Compile Include="triggers\Trigger_WeaponGiver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Game.ico" />
+    <Content Include="GameThumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <NestedContentProject Include="Content\Content.contentproj">
+      <Project>5478e0aa-20fb-4d92-a654-cd2dcf4a070e</Project>
+      <Visible>False</Visible>
+    </NestedContentProject>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 3.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bots\GrahameBot\GrahameBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\ToreyBot\ToreyBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\RyanBot\RyanBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\LoganBot\LoganBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\CraigBot\CraigBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\ScottBot\ScottBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\TravisBot\TravisBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\DanBot\DanBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Bots\RavenBot\RavenBot.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\blank400x400.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\clearDM1.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\Raven_DM1.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\Raven_DM1_asTEST.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="maps\Raven_DM1_With_Doors.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Params.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{1E75F2C6-FE7E-4FE5-ADB6-9799BB81376F}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
