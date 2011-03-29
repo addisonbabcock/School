@@ -70,17 +70,17 @@ namespace Raven.Bots.AddisonBot
 
         public override Color GetBodyColor()
         {
-            return Color.Blue;
+            return Color.Green;
         }
 
         public override Color GetHeadColor()
         {
-            return Color.Brown;
+            return Color.Green;
         }
 
         public override string GetName()
         {
-            return "Craig";
+            return "Addison";
         }
 
         protected override void DoUpdate()
