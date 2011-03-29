@@ -180,7 +180,7 @@ Pellet_Persistance = 0.1
 Pellet_Damage      = 1
 
 BotNames1 = "Dan_Bot"
-BotNames2 = "Craig_Bot"
+BotNames2 = "Addison_Bot"
 BotNames3 = "Logan_Bot"
 
 GameDuration = 1

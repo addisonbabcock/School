@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 
-namespace Raven.Bots.CraigBot
+namespace Raven.Bots.AddisonBot
 {
-    public class Craig_TargetingSystem : AbstractTargetingSystem
+    public class Addison_TargetingSystem : AbstractTargetingSystem
     {
-        public Craig_TargetingSystem(AbstractBot owner)
+        public Addison_TargetingSystem(AbstractBot owner)
             : base(owner)
         {
         }

@@ -6,16 +6,16 @@ using Microsoft.Xna.Framework.Graphics;
 using Raven.goals;
 using Raven.navigation;
 
-namespace Raven.Bots.CraigBot
+namespace Raven.Bots.AddisonBot
 {
-    public class Craig_Bot : AbstractBot, IBot
+    public class Addison_Bot : AbstractBot, IBot
     {
-        protected static Craig_BotScriptor m_pScript = Craig_BotScriptor.Instance();
+        protected static Addison_BotScriptor m_pScript = Addison_BotScriptor.Instance();
 
-        public Craig_Bot(Raven_Game world, Vector2 pos) :
+        public Addison_Bot(Raven_Game world, Vector2 pos) :
             base(world, pos)
         {
-            m_pScript = Craig_BotScriptor.Instance();
+            m_pScript = Addison_BotScriptor.Instance();
             SetEntityType((int) Raven_Objects.type_bot);
 
             SetUpVertexBuffer();
@@ -27,7 +27,7 @@ namespace Raven.Bots.CraigBot
             m_pPathPlanner = new Raven_PathPlanner(this);
 
             //create the steering behavior class
-            m_pSteering = new Craig_BotSteering(world, this);
+            m_pSteering = new Addison_BotSteering(world, this);
 
             //create the regulators
             m_pWeaponSelectionRegulator = new Regulator(script.GetDouble("Bot_WeaponSelectionFrequency"));
@@ -40,9 +40,9 @@ namespace Raven.Bots.CraigBot
             m_pBrain = new Goal_Think(this);
 
             //create the targeting system
-            m_pTargSys = new Craig_TargetingSystem(this);
+            m_pTargSys = new Addison_TargetingSystem(this);
 
-            m_pWeaponSys = new Craig_WeaponSystem(this,
+            m_pWeaponSys = new Addison_WeaponSystem(this,
                                                   script.GetDouble("Bot_ReactionTime"),
                                                   script.GetDouble("Bot_AimAccuracy"),
                                                   script.GetDouble("Bot_AimPersistance"));

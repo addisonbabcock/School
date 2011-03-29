@@ -126,11 +126,11 @@
     <Compile Include="Bots\LoganBot\Logan_BotSteering.cs" />
     <Compile Include="Bots\LoganBot\Logan_TargetingSystem.cs" />
     <Compile Include="Bots\LoganBot\Logan_WeaponSystem.cs" />
-    <Compile Include="Bots\CraigBot\Craig_Bot.cs" />
-    <Compile Include="Bots\CraigBot\Craig_BotScriptor.cs" />
-    <Compile Include="Bots\CraigBot\Craig_BotSteering.cs" />
-    <Compile Include="Bots\CraigBot\Craig_TargetingSystem.cs" />
-    <Compile Include="Bots\CraigBot\Craig_WeaponSystem.cs" />
+    <Compile Include="Bots\AddisonBot\Addison_Bot.cs" />
+    <Compile Include="Bots\AddisonBot\Addison_BotScriptor.cs" />
+    <Compile Include="Bots\AddisonBot\Addison_BotSteering.cs" />
+    <Compile Include="Bots\AddisonBot\Addison_TargetingSystem.cs" />
+    <Compile Include="Bots\AddisonBot\Addison_WeaponSystem.cs" />
     <Compile Include="Bots\ScottBot\Scott_Bot.cs" />
     <Compile Include="Bots\ScottBot\Scott_BotScriptor.cs" />
     <Compile Include="Bots\ScottBot\Scott_BotSteering.cs" />
@@ -256,7 +256,7 @@
     <None Include="Bots\LoganBot\LoganBot.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Bots\CraigBot\CraigBot.lua">
+    <None Include="Bots\AddisonBot\AddisonBot.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Bots\ScottBot\ScottBot.lua">

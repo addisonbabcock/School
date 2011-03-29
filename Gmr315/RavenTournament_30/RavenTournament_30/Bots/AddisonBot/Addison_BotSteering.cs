@@ -6,16 +6,16 @@ using Common.Misc;
 using Microsoft.Xna.Framework;
 using Raven.lua;
 
-namespace Raven.Bots.CraigBot
+namespace Raven.Bots.AddisonBot
 {
-    public class Craig_BotSteering : AbstractSteering
+    public class Addison_BotSteering : AbstractSteering
     {
 
 
-        public Craig_BotSteering(Raven_Game world, AbstractBot agent)
+        public Addison_BotSteering(Raven_Game world, AbstractBot agent)
             : base(world, agent)
         {
-            Craig_BotScriptor myScript = Craig_BotScriptor.Instance();
+            Addison_BotScriptor myScript = Addison_BotScriptor.Instance();
             m_dWeightSeparation = myScript.GetDouble("SeparationWeight");
             m_dWeightWander = myScript.GetDouble("WanderWeight");
             m_dWeightWallAvoidance = myScript.GetDouble("WallAvoidanceWeight");
