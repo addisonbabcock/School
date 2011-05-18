@@ -1,6 +1,6 @@
 
 var projectile : Rigidbody;
-var speed = 100;
+var speed = 1000;
 
 function Update () 
 {

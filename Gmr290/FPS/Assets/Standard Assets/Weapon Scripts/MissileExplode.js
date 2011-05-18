@@ -1,6 +1,6 @@
 
 var explosion : GameObject;
-
+/*
 function OnCollisionEnter (collision : Collision)
 {
 	var contact : ContactPoint = collision.contacts [0];
@@ -8,3 +8,4 @@ function OnCollisionEnter (collision : Collision)
 	var instatiatedExplosion : GameObject = Instantiate (explosion, contact.point, rotation);
 	Destroy (gameObject);
 }
+*/
