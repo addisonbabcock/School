@@ -68,19 +68,26 @@ function Fire ()
 	
 	if (Time.time - fireRate > nextFireTime)
 	{
-		nextFireTime = Time.time - Time.deltaTime;
+		//nextFireTime = Time.time - fireRate;//Time.deltaTime;
 	}
 	
 	while (nextFireTime < Time.time && bulletsLeft != 0)
 	{
-		FireOneShot ();
-		nextFireTime += fireRate;
+		print ("Calling fire one shot.");
+		FireOneShoot ();
+		//nextFireTime += fireRate;
+		nextFireTime = Time.time + fireRate;
 	}
 }
 
-function FireOneShot ()
+function FireOneShoot ()
 {
 	print ("Firing shotgun.");
+	
+	if (animation)
+	{
+		animation.Play ();
+	}
 	
 	for (var i : int = 0; i < 15; i++)
 	{
@@ -104,7 +111,7 @@ function FireOneShot ()
 				hitParticles.Emit ();
 			}
 			
-			print ("Sending damage message.");
+			//print ("Sending damage message.");
 			hit.collider.SendMessageUpwards ("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
 		}
 	}

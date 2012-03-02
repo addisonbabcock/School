@@ -79,6 +79,11 @@ function Fire ()
 		FireOneShot ();
 		nextFireTime += fireRate;
 	}
+	
+	if (animation)
+	{
+		animation.Play ();
+	}
 }
 
 function FireOneShot ()
