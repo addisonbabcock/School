@@ -49,4 +49,3 @@ static function CopyTransformRecurse (src : Transform, dst : Transform)
 		}
 	}
 }
-

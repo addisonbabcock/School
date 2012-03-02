@@ -188,16 +188,3 @@ function PickNextWaypoint (currentWaypoint : AutoWayPoint)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
