@@ -1,4 +1,6 @@
 
+@script ExecuteInEditMode ()
+
 var gSkin : GUISkin;
 var backdrop : Texture2D;
 private var isLoading = false;
@@ -17,7 +19,9 @@ function OnGUI ()
 	var backgroundStyle : GUIStyle = new GUIStyle ();
 	backgroundStyle.normal.background = backdrop;
 	GUI.Label (Rect ((Screen.width - (Screen.height * 2)) * 0.75, 0, Screen.height * 2, Screen.height), "", backgroundStyle);
-	GUI.Label (Rect ((Screen.width / 2) - 197, 50, 400, 100), "Lerpz Escapes", "mainMenuTitle");
+	GUI.Label (Rect (Screen.width / 2, 50, 0, 100), "Lerpz Loots!", "mainMenuTitle");
+	
+	GUI.Label (Rect (Screen.width / 2, 150, 0, 50), "Collect the coins and escape!", "instructions");
 	
 	if (GUI.Button (Rect ((Screen.width / 2) - 70, Screen.height - 160, 140, 70), "Play"))
 	{
