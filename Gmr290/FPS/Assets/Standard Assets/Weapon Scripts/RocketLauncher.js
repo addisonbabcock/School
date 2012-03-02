@@ -7,7 +7,8 @@ private var lastShot = -10.0;
 
 function Start ()
 {
-	audio.Stop ();
+	if (audio)
+		audio.Stop ();
 }
 
 function Fire ()
@@ -27,7 +28,8 @@ function Fire ()
 		lastShot = Time.time;
 		ammoCount--;
 		
-		audio.Play ();
+		if (audio)
+			audio.Play ();
 	}
 }
 

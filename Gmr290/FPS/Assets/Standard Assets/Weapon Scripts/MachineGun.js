@@ -39,10 +39,13 @@ function LateUpdate ()
 			
 			if (audio)
 			{
-				if (!audio.isPlaying)
+				/*if (!audio.isPlaying)
 				{
 					audio.Play ();
-				}
+				}*/
+				if (audio.isPlaying)
+					audio.Stop ();
+				audio.Play ();
 //				audio.loop = true;
 			}
 		}
