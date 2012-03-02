@@ -13,6 +13,10 @@ function Start ()
 		{
 			hit.rigidbody.AddExplosionForce (explosionPower, transform.position, explosionRadius);
 		}
+		if (hit.gameObject)
+		{
+			hit.gameObject.SendMessageUpwards ("ApplyDamage", 30.0, SendMessageOptions.DontRequireReceiver);
+		}
 	}
 	
 	if (particleEmitter)

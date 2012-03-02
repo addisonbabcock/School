@@ -95,6 +95,7 @@
      <None Include="Assets\Standard Assets\Weapon Scripts\RocketExplosion.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\RocketLauncher.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\SentryGun.js" />
+     <None Include="Assets\Standard Assets\Weapon Scripts\Shotgun.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\SphereLauncher.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\TurnOffMuzzleFlash.js" />
   </ItemGroup>

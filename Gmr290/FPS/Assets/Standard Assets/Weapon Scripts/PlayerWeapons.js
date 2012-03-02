@@ -1,4 +1,6 @@
 
+var selectedWeapon : int;
+
 function Start ()
 {
 	SelectWeapon (0);
@@ -19,6 +21,10 @@ function Update ()
 	else if (Input.GetKeyDown ("2"))
 	{
 		SelectWeapon (1);
+	}
+	else if (Input.GetKeyDown ("3"))
+	{
+		SelectWeapon (2);
 	}
 	
 	if (Input.GetKeyDown ("r"))
@@ -45,4 +51,6 @@ function SelectWeapon (index : int)
 			transform.GetChild (i).gameObject.SetActiveRecursively (false);
 		}
 	}
+	
+	selectedWeapon = index;
 }

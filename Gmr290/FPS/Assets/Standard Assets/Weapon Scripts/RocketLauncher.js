@@ -39,3 +39,7 @@ function Reload ()
 	ammoCount = 20; 
 }
 
+function GetRocketsLeft ()
+{
+	return ammoCount;
+}

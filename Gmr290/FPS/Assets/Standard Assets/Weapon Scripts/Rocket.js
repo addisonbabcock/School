@@ -14,6 +14,9 @@ function OnCollisionEnter (collision : Collision)
 	var rotation = Quaternion.FromToRotation (Vector3.up, contact.normal);
 	Instantiate (explosion, contact.point, rotation);
 	
+	if (collision.gameObject)
+		collision.gameObject.SendMessageUpwards ("ApplyDamage", 30.0, SendMessageOptions.DontRequireReceiver);
+	
 	Kill ();
 }
 

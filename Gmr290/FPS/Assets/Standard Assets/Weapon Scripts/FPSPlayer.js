@@ -14,6 +14,7 @@ var audioStepLength = 0.3;
 
 private var machineGun : MachineGun;
 private var rocketLauncher : RocketLauncher;
+private var shotgun : Shotgun;
 private var healthGUIWidth = 0.0;
 private var gotHitTimer = -1.0;
 
@@ -23,6 +24,7 @@ function Awake ()
 {
 	machineGun = GetComponentInChildren (MachineGun);
 	rocketLauncher = GetComponentInChildren (RocketLauncher);
+	shotgun = GetComponentInChildren (Shotgun);
 	
 	PlayStepSounds ();
 	
@@ -99,8 +101,17 @@ function UpdateGUI ()
 	
 	healthGUI.pixelInset.xMax = healthGUI.pixelInset.xMin + healthGUIWidth * healthFraction;
 	
-	if (machineGun)
+	var playerWeapons = GetComponentInChildren (PlayerWeapons);
+	var selectedWeapon = 0;
+	if (playerWeapons)
+		selectedWeapon = playerWeapons.selectedWeapon;
+	
+	if (machineGun && selectedWeapon == 0)
 		bulletGUI.text = machineGun.GetBulletsLeft ().ToString ();
+	else if (rocketLauncher && selectedWeapon == 1)
+		bulletGUI.text = rocketLauncher.GetRocketsLeft ().ToString ();
+	else if (shotgun && selectedWeapon == 2)
+		bulletGUI.text = shotgun.GetBulletsLeft ().ToString ();
 	
 	if (rocketLauncher)
 	{
