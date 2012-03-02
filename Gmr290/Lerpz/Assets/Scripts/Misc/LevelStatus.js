@@ -64,11 +64,12 @@ function LevelCompleted ()
 	
 	if (levelCompleteSound)
 	{
-		AudioSource.PlayClipAtPoint (levelCompleteSound, levelGoal.transform.position, 2.0);
+/*		AudioSource.PlayClipAtPoint (levelCompleteSound, levelGoal.transform.position, 2.0);
 		levelGoal.animation.Play ();
+		levelCompletedCamera.animation.Play ();
 		
-		yield WaitForSeconds (levelGoal.animation.clip.length);
+		yield WaitForSeconds (levelGoal.animation.clip.length);*/
 		
-		Application.LoadLevel ("GameOver");
+		Application.LoadLevel ("Winner");
 	}
 }
