@@ -87,7 +87,9 @@
      <None Include="Assets\Standard Assets\Weapon Scripts\Rocket.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\RocketExplosion.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\RocketLauncher.js" />
+     <None Include="Assets\Standard Assets\Weapon Scripts\SentryGun.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\SphereLauncher.js" />
+     <None Include="Assets\Standard Assets\Weapon Scripts\TurnOffMuzzleFlash.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
