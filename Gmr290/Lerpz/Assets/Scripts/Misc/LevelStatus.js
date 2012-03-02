@@ -9,6 +9,7 @@ var levelCompleteSound : AudioClip;
 var mainCamera : GameObject;
 var unlockedCamera : GameObject;
 var levelCompletedCamera : GameObject;
+var levelStartedCamera : GameObject;
 
 var itemsNeeded: int = 20;	// This is how many fuel canisters the player must collect.
 
@@ -23,6 +24,29 @@ function Awake()
 	if (!playerLink)
 		Debug.Log ("Could not get link to Lerpz");
 	levelGoal.GetComponent (MeshCollider).isTrigger = false;
+	
+	PlayIntroAnimation ();
+}
+
+function PlayIntroAnimation ()
+{
+	Debug.Log ("Trying to start up the animation...");
+	var mainCamera = Camera.main;
+	Camera.main.enabled = false;
+//	playerLink.GetComponent (AudioListener).enabled = false;
+	levelStartedCamera.active = true;
+//	levelStartedCamera.GetComponent (AudioListener).enabled = true;
+	playerLink.GetComponent (ThirdPersonController).HidePlayer ();
+	levelStartedCamera.animation.Play ();
+	Debug.Log ("Animation started.");
+	
+	yield WaitForSeconds (12);//(levelCompletedCamera.animation.clip.length);
+	Debug.Log ("Finished opening animation.");
+	levelStartedCamera.active = false;
+//	playerLink.GetComponent (AudioListener).enabled = true;
+//	Camera.main.enabled = true;
+	mainCamera.enabled = true;
+	playerLink.GetComponent (ThirdPersonController).ShowPlayer ();
 }
 
 function UnlockLevelExit ()
@@ -56,8 +80,8 @@ function UnlockLevelExit ()
 function LevelCompleted ()
 {
 	mainCamera.GetComponent (AudioListener).enabled = false;
-	levelCompletedCamera.active = true;
-	levelCompletedCamera.GetComponent (AudioListener).enabled = true;
+//	levelCompletedCamera.active = true;
+//	levelCompletedCamera.GetComponent (AudioListener).enabled = true;
 	
 	playerLink.GetComponent (ThirdPersonController).HidePlayer ();
 	playerLink.transform.position += Vector3.up * 500.0;

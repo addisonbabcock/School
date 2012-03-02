@@ -102,6 +102,8 @@ function ShowPlayer()
 
 function UpdateSmoothedMovementDirection ()
 {
+	if (!Camera.main)
+		return;
 	var cameraTransform = Camera.main.transform;
 	var grounded = IsGrounded();
 	

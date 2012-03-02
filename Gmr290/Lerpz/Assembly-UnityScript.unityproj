@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>9.0.21022</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{2E0B7D6A-18ED-1B9E-E898-08989B940621}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_3_4_0;UNITY_3_4;UNITY_EDITOR;ENABLE_PROFILER;UNITY_STANDALONE_OSX;ENABLE_GENERICS;ENABLE_DUCK_TYPING;ENABLE_TERRAIN;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CLOTH;ENABLE_WWW</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera\FadeoutLineOfSight.js" />
+     <Compile Include="Assets\Scripts\Camera\OrbitCamera.js" />
+     <Compile Include="Assets\Scripts\Camera\SmoothFollowCamera.js" />
+     <Compile Include="Assets\Scripts\Camera\SmoothLookAt.js" />
+     <Compile Include="Assets\Scripts\Camera\SpringFollowCamera.js" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyDamage.js" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyPoliceGuy.js" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyRespawn.js" />
+     <Compile Include="Assets\Scripts\Enemies\LaserTrap.js" />
+     <Compile Include="Assets\Scripts\GUI\FPS.js" />
+     <Compile Include="Assets\Scripts\GUI\GameHUD.js" />
+     <Compile Include="Assets\Scripts\GUI\GameOverGUI.js" />
+     <Compile Include="Assets\Scripts\GUI\GameOverScript.js" />
+     <Compile Include="Assets\Scripts\GUI\StartMenuGUI.js" />
+     <Compile Include="Assets\Scripts\Misc\DroppableMover.js" />
+     <Compile Include="Assets\Scripts\Misc\FenceTextureOffset.js" />
+     <Compile Include="Assets\Scripts\Misc\FuelCellGlowLookAt.js" />
+     <Compile Include="Assets\Scripts\Misc\HandleSpaceshipCollision.js" />
+     <Compile Include="Assets\Scripts\Misc\Jumppad.js" />
+     <Compile Include="Assets\Scripts\Misc\LevelStatus.js" />
+     <Compile Include="Assets\Scripts\Misc\ObjectRotator.js" />
+     <Compile Include="Assets\Scripts\Misc\OneShotParticles.js" />
+     <Compile Include="Assets\Scripts\Misc\Pickup.js" />
+     <Compile Include="Assets\Scripts\Misc\Respawn.js" />
+     <Compile Include="Assets\Scripts\Player\FalloutDeath.js" />
+     <Compile Include="Assets\Scripts\Player\JetPackParticleController.js" />
+     <Compile Include="Assets\Scripts\Player\ThirdPersonCharacterAttack.js" />
+     <Compile Include="Assets\Scripts\Player\ThirdPersonController.js" />
+     <Compile Include="Assets\Scripts\Player\ThirdPersonPlayerAnimation.js" />
+     <Compile Include="Assets\Scripts\Player\ThirdPersonPushBodies.js" />
+     <Compile Include="Assets\Scripts\Player\ThirdPersonStatus.js" />
+     <Compile Include="Assets\Scripts\WaterLightmapFog.js" />
+     <None Include="Assets\Textures\Glass\glass.shader" />
+     <None Include="Assets\Blob-Shadow\ShadowProjection.shader" />
+     <None Include="Assets\Water\FX-IslandWaterFull.shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\skybox info.txt" />
+     <None Include="Assets\Water\FX-IslandWaterSimple.shader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{9B67AD72-2561-B8E0-3E49-5CEEECFA26BC}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
+	

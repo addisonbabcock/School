@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+
+Project("{7E83C42F-9D23-0078-5DE0-D32592652C36}") = "Lerpz - Development", "Assembly-CSharp-firstpass-vs.csproj", "{9B67AD72-2561-B8E0-3E49-5CEEECFA26BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B67AD72-2561-B8E0-3E49-5CEEECFA26BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B67AD72-2561-B8E0-3E49-5CEEECFA26BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B67AD72-2561-B8E0-3E49-5CEEECFA26BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B67AD72-2561-B8E0-3E49-5CEEECFA26BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	
+EndGlobal
