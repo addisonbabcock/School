@@ -1,0 +1,48 @@
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 8.17.12.7061]
+    Renderer: NVIDIA GeForce GTX 460M   
+    Vendor:   NVIDIA
+    VRAM:     1503 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 DF24=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<I> Initializing (RawInput).
+<RI> Input initialized.
+Non platform assembly: data-07960048 (this message is harmless)
+Non platform assembly: data-03187F50 (this message is harmless)
+Non platform assembly: data-0318B7C0 (this message is harmless)
+Platform assembly: G:\Documents\Code\GMR290\Lerpz_Build_Addison\Lerpz_Build_Addison_Data\Managed\UnityScript.Lang.dll (this message is harmless)
+Platform assembly: G:\Documents\Code\GMR290\Lerpz_Build_Addison\Lerpz_Build_Addison_Data\Managed\Boo.Lang.dll (this message is harmless)
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 2078.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+Trying to start up the animation...
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+$:MoveNext()
+UnityEngine.MonoBehaviour:StartCoroutine_Auto(IEnumerator)
+LevelStatus:Awake()
+ 
+(Filename: C:/BuildAgent/work/842f9557127e852/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 34)
+
+Animation started.
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+$:MoveNext()
+UnityEngine.MonoBehaviour:StartCoroutine_Auto(IEnumerator)
+LevelStatus:Awake()
+ 
+(Filename: C:/BuildAgent/work/842f9557127e852/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 34)
+
+Finished opening animation.
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+$:MoveNext()
+ 
+(Filename: C:/BuildAgent/work/842f9557127e852/Runtime/ExportGenerated/StandalonePlayer/UnityEngineDebug.cpp Line: 34)
+
+
+Unloading 382 unused Assets to reduce memory usage. Loaded Objects now: 210.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 163.
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
