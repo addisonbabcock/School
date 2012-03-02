@@ -3,6 +3,8 @@ var explosionRadius = 10.0;
 var explosionPower = 200.0;
 var explosionDamage = 100.0;
 var explosionTime = 1.0;
+var explosionSound : AudioSource;
+
 
 function Start ()
 {
@@ -32,6 +34,11 @@ function Start ()
 		particleEmitter.emit = true;
 		yield WaitForSeconds (0.5);
 		particleEmitter.emit = false;
+	}
+	
+	if (explosionSound)
+	{
+		explosionSound.Play ();
 	}
 	
 	Destroy (gameObject, explosionTime);
