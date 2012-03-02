@@ -70,7 +70,10 @@ function FoundItem (numFound: int)
 // This allows for levels where the number of pickups is greater than the target number needed. 
 // This also lets us speed up the testing process by temporarily reducing the collecatbles needed. 
 // Our HUD will clamp to zero for us.
-
+	if (remainingItems == 0)
+	{
+		levelStateMachine.UnlockLevelExit ();
+	}
 }
 
 
@@ -111,4 +114,9 @@ function Die ()
 	SendMessage("ShowPlayer");	// Show the player again, ready for...	
 	// ... the respawn point to play it's particle effect
 	Respawn.currentRespawn.FireEffect ();
+}
+
+function LevelCompleted ()
+{
+	levelStateMachine.LevelCompleted ();
 }
