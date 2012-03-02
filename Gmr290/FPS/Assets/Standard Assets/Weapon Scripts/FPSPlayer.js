@@ -108,17 +108,14 @@ function UpdateGUI ()
 	
 	if (machineGun && selectedWeapon == 0)
 	{
-		print ("using machine gun");
 		bulletGUI.text = machineGun.GetBulletsLeft ().ToString ();
 	}
 	else if (rocketLauncher && selectedWeapon == 1)
 	{
-		print ("using rockets");
 		bulletGUI.text = rocketLauncher.GetRocketsLeft ().ToString ();
 	}
 	else if (shotgun && selectedWeapon == 2)
 	{
-		print ("using shotgun");
 		bulletGUI.text = shotgun.GetBulletsLeft ().ToString ();
 	}
 	

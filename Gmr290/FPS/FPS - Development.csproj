@@ -88,6 +88,7 @@
      <None Include="Assets\Standard Assets\Weapon Scripts\ExplosionSimple.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\FPSPlayer.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\LevelLoadFade.js" />
+     <None Include="Assets\Standard Assets\Weapon Scripts\LockCursor.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\MachineGun.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\MissileExplode.js" />
      <None Include="Assets\Standard Assets\Weapon Scripts\PlayerWeapons.js" />
