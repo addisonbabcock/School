@@ -6,6 +6,9 @@ var posX : float;
 var posY : float;
 var rocketWidth : float = 10;
 
+var drawWidth : float = 256;
+var drawHeight : float = 64;
+
 private var maxRockets : int = 0;
 private var rocketCount : int = 20;
 
@@ -24,8 +27,8 @@ function OnGUI ()
 	GUI.DrawTexture (Rect (
 			0, 
 			0, 
-			rocketTexture.width, 
-			rocketTexture.height), 
+			drawWidth, 
+			drawHeight), 
 		rocketTexture);
 	GUI.EndGroup ();
 }

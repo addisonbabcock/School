@@ -1,7 +1,7 @@
 
 var projectile : Rigidbody;
 var initialSpeed = 20.0;
-var reloadTime = 0.033;
+var reloadTime = 0.5;
 var ammoCount = 20;
 private var lastShot = -10.0;
 
