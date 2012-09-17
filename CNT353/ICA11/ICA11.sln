@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ICA11", "ICA11\ICA11.vcproj", "{35A7700C-E807-4827-9665-F1F87B5F6DB2}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ICA11", "ICA11\ICA11.vcxproj", "{35A7700C-E807-4827-9665-F1F87B5F6DB2}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
