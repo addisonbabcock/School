@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LAB6", "LAB6\LAB6.vcproj", "{B13581B6-D66A-42E8-B8A5-BDC9525C94B3}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LAB6", "LAB6\LAB6.vcxproj", "{B13581B6-D66A-42E8-B8A5-BDC9525C94B3}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
