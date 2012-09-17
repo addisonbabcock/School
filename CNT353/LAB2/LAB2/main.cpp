@@ -1,7 +1,7 @@
 #include "Bit.h"
 #include <iostream>
 #include <crtdbg.h>
-#include "e:\lab02_test.h"
+//#include "e:\lab02_test.h"
 
 using namespace std;
 
@@ -48,7 +48,7 @@ void Lab02Testy ()
 int main ()
 {
 	_CrtSetDbgFlag (_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-	Lab02Test ();
+	Lab02Testy ();
 	cin.get ();
 	return 0;
 }
