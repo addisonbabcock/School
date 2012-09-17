@@ -18,7 +18,6 @@ int main ()
 
 			cOne = cTwo; // should work transparently with existing assignment op 
 
-			double dValue;
 			cout << "cOne : " << cOne.Avg() <<  ", " << cOne.Sum() << endl;
 			cout << "cTwo : " << cTwo.Avg() <<  ", " << cTwo.Sum() << endl;
 			cout << "cThree : " << cThree.Avg() <<  ", " << cThree.Sum() << endl;
