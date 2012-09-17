@@ -27,10 +27,10 @@ void BubbleSortByName (Student* psData, unsigned int uiStudentCount)
 	Student sTemp;
 
 	//make several passes through the array
-	for (int i = 0; i < uiStudentCount - 1; i++)
+	for (unsigned int i = 0; i < uiStudentCount - 1; i++)
 	{
 		//make a pass through the array
-		for (int j = 0; j < uiStudentCount - 1; j++)
+		for (unsigned int j = 0; j < uiStudentCount - 1; j++)
 		{
 			//if the values are out of order...
 			if (strcmpi (psData [j].m_szName, psData [j + 1].m_szName) > 0)
