@@ -104,6 +104,7 @@ int main ()
 	cout << "Welcome to Rock, Paper, Scissors" << endl;
 
 	while (roundCount < 7)
+
 	{
 		while (!(humanInput >= 1 && humanInput <= 3)) // Display choices, get input and ensure validity
 		{
