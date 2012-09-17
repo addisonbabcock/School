@@ -7,7 +7,7 @@ int main ()
 	int iInput = 0;
 	char cSelection = 0;
 
-	while ((cSelection = Menu (pRoot)) != 'Q')
+	while ((cSelection = Menu (pRoot != 0)) != 'Q')
 	{
 		switch (cSelection)
 		{
