@@ -7,7 +7,7 @@ using namespace std;
 int const gkiRows = 22;
 int const gkiCols = 79;
 int const gkiSpaceshipRow = 10;
-char const gkcSpaceship = static_cast<char> (175);
+unsigned char const gkucSpaceship = 175;
 
 void FillIt (char pcaGrid [][gkiCols]);
 void DisplayIt (char pcaGrid [][gkiCols]);
@@ -43,7 +43,7 @@ int main ()
 			system ("pause");
 			return 0;
 		}
-		cGrid [gkiSpaceshipRow][i] = gkcSpaceship;
+		cGrid [gkiSpaceshipRow][i] = gkucSpaceship;
 
 		DisplayIt (cGrid);
 
