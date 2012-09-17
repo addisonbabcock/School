@@ -16,6 +16,7 @@ char ConvertGrade (double dGrade)
 		return 'B';
 	if (dGrade <= 100.0 && dGrade >= 80.0)
 		return 'A';
+	return ' ';
 }
 
 int main ()
