@@ -1,0 +1,58 @@
+Device     G22V10;
+
+/**  Inputs  **/
+
+Pin 1  = CLK;
+Pin 2  = RST;
+Pin 3  = EN;
+Pin 4  = F;
+
+/**  Outputs  **/
+
+Pin 22 = A;
+Pin 21 = B;
+Pin 20 = C;
+Pin 19 = D;
+Pin [16..18] = [SM0..2];
+
+/** Declarations and Intermediate Variable Definitions **/
+
+FIELD State = [SM0..2];
+
+$DEFINE For (EN & !RST & F)
+$DEFINE Rev (EN & !RST & !F)
+
+/**  Logic Equations  **/
+
+SEQUENCE State 
+{
+   PRESENT 0 IF For  NEXT 1;
+	     IF Rev  NEXT 4;
+	     DEFAULT NEXT 0;
+   PRESENT 1 IF For  NEXT 3;  
+             IF Rev  NEXT 0;
+	     DEFAULT NEXT 0;
+   PRESENT 3 IF For  NEXT 2;  
+   	     IF Rev  NEXT 1;
+	     DEFAULT NEXT 0;
+   PRESENT 2 IF For  NEXT 6;  
+   	     IF Rev  NEXT 3;
+	     DEFAULT NEXT 0;
+   PRESENT 6 IF For  NEXT 7;  
+   	     IF Rev  NEXT 2;
+	     DEFAULT NEXT 0;
+   PRESENT 7 IF For  NEXT 5;  
+   	     IF Rev  NEXT 6;
+	     DEFAULT NEXT 0; 
+   PRESENT 5 IF For  NEXT 4;  
+             IF Rev  NEXT 7;
+	     DEFAULT NEXT 0;
+   PRESENT 4 IF For  NEXT 0;  
+             IF Rev  NEXT 5;
+	     DEFAULT NEXT 0;
+}
+
+A = !RST & (State:0 # State:1 # State:6 # State:7);
+B = !RST & (State:1 # State:3 # State:7 # State:5);
+C = !RST & (State:3 # State:2 # State:5 # State:4);
+D = !RST & (State:0 # State:2 # State:6 # State:4);

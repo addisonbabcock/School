@@ -1,0 +1,113 @@
+
+*******************************************************************************
+                                    no_name
+*******************************************************************************
+
+CUPL(WM)        4.8a Serial# MW-65999997
+Device          g22v10  Library DLIB-h-37-1
+Created         Wed Apr 12 15:50:22 2006
+Name            xxxxxx
+Partno          xxxxxx
+Revision        xxxxxx
+Date            xxxxxx
+Designer        xxxxxx
+Company         xxxxxx
+Assembly        xxxxxx
+Location        xxxxxx
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+A =>
+    !RST & !SM1 & !SM2
+  # !RST & SM1 & SM2
+
+B =>
+    !RST & SM0
+
+C =>
+    !RST & SM1 & !SM2
+  # !RST & !SM1 & SM2
+
+D =>
+    !RST & !SM0
+
+SM0.d  =>
+    EN & F & !RST & !SM1 & !SM2
+  # EN & !F & !RST & !SM1 & SM2
+  # EN & !F & !RST & SM1 & !SM2
+  # EN & F & !RST & SM1 & SM2
+
+SM1.d  =>
+    EN & !F & !RST & SM0 & SM2
+  # EN & F & !RST & SM0 & !SM2
+  # EN & !RST & !SM0 & SM1
+
+SM2.d  =>
+    EN & !RST & SM0 & SM2
+  # EN & !F & !RST & !SM0 & !SM1
+  # EN & F & !RST & !SM0 & SM1
+
+State =>
+    SM0 , SM1 , SM2
+
+A.oe  =>
+    1 
+
+B.oe  =>
+    1 
+
+C.oe  =>
+    1 
+
+D.oe  =>
+    1 
+
+SM0.oe  =>
+    1 
+
+SM1.oe  =>
+    1 
+
+SM2.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    A                           22       V        2       10      1     
+    B                           21       V        1       12      1     
+    C                           20       V        2       14      1     
+    CLK                         1        V        -       -       -     
+    D                           19       V        1       16      1     
+    EN                          3        V        -       -       -     
+    F                           4        V        -       -       -     
+    RST                         2        V        -       -       -     
+    SM0                         16       V        -       -       -     
+    SM0                 d       16       X        4       12      1     
+    SM1                         17       V        -       -       -     
+    SM1                 d       17       X        3       14      1     
+    SM2                         18       V        -       -       -     
+    SM2                 d       18       X        3       16      1     
+    State                       0        F        -       -       -     
+    A                   oe      22       D        1       1       0     
+    B                   oe      21       D        1       1       0     
+    C                   oe      20       D        1       1       0     
+    D                   oe      19       D        1       1       0     
+    SM0                 oe      16       D        1       1       0     
+    SM1                 oe      17       D        1       1       0     
+    SM2                 oe      18       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+

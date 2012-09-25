@@ -1,0 +1,57 @@
+Name       Lab1a;
+Partno     XXXXX;
+Date       05/13/05;
+Revision   1;
+Designer   Addison Babcock;
+Company    NAIT;
+Assembly   XXXXX;
+Location   XXXXX;
+Device G22V10;
+
+/**  Inputs  **/
+
+Pin 1 = !LT;
+Pin 2 = !LB;
+Pin 3 = A;
+Pin 4 = B;
+Pin 5 = C;
+Pin 6 = D;
+
+/**  Outputs  **/
+
+Pin 22 = !OA;
+Pin 21 = !OB;
+Pin 20 = !OC;
+Pin 19 = !OD;
+Pin 18 = !OE;
+Pin 17 = !OF;
+Pin 16 = !OG;
+
+/** Declarations and Intermediate Variable Definitions **/
+
+FIELD input  = [LB, LT, A, B, C, D];
+FIELD output = [OA, OB, OC, OD, OE, OF, OG];
+
+/**  Logic Equations  **/
+
+TABLE input => output
+{
+	'b'1XXXXX => 'b'0000000;
+	'b'01XXXX => 'b'1111111;
+	'b'000000 => 'b'1111110;
+	'b'000001 => 'b'0000110;
+	'b'000010 => 'b'1011011;
+	'b'000011 => 'b'1001111;
+	'b'000100 => 'b'0100111;
+	'b'000101 => 'b'1101101;
+	'b'000110 => 'b'1111101;
+	'b'000111 => 'b'1000110;
+	'b'001000 => 'b'1111111;
+	'b'001001 => 'b'1100111;
+	'b'001010 => 'b'1110111;
+	'b'001011 => 'b'0111111;
+	'b'001100 => 'b'1111000;
+	'b'001101 => 'b'0011111;
+	'b'001110 => 'b'1111001;
+	'b'001111 => 'b'1110001;
+}

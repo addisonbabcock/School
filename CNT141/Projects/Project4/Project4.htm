@@ -1,0 +1,289 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>Project 1 : Main</title>
+<!-- Lotus-Domino (Release 4.6.2a - August 28, 1998 on Windows NT/Intel) -->
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#9F009F" vlink="#9F009F" alink="#9F009F">
+<script>
+
+	//we always need the path
+	var thisMCPath = "/lspace/etc141/mcenter.nsf";
+
+	//we don't always need the rest
+	if( top.frames.length > 0 ) {
+		if( top.startedCRDoc == 1 ) {
+			top.resetTrigger = "doc";
+			top.checkProfile( self.location.href );
+		}
+		//variables needed for doc creation
+		var httpReferer = "";
+		var serverName= "lspace1.nait.ab.ca";
+		var pathInfo = "/lspace/etc141/mcenter.nsf/105441bb46e2cc1f852560490005e510/63fed29a8ba1a02c852566dd00580a9a?OpenDocument";
+		var queryString = "OpenDocument";
+		var currentPath = "/lspace/etc141/mcenter.nsf/(-by+Title-)/63FED29A8BA1A02C852566DD00580A9A?editdocument";
+		var viewName = "(-by Title-)";
+		var isAuthor = "0";
+		var isANewDoc = "0";
+		top.newDoc = isANewDoc;
+		var isInEditMode = "0";
+		var parentUNID = "63FED29A8BA1A02C852566DD00580A9A";
+		var docID = "";
+		var hideCRButton = "1";
+		var hideAnnotationButton = "1";
+		var bookmarkTitle = "Project 1: Main";
+		
+		//variables needed for context creation
+		var dspFormName = "MCObject";
+		var dspForumMsg = "";
+		if( ( isANewDoc != 1 ) && ( isInEditMode != "1" ) ) {
+			top.mcDocLocation = self.location.href;
+		}
+
+		//handle context changes to reload utility bar
+		if( isANewDoc == 1 || isInEditMode == "1" ) {
+			top.uBarContext = "editDoc";
+		}
+		else {
+			top.uBarContext = "doc";
+		}
+		top.handleUtilityContext( "mc", "doc", "" );
+
+		//reload the utilitybar if the above misses it
+		editModeChange = ( ( top.editMode == 0 && isInEditMode == "1" ) || 
+			( top.editMode == 1 && isInEditMode == "0" ) );
+
+		if( editModeChange || top.grandContext != "MC" ) {		
+			top.writeBar( );
+			top.editMode = isInEditMode;
+		}
+
+		//replace the navigator if necessary
+		navLocation = top.nav.location.href;
+		navLocation = navLocation.toLowerCase( );
+		if( navLocation.indexOf( top.mcPath ) == -1 ) {
+			top.nav.location.replace( top.mcPath + "/$navigator" );
+		}
+
+		//load the action bar 
+		top.actionbar.location.replace( top.mcPath + "/$DocActionBar" );
+
+		//rewrite the view controls
+		top.writeViewControls( "doc" );
+
+	}
+
+	function load( docType ) { 
+		top.uBarContext = "editDoc"
+		top.mcTitle = "Lab 6 : Main";
+		top.mcKey = "BBRS-439LT3";
+		self.location = top.crPath + "/" + docType + "?openform";
+	 } 
+
+	function loadKeyword( ) {
+		numKeys = "0";
+		keyId = "";
+		if( keyId == "error" ) {
+			alert( "LearningSpace can't locate the Keyword Definitions for this document.  Contact your Instructor or course Administrator with this information." );
+		}
+		else {
+			url = ( parseInt( numKeys ) > 1 ) ? thisMCPath + "/$dlgViewKeywords?openform&parentunid=63FED29A8BA1A02C852566DD00580A9A" : 
+				thisMCPath + "/mc6/" + keyId;
+			var ht = ( parseInt( numKeys ) > 1 ) ? 200 : 400;
+			var wd = ( parseInt( numKeys ) > 1 ) ? 300 : 600;
+			keyWin = eval( "window.open( url, 'LSPE44AUUZ','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,height=" + ht + ",width=" + wd + "');" );
+		}
+	}
+
+	//Web Link in view -- Multimedia Helper stuff
+	var dspActivateLinkFromView="1";
+	var dspWebLinkActive="";
+	var dspURLtoLink="http://";
+	if( dspWebLinkActive=="1" && dspActivateLinkFromView=="1" ) {
+		newWindow = open(dspURLtoLink, "NewWindow", "height=400,width=600,location=1,toolbar=1,scrollbars=1");
+	}
+
+	// WebLaunch function
+	function WebLaunch( ) {
+		if ( "" == "1" ) {
+//			var url ="/lspace/etc141/mcenter.nsf/dlgWebLaunchCDInfo?openform&drive=None";
+			var url ="/lspace/etc141/mcenter.nsf/dlgWebLaunchCDInfo?openform&parentunid=63FED29A8BA1A02C852566DD00580A9A";
+			CDWin = window.open( url, 'nuthin','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,height=150,width=400');
+		}
+		else {
+			var DriveURL="file:///" + "" + "|" + "/" + "";	open(DriveURL,"LaunchWin","Height=300,Width=450,location,resize,toolbar,menubar,status,scrollbars");
+		}
+	}
+	
+	// Open HREF Link in another window
+	function openLink(SiteURL) {
+		open(SiteURL,"NewWin","Height=400,Width=600,location,resize,toolbar,menubar,status,scrollbars");
+		self.history.back( );
+	}
+	
+	function deleteDoc( ) {
+		url = top.mcPath + "/$dlgDeleteDoc?openform&docid=63FED29A8BA1A02C852566DD00580A9A";
+		window.open( url, 'LSPE44AUV2','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=auto,height=250,width=300');
+	}
+
+	function loadTag( tagType, viewKey, fileName, altText, ht, wd ) {
+		libraryPath = "lspace/lib/weblib.nsf";
+		startLinkString = ( tagType == "IMG" ) ? "<image " : "<embed ";
+		midLinkString = "src='/" + libraryPath + "/(containerlookup)/" + viewKey + "/$file/" + fileName + "'";
+		heightString = ( ht == "" || wd == "")? "" : "' height=" + ht;
+		widthString = ( ht == "" || wd == "" ) ? "" : " width=" + wd;
+		altString = ( altText == "" ) ? "" : ' alt="' + altText + '"';
+		endLinkString =  altString + heightString + widthString + ">";
+		linkString = startLinkString + midLinkString + endLinkString;
+		linkString = linkString.toLowerCase( );
+		document.open( );
+		document.write( linkString );
+		document.close( );
+	}
+
+</script>
+
+<table BORDER=0 CELLSPACING=0 WIDTH="100%" >
+<tr VALIGN=TOP>
+<td ROWSPAN="6" WIDTH="22%"><a href="0.d9c"><img SRC="0.d9c" BORDER=0 height=90 width=144></a></td>
+
+<td COLSPAN="2" WIDTH="78%"><b><font color="#000080"><font size=+1>Project
+1 : Main</font></font></b>
+<br><font color="#000080">Article</font></td>
+
+<td></td>
+</tr>
+</table>
+
+<p>
+<hr>
+<br><b><font color="#FF0000"><font size=+2>Project #1: Hex to Seven Segment
+Display
+<hr WIDTH="100%" SIZE=6 ALIGN=left></font></font></b><font color="#FFFFFF">...</font>
+<br><b><font color="#0000FF"><font size=+1>OBJECTIVES</font></font></b>
+<br><font color="#FFFFFF">...</font>
+<br>Upon completion of this laboratory exercise, you will have learned
+to:
+<ul>
+<li>
+implement an MSI logic circuit using a WinCUPL <b>TABLE</b></li>
+
+<li>
+compile a .pld file using the WinCupl programming application</li>
+
+<li>
+verify a source file using a CUPL simulation output file</li>
+
+<li>
+program a PLD using the XELTEC SUPERPRO II</li>
+</ul>
+
+<p><br><b><font color="#0000FF"><font size=+1>INTRODUCTION</font></font></b>
+<p>Consider the implementation of a hex-to-seven segment decoder/driver
+in a 20V8 device. The PLD will accept a 4-bit binary input (D-A) and decode
+it into seven segment display format. The seven outputs (OA thru OG) are
+to connect directly to the seven LEDs of a common anode display through
+current limiting resistors. For the common anode displays, active low outputs
+are required (a logical "0" to turn on a display segment). The 20V8 is
+capable of (16+) mA current sink and will therefore drive the display directly.
+<p>The circuit is also to include an active low input pin (LB) for blanking
+all segments of the display and an active low input (LT) for testing all
+segments by turning them all on. The blanking input takes precedence over
+the testing input. The desired pin-out for the PLD is shown below. You
+must use explicit pin numbering for your design.
+<br>&nbsp;
+<center><table>
+<tr>
+<td><img SRC="pld01{image1}.gif" </TD height=318 width=158></td>
+</tr>
+</table></center>
+<font color="#FFFFFF">..</font>
+<p><font color="#FFFFFF">......</font>
+<br><font color="#FFFFFF">...</font>
+<br><b><font color="#0000FF"><font size=+1>PROCEDURE</font></font></b>
+<br><font color="#FFFFFF">...</font>
+<br><b>Part A.&nbsp; Designing the Logic</b>
+<br>1. Copy the files 'tmpl.pld' and 'Hex7Seg.si' from the C:\\CUPL48 sub
+directory to your working directory. Rename the file 'Hex7Seg.pld'. The
+.PLD file will provide the template for your design, and the .SI file is
+the simulator input which will allow to simulate the results.
+<p>2. Run WinCUPL and choose 'File >> Open' from the menu (F3). Open your
+working directory and select the Hex7Seg.pld file. Within a few seconds
+the source file should appear.
+<p>3. Enter your name as the author, NAIT as the company, the current date,
+and specify the device as the g20V8a.
+<p>4. Input pin assignments must be made for LT, LB and A-D. The LT and
+LB pins are to be assigned as being active-low while the other four are
+to be active-high. Active-low assignments are achieved by placing '!' before
+the pin name, for example:
+<br>&nbsp;
+<center><pre>&nbsp;pin 1&nbsp; =&nbsp; !LT;</pre></center>
+5. Output assignments are to be made for 'OA' through 'OG', all of them
+being active-low.
+<p>6. The next step is to declare names for the ranges of input and output
+variables so that they can be used in a table. The <b>FIELD</b> keyword
+is used to accomplish this, and the syntax is as follows:
+<center>
+<p><b>FIELD</b> <i>fieldname</i> [<i>ordered list of variables separated
+by commas</i>]</center>
+
+<p>7. Once you have fields declared for both the inputs and outputs you
+can go on to fill in the 'Logic Equations' section of the template. Here,
+you will fill in your table using your declared fields. The <b>TABLE</b>
+keyword is used for this:
+<br>&nbsp;
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>TABLE</b> <i>Input Field</i>&nbsp; => <i>Output Field
+</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'b'<i>binary input sequence</i>&nbsp; => 'b'<i>binary output sequence</i>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</pre>
+The 'b' signifies that you are using binary numbers and the sequence to
+be used is the sequence of variables within the field (in the same order
+as they were defined in the field). You will need to add one line to the
+table for each combination of inputs.
+<br><i>Note - X can be used in place of binary input values to signify
+'don't cares'.</i>
+<br><font color="#FFFFFF">...</font>
+<br><b>Part B.&nbsp; Compiling the Design</b>
+<p>1. Once you have completed modifying the design, save the file and choose
+'Option >> Compiler Options' from the menu (Alt O).
+<p>2. By default, the most recently edited file should appear as the Input
+filename. Change the filename if required.
+<p>3. From the Logic Optimization pull-down menu choose Quine-McCluskey.
+<p>4. Select the GAL g20V8a as the device.
+<p>5. Make sure the simulate option is checked.
+<p>6. Finally, to compile choose 'Device Specific Compile' from the 'Run'
+menu (F9).
+<p><b>C. Programming the PLD</b>
+<p>1. Copy your JEDEC file to your floppy disk (Hex7Seg.jed) and go over
+to the programming station.
+<p>2. Turn on the computer and the XELTEK SUPERPRO 2 programming unit.
+<p>3. Type SP2 &lt;Enter> from the DOS commmand line and next insert the
+20V8 into the programming socket oriented into the lower part of the ZIF
+socket.
+<p>4. From the main menu, go to the Manufacturer menu then the Default
+device format submenu and select FUSE in the submenu. Press &lt;Esc>.
+<p>5. Go to the Manufacturer menu, submenu Manufacturer, select AMD and
+Press &lt;Esc>.
+<p>6. Go to the Manufacturer menu and select the Type submenu then select
+the name of the chip by either highlighting or typing PALCE20V8. Press
+&lt;Esc> twice.
+<p>7. Go to the File menu and then select the Load submenu and load the
+JEDEC fuse map file for your design. (ie:Hex7Seg.jed)
+<p>8. Next go to the Device menu and select the Function select submenu.
+From the new submenu highlight the Program option and press &lt;Enter>.
+<p>9. The PLD should now be programmed. Remove the 20V8 from the programmer.
+<p><b>D. Testing the PLD &amp; Lab Checkoff - WinCUPL Project #1 - ETC141</b>
+<p>1. Verify the operation of the circuit and then call your instructor
+for a checkoff.
+<p>Date: __________ Instructor Signature: _________________________
+<p>2. Make hardcopies of the source file. Attach it (with a staple) behind
+this checkoff sheet. Submit the Lab to your instructor for grading.
+<p>Name: ____________________
+<p>Class: ____________________
+<p><font color="#FFFFFF">...</font>
+<p>
+<hr>
+</body>
+</html>

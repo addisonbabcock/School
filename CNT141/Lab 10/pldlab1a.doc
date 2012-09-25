@@ -1,0 +1,111 @@
+
+*******************************************************************************
+                                   PLDLAB1A
+*******************************************************************************
+
+CUPL(WM)        4.8a Serial# MW-65999997
+Device          g22v10  Library DLIB-h-37-1
+Created         Wed Apr 05 15:21:49 2006
+Name            PLDLAB1A
+Partno          xxxxxx
+Revision        01
+Date            06/04/05
+Designer        Addison Babcock
+Company         CNT15
+Assembly        xxxxxx
+Location        xxxxxx
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+S =>
+    B & C
+
+T =>
+    B
+  # C
+
+U =>
+    B & C
+
+V =>
+    !B & !C
+
+W =>
+    B & !C
+  # !B & C
+
+X =>
+    !B & !C
+  # B & C
+
+Y =>
+    A & !B & !C
+  # A & B & C
+  # !A & !B & C
+  # !A & B & !C
+
+Z =>
+    !A & B & C
+  # !A & !B & !C
+
+S.oe  =>
+    1 
+
+T.oe  =>
+    1 
+
+U.oe  =>
+    1 
+
+V.oe  =>
+    1 
+
+W.oe  =>
+    1 
+
+X.oe  =>
+    1 
+
+Y.oe  =>
+    1 
+
+Z.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    A                           1        V        -       -       -     
+    B                           2        V        -       -       -     
+    C                           3        V        -       -       -     
+    S                           23       V        1       8       1     
+    T                           22       V        2       10      1     
+    U                           21       V        1       12      1     
+    V                           20       V        1       14      1     
+    W                           19       V        2       16      1     
+    X                           18       V        2       16      1     
+    Y                           17       V        4       14      1     
+    Z                           16       V        2       12      1     
+    S                   oe      23       D        1       1       0     
+    T                   oe      22       D        1       1       0     
+    U                   oe      21       D        1       1       0     
+    V                   oe      20       D        1       1       0     
+    W                   oe      19       D        1       1       0     
+    X                   oe      18       D        1       1       0     
+    Y                   oe      17       D        1       1       0     
+    Z                   oe      16       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+

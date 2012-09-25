@@ -1,0 +1,40 @@
+Name       Project 1a;
+Date       06/04/06;
+Designer   Addison Babcock;
+Company    CNT15;
+Device     G22V10;
+
+/**  Inputs  **/
+
+Pin 1 = CLK;
+Pin 2 = START;
+
+/**  Outputs  **/
+
+Pin 23 = V;
+Pin 22 = W;
+Pin 21 = X;
+Pin 20 = Y;
+Pin 19 = Z;
+
+Pin 18 = L;
+Pin 17 = M;
+Pin 16 = N;
+
+/** Equations **/
+
+L.D = !N & START;
+M.D = L & START;
+N.D = M & START;
+
+/** Table **/
+
+TABLE L, M, N => V, W, X, Y, Z
+{
+	'b'000 => 'b'11000;
+	'b'100 => 'b'01100;
+	'b'110 => 'b'00110;
+	'b'111 => 'b'00011;
+	'b'011 => 'b'00110;
+	'b'001 => 'b'01100;
+}

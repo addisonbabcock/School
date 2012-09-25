@@ -1,0 +1,283 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>Project 2 : Main</title>
+<!-- Lotus-Domino (Release 4.6.2a - August 28, 1998 on Windows NT/Intel) -->
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#9F009F" vlink="#9F009F" alink="#9F009F">
+<script>
+
+	//we always need the path
+	var thisMCPath = "/lspace/etc141/mcenter.nsf";
+
+	//we don't always need the rest
+	if( top.frames.length > 0 ) {
+		if( top.startedCRDoc == 1 ) {
+			top.resetTrigger = "doc";
+			top.checkProfile( self.location.href );
+		}
+		//variables needed for doc creation
+		var httpReferer = "";
+		var serverName= "lspace1.nait.ab.ca";
+		var pathInfo = "/lspace/etc141/mcenter.nsf/105441bb46e2cc1f852560490005e510/63fed29a8ba1a02c852566dd00580a9a?OpenDocument";
+		var queryString = "OpenDocument";
+		var currentPath = "/lspace/etc141/mcenter.nsf/(-by+Title-)/63FED29A8BA1A02C852566DD00580A9A?editdocument";
+		var viewName = "(-by Title-)";
+		var isAuthor = "0";
+		var isANewDoc = "0";
+		top.newDoc = isANewDoc;
+		var isInEditMode = "0";
+		var parentUNID = "63FED29A8BA1A02C852566DD00580A9A";
+		var docID = "";
+		var hideCRButton = "1";
+		var hideAnnotationButton = "1";
+		var bookmarkTitle = "Project 2 : Main";
+		
+		//variables needed for context creation
+		var dspFormName = "MCObject";
+		var dspForumMsg = "";
+		if( ( isANewDoc != 1 ) && ( isInEditMode != "1" ) ) {
+			top.mcDocLocation = self.location.href;
+		}
+
+		//handle context changes to reload utility bar
+		if( isANewDoc == 1 || isInEditMode == "1" ) {
+			top.uBarContext = "editDoc";
+		}
+		else {
+			top.uBarContext = "doc";
+		}
+		top.handleUtilityContext( "mc", "doc", "" );
+
+		//reload the utilitybar if the above misses it
+		editModeChange = ( ( top.editMode == 0 && isInEditMode == "1" ) || 
+			( top.editMode == 1 && isInEditMode == "0" ) );
+
+		if( editModeChange || top.grandContext != "MC" ) {		
+			top.writeBar( );
+			top.editMode = isInEditMode;
+		}
+
+		//replace the navigator if necessary
+		navLocation = top.nav.location.href;
+		navLocation = navLocation.toLowerCase( );
+		if( navLocation.indexOf( top.mcPath ) == -1 ) {
+			top.nav.location.replace( top.mcPath + "/$navigator" );
+		}
+
+		//load the action bar 
+		top.actionbar.location.replace( top.mcPath + "/$DocActionBar" );
+
+		//rewrite the view controls
+		top.writeViewControls( "doc" );
+
+	}
+
+	function load( docType ) { 
+		top.uBarContext = "editDoc"
+		top.mcTitle = "Project 2 : Main";
+		top.mcKey = "BBRS-439LT3";
+		self.location = top.crPath + "/" + docType + "?openform";
+	 } 
+
+	function loadKeyword( ) {
+		numKeys = "0";
+		keyId = "";
+		if( keyId == "error" ) {
+			alert( "LearningSpace can't locate the Keyword Definitions for this document.  Contact your Instructor or course Administrator with this information." );
+		}
+		else {
+			url = ( parseInt( numKeys ) > 1 ) ? thisMCPath + "/$dlgViewKeywords?openform&parentunid=63FED29A8BA1A02C852566DD00580A9A" : 
+				thisMCPath + "/mc6/" + keyId;
+			var ht = ( parseInt( numKeys ) > 1 ) ? 200 : 400;
+			var wd = ( parseInt( numKeys ) > 1 ) ? 300 : 600;
+			keyWin = eval( "window.open( url, 'LSPE44AUUZ','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,height=" + ht + ",width=" + wd + "');" );
+		}
+	}
+
+	//Web Link in view -- Multimedia Helper stuff
+	var dspActivateLinkFromView="1";
+	var dspWebLinkActive="";
+	var dspURLtoLink="http://";
+	if( dspWebLinkActive=="1" && dspActivateLinkFromView=="1" ) {
+		newWindow = open(dspURLtoLink, "NewWindow", "height=400,width=600,location=1,toolbar=1,scrollbars=1");
+	}
+
+	// WebLaunch function
+	function WebLaunch( ) {
+		if ( "" == "1" ) {
+//			var url ="/lspace/etc141/mcenter.nsf/dlgWebLaunchCDInfo?openform&drive=None";
+			var url ="/lspace/etc141/mcenter.nsf/dlgWebLaunchCDInfo?openform&parentunid=63FED29A8BA1A02C852566DD00580A9A";
+			CDWin = window.open( url, 'nuthin','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,height=150,width=400');
+		}
+		else {
+			var DriveURL="file:///" + "" + "|" + "/" + "";	open(DriveURL,"LaunchWin","Height=300,Width=450,location,resize,toolbar,menubar,status,scrollbars");
+		}
+	}
+	
+	// Open HREF Link in another window
+	function openLink(SiteURL) {
+		open(SiteURL,"NewWin","Height=400,Width=600,location,resize,toolbar,menubar,status,scrollbars");
+		self.history.back( );
+	}
+	
+	function deleteDoc( ) {
+		url = top.mcPath + "/$dlgDeleteDoc?openform&docid=63FED29A8BA1A02C852566DD00580A9A";
+		window.open( url, 'LSPE44AUV2','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=auto,height=250,width=300');
+	}
+
+	function loadTag( tagType, viewKey, fileName, altText, ht, wd ) {
+		libraryPath = "lspace/lib/weblib.nsf";
+		startLinkString = ( tagType == "IMG" ) ? "<image " : "<embed ";
+		midLinkString = "src='/" + libraryPath + "/(containerlookup)/" + viewKey + "/$file/" + fileName + "'";
+		heightString = ( ht == "" || wd == "")? "" : "' height=" + ht;
+		widthString = ( ht == "" || wd == "" ) ? "" : " width=" + wd;
+		altString = ( altText == "" ) ? "" : ' alt="' + altText + '"';
+		endLinkString =  altString + heightString + widthString + ">";
+		linkString = startLinkString + midLinkString + endLinkString;
+		linkString = linkString.toLowerCase( );
+		document.open( );
+		document.write( linkString );
+		document.close( );
+	}
+
+</script>
+
+<table BORDER=0 CELLSPACING=0 WIDTH="100%" >
+<tr VALIGN=TOP>
+<td ROWSPAN="6" WIDTH="22%"><img SRC="0.d9c" height=90 width=144></td>
+
+<td COLSPAN="2" WIDTH="78%"><b><font color="#000080"><font size=+1>Project
+2 : Main</font></font></b>
+<br><font color="#000080">Article</font></td>
+
+<td></td>
+</tr>
+</table>
+
+<p>
+<hr>
+<br><b><font color="#FF0000"><font size=+2>Project #2: Gray Code Counter
+<hr WIDTH="100%" SIZE=6 ALIGN=left></font></font></b><font color="#FFFFFF">...</font>
+<br><b><font color="#0000FF"><font size=+1>OBJECTIVES</font></font></b>
+<br><font color="#FFFFFF">...</font>
+<br>Upon completion of this laboratory exercise, you will have learned
+to:
+<ul>
+<li>
+implement a 4-bit gray code sequence</li>
+
+<li>
+program a PLD with SOP equations derived from Karnaugh maps</li>
+
+<li>
+express equations in binary format for WinCUPL</li>
+
+<li>
+use an extension for registered outputs in WinCUPL</li>
+</ul>
+<font color="#FFFFFF">...</font>
+<br><b><font color="#0000FF"><font size=+1>INTRODUCTION</font></font></b>
+<p>In Project #1 you implemented a combinational logic circuit in a 20V8
+device. Consider the implementation of a synchronous 4-bit Gray Code Counter
+in a 20V8. The I/O architecture control block must be programmed to configure
+the output for registered mode operation. This is simple as we must only
+generate the equations then indicate via an extension that the design is
+registered. In registered mode, the output is registered via a&nbsp; D-type
+flip-flop. The feedback signal comes directly from the output of the flip-flop.
+The counter circuit must also include an active-high reset signal input.
+<p>The sequence that the counter is to follow is shown below.
+<br>&nbsp;
+<br>&nbsp;
+<center><table>
+<caption><b><u>4-bit Gray Code Sequence</u></b></caption>
+
+<tr>
+<td><img SRC="pld02{image0}.gif" height=416 width=603></td>
+</tr>
+</table></center>
+<font color="#FFFFFF">...</font>
+<p><font color="#FFFFFF">......</font>
+<br><font color="#FFFFFF">...</font>
+<br><b><font color="#0000FF"><font size=+1>PROCEDURE</font></font></b>
+<br><font color="#FFFFFF">...</font>
+<br><b>Part A.</b>
+<br>1. Determine the required logic equations by filling out the truth
+table provided. Reduce the equations using Karnaugh Maps and enter the
+reduced equations in the space provided below.
+<p>Q0 =
+<p>Q1 =
+<p>Q2 =
+<p>Q3 =
+<br>&nbsp;
+<center><table>
+<tr>
+<td><img SRC="pld02{image1}.gif" height=430 width=603></td>
+</tr>
+</table></center>
+
+<p>2. Create the source file by making another copy of the WinCUPL template
+in your working directory and save it as GryCnt.pld. Along with it, copy
+the GryCnt.si file for the simulation. Open the file with WinCUPL and follow
+the same initial steps as you did in Project1.
+<p>3. Pin assignments can be determined from the diagram below.
+<br><i>Hint: Look up 'pin' in the WinCUPL help file for the syntax on list
+notation to assign the outputs.</i>
+<br>&nbsp;
+<center><table>
+<tr>
+<td><img SRC="pld02{image3}.gif" </TD height=318 width=158></td>
+</tr>
+</table></center>
+
+<p>4. Rather than making a table in this project, you will be entering
+the SOP equations that you deduced from the Karnaugh maps. First declare
+a <b>FIELD</b> called 'state' which includes the variables Q3 - Q0. Now
+the products within the equations can be expressed using 'state'.
+<br>For example, if the equation for Q0 was
+<pre>Q0 = (!Q3 !Q2 Q1) # (Q2 Q1 Q0)</pre>
+it would be expressed in the .PLD file as
+<pre>Q0.D = state: 'b' 001X&nbsp; #&nbsp; state: 'b' X111</pre>
+The .D extension tells the compiler to configure the PLD as a type D register.
+<p>By expressing the state variables in binary form you can use
+<i>don't
+cares</i> to fill in for the terms that aren't included in a product.
+<p>5. Once you have completed the syntax for the state equations go ahead
+and compile the file referring to the directions from Project #1 if necessary.
+Obtain a hard copy of the .DOC file. The pin-out for the PLD will be required
+later for testing purposes.
+<p>6. Verify your design using the simulator output file 'GryCnt.so'.
+<br><font color="#FFFFFF">...</font>
+<br><b>Part B.&nbsp;&nbsp; Programming the PLD</b>
+<p>1. Copy your JEDEC file to your floppy disk (ie: GryCnt.jed) and go
+over to the programming station.
+<p>2. Turn on the computer and the XELTEK SUPERPRO 2 programming unit.
+<p>3. Type SP2 &lt;Enter> from the DOS commmand line and next insert the
+20V8 into the programming socket oriented into the lower part of the ZIF
+socket.
+<p>4. From the main menu, go to the Manufacturer menu then the Default
+device format submenu and select FUSE in the submenu. Press &lt;Esc>.
+<p>5. Go to the Manufacturer menu, submenu Manufacturer, select AMD and
+Press &lt;Esc>.
+<p>6. Go to the Manufacturer menu and select the Type submenu then select
+the name of the chip by either highlighting or typing PALCE20V8. Press
+&lt;Esc> twice.
+<p>7. Go to the File menu and then select the Load submenu and load the
+JEDEC fuse map file for your design. (ie: GryCnt.jed)
+<p>8. Next go to the Device menu and select the Function select submenu.
+From the new submenu highlight the Program option and press &lt;Enter>.
+<p>9. The PLD should now be programmed. Remove the 20V8 from the programmer
+<p><b>C. Testing the PLD &amp; - Lab Checkoff - WinCUPL Project #2 - ETC141</b>
+<p>1. Verify the operation of the circuit to your instructor.
+<p>Date: __________ Instructor Signature: _________________________
+<p>2. Make hardcopies of both the .DOC file and the Simulation output.
+Attach them (with a staple) behind this checkoff sheet. Submit the Lab
+to your instructor for grading.
+<p>Name: ____________________
+<p>Class:
+<br>
+<hr>
+</body>
+</html>

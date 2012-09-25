@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.07 [en] (Win95; U) [Netscape]">
+   <TITLE>Final Project</TITLE>
+<!-- Lotus-Domino (Release 4.6.4 - March 23, 1999 on Windows NT/Intel) -->
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#FFFFFF" LINK="#9F009F" VLINK="#9F009F" ALINK="#9F009F">
+
+<HR>
+<BR><B><FONT COLOR="#FF0000"><FONT SIZE=+2>Project #3 : Digital Communication
+System using MSI Devices</FONT></FONT></B>
+<HR WIDTH="100%" SIZE=6 ALIGN=left>
+<BR><B><FONT COLOR="#0000FF"><FONT SIZE=+1>Overview</FONT></FONT></B>
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<BR>In this project you will implement and complete the following digital
+communication system. The system consists of two subsystems, the transmitter
+and receiver. Within each subsystem are a number of common MSI devices
+namely a counter, multiplexer, shift register, and decoder. You are not
+required to understand the detailed operation of the counter and shift
+register at this time.
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<BR>The transmitter is to accept input from the two hex keypads and when
+the momentary switch is pressed transfer the "byte" serially to the receiver
+over a single signal connection. Any valid ASCII code will be displayed
+on the ASCII display. Examination of the circuit shows that with 31 Hex
+input the display indicates the number one (1) which is correct.
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<BR>You will complete the circuit such that the LEDs can be turned "on"
+or "off" via serial control. This system could be used for remote control
+of eight different devices with the necessary interface electronics. These
+could be lights, motors, appliances etc. The ASCII values for the number
+zero (30h) to the number seven(37h) will each activate the decoder outputs
+Y0 to Y7 respectively.
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<BR><B><FONT COLOR="#0000FF"><FONT SIZE=+1>Procedure</FONT></FONT></B>
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<BR>1) Capture the "incomplete" schematic shown below using LogicWorks<FONT SIZE=+1>&reg;</FONT>.
+Connect the two hex keypads to the mux inputs (0 ... 7). The keypads are
+oriented such that they may be connected directly. Test the circuit to
+confirm 30h to 37h input on the keypad displays the numbers 0 through 7
+on the ASCII display. Save the file as proj2.cct in the LW303 folder on
+your hard drive or on a floppy.
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<CENTER><IMG SRC="0.ace" HEIGHT=383 WIDTH=606></CENTER>
+
+<P><B><FONT COLOR="#FFFFFF">....</FONT></B>
+<BR>2) The next step is to connect the 74LS138 decoder to the outputs of
+the shift register outputs (Q0 to Q7) such that each corresponding output
+of the decoder is active (low) when the ASCII codes for the numbers 0 through
+7 are received. Any other ASCII codes received are ignored by the decoder
+circuit. You will require one additional gate to "absolutely" decode the
+seven bits. This is required as the 74LS138 decoder has only six inputs
+and the serial shift register has eight outputs(Q0 to Q7). The following
+truth table is provided for your reference.
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<CENTER><IMG SRC="10.323a" HEIGHT=213 WIDTH=487>
+<BR><FONT SIZE=+1>74HC138 Decoder Truth Table</FONT></CENTER>
+<B><FONT COLOR="#FFFFFF">...</FONT></B>
+<BR>a) Take out a piece of paper and based on the information provided
+in the table above, determine the necessary connections. Note the Q0 output
+of the shift register is the LSB and as mentioned earlier a 2-i/p gate
+will be required to expand the number of inputs of the 74LS138 decoder.
+<BR><B><FONT COLOR="#FFFFFF">...</FONT></B>
+<BR>b) Once the design has been completed (on paper) start LogicWorks<FONT SIZE=+1>&reg;</FONT>,
+open the proj.cct file saved earlier and complete the schematic. Verify
+your circuit operates properly and call your instructor for a check-off.
+<BR>&nbsp;
+<BR>&nbsp;
+</BODY>
+</HTML>

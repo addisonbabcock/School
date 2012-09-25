@@ -1,0 +1,32 @@
+Name       Lab3a;
+Partno     XXXXX;
+Date       05/19/99;
+Revision   1;
+Designer   Wayne Goode;
+Company    NAIT;
+Assembly   XXXXX;
+Location   XXXXX;
+Device     g20V8a;
+
+/******************************************************************/
+/* Simulator Input File for the                                   */
+/* Mealy State Machine Stepper Motor Controller                   */
+/*                                                                */
+/*                                                                */
+/******************************************************************/
+
+ORDER: Clk,Rst,En,F,%2,State,%2,A,B,C,D;
+
+VECTORS: PXXX000****    /** start at state 0 **/
+	 
+	 $REPEAT 8;     /** go forward 8 cycles **/ 
+	 K011*******     
+	 
+	 $REPEAT 8;     /** go backward 8 cycles **/
+	 K010*******
+	 
+	 $REPEAT 2;     /** hold for 2 cycles **/
+	 K00X*******
+         
+	 $REPEAT 2;     /** reset for 2 cycles **/
+	 K1XX*******

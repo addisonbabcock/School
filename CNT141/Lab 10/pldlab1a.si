@@ -1,0 +1,20 @@
+Name       PLDLAB1A;
+Date       06/04/05;
+Revision   01;
+Designer   Addison Babcock;
+Company    CNT15;
+Device     G22V10;
+
+order: A, B, C, %2, S, %1, T, %1, U, %1, V, %1, W, %1, X, %1, Y, %1, Z;
+
+/**  Logic Equations  **/
+
+vectors:
+000LLHHLHLH
+001LHHLHLHL
+010LHHLHLHL
+011HHLLLHLH
+100LLHHLHHL
+101LHHLHLLL
+110LHHLHLLL
+111HHLLLHHL

@@ -1,0 +1,36 @@
+Name       PLDLAB1A;
+Date       06/04/05;
+Revision   01;
+Designer   Addison Babcock;
+Company    CNT15;
+Device     G22V10;
+
+/**  Inputs  **/
+
+Pin 1 = A;
+Pin 2 = B;
+Pin 3 = C;
+
+/**  Outputs  **/
+
+Pin 23 = S;
+Pin 22 = T;
+Pin 21 = U;
+Pin 20 = V;
+Pin 19 = W;
+Pin 18 = X;
+Pin 17 = Y;
+Pin 16 = Z;
+
+/**  Logic Equations  **/
+
+S = B & C;
+T = B # C;
+U = !(B & C);
+V = (!B) & (!C);
+W = B $ C;
+X = !B & !C # B & C;
+Y = A $ B $ C;
+Z = !A & (!B & !C # B & C);
+
+

@@ -1,0 +1,80 @@
+Name       Lab3a;
+Partno     XXXXX;
+Date       05/19/99;
+Revision   1;
+Designer   Wayne Goode;
+Company    NAIT;
+Assembly   XXXXX;
+Location   XXXXX;
+Device     g20V8a;
+
+/******************************************************************/
+/*                                                                */
+/*  Mealy State Machine Stepper Motor Controller                  */
+/*                                                                */
+/******************************************************************/
+
+/***************  Inputs  *******************/
+
+Pin        1  =  Clk       ;      /*                                */
+Pin        2  =  Rst       ;      /*                                */
+Pin        3  =  En        ;      /*                                */
+Pin        4  =  F         ;      /*                                */
+
+/***************  Outputs  ******************/
+
+Pin  [16..18] =  [S2..0]   ;      /*                                */
+Pin       19  =  D         ;      /*                                */
+Pin       20  =  C         ;      /*                                */
+Pin       21  =  B         ;      /*                                */
+Pin       22  =  A         ;      /*                                */
+
+/** Declarations and Intermediate Variable Definitions **/
+
+FIELD State = [S2..0];
+
+$DEFINE For (En & !Rst & F)
+$DEFINE Rev (En & !Rst & !F)
+
+/**************  Logic Equations  ********************/
+
+/**  Progression of states follows gray code so that no **/
+/**    transition alters more than one bit.             **/
+/**  Default is always state 0.             	 	**/
+
+ 
+SEQUENCE State 
+{
+   PRESENT 0 IF For  NEXT 1;
+	     IF Rev  NEXT 4;
+	     DEFAULT NEXT 0;
+   PRESENT 1 IF For  NEXT 3;  
+             IF Rev  NEXT 0;
+	     DEFAULT NEXT 0;
+   PRESENT 3 IF For  NEXT 2;  
+   	     IF Rev  NEXT 1;
+	     DEFAULT NEXT 0;
+   PRESENT 2 IF For  NEXT 6;  
+   	     IF Rev  NEXT 3;
+	     DEFAULT NEXT 0;
+   PRESENT 6 IF For  NEXT 7;  
+   	     IF Rev  NEXT 2;
+	     DEFAULT NEXT 0;
+   PRESENT 7 IF For  NEXT 5;  
+   	     IF Rev  NEXT 6;
+	     DEFAULT NEXT 0; 
+   PRESENT 5 IF For  NEXT 4;  
+             IF Rev  NEXT 7;
+	     DEFAULT NEXT 0;
+   PRESENT 4 IF For  NEXT 0;  
+             IF Rev  NEXT 5;
+	     DEFAULT NEXT 0;
+}
+
+
+/** implement 'Two-Phase-On' control of the motor relays **/
+
+A = !Rst & (State:0 # State:1 # State:6 # State:7);  /** are these synchronous or do I **/
+B = !Rst & (State:1 # State:3 # State:7 # State:5);  /** need the .D extension ?       **/
+C = !Rst & (State:3 # State:2 # State:5 # State:4);  /** -N- won't simulate with the   **/
+D = !Rst & (State:0 # State:2 # State:6 # State:4);  /**  .D extension on them         **/  

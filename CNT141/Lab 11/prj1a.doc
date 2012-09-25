@@ -1,0 +1,109 @@
+
+*******************************************************************************
+                                    Project
+*******************************************************************************
+
+CUPL(WM)        4.8a Serial# MW-65999997
+Device          g22v10  Library DLIB-h-37-1
+Created         Thu Apr 06 13:10:26 2006
+Name            Project 1a
+Partno          xxxxxx
+Revision        xxxxxx
+Date            06/04/06
+Designer        Addison Babcock
+Company         CNT15
+Assembly        xxxxxx
+Location        xxxxxx
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+L.d  =>
+    !N
+
+M.d  =>
+    L
+
+N.d  =>
+    M
+
+V =>
+    !L & !M & !N
+
+W =>
+    !M & !N
+  # !L & !M & N
+
+X =>
+    !L & N
+  # L & !N
+
+Y =>
+    !L & M & N
+  # L & M
+
+Z =>
+    L & M & N
+
+L.oe  =>
+    1 
+
+M.oe  =>
+    1 
+
+N.oe  =>
+    1 
+
+V.oe  =>
+    1 
+
+W.oe  =>
+    1 
+
+X.oe  =>
+    1 
+
+Y.oe  =>
+    1 
+
+Z.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    CLK                         1        V        -       -       -     
+    L                           18       V        -       -       -     
+    L                   d       18       X        1       16      1     
+    M                           17       V        -       -       -     
+    M                   d       17       X        1       14      1     
+    N                           16       V        -       -       -     
+    N                   d       16       X        1       12      1     
+    START                       2        V        -       -       -     
+    V                           23       V        1       8       1     
+    W                           22       V        2       10      1     
+    X                           21       V        2       12      1     
+    Y                           20       V        2       14      1     
+    Z                           19       V        1       16      1     
+    L                   oe      18       D        1       1       0     
+    M                   oe      17       D        1       1       0     
+    N                   oe      16       D        1       1       0     
+    V                   oe      23       D        1       1       0     
+    W                   oe      22       D        1       1       0     
+    X                   oe      21       D        1       1       0     
+    Y                   oe      20       D        1       1       0     
+    Z                   oe      19       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+

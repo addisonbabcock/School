@@ -1,0 +1,144 @@
+
+*******************************************************************************
+                                     Lab1a
+*******************************************************************************
+
+CUPL(WM)        4.8a Serial# MW-65999997
+Device          g22v10  Library DLIB-h-37-1
+Created         Thu Apr 13 13:47:36 2006
+Name            Lab1a
+Partno          XXXXX
+Revision        1
+Date            05/13/05
+Designer        Addison Babcock
+Company         NAIT
+Assembly        XXXXX
+Location        XXXXX
+
+===============================================================================
+                            Expanded Product Terms
+===============================================================================
+
+OA =>
+    A & B & C & D & !LB & !LT
+  # !LB & LT
+  # !A & !B & !D & !LB & !LT
+  # !A & C & D & !LB & !LT
+  # !A & B & !C & D & !LB & !LT
+  # B & C & !D & !LB & !LT
+  # A & !B & !C & !LB & !LT
+  # A & !B & C & !D & !LB & !LT
+  # A & B & !C & !D & !LB & !LT
+
+OB =>
+    A & B & C & D & !LB & !LT
+  # !LB & LT
+  # !A & !C & !D & !LB & !LT
+  # !A & B & !C & D & !LB & !LT
+  # B & C & !D & !LB & !LT
+  # A & B & !C & !D & !LB & !LT
+  # A & !B & !LB & !LT
+
+OC =>
+    A & B & !C & !LB & !LT
+  # !LB & LT
+  # A & C & D & !LB & !LT
+  # B & C & !D & !LB & !LT
+  # !B & !D & !LB & !LT
+
+OD =>
+    A & !C & !D & !LB & !LT
+  # !LB & LT
+  # !A & !B & !D & !LB & !LT
+  # !B & C & D & !LB & !LT
+  # B & !C & D & !LB & !LT
+  # B & C & !D & !LB & !LT
+
+OE =>
+    A & B & !C & D & !LB & !LT
+  # !LB & LT
+  # A & !B & !LB & !LT
+  # !A & C & D & !LB & !LT
+  # !A & !C & !LB & !LT
+  # !A & B & C & !D & !LB & !LT
+
+OF =>
+    A & B & !C & D & !LB & !LT
+  # !LB & LT
+  # !A & B & C & D & !LB & !LT
+  # !B & !LB & !LT
+  # !A & B & !C & !D & !LB & !LT
+
+OG =>
+    A & B & D & !LB & !LT
+  # !LB & LT
+  # !B & C & !LB & !LT
+  # !A & B & !C & !LB & !LT
+  # B & C & !D & !LB & !LT
+  # A & !B & !C & !LB & !LT
+
+input =>
+    LB , LT , A , B , C , D
+
+output =>
+    OA , OB , OC , OD , OE , OF , OG
+
+OA.oe  =>
+    1 
+
+OB.oe  =>
+    1 
+
+OC.oe  =>
+    1 
+
+OD.oe  =>
+    1 
+
+OE.oe  =>
+    1 
+
+OF.oe  =>
+    1 
+
+OG.oe  =>
+    1 
+
+
+===============================================================================
+                                 Symbol Table
+===============================================================================
+
+Pin Variable                                    Pterms   Max     Min    
+Pol   Name              Ext     Pin     Type     Used   Pterms  Level   
+--- --------            ---     ---     ----    ------  ------  -----   
+
+    A                           3        V        -       -       -     
+    B                           4        V        -       -       -     
+    C                           5        V        -       -       -     
+    D                           6        V        -       -       -     
+ !  LB                          2        V        -       -       -     
+ !  LT                          1        V        -       -       -     
+ !  OA                          22       V        9       10      1     
+ !  OB                          21       V        7       12      1     
+ !  OC                          20       V        5       14      1     
+ !  OD                          19       V        6       16      1     
+ !  OE                          18       V        6       16      1     
+ !  OF                          17       V        5       14      1     
+ !  OG                          16       V        6       12      1     
+    input                       0        F        -       -       -     
+    output                      0        F        -       -       -     
+    OA                  oe      22       D        1       1       0     
+    OB                  oe      21       D        1       1       0     
+    OC                  oe      20       D        1       1       0     
+    OD                  oe      19       D        1       1       0     
+    OE                  oe      18       D        1       1       0     
+    OF                  oe      17       D        1       1       0     
+    OG                  oe      16       D        1       1       0     
+
+
+LEGEND    D : default variable         F : field      G : group
+          I : intermediate variable    N : node       M : extended node
+          U : undefined                V : variable   X : extended variable
+          T : function
+

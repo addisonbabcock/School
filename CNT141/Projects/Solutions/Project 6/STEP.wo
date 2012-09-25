@@ -1,0 +1,35 @@
+#WAVEFORM
+#H Device     G20V10;
+#H 
+#H /******************************************************************/
+#H /* Simulator Input File for the                                   */
+#H /* Mealy State Machine Stepper Motor Controller                   */
+#H /*                                                                */
+#H /*                                                                */
+#H /******************************************************************/
+#H 
+#F State = [SM0,SM1,SM2];
+
+#H ORDER: CLK,RST,EN,F,%2,State,%2,A,B,C,D;
+#H 
+#V 0001 PXXX000****
+#V 0002 K011HLHLHHL
+#V 0003 K011LLHLLHH
+#V 0004 K011LLLHLLH
+#V 0005 K011HLLHHLL
+#V 0006 K011HHLLHHL
+#V 0007 K011LHLLLHH
+#V 0008 K011LHHHLLH
+#V 0009 K011HHHHHLL
+#V 0010 K010LHHHLLH
+#V 0011 K010LHLLLHH
+#V 0012 K010HHLLHHL
+#V 0013 K010HLLHHLL
+#V 0014 K010LLLHLLH
+#V 0015 K010LLHLLHH
+#V 0016 K010HLHLHHL
+#V 0017 K010HHHHHLL
+#V 0018 K00XLLLHLLH
+#V 0019 K00XLLLHLLH
+#V 0020 K1XXLLLLLLL
+#V 0021 K1XXLLLLLLL

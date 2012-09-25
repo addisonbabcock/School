@@ -1,0 +1,440 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.5 [en] (Win95; I) [Netscape]">
+   <title>Project 3 : Main</title>
+<!-- Lotus-Domino (Release 4.6.2a - August 28, 1998 on Windows NT/Intel) -->
+</head>
+<body text="#000000" bgcolor="#FFFFFF" link="#9F009F" vlink="#9F009F" alink="#9F009F">
+<script>
+
+	//we always need the path
+	var thisMCPath = "/lspace/etc141/mcenter.nsf";
+
+	//we don't always need the rest
+	if( top.frames.length > 0 ) {
+		if( top.startedCRDoc == 1 ) {
+			top.resetTrigger = "doc";
+			top.checkProfile( self.location.href );
+		}
+		//variables needed for doc creation
+		var httpReferer = "";
+		var serverName= "lspace1.nait.ab.ca";
+		var pathInfo = "/lspace/etc141/mcenter.nsf/105441bb46e2cc1f852560490005e510/63fed29a8ba1a02c852566dd00580a9a?OpenDocument";
+		var queryString = "OpenDocument";
+		var currentPath = "/lspace/etc141/mcenter.nsf/(-by+Title-)/63FED29A8BA1A02C852566DD00580A9A?editdocument";
+		var viewName = "(-by Title-)";
+		var isAuthor = "0";
+		var isANewDoc = "0";
+		top.newDoc = isANewDoc;
+		var isInEditMode = "0";
+		var parentUNID = "63FED29A8BA1A02C852566DD00580A9A";
+		var docID = "";
+		var hideCRButton = "1";
+		var hideAnnotationButton = "1";
+		var bookmarkTitle = "Project 3 : Main";
+		
+		//variables needed for context creation
+		var dspFormName = "MCObject";
+		var dspForumMsg = "";
+		if( ( isANewDoc != 1 ) && ( isInEditMode != "1" ) ) {
+			top.mcDocLocation = self.location.href;
+		}
+
+		//handle context changes to reload utility bar
+		if( isANewDoc == 1 || isInEditMode == "1" ) {
+			top.uBarContext = "editDoc";
+		}
+		else {
+			top.uBarContext = "doc";
+		}
+		top.handleUtilityContext( "mc", "doc", "" );
+
+		//reload the utilitybar if the above misses it
+		editModeChange = ( ( top.editMode == 0 && isInEditMode == "1" ) || 
+			( top.editMode == 1 && isInEditMode == "0" ) );
+
+		if( editModeChange || top.grandContext != "MC" ) {		
+			top.writeBar( );
+			top.editMode = isInEditMode;
+		}
+
+		//replace the navigator if necessary
+		navLocation = top.nav.location.href;
+		navLocation = navLocation.toLowerCase( );
+		if( navLocation.indexOf( top.mcPath ) == -1 ) {
+			top.nav.location.replace( top.mcPath + "/$navigator" );
+		}
+
+		//load the action bar 
+		top.actionbar.location.replace( top.mcPath + "/$DocActionBar" );
+
+		//rewrite the view controls
+		top.writeViewControls( "doc" );
+
+	}
+
+	function load( docType ) { 
+		top.uBarContext = "editDoc"
+		top.mcTitle = "Project 3 : Main";
+		top.mcKey = "BBRS-439LT3";
+		self.location = top.crPath + "/" + docType + "?openform";
+	 } 
+
+	function loadKeyword( ) {
+		numKeys = "0";
+		keyId = "";
+		if( keyId == "error" ) {
+			alert( "LearningSpace can't locate the Keyword Definitions for this document.  Contact your Instructor or course Administrator with this information." );
+		}
+		else {
+			url = ( parseInt( numKeys ) > 1 ) ? thisMCPath + "/$dlgViewKeywords?openform&parentunid=63FED29A8BA1A02C852566DD00580A9A" : 
+				thisMCPath + "/mc6/" + keyId;
+			var ht = ( parseInt( numKeys ) > 1 ) ? 200 : 400;
+			var wd = ( parseInt( numKeys ) > 1 ) ? 300 : 600;
+			keyWin = eval( "window.open( url, 'LSPE44AUUZ','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,height=" + ht + ",width=" + wd + "');" );
+		}
+	}
+
+	//Web Link in view -- Multimedia Helper stuff
+	var dspActivateLinkFromView="1";
+	var dspWebLinkActive="";
+	var dspURLtoLink="http://";
+	if( dspWebLinkActive=="1" && dspActivateLinkFromView=="1" ) {
+		newWindow = open(dspURLtoLink, "NewWindow", "height=400,width=600,location=1,toolbar=1,scrollbars=1");
+	}
+
+	// WebLaunch function
+	function WebLaunch( ) {
+		if ( "" == "1" ) {
+//			var url ="/lspace/etc141/mcenter.nsf/dlgWebLaunchCDInfo?openform&drive=None";
+			var url ="/lspace/etc141/mcenter.nsf/dlgWebLaunchCDInfo?openform&parentunid=63FED29A8BA1A02C852566DD00580A9A";
+			CDWin = window.open( url, 'nuthin','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=0,height=150,width=400');
+		}
+		else {
+			var DriveURL="file:///" + "" + "|" + "/" + "";	open(DriveURL,"LaunchWin","Height=300,Width=450,location,resize,toolbar,menubar,status,scrollbars");
+		}
+	}
+	
+	// Open HREF Link in another window
+	function openLink(SiteURL) {
+		open(SiteURL,"NewWin","Height=400,Width=600,location,resize,toolbar,menubar,status,scrollbars");
+		self.history.back( );
+	}
+	
+	function deleteDoc( ) {
+		url = top.mcPath + "/$dlgDeleteDoc?openform&docid=63FED29A8BA1A02C852566DD00580A9A";
+		window.open( url, 'LSPE44AUV2','resizable=0,toolbar=0,location=0,directories=0,status=0,menubar=0,scrollbars=auto,height=250,width=300');
+	}
+
+	function loadTag( tagType, viewKey, fileName, altText, ht, wd ) {
+		libraryPath = "lspace/lib/weblib.nsf";
+		startLinkString = ( tagType == "IMG" ) ? "<image " : "<embed ";
+		midLinkString = "src='/" + libraryPath + "/(containerlookup)/" + viewKey + "/$file/" + fileName + "'";
+		heightString = ( ht == "" || wd == "")? "" : "' height=" + ht;
+		widthString = ( ht == "" || wd == "" ) ? "" : " width=" + wd;
+		altString = ( altText == "" ) ? "" : ' alt="' + altText + '"';
+		endLinkString =  altString + heightString + widthString + ">";
+		linkString = startLinkString + midLinkString + endLinkString;
+		linkString = linkString.toLowerCase( );
+		document.open( );
+		document.write( linkString );
+		document.close( );
+	}
+
+</script>
+
+<table BORDER=0 CELLSPACING=0 WIDTH="100%" >
+<tr VALIGN=TOP>
+<td ROWSPAN="6" WIDTH="22%"><img SRC="0.d9c" height=90 width=144></td>
+
+<td COLSPAN="2" WIDTH="78%"><b><font color="#000080"><font size=+1>Project
+3 : Main</font></font></b>
+<br><font color="#000080">Article</font></td>
+
+<td></td>
+</tr>
+</table>
+
+<p>
+<hr>
+<br><b><font color="#FF0000"><font size=+2>Project #3: Stepper Motor Controller
+<hr WIDTH="100%" SIZE=6 ALIGN=left></font></font></b><font color="#FFFFFF">...</font>
+<br><b><font color="#0000FF"><font size=+1>OBJECTIVES</font></font></b>
+<br><font color="#FFFFFF">...</font>
+<br>Upon completion of this laboratory exercise, you will have learned
+to:
+<ul>
+<li>
+<font color="#000000">define variables in WinCUPL</font></li>
+
+<li>
+<font color="#000000">program a state machine using WinCUPL state machine
+syntax</font></li>
+
+<li>
+<font color="#000000">assign the outputs of a state machine with boolean
+equations</font></li>
+
+<li>
+<font color="#000000">implement&nbsp; two-phase-on stepper motor control</font><font color="#FFFFFF">...</font></li>
+</ul>
+
+<p><br><b><font color="#0000FF"><font size=+1>INTRODUCTION</font></font></b>
+<p>In this lab you are to design a two-phase-on stepper motor controller
+using a synchronous Mealy Class A state machine implemented in a 20V8 PLD.
+The design will be created compiled, then simulated using WinCUPL. Once
+the simulation results are verified the PLD will be programmed and the
+design tested in circuit.
+<p>The specifications for the design are as follows:
+<ul>
+<li>
+&nbsp;there are four active high outputs (A ,B ,C ,D)</li>
+
+<li>
+an active high enable input (EN) is provided to start and stop the motor.
+The stepper motor position is "frozen" in the current state when it is
+de-activated (EN=0).</li>
+
+<li>
+a control line input (F) is provided to control the direction of rotation
+of the stepper motor (F=1 Forward, F=0 Reverse).</li>
+
+<li>
+an active high reset input (RST) is provided which will force all outputs
+low when asserted. The motor windings are all de-energized with the reset
+signal.</li>
+
+<li>
+use explicit pin assignments as shown below:</li>
+</ul>
+<font color="#FFFFFF">...</font>
+<center><table>
+<tr>
+<td><img SRC="pld03{image1}.gif" </TD height=318 width=158></td>
+</tr>
+</table></center>
+
+<br>&nbsp;
+<p><b><font color="#0000FF"><font size=+1>PROCEDURE</font></font></b>
+<br><font color="#FFFFFF">...</font>
+<br><b>Part A.&nbsp;&nbsp; State Machine Design</b>
+<br>1.&nbsp; Create a new source file named 'Step.pld' from the template
+and assign the pins as described in the introduction.
+<p>2. The WinCUPL design section will include Intermediate Variable definitions
+following the pin declarations.&nbsp; In this section you will label the
+'State' variable as a <b>FIELD</b>, using [SM2-0], as well as define the
+Forward and Reverse conditions as variables.&nbsp;&nbsp; The WinCUPL keyword
+for defining variables is&nbsp; <b>$DEFINE.&nbsp;&nbsp; </b>The variable
+names to be used are 'For' and 'Rev'.&nbsp; A boolean statement, enclosed
+in parentheses,&nbsp; tells the compiler which input pins have to be high
+or low for the variable to be true..&nbsp; The general syntax is as follows:
+<p><font size=-1><b>$DEFINE</b>&nbsp;&nbsp; <i>variable name</i>&nbsp;&nbsp;
+(<i>inputX&nbsp;&nbsp; &amp;&nbsp; inputY&nbsp; &amp; ! inputZ&nbsp;&nbsp;
+...</i>)</font>
+<p>3.&nbsp; Create code which will take the controller through&nbsp; the
+eight states in gray code sequence (refer to Project #2.
+<br>WinCUPL provides syntax specifically for designing state machines.&nbsp;
+This syntax will be used in this project to create the 'Logic Equations'
+section of the source file.&nbsp; There are several keywords included in
+the state machine syntax.&nbsp; A demonstration of how to use them is given
+below:
+<p><font size=-1><b>SEQUENCE&nbsp;</b> state</font>
+<br><font size=-1>{</font>
+<br><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp; <b>PRESENT&nbsp;&nbsp; </b><i>value
+of state&nbsp;</i>&nbsp;&nbsp; <b>IF&nbsp;&nbsp; </b><i>contitional variable
+</i><b>NEXT
+</b><i>value
+of next state;</i></font>
+<br><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>DEFAULT&nbsp;</b><i> </i><b>NEXT&nbsp;&nbsp; </b><i>default value of
+state ;</i></font>
+<br><font size=-1>}</font>
+<p>Consider the transition from state 0 in the gray code sequence as an
+example (the state values are in hexadecimal)::
+<p><font size=-1><b>SEQUENCE&nbsp;&nbsp; </b>state</font>
+<br><font size=-1>{</font>
+<br><font size=-1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>PRESENT
+</b>0&nbsp;
+
+<b>IF&nbsp;&nbsp;&nbsp;&nbsp; </b>For&nbsp; <b>NEXT&nbsp;&nbsp; 
+</b>1;</font>
+<br><font size=-1><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IF&nbsp;&nbsp;&nbsp;&nbsp; </b>Rev&nbsp;&nbsp; <b>NEXT&nbsp;&nbsp; </b>4;</font>
+<br><font size=-1><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+DEFAULT NEXT&nbsp;&nbsp; </b>0;</font>
+<br><font size=-1>}</font>
+<br>&nbsp;
+<p>4.&nbsp;&nbsp; Add an 'Equations' section for the output decoding circuitry
+in which the ouputs, A-D, will be defined using boolean equations.&nbsp;
+The equations are to control the output pins so that they become active
+in a&nbsp; relation to the states which will cause a two-phase-on pattern
+of&nbsp; progression to drive the stepper motor. Remember to incorporate
+the RST signal into the equations to provide the required reset function.
+<br>&nbsp;
+<br>&nbsp;
+<center><table BORDER COLS=9 WIDTH="75%" HEIGHT="100" >
+<caption><b>Two-Phase-On Pattern</b></caption>
+
+<tr>
+<td><b>out.\St.</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>0</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>1</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>3</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>2</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>6</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>7</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>5</b></td>
+
+<td>&nbsp;&nbsp;&nbsp; <b>4</b></td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp; <b>A</b></td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td>&nbsp;&nbsp; LO</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp; <b>B</b></td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td>&nbsp; LO&nbsp;</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td>&nbsp;&nbsp; LO</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp; <b>C</b></td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+</tr>
+
+<tr>
+<td>&nbsp;&nbsp;&nbsp; <b>D</b></td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI&nbsp;</td>
+
+<td>&nbsp;&nbsp; LO</td>
+
+<td>&nbsp;&nbsp; LO&nbsp;</td>
+
+<td BGCOLOR="#CCCCCC">&nbsp;&nbsp; HI</td>
+</tr>
+</table></center>
+
+<p><font color="#FFFFFF">...</font>
+<br><b>Part B.&nbsp;&nbsp; Compilation &amp; Simulation</b>
+<p>1.&nbsp; Open the simulator input file 'Step.si'.&nbsp; You will see
+that it provides input values to cause the state machine to go through
+the following steps:
+<ul>
+<li>
+preset to state zero</li>
+
+<li>
+go forward eight cycles</li>
+
+<li>
+reverse eight cycles</li>
+
+<li>
+hold for two cycles</li>
+
+<li>
+reset through two cycles.</li>
+</ul>
+2.&nbsp; Compile and Simulate your .PLD file and study&nbsp; the simulator
+output file.&nbsp; Make sure the result that your source file produced
+matches the desired sequence stated above.
+<p>3.&nbsp;&nbsp; Make a hard copy of the .PLD and&nbsp; .SO file to be
+included with the lab write-up.
+<br>&nbsp;
+<p><b>C. Programming the PLD</b>
+<p>1. Copy your JEDEC file to your floppy disk (ie: STEP.JED) and go over
+to the programming station.
+<p>2. Turn on the computer and the XELTEK SUPERPRO 2 programming unit.
+<p>3. Type SP2 &lt;Enter> from the DOS command line and next insert the
+20V8 into the programming socket oriented into the lower part of the ZIF
+socket.
+<p>4. From the main menu, go to the Manufacturer menu then the Default
+device format submenu and select FUSE in the submenu. Press &lt;Esc>.
+<p>5. Go to the Manufacturer menu, submenu Manufacturer, select AMD and
+Press &lt;Esc>.
+<p>6. Go to the Manufacturer menu and select the Type submenu then select
+the name of the chip by either highlighting or typing PALCE20V8. Press
+&lt;Esc> twice.
+<p>7. Go to the File menu and then select the Load submenu and load the
+JEDEC fuse map file for your design.
+<p>8. Next go to the Device menu and select the Function select submenu.
+From the new submenu highlight the Program option and press &lt;Enter>.
+<p>9. The PLD should now be programmed. Remove the 20V8 from the programmer
+<p><b>D. Testing the PLD &amp; - Lab Checkoff - WinCUPL&nbsp; Project #3
+- ETC141</b>
+<p>1. Verify the operation of the circuit to your instructor.
+<p>Date: __________ Instructor Signature: _________________________
+<p>Fmax: _________
+<p>2. Attach your source and simulation output files.. Submit the Lab to
+your instructor for grading.
+<p>Name: ____________________
+<p>Class: ____________________
+<p><font color="#FFFFFF">...</font>
+<p>
+<hr>
+</body>
+</html>
