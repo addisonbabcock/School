@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function OpenWindow1 ()
+{
+	window.open ("http://www.yahoo.com","Yahoo", "");
+}
+
+function OpenWindow2 ()
+{
+	window.open ("about:blank", "Blank", "location=no, menubar=no, height=300, width=400");
+}
+
+function OpenWindow3 ()
+{
+	newWin = window.open ("about:blank", "Stuff", "");
+	newWin.document.writeln ("<form><input type='button' value='Close' onClick='window.close ();'></form>");
+}
+//-->
+</script>
+</head>
+
+<body>
+
+<form method="get" action="">
+	<input type="button" value="openWin1" onClick="OpenWindow1 ();"><br>
+	<input type="button" value="openWin2" onClick="OpenWindow2 ();"><br>
+	<input type="button" value="openWin3" onClick="OpenWindow3 ();"><br>
+</form>
+</body>
+</html>

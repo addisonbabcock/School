@@ -1,0 +1,29 @@
+Sine,"Sine wave current value, amplitude of over 9000",0,1,5,0,"","",0,0,0,100,0,100,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+Ramp,"Ramp waveform, amplitude of over 9000.",0,1,5,0,"","",0,0,0,100,0,100,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+Pulse,"Pulse train, amplitude of over 9000.",0,1,5,0,"","",0,0,0,100,0,100,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#Year4,"Current year in 4 digit format",0,1,20,0,"","",0,0,0,100,0,100,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,0,0
+#Year,"Last 2 digits in year (0-99)",0,1,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#Seconds,"Seconds after minute (0-59)",0,1,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#ScreenUpdate,"Set to TRUE to enable Screen Redraw/Update",0,0,20,0,"","",1,0,0,100,0,100,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,0,0
+#RestartDDE,"Toggle TRUE to restart DDE comms.",0,0,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#Month,"Month (1-12)",0,1,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#Minutes,"Minutes after hour (0-59)",0,1,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#LogicRunning,"TRUE if background tasks are running",0,0,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#LastEditField,"",0,2,20,0,"","",0,0,0,100,0,100,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,0,0
+#KeyPressed,"",0,1,20,0,"","",0,0,0,100,0,100,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,0,0
+#IdleTime,"Ellapsed time in seconds since last operator action",0,1,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#Hour,"Hour in 24 hour format",0,1,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#fxManager,"Set to TRUE if fxManager is detected",0,0,20,0,"","",0,0,0,100,0,100,,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,0,0
+#EventTag,"Last recorded event",0,2,80,0,"","No events",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#driverID,"ID for last I/O error received",0,1,0,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#driverFunc,"Description of last I/O error",0,2,80,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#driverError,"I/O error received",0,0,0,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#Day,"Day of month",0,1,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#DataLogging,"TRUE if historical logging is ON",0,0,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#AlmPrtOver,"TRUE if alarm error is buffer overflow",0,0,0,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#AlmPrtOffLine,"TRUE if alarm error is Off Line",0,0,0,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#AlmPrtNoPaper,"TRUE if alarm error is Out of Paper",0,0,0,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#AlmPrtError,"TRUE if an alarm printer error is detected",0,0,0,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#AlarmPrinting,"TRUE if alarm printing is enabled",0,0,0,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#AlarmLogging,"TRUE if alarm logging is enabled",0,0,0,0,"","",1,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0
+#AccessLevel,"Current security level (0-999)",0,1,5,0,"","",0,0,0,0,0,0,*,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,*,0,0

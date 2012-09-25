@@ -1,0 +1,18 @@
+øõTRiLOGI Ver 5.0
+8,Button
+~
+0,Light
+~
+~
+0,Timer 50
+~
+0,Seq1 2
+~
+%JSeq1:0=1st.Scan
+%JSeq1:1=Seq1:0*Button
+Light|Timer=Seq1:1
+%JSeq1:0=Seq1:1*Timer
+
+~END_CIRCUIT~
+~END_CUSTFN~
+~END_CUSTFNLABEL~

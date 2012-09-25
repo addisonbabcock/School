@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Guestbook</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript">
+<!--
+function ajaxLoader (url, id) {
+	if (document.getElementById) {
+		var x = (window.ActiveXObject) ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest ();
+	}
+	if (x) {
+		x.onreadystatechange = function () {
+			if (x.readyState == 4 && x.status == 200) {
+				el = document.getElementById (id);
+				el.innerHTML = x.responseText;
+			}
+		}
+		x.open ("GET", url, true);
+		x.send (null);
+	}
+}
+
+function GetGuestBook ()
+{
+	ajaxLoader ('guestbook.txt', 'entries');
+}
+//-->
+</script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+<style type="text/css">
+entries
+{
+	overflow: auto;
+	position: absolute;
+	left: 449px;
+	top: 107px;
+	width: 495xp;
+	height: 301px;
+	z-index: 1;	
+}
+</style>
+</head>
+<body onLoad="GetGuestBook ();">
+<div id="entries" style="overflow: auto; position: absolute; left: 449px; top: 107px; width: 495xp; height: 301px; z-index: 1;"></div>
+<h1>Guest Book ICA</h1>
+<form method="GET" action="addEntry.php">
+	<table width="376" height="305" border="0">
+		<tr>
+			<td>Name:</td>
+			<td colspan="2"><input type="text" name="guestName"></td>
+		</tr>
+		<tr>
+			<td>Email:</td>
+			<td colspan="2"><input type="text" name="guestEmail"></td>
+		</tr>
+		<tr>
+			<td>Comments:</td>
+			<td colspan="2"><textarea name="guestComment" cols="40" rows="10"></textarea></td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Add Entry"></td>
+			<td><input type="reset" value="Reset Form"></td>
+			<td><input type="button" value="View Guest Book" onClick="GetGuestBook ();"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

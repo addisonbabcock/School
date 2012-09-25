@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>thing</title>
+<style type="text/css">
+#rpmLayer, #voltLayer, #tempLayer, #buttonLayer
+{
+	color : #CC0000;
+	background-color : #11FFFF;
+	font-size : 12px;
+	font-family : Verdana
+}
+</style>
+<script type="text/javascript">
+<!--
+var response;
+
+function ajaxLoader (url) {
+	if (document.getElementById) {
+		var x = (window.ActiveXObject) ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest ();
+	}
+	if (x) {
+		x.onreadystatechange = function () {
+			if (x.readyState == 4 && x.status == 200) {
+				response = x.responseText;
+				updateLayers ('rpmLayer', 'tempLayer', 'voltLayer');
+			}
+		}
+		x.open ("GET", url, true);
+		x.send (null);
+	}
+}
+
+function updateLayers (rpmLayerID, tempLayerID, voltLayerID)
+{
+	//var response = ajaxLoader(url);
+	
+	startRpmLayer = response.indexOf ("<" + rpmLayerID + ">", 0) + ("<" + rpmLayerID + ">").length;
+	endRpmLayer = response.indexOf ("</" + rpmLayerID + ">", startRpmLayer);
+	rpm = response.slice (startRpmLayer, endRpmLayer);
+
+	startTempLayer = response.indexOf ("<" + tempLayerID + ">", 0) + ("<" + tempLayerID + ">").length;
+	endTempLayer = response.indexOf ("</" + tempLayerID + ">", startTempLayer);
+	temp = response.slice (startTempLayer, endTempLayer);
+	
+	startVoltLayer = response.indexOf ("<" + voltLayerID + ">", 0) + ("<" + voltLayerID + ">").length;
+	endVoltLayer = response.indexOf ("</" + voltLayerID + ">", startVoltLayer);
+	volt = response.slice (startVoltLayer, endVoltLayer);
+
+	document.getElementById (rpmLayerID).innerHTML = rpm;
+	document.getElementById (tempLayerID).innerHTML = temp;
+	document.getElementById (voltLayerID).innerHTML = volt;
+}
+//-->
+</script>
+</head>
+<body onLoad="ajaxLoader ('values.php');">
+<div id="PictureLayer" style="position:absolute; left:40px; top:24px; width:483px; height:276px; z-index:1">
+	<img src="bg.jpg" width="483" height="276">
+</div>
+<div id="rpmLayer" style="position:absolute; left:341px; top:230px; width:82px; height:15px; z-index:2"></div>
+<div id="voltLayer" style="position:absolute; left:341px; top:255px; width:82px; height:15px; z-index:3"></div>
+<div id="tempLayer" style="position:absolute; left:341px; top:280px; width:82px; height:15px; z-index:4"></div>
+<div id="buttonLayer" style="position:absolute; left:429px; top:255px; width:82px; height:15px; z-index:5">
+	<a href="#" onClick="ajaxLoader ('values.php');">Refresh</a>
+</div>
+</body>
+</html>

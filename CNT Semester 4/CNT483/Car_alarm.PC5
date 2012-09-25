@@ -1,0 +1,25 @@
+øõTRiLOGI Ver 5.0
+8,Door
+9,Key
+~
+0,Siren
+~
+~
+0,EntryTimer 30
+1,ExitTimer 30
+~
+~
+%JSeq1:1=1st.Scan
+%JSeq1:2=Door*Seq1:1
+EntryTimer=Seq1:2
+%JSeq1:3=EntryTimer*Seq1:2
+%JSeq1:4=Seq1:2*Key
+Siren=Seq1:3
+%JSeq1:4=Seq1:3*Key
+%JSeq1:5=Seq1:4*/Key
+ExitTimer=Seq1:5
+%JSeq1:1=ExitTimer
+
+~END_CIRCUIT~
+~END_CUSTFN~
+~END_CUSTFNLABEL~

@@ -1,0 +1,24 @@
+øõTRiLOGI Ver 5.0
+8,R_Start
+9,R_Stop
+10,Cam_Ok
+11,LE_Stop
+12,UE_Stop
+~
+0,Alert
+~
+0,Start
+1,Stop
+2,Run
+~
+0,Timer 30
+~
+~
+Start=R_Start*Timer
+Stop=((R_Stop*Timer+UE_Stop)+LE_Stop)
+Alert=Timer
+Timer=Cam_Ok*(R_Start+R_Stop)
+
+~END_CIRCUIT~
+~END_CUSTFN~
+~END_CUSTFNLABEL~

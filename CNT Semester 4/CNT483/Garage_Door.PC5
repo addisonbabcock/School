@@ -1,0 +1,59 @@
+øõTRiLOGI Ver 5.0
+8,Button
+9,Top_Sw
+10,Bot_Sw
+11,Obstr_Sw
+12,Reset
+~
+0,Motor_U
+1,Motor_D
+~
+~
+~
+0,State 3
+~
+%JSeq1:0=1st.Scan
+%LClosed=Seq1:0
+%JSeq1:1=Seq1:0*Button
+Motor_U|%LFn_#1=Seq1:1
+%JSeq1:2|%LOpen=Seq1:1*Top_Sw
+%JSeq1:3=Seq1:2*Button
+Motor_D|%LClosing=Seq1:3
+%JSeq1:0=Seq1:3*Bot_Sw
+%JSeq1:1|%LObstructio=Seq1:3*Obstr_Sw
+%JSeq1:0=Reset
+
+~END_CIRCUIT~
+È
+Fn#0,49
+SETLCD 0,1,CHR$(1) '
+SETLCD 4,1,"OPENING DOOR" '
+È
+Fn#1,48
+SETLCD 0,1,CHR$(1) '
+SETLCD 4,1,"DOOR OPEN" '
+
+È
+Fn#2,49
+SETLCD 0,1,CHR$(1) '
+SETLCD 4,1,"CLOSING DOOR" '
+È
+Fn#3,48
+SETLCD 0,1,CHR$(1) '
+SETLCD 4,1,"DOOR CLOSED" '
+È
+Fn#4,48
+SETLCD 0,1,CHR$(1) '
+SETLCD 4,1,"OBSTRUCTION" '
+È
+Fn#6,22
+SETLCD 0,1,CHR$(1) '
+
+~END_CUSTFN~
+0,Opening
+1,Open
+2,Closing
+3,Closed
+4,Obstructio
+6,Clear
+~END_CUSTFNLABEL~

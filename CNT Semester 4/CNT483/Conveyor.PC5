@@ -1,0 +1,20 @@
+øõTRiLOGI Ver 5.0
+8,Start
+9,Stop
+10,Step
+~
+0,Motor
+~
+~
+~
+0,State 3
+~
+%JSeq1:1=1st.Scan
+%JSeq1:3=Step
+%JSeq1:2=Seq1:1*Start
+%JSeq1:1=(Seq1:2*Stop+Seq1:3*/Step)
+Motor=(Seq1:2+Seq1:3)
+
+~END_CIRCUIT~
+~END_CUSTFN~
+~END_CUSTFNLABEL~

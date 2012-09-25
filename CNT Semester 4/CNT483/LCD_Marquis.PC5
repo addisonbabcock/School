@@ -1,0 +1,54 @@
+øõTRiLOGI Ver 5.0
+8,Right
+~
+~
+~
+0,Delay 10
+~
+~
+
+%LLCDInit=1st.Scan
+%KLCDRight=Right*Delay
+%KLCDLeft=/Right*Delay
+Delay=/Delay
+
+~END_CIRCUIT~
+È
+Fn#0,50
+CALL 4
+
+C = C + 1 '
+IF C = 20 '
+	C = 1 '
+ENDIF '
+
+
+È
+Fn#1,9
+C = 1 '
+
+
+È
+Fn#2,48
+CALL 4
+
+C = C - 1 '
+IF C = 0 '
+	C = 20 '
+ENDIF '
+È
+Fn#3,194
+SETLCD 0,1,CHR$(1) '
+SETLCD 4,C,"PLCs are so much fun" '
+
+SETDAC 1,ADC ( 4 ) '
+S = (ADC (4) * 20) / 4096 + 1 '
+SETTIMERSV 1,S '
+
+SETLCD 1,1,"Refresh = " + STR$ (S / 10) + "." + STR$ (S MOD 10) '
+~END_CUSTFN~
+0,LCDRight
+1,LCDInit
+2,LCDLeft
+3,LCDDraw
+~END_CUSTFNLABEL~

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CNT4K - Addison Babcock - Final Project</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+<!--
+function CheckLogin ()
+{
+	var submittable = true;
+	
+	//check for username
+	if (document.forms [0].usern.value.length == 0)
+	{
+		submittable = false;
+		document.getElementById ('usernameOK').innerHTML = "<font color='#FF0000'>Please enter a username.</font>";
+	}
+	else
+	{
+		document.getElementById ('usernameOK').innerHTML = "<font color='#00CC00'>Username OK!</font>";
+	}
+	
+	//check for password
+	if (document.forms [0].passw.value.length == 0)
+	{
+		submittable = false;
+		document.getElementById ('passwordOK').innerHTML = "<font color='#FF0000'>Please enter a password.</font>";
+	}
+	else
+	{
+		document.getElementById ('passwordOK').innerHTML = "<font color='#00CC00'>Password OK!</font>";
+	}
+	
+	//did all checks pass?
+	if (submittable == true)
+	{	
+		document.forms [0].submit ();
+	}
+}
+//-->
+</script>
+</head>
+<body  bgcolor="#99FFFF">
+<h1>Final Project</h1>
+<div id="formDiv" style="position:absolute; left:9px; top:66px; width:268px; height:23px; z-index:3"> 
+  <table width="269" border="0">
+    <form method="post" action="login.php" onSubmit="return false;">
+			<tr>
+				<td colspan="2">Please login:</td>
+			</tr>
+			<tr>
+				<td>Username: </td>
+				<td><input type="text" name="usern"></td>
+			</tr>
+			<tr>
+				<td>Password: </td>
+				<td><input type="password" name="passw"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" onClick="CheckLogin ();"></td>
+				<td><input type="reset"></td>
+			</tr>
+		</form>
+	</table>
+</div>
+<div id="usernameOK" style="position:absolute; left:286px; top:92px; width:201px; height:22px; z-index:1"></div>
+<div id="passwordOK" style="position:absolute; left:286px; top:118px; width:201px; height:22px; z-index:2"></div>
+</body>
+</html>

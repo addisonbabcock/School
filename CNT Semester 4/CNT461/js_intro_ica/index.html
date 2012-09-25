@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Javascript Intro ICA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script type="text/javascript">
+<!--
+function testCookies ()
+{
+	alert ("Cookies are " + (navigator.cookieEnabled ? "enabled" : "disabled") + ". ");
+}
+function setBGColor ()
+{
+	document.bgColor = '#888888';
+}
+function openGoogle ()
+{
+	window.open ('http://www.google.com', 'Google', 'width=400, height=100');
+}
+function MouseOver (mouseOnImage)
+{
+	if (mouseOnImage)
+	{
+		document.inFunction.src = "home-button-down.jpg";
+	}
+	else
+	{
+		document.inFunction.src = "home-button-up.jpg";
+	}
+}
+//-->
+</script>
+</head>
+<body>
+<h1>Javascript Intro ICA</h1>
+<table border=1>
+	<tr>
+		<td>Alert Test:</td>
+		<td><input name="alertButton" type="button" onClick="alert ('My name is Addison');" value="Make Alert"></button></td>
+	</tr>
+	<tr>
+		<td>Prompt Test:</td>
+		<td><input name="promptButton" type="button" value="Ask Me"
+				   onclick="var colour = prompt ('What is your favourite colour?'); alert ('You like ' + colour);"></td>
+	</tr>
+	<tr>
+		<td>New Window:</td>
+		<td><input name="newWindowButton" type="button" value="Google Me"
+				   onclick="openGoogle ();"></td>
+	</tr>
+	<tr>
+		<td>Redirect Using Location:</td>
+		<td><input name="redirectButton" type="button" value="Off to Google"
+				   onclick="location.href = 'http://www.google.com'"></td>
+	</tr>
+	<tr>
+		<td>History Test:</td>
+		<td><input name="backButton" type="button" value="Go Back Now"
+				   onclick="history.back ();"></td>
+	</tr>
+	<tr>
+		<td>Navigator Test:</td>
+		<td><input name="cookiesButton" type="button" value="Are cookies allowed?"
+				   onclick="testCookies ();"></td>
+	</tr>
+	<tr>
+		<td>Body Properties:</td>
+		<td><input name="bodyButton" type="button" value="Darken the Skies" onclick="setBGColor ();"></td>
+	</tr>
+	<tr>
+		<td>Swap in Place:</td>
+		<td><img name="inPlace" src="home-button-up.jpg" onMouseOver="document.inPlace.src='home-button-down.jpg';" 
+				 onMouseOut="document.inPlace.src='home-button-up.jpg';"></td>
+	</tr>
+	<tr>
+		<td>Swap in Function:</td>
+		<td><img name="inFunction" src="home-button-up.jpg" onMouseOver="MouseOver (true);" onMouseOut="MouseOver (false);"></td>
+	</tr>
+	<tr>
+		<td colspan=2 align="center">Done</td>
+	</tr>
+</table>
+</body>
+</html>

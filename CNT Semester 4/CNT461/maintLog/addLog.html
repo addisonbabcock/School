@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Add a record to the log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+<table border="0">
+	<form action="addLog.php" method="post">
+		<tr>
+			<td>operator:</td>
+			<td><input type="text" name="operator"></td>
+		</tr>
+		<tr>
+			<td>equipment:</td>
+			<td><input type="text" name="equipment"></td>
+		</tr>
+		<tr>
+			<td>problem:</td>
+			<td><input type="text" name="problem"></td>
+		</tr>
+		<tr>
+			<td><input type="submit"></td>
+			<td><input type="reset"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><a href="viewLog.php">View log file</a></td>
+		</tr>
+		<tr>
+			<td colspan="2"><a href="viewLogXML.php">View log in XML</a></td>
+		</tr>
+	</form>
+</table>
+</body>
+</html>

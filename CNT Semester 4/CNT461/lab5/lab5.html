@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<script language="JavaScript" type="text/javascript">
+<!--
+var nameHelpShown = false;
+var emailHelpShown = false;
+var passwordHelpShown = false;
+
+function Loaded ()
+{
+	window.status = "Maricopa Report Form";
+	document.ReportForm.name.focus ();
+}
+
+function CheckInputs ()
+{
+	var formOK = true;
+	
+	if (document.ReportForm.name.value.length == 0)
+	{
+		document.getElementById('nameDiv').style.color= "red";
+		document.getElementById('nameDiv').innerHTML = "The name field must not be blank.";
+		
+		if (formOK)
+		{
+			nameHelpShown = true;
+			document.ReportForm.name.focus ();
+		}
+		formOK = false;
+	}
+	else
+	{
+		document.getElementById('nameDiv').innerHTML = "&nbsp;";
+	}
+	
+	apos=document.ReportForm.email.value.indexOf("@");
+	dotpos=document.ReportForm.email.value.lastIndexOf(".");
+	if (apos < 1 || dotpos - apos < 2 || 
+		document.ReportForm.email.value.length == 0) 
+	{
+		document.getElementById('emailDiv').style.color = "red";
+		document.getElementById('emailDiv').innerHTML = "The email field must not be blank and must contain at least one '@' and '.'.";
+		
+		if (formOK)
+		{
+			emailHelpShown = true;
+			document.ReportForm.email.focus ();
+		}
+		formOK = false;
+	}
+	else
+	{
+		document.getElementById('emailDiv').innerHTML = "&nbsp;";
+	}
+	
+	if (document.ReportForm.pass.value.length == 0)
+	{
+		document.getElementById('passwordDiv').style.color = "red";
+		document.getElementById('passwordDiv').innerHTML = "The password field must not be blank.";
+
+		if (formOK)
+		{
+			passwordHelpShown = true;
+			document.ReportForm.pass.focus ();
+		}
+		formOK = false;
+	}
+	else
+	{
+		document.getElementById('passwordDiv').innerHTML = "&nbsp;";
+	}
+	
+	return formOK;
+}
+
+function ShowNameHelp ()
+{
+	if (!nameHelpShown)
+	{
+		document.getElementById('nameDiv').style.color = "green";
+		document.getElementById('nameDiv').innerHTML = "Please enter your name.";
+	}
+	nameHelpShown = true;
+}
+
+function ShowEmailHelp ()
+{
+	if (!emailHelpShown)
+	{
+		document.getElementById('emailDiv').style.color = "green";
+		document.getElementById('emailDiv').innerHTML = "Please enter your email address.";
+	}
+	emailHelpShown = true;
+}
+
+function ShowPassHelp ()
+{
+	if (!passwordHelpShown)
+	{
+		document.getElementById('passwordDiv').style.color = "green";
+		document.getElementById('passwordDiv').innerHTML = "Please enter your password.";
+	}
+	passwordHelpShown = true;
+}
+
+function FormReset ()
+{
+	nameHelpShown = false;
+	emailHelpShown = false;
+	passwordHelpShown = false;
+	
+	return true;
+}
+//-->
+</script>
+</head>
+<body bgcolor="#ffffcc" link="#0000cc" text="#333333" vlink="#ff6666" onLoad="Loaded();">
+<h2 align="center">Report Form</h2>
+
+<form method="post" name="ReportForm" onSubmit="return CheckInputs ();" onReset="return FormReset ();" method="post" action="http://nait.jtlnet.com/~aux0uv/cgi-bin/FormAl.pl">
+	<table border="0" cellpadding="4" cellspacing="1">
+		<tbody><tr>
+			<td colspan="2" bgcolor="#003333"><font color="#cccccc" size="+3">
+				<tt><b>student information</b></tt></font></td>
+		</tr>
+		<tr>
+			<td align="right" valign="top"><tt><b>name</b></tt></td>
+			<td valign="top"><input name="name" size="40" type="text" onFocus="ShowNameHelp ();"><br>
+        <font color="#000099" size="2">enter your full name</font>
+		<div id="nameDiv">&nbsp;</div></td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>email</b></tt></td>
+			<td valign="top"><input name="email" size="40" type="text" onFocus="ShowEmailHelp ();"><br>
+				<font color="#000099" size="2">enter an internet contact address</font>
+				<div id="emailDiv">&nbsp;</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>password</b></tt></td>
+			<td valign="top"><input name="pass" size="20" type="password" onFocus="ShowPassHelp ();"><br>
+				<font color="#000099" size="2">enter a code to identify you to your instructor</font>
+				<div id="passwordDiv">&nbsp;</div>
+			</td>
+		</tr>
+<!--		
+		<tr>
+			<td colspan="2" bgcolor="#003333"><font color="#cccccc" size="+3">
+				<tt><b>volcano report</b></tt></font></td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>volcano name</b></tt></td>
+			<td valign="top"><input name="vname" size="40" type="text"><br>
+				<font color="#000099" size="2">enter the name of the volcano you researched</font>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>location</b></tt></td>
+			<td valign="top"><input name="vlat" size="10" type="text"> latitude<br>
+				<input name="vlong" size="10" type="text"> longitude<br>
+				<font color="#000099" size="2">enter the map coordinates that locate this volcano</font>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>type</b></tt></td>
+			<td valign="top">
+				<select name="vtype">
+					<option value="select" selected="selected">Select the type...</option>
+					<option value="Hawaiian">Hawaiian</option>
+					<option value="Surtseyan">Surtseyan</option>
+					<option value="Strombolian">Strombolian</option>
+					<option value="Phreato-Plinian">Phreato-Plinian</option>
+					<option value="Plinian">Plinian</option>
+				</select><br>
+				<font color="#000099" size="2">select the volcano type 
+				(see <a href="https://carnage.net.nait.ca/webdev/labs/term.html" target="_top">volcano terminology</a>)</font>
+			</td>
+		</tr>
+		
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>activity</b></tt></td>
+			<td valign="top">
+				<input name="active" value="active" checked="checked" type="radio"> active
+				<input name="active" value="inactive" type="radio"> inactive<br>
+				<input name="vdate" size="40" type="text"><br>
+				<font color="#000099" size="2">enter the date of last known eruption, if known</font>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>features</b></tt></td>
+			<td valign="top">
+				<input name="note1" value="danger risk" type="checkbox">danger risk to nearby population<br>
+				<input name="note2" value="historic eruptions" type="checkbox">has erupted in historic time<br>
+				<input name="note3" value="observed" type="checkbox">has been observed in detail<br>
+				<input name="note4" value="explosive eruptions" type="checkbox">explosive eruptions<br>
+				<input name="note5" value="mild eruptions" type="checkbox">mild eruptions<br>
+				<font color="#000099" size="2">check all that apply</font>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>more info</b></tt></td>
+			<td valign="top"><textarea name="info" rows="12" cols="40" wrap="virtual"></textarea><br>
+				<font color="#000099" size="2">write any other information 
+					that you have learned about this volcano</font>
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" bgcolor="#003333"><font color="#cccccc" size="+3">
+			<tt><b>sources</b></tt></font></td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"><tt><b>references</b></tt></td>
+			<td valign="top"><input name="ref1" size="40" value="http://" type="text"><br>
+				<input name="ref2" size="40" value="http://" type="text"><br>
+				<input name="ref3" size="40" value="http://" type="text"><br>
+				<font color="#000099" size="2">provide three web site URLs that you used in your research</font>
+			</td>
+		</tr>
+		-->
+		<tr>
+			<td colspan="2" bgcolor="#003333"><font color="#cccccc" size="+3">
+				<tt><b>send report</b></tt></font></td>
+		</tr>
+		
+		<tr>
+			<td align="right" valign="top"> </td>
+			<td valign="top">
+				<input value="Send in My Report" type="submit">  
+				<input value="Erase Report Form" type="reset">
+			</td>
+		</tr>
+	</tbody></table>
+</form>
+
+
+</body></html>

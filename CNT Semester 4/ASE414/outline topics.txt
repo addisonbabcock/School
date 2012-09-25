@@ -1,0 +1,27 @@
+1.0
+-history of p2p
+-comparison of p2p protocols
+---
+-how bittorrent works
+-trackers
+-torrent sites
+-various bittorrent clients
+-advantages & disadvantages of bittorrent versus other protocols
+2.0
+-ISP throttling
+-QOS
+-Distribution of types of internet traffic
+-arguments for and against throttling
+-sweden and north korea
+-ISP overselling
+-"unlimited" limits
+-traffic shaping
+-blocked ports
+-net neutrality
+-efforts to increase bandwidth
+3.0
+-legal issues
+-lawsuits against end users
+-attempts to close trackers
+--pirate bay
+--suprnova

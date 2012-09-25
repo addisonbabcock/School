@@ -1,0 +1,27 @@
+øõTRiLOGI Ver 5.0
+0,Start
+1,Stop
+2,Manual
+3,Step
+~
+0,Out1
+1,Out2
+2,Out3
+3,Out4
+4,Out5
+5,Out6
+6,Out7
+7,Out8
+~
+0,Run
+~
+0,Duration 1000
+~
+0,Seq1 4
+~
+Run|Duration=(Start+Run)*/Stop
+%ASeq1=Run*(Step*Manual+/Manual*Clk:0.5s)
+
+~END_CIRCUIT~
+~END_CUSTFN~
+~END_CUSTFNLABEL~

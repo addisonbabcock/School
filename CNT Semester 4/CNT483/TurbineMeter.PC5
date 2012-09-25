@@ -1,0 +1,82 @@
+øõTRiLOGI Ver 5.0
+12,Prove
+13,Good
+14,Done
+15,Zero
+~
+~
+~
+0,InitDelay 10
+~
+~
+%JSeq2:0=(1st.Scan+Zero)
+%LFn_#1|InitDelay=Seq2:0
+%JSeq2:1=(Seq2:2*Done+(Seq2:3*Done+Seq2:0*InitDelay))
+%LFn_#2=Seq2:1
+%JSeq2:2=Seq2:1*Prove
+%LProving|%KShowCounte=Seq2:2
+%JSeq2:3=Seq2:2*Good
+%LCalculate=Seq2:3
+
+~END_CIRCUIT~
+È
+Fn#0,236
+HSCDEF 1,10,200000 '
+HSCPV [1] = 0 ' Init the counter
+Output [1] = &H0000
+ ' 
+SETLCD 0,1,CHR$(1) ' 
+SETLCD 1,1,"State 1 - init     " ' 
+SETLCD 2,1,"Counter " + STR$(HSCPV [1]) ' 
+SETLCD 3,1,"Release Zero" ' 
+SETLCD 4,1,"K Factor: " ' 
+
+
+È
+Fn#1,174
+SETLCD 0,1,CHR$(1) ' 
+SETLCD 1,1,"State 2 - Waiting" ' 
+SETLCD 2,1,"Counter " + STR$(HSCPV[1]) ' 
+SETLCD 3,1,"Press Prove" ' 
+SETLCD 4,1,"K Factor: " ' 
+
+Output [1] = &H0000
+
+È
+Fn#2,162
+SETLCD 0,1,CHR$(1) ' 
+SETLCD 1,1,"State 3 - Proving" ' 
+SETLCD 2,1,"Counter " + STR$(HSCPV[1]) ' 
+SETLCD 3,1,"Fill tank, press Done" ' 
+SETLCD 4,1,"K Factor: " ' 
+È
+Fn#3,210
+SETLCD 0,1,CHR$(1) ' 
+SETLCD 1,1,"State 4 - Calculating" ' 
+SETLCD 2,1,"Counter " + STR$(HSCPV[1]) ' 
+SETLCD 3,1,"Press done" ' 
+SETLCD 4,1,"K Factor " + STR$((HSCPV [1] * 1000) / 2440) ' 
+
+Output [1] = &H0000
+
+È
+Fn#4,152
+SETLCD 2,1,"Counter " + STR$(HSCPV [1]) ' 
+
+If ADC(4) > 819
+Then
+	Output [1] = &H0400 ' 
+	SetDAC 1, ADC(4)
+Else
+	Output [1] = &H0000
+	SetDAC 1, 0
+EndIf
+
+~END_CUSTFN~
+0,Initialize
+1,Waiting
+2,Proving
+3,Calculate
+4,ShowCounte
+9,phantom
+~END_CUSTFNLABEL~

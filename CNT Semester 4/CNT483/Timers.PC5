@@ -1,0 +1,24 @@
+øõTRiLOGI Ver 5.0
+8,Button1
+9,Button2
+~
+0,Light1
+1,Light2
+~
+~
+0,Delay1 50
+1,Delay2 50
+~
+0,State 4
+~
+%JSeq1:0=1st.Scan
+%JSeq1:1=Seq1:0*Button1
+Light1|Delay1=Seq1:1
+%JSeq1:2=Seq1:1*Delay1
+%JSeq1:3=Seq1:2*Button2
+Delay2|Light2=Seq1:3
+%JSeq1:0=Seq1:3*Delay2
+
+~END_CIRCUIT~
+~END_CUSTFN~
+~END_CUSTFNLABEL~

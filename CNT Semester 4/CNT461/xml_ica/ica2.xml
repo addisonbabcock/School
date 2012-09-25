@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE email [
+	<!ELEMENT email (to+, from+, subject, body)>
+	<!ELEMENT to (#PCDATA)>
+	<!ELEMENT from (#PCDATA)>
+	<!ELEMENT subject (#PCDATA)>
+	<!ELEMENT body (#PCDATA)>
+]>
+<email>
+	<to>addison.babcock@gmail.com</to>
+	<from>stuff@place.com</from>
+	<subject>Too many fish!</subject>
+	<body>Get rid of some of your fish!</body>
+</email>

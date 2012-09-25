@@ -1,0 +1,21 @@
+øõTRiLOGI Ver 5.0
+0,R_Start
+1,R_Stop
+2,Cam_Ok
+3,LE_Stop
+4,UE_Stop
+~
+~
+0,Start
+1,Stop
+2,Run
+~
+~
+~
+Start=R_Start*Cam_Ok
+Stop=(R_Stop*Cam_Ok+(LE_Stop+UE_Stop))
+Run=(Run*/Stop+Start)
+
+~END_CIRCUIT~
+~END_CUSTFN~
+~END_CUSTFNLABEL~

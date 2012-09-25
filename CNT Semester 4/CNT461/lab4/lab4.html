@@ -1,0 +1,147 @@
+<html>
+<head>
+<script language="JavaScript">
+<!--
+function Calculate ()
+{
+	var subtotal = 0;
+	var gst = 0;
+	var pst = 0;
+	var shipping = 0;
+	var total = 0;
+	
+	//check to see if the subtotal field is a number
+	if (isNaN (document.forms[0].text_subtotal.value))
+	{
+		//NaN display an alert
+		alert (document.forms[0].text_subtotal.value + " is not a number. Aborting.");
+		return;
+	}
+	
+	//get the subtotal
+	subtotal = parseFloat (document.forms[0].text_subtotal.value);
+	
+	//calculate and display the gst
+	if (document.forms[0].check_gst.checked)
+	{
+		gst = subtotal * 0.06;
+	}
+	else
+	{
+		gst = 0.0;
+	}
+	document.forms[0].text_gst.value = Math.round (gst * 100) / 100;
+	
+	//calculate and display the pst
+	if (document.forms[0].radio_pst[0].checked)
+	{
+		pst = 0.0;	
+	}
+	else
+	{
+		if (document.forms[0].radio_pst[1].checked)
+		{
+			pst = subtotal * 0.05;
+		}
+		else
+		{
+			if (document.forms[0].radio_pst[2].checked)
+			{
+				pst = subtotal * 0.08;
+			}
+		}
+	}
+	document.forms[0].text_pst.value = Math.round (pst * 100) / 100;
+	
+	//calculate and display the shipping
+	var shippingSelectedIndex = document.forms[0].select_shipping.selectedIndex;
+	if (shippingSelectedIndex == 0)
+	{
+		shipping = 0;
+		document.forms [0].text_shipping.value = "0.00";
+	}
+	else
+	{
+		if (shippingSelectedIndex == 1)
+		{
+			shipping = 5.00;
+			document.forms [0].text_shipping.value = "5.00";
+		}
+		else
+		{
+			if (shippingSelectedIndex == 2)
+			{
+				shipping = 10.00;
+				document.forms [0].text_shipping.value = "10.00";				
+			}
+			else
+			{
+				if (shippingSelectedIndex == 3)
+				{
+					shipping = 20.00;
+					document.forms [0].text_shipping.value = "20.00";
+				}
+			}
+		}
+	}
+	
+	//calculate and display the total
+	total = subtotal + gst + pst + shipping;
+	document.forms[0].text_total.value = Math.round (total * 100) / 100;
+}
+//-->
+</script>
+<title>CNT4K - Addison Babcock - Lab 4</title>
+</head>
+<body>
+<img src="../banner.gif" width="640" height="79"> 
+<h1>CNT4K - Addison Babcock - Lab 4</h1>
+<form>
+	<table border="0">
+		<tr>
+			<td colspan="3" align="center"><h2>Art Gallery Cost Calculator</h2></td>
+		</tr>
+		<tr>
+			<td>Subtotal:</td>
+			<td colspan="2"><input type="text" name="text_subtotal" value="0.00" onBlur="javascript:Calculate ();"></td>
+		</tr>
+		<tr>
+			<td>GST:</td>
+			<td><input type="text" name="text_gst" value="0.00"></td>
+			<td><input type="checkbox" name="check_gst" value="false" onClick="javascript:Calculate ();"> Yes / No</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+			<td><input type="radio" name="radio_pst" value="0" checked="true" onClick="javascript:Calculate ();"> None</td>
+		</tr>
+		<tr>
+			<td>PST:</td>
+			<td><input type="text" name="text_pst" value="0.00"></td>
+			<td><input type="radio" name="radio_pst" value="5" onClick="javascript:Calculate ();"> 5%</td>
+		</tr>
+		<tr>
+			<td colspan="2">&nbsp;</td>
+			<td><input type="radio" name="radio_pst" value="8" onClick="javascript:Calculate ();"> 8%</td>
+		</tr>
+		<tr>
+			<td>Shipping:</td>
+			<td><input type="text" name="text_shipping" value="0.00"></td>
+			<td>
+				<select name="select_shipping" onChange="javascript:Calculate ();">
+					<option value="select_shipping_none">None ($0.00)</option>
+					<option value="select_shipping_ground">Ground ($5.00)</option>
+					<option value="select_shipping_air">Air ($10.00)</option>
+					<option value="select_shipping_express">Express ($20.00)</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Total:</td>
+			<td><input type="text" name="text_total" value="0.00"></td>
+			<td><input type="reset" value="Reset form"></td>
+		</tr>
+	</table>
+</form>
+<a href="../index.html"><img src="../back.gif"></a>
+</body>
+</html>
