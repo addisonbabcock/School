@@ -1,0 +1,47 @@
+/* CascadingDelete.sql
+
+Example script used to modify original version of ExamProctor,
+FinancialDetail, & Schedule tables that already exist in some database example!  
+
+After the modification script below is executed, when a parent record (in the Registration table in this example) is deleted, any child records will go too (this is CASCADING DELETE in action. */
+
+ALTER TABLE ExamProctor --drop existing FK constraint
+		 DROP CONSTRAINT FK_LoginId_Year_SemesterCode2
+GO
+
+--now add the constraint back but this time, enable cascading delete:
+ALTER TABLE ExamProctor
+		 ADD CONSTRAINT FK_LoginId_Year_SemesterCode2 FOREIGN KEY
+(LoginId,Year,SemesterCode)
+      REFERENCES Registration(LoginId,Year,SemesterCode)
+		 		 ON DELETE CASCADE
+go
+
+ALTER TABLE FinancialDetail --drop FK constraint
+		 DROP CONSTRAINT FK_LoginId_Year_SemesterCode
+GO
+
+--now add the constraint but this time, enable cascading delete:
+ALTER TABLE FinancialDetail
+		 ADD CONSTRAINT FK_LoginId_Year_SemesterCode FOREIGN KEY
+(LoginId,Year,SemesterCode)
+      REFERENCES Registration(LoginId,Year,SemesterCode)
+		 		 ON DELETE CASCADE
+go
+
+ALTER TABLE Schedule --drop FK constraint
+		 DROP CONSTRAINT FK_LoginId_Year_SemesterCode_3
+GO
+
+--now add the constraint but this time, enable cascading delete:
+ALTER TABLE Schedule
+		 ADD CONSTRAINT FK_LoginId_Year_SemesterCode_3 FOREIGN KEY
+(LoginId,Year,SemesterCode)
+      REFERENCES Registration(LoginId,Year,SemesterCode)
+		 		 ON DELETE CASCADE
+go
+
+--test now:
+delete Registration
+where loginid=1 --parent and any child records should disappear!
+

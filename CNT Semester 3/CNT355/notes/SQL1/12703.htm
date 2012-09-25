@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>12703</title>
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="ProgId" content="VisualStudio.HTML">
+		<meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+	</head>
+	<body>
+		<H1>Log 12703</H1>
+		<B>
+			<HR width="100%" SIZE="1">
+			<P>
+		</B><B>Misc Fundamental Concepts (~0.25 hr.) </B></P>
+		<UL style="MARGIN-TOP: 0in" type="disc">
+			<LI class="MsoNormal">
+				Instructor will explain what a DBMS (Database Mgmt System) is and list some 
+				example products<BR>
+				<BR>
+			<LI class="MsoNormal">
+			SQL is based on&nbsp; open standard (ANSI - not owned or controlled by any one 
+			company however variations on SQL exist; covered later)
+			<LI class="MsoNormal">
+			note SQL is not procedural in nature, but rather it is set-based (statements 
+			define an outcome); procedural languages instruct computer how to proceed 
+			step-by-step
+			<LI class="MsoNormal">
+				&nbsp;<A href="http://www.ansi.org/">ANSI</A>
+			has published several versions of the SQL Standard however SQL92 is most 
+			commonly supported at the time of this writing (2001).&nbsp; Note that many 
+			standards are available from ANSI concerning databases (visit the ANSI website 
+			and search based on keyword "SQL").&nbsp; ANSI-SQL is considered "pure" SQL; 
+			vendors such as Microsoft and Oracle generally build upon this basic foundation 
+			adding their own additional "enhancements" to try and differentiate their 
+			products in the market.&nbsp; It is often best to stick with "pure" SQL if 
+			possible to ensure portability.
+			<LI class="MsoNormal">
+				<B><A href="ExampleSqlScript.htm">Example SQL Script</A>&nbsp;illustrating the 
+					"nature" of SQL</B><BR>
+			<LI class="MsoNormal">
+			a "front end" is used for User Interface; Instructor will describe some 
+			examples
+			<LI class="MsoNormal">
+			back end = DBMS
+			<LI class="MsoNormal">
+				Common languages for applications designed to run on Microsoft platforms 
+				include:&nbsp; C++, C#, VB.NET, ASP.NET</LI></UL>
+		<P class="MsoNormal">
+			<HR align="center" width="100%" SIZE="2">
+		<P></P>
+		<P><B>Terminology and Definitions (0.5 hr.)</B></P>
+		<P class="MsoNormal">Instructor will discuss these terms:&nbsp; Datastore, Data, 
+			Metadata, Entities, Tables, Fields, Columns, Rows, Records,&nbsp;Primary Key, 
+			Foreign Key,&nbsp; Results&nbsp;
+		</P>
+		<P><SPAN style="COLOR: blue">Note... a database as defined by Microsoft under the 
+				context of SQL Server, consists of the following (from Books Online):</SPAN></P>
+		<P><SPAN style="COLOR: blue"></SPAN>A database in Microsoft® SQL Server™ consists 
+			of a collection of tables that stores a specific set of structured data. A 
+			table contains a collection of rows(sometimes referred to as records or tuples) 
+			and columns(sometimes referred to as attributes). Each column in the table is 
+			designed to store a certain type of information (for example, dates, names, 
+			dollar amounts, or numbers). Tables have several types of controls that ensure 
+			the validity of the data. Tables can have indexes, much like those in books, 
+			that allow rows to be found quickly. A database can also store procedures that 
+			use Transact-SQL programming code to perform operations with the data in the 
+			database, such as storing views that provide customized access to table data.</P>
+		<P>For example, you can create a database named <B>MyCoDb</B> to manage your 
+			company’s data. In the <B>MyCoDb</B> database, you can create a table named <B>Employees</B>
+			to store information about each employee, and the table can contain columns 
+			named <B>EmpId</B>, <B>LastName</B>, <B>FirstName</B>, <B>Dept</B>, and <B>Title</B>. 
+			You can add some constraints to the table to ensure that no two employees share 
+			the same <B>EmpId</B> and that the <B>Dept</B> column contains only valid 
+			numbers for the departments in your company. You can define indexes to ensure 
+			that you can quickly find the data for an employee based on the employee ID or 
+			last name. You will need to add a row of data to the <B>Employees </B>table for 
+			each employee; this can be done by creating a procedure named <B>AddEmployee</B>
+			that is customized to accept the data values for a new employee and performs 
+			the operation of adding the row to the <B>Employees</B> table.</P>
+		<P>You can also define a view called <B>DeptEmps</B> that combines data from the <B>Departments</B>
+			and <B>Employees</B> tables and produces output with a departmental summary of 
+			employees.</P>
+		<DIV class="MsoNormal" style="TEXT-ALIGN: center" align="center"></DIV>
+		<SPAN style="FONT-SIZE: 12pt; FONT-FAMILY: 'Times New Roman'"></SPAN>
+		<P>
+			<HR align="center" width="90%" color="red" noShade SIZE="1">
+		<P></P>
+		<H2><A href="TieredArchitectures.htm">Tiered Architectures</A> (~1h) - focus on 3 
+			tier model (data, business logic &amp; presentation layers).&nbsp; Note this is 
+			basis for .NET option course.</H2>
+		<P>
+			<BR>
+			<BR>
+			<B>&nbsp;
+		</P>
+		</B>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+/* CreateTable2.sql - adding PK definitions */
+
+use db_n --where n is number assigned to student, ie, user 25 should be using db_25!
+
+--drop tables ONLY if they already exist; this can be done by checking the
+--sysobjects table in the database!
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Employees_Projects')
+   drop table Employees_Projects
+GO
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Employees')
+   drop table Employees
+GO
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Projects')
+   drop table Projects
+GO
+ 
+-------------------------CREATE TABLES NOW: ------------------------------------
+--clustered indexes are created on the primary key columns; discussed later, these
+--help to quickly locate information based on a PK value
+
+Create Table Employees(
+
+	SocialInsuranceNumber	char(9) 	not null
+		Constraint PK_SocialInsuranceNumber primary key clustered,
+	LastName		varchar(100)	not null,
+	FirstName		varchar(100)	not null,
+	MiddleInitial		char(1)		null,
+	BirthDate		smalldatetime	not null,
+	Address			varchar(100)	null,
+	Gender			char(1)		not null,
+	Salary			smallmoney	not null,
+	SupervisorSIN		char(9)		null
+)
+
+--next table has a composite PK:
+Create Table Employees_Projects(
+
+	SocialInsuranceNumber	char(9) 	not null,
+	ProjectNumber		char(2)		not null,
+	WeeklyHrs		smallint	not null,
+	Constraint PK_SocialInsuranceNumber_ProjectNumber primary key clustered 
+	(SocialInsuranceNumber,ProjectNumber) 
+)
+
+Create Table Projects(
+
+	ProjectNumber		char(2)		not null
+		Constraint PK_ProjectNumber primary key clustered,
+	ProjectName		varchar(100)	not null,
+	ProjectLocation		varchar(100)	not null
+)
+

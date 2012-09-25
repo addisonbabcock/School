@@ -1,0 +1,595 @@
+<html><head><title>Books24x7.com - Referenceware for Professionals</title>
+	
+		
+		<meta http-equiv="REFRESH" content="900; URL=/default.asp">
+		<link rel="stylesheet" href="Indexes2_files/xpolecau.css">
+			<link rel="stylesheet" type="text/css" href="Indexes2_files/ie000001.css"></head><body leftmargin="0" topmargin="0" rightmargin="0" bgcolor="#ffffff" link="#122eb2">
+		<div style="z-index: 1; left: 0px; position: relative; top: 0px; text-align: left;"></div>
+		<map name="navmap"><area shape="RECT" coords="0,0,93,29" href="http://library.books24x7.com/topics.asp" alt="Find Books" target="_self"><area shape="RECT" coords="94,0,204,29" href="http://library.books24x7.com/bookshelf.asp" alt="Go to My Bookshelf" target="_self"><area shape="RECT" coords="205,0,279,29" href="http://library.books24x7.com/home.asp" alt="Home" target="_self"><area shape="RECT" coords="280,0,354,29" href="http://library.books24x7.com/login.asp" alt="Login" target="_self"><area shape="RECT" coords="355,0,452,29" href="http://library.books24x7.com/account.asp" alt="Account Info" target="_self"><area shape="RECT" coords="453,0,508,29" href="http://library.books24x7.com/help.asp" alt="Help" target="_self"><area shape="RECT" coords="509,0,603,29" href="http://library.books24x7.com/feedback.asp" alt="Submit Feedback" target="_self">
+			
+			
+			
+			
+			
+			
+			
+		</map>
+		<table bgcolor="#336699" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td></td>
+			</tr>
+		</tbody></table>
+		<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="700">
+			<tbody><tr>
+				<td rowspan="2" bgcolor="#000000" height="700" width="1"><img src="Indexes2_files/transdou.gif" alt="" height="700" hspace="0" vspace="0" width="1"></td>
+				<td rowspan="2" height="700" width="20"><img src="Indexes2_files/transdou.gif" alt="" height="1" hspace="0" vspace="0" width="20"></td>
+				<td align="left" valign="top" width="679"><a name="skip"></a><div class="b24-bookmeta" xmlns:dc="http://purl.org/dc/elements/1.0/">
+<a name="skip">							</a><table border="0" cellpadding="0" cellspacing="2" width="100%">
+								<tbody><tr>
+									<td align="right" valign="top" width="100"><a border="0" href="http://library.books24x7.com/book/id_3429/toc.asp?bookid=3429"><img src="Indexes2_files/07356128.gif" alt="Microsoft SQL Server 2000 Performance Tuning Technical Reference" align="left" border="0" height="108" width="83"></a></td>
+									<td width="2"></td>
+									<td align="left" valign="top">
+										<table border="0" cellpadding="0" cellspacing="4" width="100%">
+											<tbody><tr>
+												<td colspan="2" align="left" valign="top"><a border="0"><span class="b24-bookchaptertitle">Chapter 18 - 
+ Using and Tuning Indexes</span></a></td>
+											</tr>
+											<tr>
+												<td colspan="2" align="left" valign="top">Microsoft SQL Server 2000 Performance 
+													Tuning Technical Reference</td>
+											</tr>
+											<tr>
+												<td align="left" valign="top"><span class="b24-bookauthor">by&nbsp;Edward Whalen&nbsp;et al.</span>&nbsp;
+												</td>
+												<td align="right" valign="top"></td>
+											</tr>
+											<tr>
+												<td colspan="2" align="left" valign="top"><span class="b24-bookimprint">Microsoft Press</span><span class="b24-bookcwdate"> © 2001</span></td>
+											</tr>
+										</tbody></table>
+									</td>
+								</tr>
+							</tbody></table>
+<a name="skip">						</a></div>
+<a name="skip">						</a><table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody><tr>
+								<td align="center">
+									<table border="0" cellpadding="0" cellspacing="5" width="85%">
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#000000"><img src="Indexes2_files/transdou.gif" alt="" border="0" height="1" width="1"></td>
+							</tr>
+						</tbody></table>
+<a name="skip">					</a>
+					<div xmlns:esi="i.am.akamai"><!--Bypass:First Viewer Page:Trial user: Time:Tue, 15 Apr 2003 18:39:50 UTC--><div><!--XML Creation Time:Tue, 15 Apr 2003 18:39:46 UTC-->
+							<div class="chapter">
+								<a name="chapter.A5AA041F-53A5-11D6-A596-00045A54F279"></a>
+								<div class="section">
+									<h2 class="first-section-title">
+										<a name="839"></a><a name="wbp23Ch18P61"></a>Tuning <font color="#cc00cc">Indexes</font>
+									</h2>
+									<p class="first-para">An efficient index helps you to find data with fewer I/Os and 
+										less system resource usage than a table scan. Because an index involves 
+										traversing the B-tree to find an individual value, it is not efficient to use 
+										an index when you retrieve large amounts of data. A general rule is that for 
+										queries that access more than 20 percent of the rows in a table, it is better 
+										to do a table scan than to use an index.</p>
+									<p class="para">Upon the execution of a query, the <font color="#cc00cc">SQL</font> <font color="#cc00cc">
+											Server</font> query optimizer evaluates the costs of the possible methods 
+										of finding the data and chooses the method that is most efficient to use as the 
+										query execution plan. <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+										determines whether to use an index and which of the available <font color="#cc00cc">
+											indexes</font> to use. (If it is more efficient not to use an index to 
+										satisfy the query, <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+										doesn&#8217;t use one.) In versions preceding <font color="#cc00cc">SQL</font> <font color="#cc00cc">
+											Server</font> 7.0, only one index could be used in a query execution plan. 
+										With <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font> 7.0 
+										and <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font> <font color="#cc00cc">
+											2000</font>, an index intersection or index union can be performed to make 
+										use of more than one index to satisfy a query. <font color="#cc00cc">SQL</font> <font color="#cc00cc">
+											Server</font> can also join two <font color="#cc00cc">indexes</font> defined 
+										on the same table to satisfy a query.
+									</p>
+									<p class="para">Basically, creating an appropriate and efficient index is the first 
+										step in tuning the index. You must make several decisions when creating <font color="#cc00cc">
+											indexes</font>, including the following:</p>
+									<ul class="itemizedlist">
+										<li class="first-listitem">
+											<p class="first-para">Which column or columns to include in the index.</p>
+										</li><li class="listitem">
+											<p class="first-para">Whether to add a PRIMARY KEY constraint or UNIQUE constraint 
+												to the table, which allow <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+												to create an index for you. (You might have already done this at table 
+												creation.)</p>
+										</li><li class="listitem">
+											<p class="first-para">Whether the index should be clustered or nonclustered.</p>
+										</li><li class="listitem">
+											<p class="first-para">Whether or not the index should be unique.</p>
+										</li><li class="listitem">
+											<p class="first-para">Whether to use a fill factor and, if so, what percentage to 
+												choose. (For more information, see the &#8220;<a class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P100">Fill 
+													Factor</a>&#8221; section later in this chapter.)</p>
+										</li>
+									</ul>
+									<p class="para">To help in making these decisions, you must look at your <font color="#cc00cc">
+											SQL</font> statements to determine which tables and columns are being 
+										accessed and how they are being accessed. We discuss this in more detail in 
+										later subsections. But first, here are some general guidelines for creating <font color="#cc00cc">
+											indexes</font>:<a name="840"></a><a name="beginpage.A5AA0426-53A5-11D6-A596-00045A54F279"></a>
+									</p>
+									<ul class="itemizedlist">
+										<li class="first-listitem">
+											<p class="first-para">Determine if most of the queries are SELECT statements, or if 
+												there are significant numbers of INSERT, UPDATE, or DELETE statements. As the 
+												number of <font color="#cc00cc">indexes</font> on a table increases, so does 
+												the amount of overhead required to maintain those <font color="#cc00cc">indexes</font>
+												for INSERT, UPDATE, and DELETE statements. For queries with a lot of these 
+												statements, therefore, be conservative with the number of <font color="#cc00cc">indexes</font>
+												you create on the modified tables. If your queries are mostly SELECT 
+												statements, then more <font color="#cc00cc">indexes</font> might allow better 
+												performance by providing <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+												more <font color="#cc00cc">indexes</font> to choose from for its query 
+												execution plans. Usually you must find a balance between these two cases.</p>
+										</li><li class="listitem">
+											<p class="first-para">You should attempt to build your <font color="#cc00cc">indexes</font>
+												to aid specific queries&#8212;do not just generalize or guess about what columns to 
+												use as the index keys. After creating an index, you should check the execution 
+												plan for the query or queries for which it was built and verify that the index 
+												is being chosen by <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+												as you expected. We explain how to do this in the &#8220;<a role="targetype:section" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P107">Using
+													<font color="#cc00cc">SQL</font> Query Analyzer</a>&#8221; section later in this 
+												chapter.</p>
+										</li><li class="listitem">
+											<p class="first-para">Indexing very small tables can hurt performance, because it 
+												might be more efficient for <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+												to perform a simple table scan. The query optimizer should detect this fact; 
+												however, it is not perfect, so be aware that <font color="#cc00cc">SQL</font> <font color="#cc00cc">
+													Server</font> might try to use an index where one is available.</p>
+										</li><li class="listitem">
+											<p class="first-para">Avoid having too many index keys in the index, because the 
+												greater the amount of data in the index, the more data must be updated when 
+												modifications are made to the table, thus causing more overhead. An index with 
+												one to a few key columns is called a <i class="emphasis">narrow</i> <i class="emphasis">
+													index;</i> an index with many key columns is called a <i class="emphasis">wide 
+													index</i>. A narrow index takes up less space than a wide index and is 
+												preferable when possible.</p>
+										</li><li class="listitem">
+											<p class="first-para">Avoid choosing columns with large data types as index keys. 
+												For example, an <b class="bold">integer</b> column type is a good choice for an 
+												index key, whereas a <b class="bold">varchar</b> column type is not a good 
+												choice because the <b class="bold">varchar</b> data can require a lot of space 
+												and therefore more overhead for maintenance.</p>
+										</li>
+									</ul>
+									<p class="para">Now we&#8217;ll look at some guidelines concerning what type of data 
+										search clauses in queries will most benefit from <font color="#cc00cc">indexes</font>:</p>
+									<ul class="itemizedlist">
+										<li class="first-listitem">
+											<p class="first-para">
+												<b class="bold">Searches that match a specific value</b> These queries will 
+												retrieve only a few rows that match a specific equality. For example:
+												<span class="fixed">WHERE customer_ID = 19</span>.</p>
+										</li><li class="listitem">
+											<p class="first-para">
+												<b class="bold">Searches that match a range of values</b> These queries will 
+												also retrieve a small number of rows. For example:
+												<span class="fixed">WHERE customer_ID BETWEEN 19 AND 22 </span>or<span class="fixed"> WHERE customer_ID &gt;= 19 AND customer_ID &lt;= 22</span>.
+												<a name="841"></a><a name="beginpage.A5AA0427-53A5-11D6-A596-00045A54F279"></a>
+											</p>
+										</li><li class="listitem">
+											<p class="first-para">
+												<b class="bold">Searches that are used in a join</b> Columns that are used as 
+												join keys often are good candidates for <font color="#cc00cc">indexes</font>. 
+												For example:
+												<span class="fixed">FROM customer_table as cust, customer_detail_table as cust_det WHERE cust.customer_ID = cust_det.customer_ID</span>.</p>
+										</li><li class="listitem">
+											<p class="first-para">
+												<b class="bold">Searches that retrieve data in a specific order</b> If you want 
+												the resulting data set to be sorted, you can use a clustered index on the 
+												column or columns by which you want to sort. Because the data is already sorted 
+												within the index itself, no sorting is required when the results are returned. 
+												An example is assuming a clustered index on customer_ID:
+												<span class="fixed">WHERE customer_ID &lt; 100 ORDER BY customer_ID</span>.</p>
+										</li>
+									</ul>
+									<p class="para">Creating and verifying index usage is a continual process as your 
+										queries grow and change. In the next sections we discuss in more detail how to 
+										choose the index key columns for an index, how to use a fill factor, and how to 
+										use <font color="#cc00cc">SQL</font> Query Analyzer to determine the execution 
+										plan for a query by <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>.</p>
+									<div class="section">
+										<h3 class="sect3-title">
+											<a name="842"></a><a name="wbp23Ch18P88"></a>Choosing the Index Key Columns</h3>
+										<p class="first-para">An index is most beneficial when you are searching for only a 
+											few rows. Therefore, you should design your <font color="#cc00cc">indexes</font>
+											with good selectivity. The <i class="emphasis">selectivity</i> of an index is 
+											based on the number of rows per index key value. An index with poor selectivity 
+											is one that has multiple rows per key value, such as an index key on a gender 
+											column that holds one of two values: M for male and F for female. An index with 
+											good selectivity has one or a few values per index key, such as an index on a 
+											customer ID column. A unique index has the best selectivity.</p>
+										<p class="para">Information about the selectivity of an index is stored within the 
+											index distribution statistics. An index with good selectivity is more likely to 
+											be used by the query optimizer than an index with poor selectivity. You can 
+											view the selectivity of an index by using the command DBCC SHOW_STATISTICS (<i class="emphasis">table_name</i>,
+											<i class="emphasis">index_name</i>). The lower the density returned in the 
+											output, the higher the selectivity. Index statistics are updated automatically 
+											by default, but can be manually updated with the command UPDATE STATISTICS <i class="emphasis">
+												table_name</i>. For more information about these two commands and their 
+											syntax, search for them by name in <font color="#cc00cc">SQL</font> <font color="#cc00cc">
+												Server</font> Books Online.</p>
+										<p class="para">The selectivity of an index can be enhanced by using a composite 
+											index. Several columns with poor selectivity can be joined together in a 
+											composite index to form one index that has good selectivity. Although a unique 
+											index provides the best selectivity, be sure to choose an index type that fits 
+											your data model. For instance, you should not create a unique index on a 
+											customer last-name column if duplicate last names are allowed in your table.<a name="843"></a><a name="beginpage.A5AA0428-53A5-11D6-A596-00045A54F279"></a>
+										</p>
+										<p class="para">For a clustered index with a composite key, the order in which the 
+											key columns are listed in the CREATE INDEX statement is also important. In a 
+											clustered index, the data is sorted first by the first key, then by the second 
+											key, and so on, according to the order in which the columns were specified when 
+											you created the index. For example, if you create a clustered index for a 
+											customer table on the customer last-name column and then on the customer 
+											first-name column, the data is first sorted by last name; if there are any rows 
+											with the same last name, those rows are also sorted by first name. If there are 
+											100 entries with the last name Smith, for example, the Smith duplicates are 
+											sorted in order of first names after the data is sorted by last name. 
+											Therefore, a query using this index is more efficient if either both last name 
+											and first name are included in the WHERE clause, or if only the last name is in 
+											the WHERE clause. A less efficient query would search for first name only, 
+											because all last names will have to be checked for the matching first name. In 
+											all three cases, the clustered index will be used to satisfy the queries, and 
+											each will be performed more efficiently than if there were no index on the 
+											table.</p>
+										<p class="para">In contrast, the order in which the columns actually appear in the 
+											WHERE clause does not matter. (This is true for both clustered and nonclustered <font color="#cc00cc">
+												indexes</font>.) For example, the following two queries use the index just 
+											described in the same manner (that is, they have the same execution plan):</p>
+										<pre class="programlisting">SELECT CUSTOMER_ID FROM CUSTOMER 
+   WHERE LAST_NAME="SMITH" AND FIRST_NAME="PENELOPE" 
+
+SELECT CUSTOMER_ID FROM CUSTOMER 
+   WHERE FIRST_NAME="PENELOPE" AND LAST_NAME="SMITH" </pre>
+										<p class="last-para">It is also important when choosing your index keys to try to 
+											cover a query. <i class="emphasis">Covering</i> a query means to include each 
+											of the columns in the SELECT list as an index key within the same index, so 
+											that the data retrieved resides in the index keys themselves, and the actual 
+											data pages do not have to be read at all. The covered query needs to read data 
+											only from the index and can bypass the table data pages. For example, if a 
+											query selects only columns A and B, and a composite index on that same table 
+											has columns A and B as the index keys, then the query is covered. Even if the 
+											index is created on columns A, B, and C, the query is still covered. Also 
+											consider that if a nonclustered index exists for column B while a clustered 
+											index exists for column A, then the query is covered as the leaf node of the 
+											non-clustered index automatically contains the key value for A.</p>
+										<a name="sDE5A75D9-85D7-4F33-A531-ECA4EB473490"></a>
+									</div>
+									<div class="section">
+										<h3 class="sect3-title">
+											<a name="844"></a><a name="wbp23Ch18P100"></a>Fill Factor</h3>
+										<p class="first-para">As inserts, updates, and deletes are performed on a table 
+											that has <font color="#cc00cc">indexes</font>, the <font color="#cc00cc">indexes</font>
+											must be updated to reflect the changes in the table. The index rows are stored 
+											in order based on the index keys. Therefore, particularly for inserts and 
+											updates, new index rows must be added in the appropriate location to maintain 
+											order in the index. As index pages fill up, space for additional index rows 
+											must be created. <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											does this by moving approximately half of the rows in the index page to a new 
+											page. This operation is known as a <i class="emphasis">page split</i>. Page 
+											splits result in increased system overhead because of the CPU usage and 
+											additional I/Os they incur. One way to avoid page splits is by tuning the fill 
+											factor of the index pages. The<i class="emphasis"> fill factor</i> specifies 
+											the percentage of the page to fill when creating the index. This allows you to 
+											leave room in the index pages for additional index rows.<a name="845"></a><a name="beginpage.A5AA0429-53A5-11D6-A596-00045A54F279"></a>
+										</p>
+										<p class="para">You can specify the fill factor on an index by using the FILLFACTOR 
+											option with the CREATE INDEX command or, if using Enterprise Manager, by 
+											opening the database diagram, right-clicking the table you want, and selecting 
+											Properties from the menu. Click the <font color="#cc00cc">Indexes</font>/Keys 
+											tab, select the index from the drop-down list, and enter the percentage you 
+											want in the Fill Factor section. The value of the fill factor varies from 0 to 
+											100, indicating the percentage of the index page that should be filled upon 
+											index creation. If the fill factor is not specified, the system default (the 
+											value set for the <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											configuration option <i class="emphasis">fillfactor</i>) is used. This value is 
+											set to 0 when <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											is installed.</p>
+										<table class="note" border="0" cellpadding="0" cellspacing="0">
+											<tbody><tr>
+												<td class="admon-check" valign="top"></td>
+												<td class="admon-title" valign="top">Note&nbsp;</td>
+												<td class="admon-body" valign="top">
+													<p class="first-para">
+														The fill factor parameter only specifies how the index is originally created. 
+														It has no effect once the index has been built.</p>
+												</td>
+											</tr>
+										</tbody></table>
+										<p class="para">When 0 is specified for the fill factor, the leaf pages are packed 
+											to 100 percent, but the branch nodes have some space left free. This is the <font color="#cc00cc">
+												SQL</font> <font color="#cc00cc">Server</font> installation default, and it 
+											usually works well. A value of 100 for the fill factor specifies that all index 
+											pages are completely filled when the index is created. This is optimal for 
+											tables that never have new data inserted in them (that is, read-only tables). 
+											Both the leaf pages and upper-level pages are completely packed; thus, any 
+											insert will cause a page split. The benefit of packing the index pages is that 
+											the index requires less storage space.</p>
+										<p class="para">Using a low value for the fill factor allows a great deal of space 
+											for inserts, but requires a lot of extra space in which to store the index. 
+											Unless you will be doing constant inserts to the database, a low value for the 
+											fill factor is usually not recommended. If you are experiencing a great many 
+											page splits, try decreasing the value for the fill factor by a small 
+											percentage, then recreate the index and see if the problem is solved.</p>
+										<p class="last-para">The number of page splits per second that your system is 
+											experiencing is displayed in the <font color="#cc00cc">SQL</font> <font color="#cc00cc">
+												Server</font> Page Splits/sec statistic. This value can be found using 
+											System Monitor in the Performance console and the SQLServer:Access Methods 
+											object. If this value is high, you might need to rebuild the index with a lower 
+											fill factor.</p>
+										<a name="sDE5A75D9-85D7-4F33-A531-ECA4EB473490"></a>
+									</div>
+									<div class="section">
+										<h3 class="sect3-title">
+											<a name="846"></a><a name="wbp23Ch18P107"></a>Using <font color="#cc00cc">SQL</font>
+											Query Analyzer</h3>
+										<p class="first-para">
+											<font color="#cc00cc">SQL</font> Query Analyzer has many functions, but we 
+											focus here on three particular functions that help with index tuning. First, we 
+											show how <font color="#cc00cc">SQL</font> Query Analyzer can be used to perform 
+											index analysis on a query; <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											will recommend a possible index to help with the execution of the specified 
+											query. Next, we show how <font color="#cc00cc">SQL</font> Query Analyzer can be 
+											used to display the estimated execution plan that <font color="#cc00cc">SQL</font>
+											<font color="#cc00cc">Server</font> will use to execute a query, without 
+											actually executing the query. Finally, we show how to display the actual 
+											execution plan that <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											used to perform a query.</p>
+										<p class="para">For the index analysis examples, we use our own sample database, 
+											salesdb. (We don&#8217;t use the installed sample database because it contains so 
+											little data that <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											will not make any index recommendations.) You should be able to follow along 
+											and do similar testing with your own databases.<a name="847"></a><a name="beginpage.A5AA042A-53A5-11D6-A596-00045A54F279"></a>
+										</p>
+										<p class="para">We use <font color="#cc00cc">SQL</font> Query Analyzer to help 
+											determine what <font color="#cc00cc">indexes</font> would be helpful for some 
+											queries to the <i class="emphasis">customer</i> table of our salesdb database. 
+											This table currently has no <font color="#cc00cc">indexes</font> and contains 
+											300,000 rows of data. First we open <font color="#cc00cc">SQL</font> Query 
+											Analyzer and select salesdb as the database in the Current Database drop-down 
+											list on the toolbar. Then, in the Query window, we type in our query, which 
+											searches for all rows with a last name of &#8220;Smith,&#8221; as shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P112">
+												Figure 18.5</a>. Next we select Index Tuning Wizard from the Query menu. 
+											The welcome page opens, as shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P114">
+												Figure 18.6</a>.</p>
+										<div class="figure">
+											<a name="848"></a><a name="wbp23Ch18P112"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql05%5F0%2Ejpg&amp;image_id=195&amp;previd=IMG_195&amp;titlelabel=Figure+18%2E5%3A+&amp;title=+SQL+Query+Analyzer%2E" name="IMG_195" target="_parent"><img src="Indexes2_files/f18ql050.jpg" alt="Click To expand" border="0" height="235" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.5: </span><b class="bold">
+												</b><font color="#cc00cc">SQL</font> Query Analyzer.</span>
+										</div>
+										<div class="figure">
+											<a name="849"></a><a name="wbp23Ch18P114"></a><a name="850"></a><a name="wbp23Ch18P113">
+											</a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql06%5F0%2Ejpg&amp;image_id=196&amp;previd=IMG_196&amp;titlelabel=Figure+18%2E6%3A+&amp;title=+The+welcome+page+of+the+Index+Tuning+Wizard%2E" name="IMG_196" target="_parent"><img src="Indexes2_files/f18ql060.jpg" alt="Click To expand" border="0" height="271" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.6: </span><b class="bold">
+												</b>The welcome page of the Index Tuning Wizard.</span>
+										</div>
+										<p class="para">Clicking the Next button displays the Select <font color="#cc00cc">Server</font>
+											and Database page (see <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P117">
+												Figure 18.7</a>), where you can select the <font color="#cc00cc">server</font>
+											and table or tables that you want to analyze for index recommendations. You can 
+											also select whether to keep existing <font color="#cc00cc">indexes</font> or 
+											not, whether to include indexed views, and how thorough an analysis to do.</p>
+										<div class="figure">
+											<a name="851"></a><a name="wbp23Ch18P117"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql07%5F0%2Ejpg&amp;image_id=197&amp;previd=IMG_197&amp;titlelabel=Figure+18%2E7%3A+&amp;title=+The+Select+Server+and+Database+page+allows+you+to+select+the+object+to+analyze+and+specify+tuning+settings%2E" name="IMG_197" target="_parent"><img src="Indexes2_files/f18ql070.jpg" alt="Click To expand" border="0" height="271" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.7: </span><b class="bold">
+												</b>The Select <font color="#cc00cc">Server</font> and Database page allows you to select the object to analyze and specify tuning settings.</span>
+										</div>
+										<p class="para">Click Next to view the Specify Workload page (see <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P120">
+												Figure 18.8</a>), where you can specify whether to use the query defined in 
+											the <font color="#cc00cc">SQL</font> Query Analyzer, or another workload, such 
+											as from <font color="#cc00cc">SQL</font> Profiler, in order for the wizard to 
+											make tuning recommendations.</p>
+										<div class="figure">
+											<a name="852"></a><a name="wbp23Ch18P120"></a><a name="853"></a><a name="wbp23Ch18P119">
+											</a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql08%5F0%2Ejpg&amp;image_id=198&amp;previd=IMG_198&amp;titlelabel=Figure+18%2E8%3A+&amp;title=+The+Specify+Workload+page%2E" name="IMG_198" target="_parent"><img src="Indexes2_files/f18ql080.jpg" alt="Click To expand" border="0" height="271" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.8: </span><b class="bold">
+												</b>The Specify Workload page.</span>
+										</div>
+										<p class="para">Click Next to display the Select Tables to Tune page, as shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P123">
+												Figure 18.9</a>. Here you simply select the table or tables that you want 
+											to get index recommendations on.</p>
+										<div class="figure">
+											<a name="854"></a><a name="wbp23Ch18P123"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql09%5F0%2Ejpg&amp;image_id=199&amp;previd=IMG_199&amp;titlelabel=Figure+18%2E9%3A+&amp;title=+The+Select+Tables+to+Tune+page%2E" name="IMG_199" target="_parent"><img src="Indexes2_files/f18ql090.jpg" alt="Click To expand" border="0" height="271" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.9: </span><b class="bold">
+												</b>The Select Tables to Tune page.</span>
+										</div>
+										<p class="para">Clicking Next begins the analysis process. This might take a few 
+											seconds, a few minutes, or longer depending on the amount of data to analyze. 
+											Once it has completed the status window closes and the Index Recommendations 
+											page appears, as shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P126">
+												Figure 18.10</a>.</p>
+										<div class="figure">
+											<a name="855"></a><a name="wbp23Ch18P126"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql10%5F0%2Ejpg&amp;image_id=200&amp;previd=IMG_200&amp;titlelabel=Figure+18%2E10%3A+&amp;title=+Index+recommendations+after+index+analysis%2E" name="IMG_200" target="_parent"><img src="Indexes2_files/f18ql100.jpg" alt="Click To expand" border="0" height="271" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.10: </span><b class="bold">
+												</b>Index recommendations after index analysis.</span>
+										</div>
+										<p class="para">The Index Recommendations page shows you the type of index the 
+											Index Tuning Wizard recommends and whether it is clustered. It also provides an 
+											estimate on improved performance. You can click the Analysis button to browse 
+											the statistics gathered in the analysis.<a name="856"></a><a name="beginpage.A5AA042B-53A5-11D6-A596-00045A54F279"></a>
+										</p>
+										<p class="para">In this case, <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											recommends an ascending clustered index, named <i class="emphasis">customer1</i>, 
+											on the <i class="emphasis">customer</i> table, with <i class="emphasis">c_last</i>
+											as the index key. Clicking Next advances the Wizard to the Schedule Index 
+											Update Job page, as shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P130">
+												Figure 18.11</a>. We can choose to accept the recommended index and let <font color="#cc00cc">
+												SQL</font> <font color="#cc00cc">Server</font> create it, create an index 
+											creation script for later use, or cancel the wizard.</p>
+										<div class="figure">
+											<a name="857"></a><a name="wbp23Ch18P130"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql11%5F0%2Ejpg&amp;image_id=201&amp;previd=IMG_201&amp;titlelabel=Figure+18%2E11%3A+&amp;title=+The+Schedule+Index+Update+Job+page%2E" name="IMG_201" target="_parent"><img src="Indexes2_files/f18ql110.jpg" alt="Click To expand" border="0" height="271" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.11: </span><b class="bold">
+												</b>The Schedule Index Update Job page.</span>
+										</div>
+										<p class="para">We choose to cancel this window so we can perform index analysis on 
+											another query. You probably should perform index analysis on more than one 
+											query before deciding which <font color="#cc00cc">indexes</font> to create. 
+											There might be another query, for example, that searches for the customer by 
+											last name and first name.
+										</p>
+										<p class="para">Before we create any <font color="#cc00cc">indexes</font> on our <i class="emphasis">
+												customer</i> table, we&#8217;ll look at the same query on <i class="emphasis">c_last</i>
+											and <i class="emphasis">c_first</i> as before using the <font color="#cc00cc">SQL</font>
+											Query Analyzer, but this time choose the Display Estimated Execution Plan 
+											option from the Query menu. This option displays the estimated execution plan 
+											without executing the query. This is helpful when you suspect that the query 
+											might take a long time to complete and you do not want to execute it, but you 
+											want to find out what execution plan <font color="#cc00cc">SQL</font> <font color="#cc00cc">
+												Server</font> would choose if it did execute the query. The results of our 
+											query are shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P137">
+												Figure 18.12</a>.</p>
+										<p class="para">To understand the output, you read from right to left (following 
+											the gray arrow) and from bottom to top (had there been more levels of 
+											information). As you see in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P137">
+												Figure 18.12</a>, <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											would perform a table scan to complete our query. A table scan is not desirable 
+											since it requires reading every row in the table, so we create a clustered 
+											index on the <i class="emphasis">c_id</i> column using the following command:</p>
+										<div class="widecontent">
+											<pre class="programlisting">CREATE CLUSTERECREATE CLUSTERED INDEX cust_indx_1 on customer (c_last, c_first)
+GO</pre>
+										</div>
+										<div class="figure">
+											<a name="858"></a><a name="wbp23Ch18P137"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql12%5F0%2Ejpg&amp;image_id=202&amp;previd=IMG_202&amp;titlelabel=Figure+18%2E12%3A+&amp;title=+The+estimated+execution+plan+for+a+sample+query+before+creating+an+index%2E" name="IMG_202" target="_parent"><img src="Indexes2_files/f18ql120.jpg" alt="Click To expand" border="0" height="251" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.12: </span><b class="bold">
+												</b>The estimated execution plan for a sample query before creating an index.</span>
+										</div>
+										<p class="para">Now we display the estimated execution plan again, and we get the 
+											results shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P140">
+												Figure 18.13</a>. This time for its execution plan, <font color="#cc00cc">SQL</font>
+											<font color="#cc00cc">Server</font> chose to use the index we just created. If 
+											you move the mouse over the icon and the name of the index in the displayed 
+											results, you will see statistics about the index operation, as shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P142">
+												Figure 18.14</a>. Move the mouse to point at the arrow between the SELECT 
+											and index icons, or above the SELECT icon, and you will see more statistics 
+											windows. See <a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;destid=737#737" target="_parent" class="chapterjump">Chapter 16</a>, &#8220;Using <font color="#cc00cc">SQL</font> 
+											Query Analyzer,&#8221; and <font color="#cc00cc">SQL</font> <font color="#cc00cc">Server</font>
+											Books Online for details on what the icons signify and what the statistics 
+											mean.</p>
+										<div class="figure">
+											<a name="859"></a><a name="wbp23Ch18P140"></a><a name="860"></a><a name="wbp23Ch18P139">
+											</a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql13%5F0%2Ejpg&amp;image_id=203&amp;previd=IMG_203&amp;titlelabel=Figure+18%2E13%3A+&amp;title=+The+estimated+execution+plan+for+the+same+sample+query+after+the+index+has+been+created%2E" name="IMG_203" target="_parent"><img src="Indexes2_files/f18ql130.jpg" alt="Click To expand" border="0" height="251" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.13: </span><b class="bold">
+												</b>The estimated execution plan for the same sample query after the index has been created.</span>
+										</div>
+										<div class="figure">
+											<a name="861"></a><a name="wbp23Ch18P142"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql14%5F0%2Ejpg&amp;image_id=204&amp;previd=IMG_204&amp;titlelabel=Figure+18%2E14%3A+&amp;title=+Details+of+the+clustered+index+seek%2E" name="IMG_204" target="_parent"><img src="Indexes2_files/f18ql140.jpg" alt="Click To expand" border="0" height="289" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.14: </span><b class="bold">
+												</b>Details of the clustered index seek.</span>
+										</div>
+										<p class="para">Now we&#8217;ll actually run this query and see if the estimated 
+											execution plan is the same as the execution plan <font color="#cc00cc">SQL</font>
+											<font color="#cc00cc">Server</font> really uses. First, we change the query to 
+											select only <i class="emphasis">c_last</i> instead of *, so that less data is 
+											returned. Next select Show Execution Plan from the Query menu, so that the icon 
+											to the left is highlighted in light gray (this indicates that it is enabled). 
+											Then we click the Run toolbar button (the green arrow) to run the query.
+										</p>
+										<p class="para">Once the query has been completed, the query results are displayed 
+											in the Results tab, and the execution plan that was used is displayed in the 
+											Execution Plan tab. We click the Execution Plan tab and see the results shown 
+											in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P148">
+												Figure 18.15</a>. If we hold the mouse over the index icon again, we see 
+											the query execution statistics for that index seek operation, as shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P150">
+												Figure 18.16</a>.</p>
+										<p class="para">If we compare this set of actual statistics for the index operation 
+											with the set of estimated statistics shown in <a role="targetype:figure" class="internaljump" href="http://library.books24x7.com/book/id_3429/viewer.asp?#wbp23Ch18P142">
+												Figure 18.14</a>, we can see that the row count is less and the row size is 
+											less. However, the actual cost of the index operation is the same in both cases 
+											(0.018809), so the estimate was fairly accurate.
+										</p>
+										<p class="para">Now that you have seen how to use <font color="#cc00cc">SQL</font> Query 
+											Analyzer, you should be able to display the execution plans for your queries to 
+											help you determine whether your <font color="#cc00cc">indexes</font> are being 
+											used or not, and if the right index is being used.<a name="862"></a><a name="beginpage.A5AA042D-53A5-11D6-A596-00045A54F279"></a>
+										</p>
+										<div class="figure">
+											<a name="863"></a><a name="wbp23Ch18P148"></a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql15%5F0%2Ejpg&amp;image_id=205&amp;previd=IMG_205&amp;titlelabel=Figure+18%2E15%3A+&amp;title=+The+actual+execution+plan%2E" name="IMG_205" target="_parent"><img src="Indexes2_files/f18ql150.jpg" alt="Click To expand" border="0" height="251" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.15: </span><b class="bold">
+												</b>The actual execution plan.</span>
+										</div>
+										<div class="figure">
+											<a name="864"></a><a name="wbp23Ch18P150"></a><a name="865"></a><a name="wbp23Ch18P149">
+											</a>
+											<span class="figuremediaobject">
+												<a href="http://library.books24x7.com/viewer.asp?bkid=3429&amp;image_src=http://images.books24x7.com/bookimages/id_3429/f18ql16%5F0%2Ejpg&amp;image_id=206&amp;previd=IMG_206&amp;titlelabel=Figure+18%2E16%3A+&amp;title=+Query+execution+statistics%2E" name="IMG_206" target="_parent"><img src="Indexes2_files/f18ql160.jpg" alt="Click To expand" border="0" height="310" width="350"></a></span>
+											<br style="line-height: 1;">
+											<span class="figure-title"><span class="figure-titlelabel">Figure 18.16: </span><b class="bold">
+												</b>Query execution statistics.</span>
+										</div>
+										<a name="sDE5A75D9-85D7-4F33-A531-ECA4EB473490"></a>
+									</div>
+									<a name="sDE5A75D9-85D7-4F33-A531-ECA4EB473490"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="1" bgcolor="#ffffff" width="679"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr>
+							<td colspan="2" align="left" height="10" valign="middle"><img src="Indexes2_files/blackdou.gif" alt="" border="0" height="1" width="100%"></td>
+						</tr>
+						<tr>
+							<td width="98%"><a href="http://library.books24x7.com/book/id_3429/help.asp?item=membership" target="_top" border="0"><span style="font-size: 10px; color: rgb(204, 0, 0); font-family: Arial,Helvetica,sans-serif; text-decoration: none;"></span></a></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td width="98%"><span style="font-size: 10px; font-family: Arial,Helvetica,sans-serif;">
+									<a href="http://library.books24x7.com/feedback.asp" border="0"></a>
+								</span></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+		<!-- This document saved from http://library.books24x7.com/book/id_3429/viewer.asp?pr=1 -->
+	</body></html>

@@ -1,0 +1,162 @@
+/* file Insert2.txt
+
+Again, there is over-lap between the script found in this document
+and in previously covered JoinTheory3.sql.
+
+Inserting, copying data... tables in same and different databases */
+
+use db_n --make your database the current database
+go
+
+/* the SELECT INTO statement can be used to easily create new tables based on existing tables; 
+these can be populated with data from the source table, or they can simply be empty
+depending upon how we structure our SQL.  
+
+See "SELECT INTO" in Books Online for full details.
+
+Examples.. */
+
+--to create an empty table in db_n that is based on the structure of the Stores
+--table in Pubs:
+
+--as usual, delete ensure table does NOT exist cause we cannot create a table if it 
+--already exists
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'My_Stores')
+   drop table My_Stores
+GO
+
+
+SELECT * INTO My_Stores --new table we are creating in current database
+FROM Pubs..Stores
+GO
+
+--NOTE:  although the column structure has been copied, NO PK has been defined in the
+--new table!  Can see this by looking at data returned by the INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+--view:
+
+SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+go --or alternately, to clearly see no keys have been defined in the new table:
+
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+go --can see My_Stores is NOT in the list of table names returned!
+
+SELECT * FROM My_Stores --take a look at the new table we have just created!
+go
+
+--Note the above goal could have been achieved another way we are familiar with:
+
+--i) drop table if exists:
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'My_Stores')
+   drop table My_Stores
+GO
+
+--ii) CREATE table:
+CREATE TABLE My_Stores(
+	stor_id char(4) not null,
+	stor_name varchar(40) null,
+	stor_address varchar(40) null,
+	city varchar(20) null,
+	state char(2) null,
+	zip char(5) null
+)
+GO
+
+--iii) copy the data into the new table called "My_Stores":
+INSERT INTO My_Stores --note the word "INTO" is optional (see Books Online)
+	SELECT * FROM Pubs..Stores --supplying values for ALL cols so no column
+--list is required, only values which in this case come from the subquery
+go
+
+--iv) take a look at the data to verify all went ok:
+SELECT * FROM My_Stores
+go
+
+--v) to prove the word "INTO" is optional 
+INSERT My_Stores
+	SELECT * FROM Pubs..Stores
+go
+
+--vi) take a look at the data to verify all went ok:
+SELECT * FROM My_Stores
+go
+
+---------------------------------------------------------------------------------
+---- TO CREATE TABLES IN A DIFFERENT DATABASE from your current one:
+use db_n --ensure your database is the current one (n = your assigned number)
+go
+
+--for this example, permissions are required to create tables and data in the
+--InsertPractice database:
+
+--i) drop table if exists:
+IF EXISTS (SELECT name FROM InsertPractice..sysobjects --IMPORTANT: the sysobjects table
+           WHERE name = 'TestTable') --in the InsertPractice database!
+   drop table InsertPractice..TestTable
+GO
+
+--ii) CREATE table:
+CREATE TABLE InsertPractice..TestTable(
+	stor_id char(4) not null,
+	stor_name varchar(40) null,
+	stor_address varchar(40) null,
+	city varchar(20) null,
+	state char(2) null,
+	zip char(5) null
+)
+GO
+
+--iii) take a look at the table to verify it has been created:
+SELECT * FROM InsertPractice..TestTable --NO data has been inserted yet; it is empty
+go
+
+----------------------------------------------------------------------------
+---WE CAN APPLY THE SAME THEORY TO THE "SELECT INTO" statement, ie:
+IF EXISTS (SELECT name FROM InsertPractice..sysobjects
+           WHERE name = 'TestTable')
+   drop table InsertPractice..TestTable
+GO
+
+--IMPORTANT: you must have permission to SELECT INTO in the InsertPractice database
+--for SELECT INTO to work; a system administrator could do this as follows:
+
+EXEC sp_dboption 'InsertPractice','select into/bulkcopy','TRUE'
+go
+
+SELECT * INTO InsertPractice..TestTable --new table we are creating in current database
+FROM Pubs..Stores
+GO
+
+--to verify that this worked:
+SELECT * FROM InsertPractice..TestTable --take a look at the new table
+go
+
+--can execute other commands against the new database if we have permissions:
+DELETE InsertPractice..TestTable --empty the table
+go
+
+SELECT * FROM InsertPractice..TestTable --take a look at the new table
+go
+----------------------------------------------------------------------------
+
+--Using the theory above, you can populate tables in the InsertPractice
+--database based on more complex queries, for example:
+
+SELECT a.au_fname 'First Name', a.au_lname 'Last Name', a.city as 'Author''s City',
+	a.state as 'Author''s State', p.city as 'Publisher''s City',
+	p.state as 'Publisher''s State', p.pub_name 'Publisher''s Name'
+INTO InsertPractice..us_1_NewTable --new table we are creating in current database
+
+FROM Pubs..authors AS a 
+	INNER JOIN Pubs..publishers AS p
+    	ON a.city = p.city AND a.state = p.state /* 2 conditions determine a match */
+ORDER BY a.au_lname ASC, a.au_fname ASC
+go
+
+--look at table:
+Select * from InsertPractice..us_1_NewTable
+go --note the column names = the assigned aliases above!
+
+

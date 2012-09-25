@@ -1,0 +1,236 @@
+<html>
+
+<head>
+<meta name="Generator" content="Microsoft Office HTML Filter 2.0">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Originator" content="Microsoft Word 9">
+<title>Alter Table</title>
+<style>
+<!--
+ 
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:Times;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+</head>
+
+<body lang="EN-US" link="blue" vlink="blue"><!-- W. Wolinski, Computer Engineering - Sep./01 -->
+
+<h1 class="Section1">Alter Table</h1>
+<P class=Section1><STRONG><FONT color=red>      
+  Used for modifying tables...examples of      
+  what can be done:</FONT></STRONG></P>
+<P class=MsoNormal 
+style="MARGIN-LEFT: 1in; TEXT-INDENT: -0.5in; mso-list: l0 level1 lfo1; tab-stops: list 1.0in"><FONT 
+color=red>-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>adding a column to an existing table</FONT></P>
+<P class=MsoNormal 
+style="MARGIN-LEFT: 1in; TEXT-INDENT: -0.5in; mso-list: l0 level1 lfo1; tab-stops: list 1.0in"><FONT 
+color=red>-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>adding a constraint to an existing column / table</FONT></P>
+<P class=MsoNormal 
+style="MARGIN-LEFT: 1in; TEXT-INDENT: -0.5in; mso-list: l0 level1 lfo1; tab-stops: list 1.0in"><FONT 
+color=red>-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>disabling, enabling, or dropping some types of&nbsp;existing constraints 
+(see details in books online)</FONT></P>
+<P class=MsoNormal 
+style="MARGIN-LEFT: 1in; TEXT-INDENT: -0.5in; mso-list: l0 level1 lfo1; tab-stops: list 1.0in">&nbsp;</P>
+
+<hr size="2" width="100%" align="center" class=Section1><STRONG>      
+</STRONG>
+
+<P class=MsoNormal></P>
+<P><CODE>
+<FONT face="Times New Roman"><CODE><FONT face="Times New Roman"><STRONG><FONT face="Times New Roman">
+Look up "Alter Table" in Books Online and bookmark the 
+information for future use.&nbsp; 
+</FONT></STRONG></FONT></CODE></FONT></CODE></P>
+<P><CODE><FONT><CODE></CODE></FONT></CODE><CODE><FONT><CODE><FONT><FONT><FONT 
+face="Times New Roman"><STRONG>The syntax you see is pretty ugly, but generally 
+speaking the final statement that is used to modify a table is fairly 
+simple.&nbsp; When trying to understand the syntax presented in books online, it 
+can be extremely helpful to refer to "Transact-SQL Syntax Conventions" (also in 
+books online) for an explanation of symbols such as "{" and much 
+more.</STRONG></FONT></FONT></FONT></CODE></FONT></CODE></P>
+<P><CODE><FONT><CODE><FONT><FONT><FONT face="Times New Roman">Briefly... the "{" braces mean the information between is 
+required, therefore something needs to be entered after "<STRONG><FONT 
+color=blue>ALTER TABLE <EM>table</EM></FONT></STRONG>".&nbsp; Let's examine the 
+syntax which follows below:</FONT></FONT></FONT></CODE></FONT></CODE></P>
+<P><CODE><FONT><CODE><FONT ><FONT color=blue face="Times New Roman">{[ ALTER 
+COLUMN </FONT><FONT color=blue><FONT face="Times New Roman"><I>column_name <BR></I>&nbsp;&nbsp;&nbsp;&nbsp;{ 
+<I>new_data_type </I>[ <B>( </B><I>precision </I>[ <B>, </B><I>scale </I>] 
+<B>)</B> ] <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ COLLATE &lt; 
+collation_name &gt; ] <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ NULL 
+| NOT NULL ] <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| {ADD | DROP } 
+ROWGUIDCOL } <BR>&nbsp;&nbsp;&nbsp;&nbsp;] 
+<BR></FONT></FONT></FONT></CODE></FONT></CODE><CODE><FONT><CODE><FONT ><FONT color=blue><FONT face="Times New Roman"> 
+<BR></FONT></FONT></FONT><FONT face="Times New Roman">The "{ " 
+is not typed as part of the command as noted in the syntax conventions 
+information.</FONT></CODE></FONT></CODE></P>
+<P><CODE><FONT><CODE><FONT 
+face="Times New Roman">   
+            
+               
+       Next, we encounter a "["; 
+info between square brackets is optional; in the case of the ALTER TABLE 
+statement, we see there are several possibilities that can immediately follow 
+the <STRONG>"ALTER TABLE" string... in this case, we would use this section (above) if we are 
+trying to alter a column 
+definition.</STRONG></FONT></CODE></FONT></CODE></P>
+<P><CODE><FONT><CODE><FONT 
+face="Times New Roman">The outer set of&nbsp;square brackets above encloses one possible 
+way to structure the ALTER TABLE command, but if we are NOT interested in 
+altering a column definition then we need to look further...considering the next block of 
+information:</FONT></CODE></FONT></CODE></P>
+<P><CODE><FONT><CODE></CODE></FONT></CODE><CODE><FONT><CODE><FONT face="Times New Roman" color=blue>| ADD 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ [ &lt; column_definition 
+&gt; ] <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp; 
+<I>column_name</I> AS <I>computed_column_expression 
+</I><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} [ <B>,</B>...<I>n 
+</I>] <BR></P></FONT></CODE></FONT></CODE>
+<P><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman">The first vertical line means "OR"... ie, if we did not use 
+the alter column section, then this section could possibly&nbsp;follow the 
+"ALTER TABLE <EM>table"</EM>  
+               
+      &nbsp;string in the command... which in this 
+case, would be used if we are ADDING A 
+COLUMN.</FONT></FONT></FONT></FONT></CODE></FONT></CODE></P>
+<P><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman">If we are interested in adding a column, then based on what we 
+have seen so far&nbsp;we would be building this 
+command:</FONT></FONT></FONT></FONT></CODE></FONT></CODE></P>
+<OL>
+  <LI>
+  <DIV><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman">ALTER 
+  TABLE <EM>name</EM>&nbsp; (where name = the name of the table we are 
+  altering)</FONT></FONT></FONT></FONT></CODE></FONT></CODE></DIV>
+  <LI>
+  <DIV><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman">ALTER 
+  TABLE ADD</FONT></FONT></FONT></FONT></CODE></FONT></CODE></DIV>
+  <LI>
+  <DIV><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman">now 
+  there is a curly brace so we MUST supply additional information... either a 
+  column definition, or an expression defining a computed column, for example we 
+  could be this far now:&nbsp; <BR><BR><STRONG>ALTER TABLE 
+  Items&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ADD&nbsp;ItemDescription 
+  VARCHAR(50)&nbsp;&nbsp; 
+  NULL</STRONG><BR></FONT></FONT></FONT></FONT></CODE></FONT></CODE><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman"></FONT></FONT></FONT></FONT></CODE></FONT></CODE> 
+               
+              
+          
+   </DIV></LI></OL>
+  <P><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman">As books online notes, we must be careful with nulls, 
+ie:</FONT></FONT></FONT></FONT></CODE></FONT></CODE> 
+               
+              
+          
+   </P>
+  <P><CODE><FONT><CODE><FONT><FONT><FONT><FONT face="Times New Roman">..."Specifies whether the column can accept null values. 
+Columns that do not allow null values can be added with ALTER TABLE only if they 
+have a default specified. <STRONG><EM>A new column added to a table must either 
+allow null values, or the column must be specified with a default 
+value</EM></STRONG> 
+               
+              
+          
+   ."</P>
+<P><STRONG>Now getting back to examining the command syntax... in the "ADD" 
+section note that we have "</STRONG><FONT color=#0000ff>[ 
+<STRONG>,</STRONG>...<I>n 
+</I>] " <FONT color=black>at the 
+end.&nbsp; This means you can add more than 1 column at a time simply separating 
+the information defining each column by a comma.&nbsp; Defining more than 1 
+column is optional (therefore the square brackets), and the "n" means any number 
+of columns can be defined.</FONT></FONT></P>
+<HR>
+
+<P>..assuming we were NOT interested in ADDing column(s), continuing our 
+examination of the ALTER TABLE command syntax we encounter:</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;<FONT color=blue>| [ WITH CHECK | WITH NOCHECK ] ADD 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ &lt; table_constraint &gt; 
+} [ <B>,</B>...<I>n </I>]</FONT> </P>
+<P>The vertical bar (logical OR) means if we did NOT use the ALTER COLUMN or ADD 
+sections, we might want to use this section which can be used to add, enable or 
+disable a constraint or multiple constraints at once.&nbsp; Examples:</P>
+<P>To add the Semester column to the Marks table and make it a foreign key 
+referencing the SCHEDULE table:</P>
+<P>ALTER TABLE Marks <BR>&nbsp;&nbsp; ADD Semester char(1) null <BR>&nbsp;&nbsp; 
+Constraint FK_Semester references Schedule (Semester) </P>
+<P>To add a column level foreign key constraint to the existing CourseId column 
+in the Marks table making it a foreign key referencing the Courses table:</P>
+<P>ALTER TABLE Marks <BR>&nbsp;&nbsp; ADD Constraint FK_CourseId Foreign key 
+(CourseId) References Courses (CourseId) </P>
+<P>To add a column level check constraint to the existing PHONE column in the 
+Students table to ensure the phone number is in the format (nnn) nnn-nnnn:</P>
+<P>ALTER TABLE Students <BR>&nbsp;&nbsp; ADD <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Constraint CK_Phone Check <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ( 
+Phone like ‘([0-9][0-9][0-9]) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]’ )</P>
+<P>To add a column level default constraint to the existing ORDERDATE column in 
+the Sales table such that a default of the current date is specified (if no 
+value is supplied during an insert, then the default will apply):</P>
+<P>ALTER TABLE Sales <BR>&nbsp;&nbsp; ADD Constraint DF_OrderDate Default 
+Getdate() for OrderDate </P>
+<P>To disable the default constraint named DF_Mark in the Marks table:</P>
+<P>ALTER TABLE Marks <BR>&nbsp;&nbsp; Nocheck Constraint DF_Mark </P>
+<P>To enable an existing default constraint named DF_MARK in the Marks 
+table:</P>
+<P>ALTER TABLE Marks <BR>&nbsp;&nbsp; Check Constraint DF_Mark </P>
+<P>To delete an existing default constraint named DF_Mark from the Marks 
+table:</P>
+<P>ALTER TABLE Marks <BR>&nbsp;&nbsp; Drop Constraint DF_Mark </P>
+<HR>
+
+<P>Back to sytax again... the final section of the ALTER TABLE command shows 
+this:</P>
+<P><FONT color=blue>&nbsp;&nbsp;&nbsp;&nbsp;| { ENABLE | DISABLE } TRIGGER 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ ALL | <I>trigger_name 
+</I>[ <B>,</B>...<I>n </I>] } <BR>}</FONT></P>
+<P>The final curly brace is the end.&nbsp; If we did not previously choose one 
+of the sections described above then this is the last option; it is used to 
+specify that <I>trigger_name</I> is enabled or disabled. </P>
+<P>Triggers are often created in a database when&nbsp;you want to execute a 
+block of SQL when an INSERT, UPDATE or DELETE is performed in some 
+table.&nbsp;When a trigger is disabled it is still defined for the table; 
+however, when INSERT, UPDATE, or DELETE statements are executed against the 
+table, the actions in the trigger are not performed until the trigger is 
+re-enabled. </P>
+<P><STRONG>
+<HR align=center width="100%" SIZE=2 class=MsoNormal>
+</STRONG></FONT></FONT></FONT></P>
+<P></P>
+<P align=center><STRONG><FONT color=red><EM>Your instructor may optionally discuss 
+additional SQL examples of his/her own time permitting.</EM></FONT></STRONG></P>
+<P><STRONG></STRONG>&nbsp;</P><PRE><STRONG></STRONG><FONT face="Times New Roman">&nbsp;</FONT></PRE><PRE><STRONG></STRONG><STRONG></STRONG><FONT face="Times New Roman">&nbsp;</FONT></PRE><PRE><STRONG></STRONG><FONT face="Times New Roman">&nbsp;</FONT></PRE><PRE><FONT face="Times New Roman">&nbsp;</FONT></PRE><PRE><FONT face="Times New Roman">&nbsp;</FONT></PRE></FONT></CODE></FONT></CODE>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<HTML>
+	<HEAD>
+		<TITLE></TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+	</HEAD>
+	<BODY>
+		<H1>Parameters</H1>
+		<DIV id="nstext" valign="top">
+			<P>Parameters are used to exchange data between stored procedures and the 
+				application or tool (like Query Analyzer) that called the stored procedure:
+				<UL type="disc">
+					<LI>
+						Input parameters allow the caller to pass a data value to the stored procedure.<BR>
+						<BR>
+					<LI>
+						Output parameters allow the stored procedure to pass a data value or a cursor 
+						variable back to the caller.<BR>
+						<BR>
+					<LI>
+						Every stored procedure returns an integer return code to the caller. If the 
+						stored procedure does not explicitly set a value for the return code, the 
+						return code is 0.
+					</LI>
+				</UL>
+			<P>The following stored procedure shows the use of an input parameter, an output 
+				parameter, and a return code:</P>
+			<pre>
+-- Create a procedure that takes one input parameter 
+-- and returns one output parameter and a return code. 
+drop proc spSampleProcedure
+
+CREATE PROC spSampleProcedure 
+	@EmployeeIDParm INT,--input para 
+	@MaxQuantity INT OUTPUT --input/output para 
+AS 
+-- Declare and initialize a variable to hold @@ERROR. 
+--in most programming languages, you have to declare a variable 
+--before it can be used! 
+DECLARE @ErrorSave INT
+ 
+
+SET @ErrorSave = 0 --assign a value of 0 to @ErrorSave 
+--local variables must always begin with @
+ 
+
+-- Do a SELECT using the input parameter. 
+SELECT FirstName, LastName, Title 
+FROM Northwind..Employees 
+WHERE EmployeeID = @EmployeeIDParm
+
+
+-- Save any nonzero @@ERROR value. 
+IF (@@ERROR &lt;&gt; 0) SET @ErrorSave = @@ERROR 
+--@@ERROR is a function! value indicates whether or not the last 
+--executed SQL statement was successful
+ 
+-- Set a value in the output parameter. 
+SELECT @MaxQuantity = MAX(Quantity) FROM Northwind..[Order Details] 
+
+IF (@@ERROR &lt;&gt; 0) SET @ErrorSave = @@ERROR 
+-- Returns 0 if neither SELECT statement had 
+-- an error; otherwise, returns the last error. 
+
+RETURN @ErrorSave 
+GO
+
+-- Declare the variables for the return code and output parameter.
+DECLARE @ReturnCode INT
+DECLARE @MaxQtyVariable INT
+
+-- Execute the stored procedure and specify which variables
+-- are to receive the output parameter and return code values.
+EXEC @ReturnCode = spSampleProcedure 
+	@EmployeeIDParm = 9,
+    @MaxQuantity = @MaxQtyVariable OUTPUT
+
+-- Show the values returned.
+PRINT ' '
+PRINT 'Return code = ' + CAST(@ReturnCode AS CHAR(10))
+PRINT 'Maximum Quantity = ' + CAST(@MaxQtyVariable AS CHAR(10))
+GO
+</pre>
+			<P>When a stored procedure is executed, input parameters can either have their 
+				value set to a constant or use the value of a variable. Output parameters and 
+				return codes must return their values into a variable. Parameters and return 
+				codes can exchange data values with either Transact-SQL variables or 
+				application variables.</P>
+			<P>If a stored procedure is called from a batch or script, the parameters and 
+				return code values can use Transact-SQL variables defined in the same batch. 
+				This example is a batch that executes the procedure created earlier. The input 
+				parameter is specified as a constant and the output parameter and return code 
+				place their values in Transact-SQL variables:</P>
+			<PRE><CODE>-- Declare the variables for the return code and output parameter.
+DECLARE @ReturnCode INT
+DECLARE @MaxQtyVariable INT
+
+-- Execute the stored procedure and specify which variables
+-- are to receive the output parameter and return code values.
+EXEC @ReturnCode = SampleProcedure @EmployeeIDParm = 9,
+   @MaxQuantity = @MaxQtyVariable OUTPUT
+
+-- Show the values returned.
+PRINT ' '
+PRINT 'Return code = ' + CAST(@ReturnCode AS CHAR(10))
+PRINT 'Maximum Quantity = ' + CAST(@MaxQtyVariable AS CHAR(10))
+GO</CODE></PRE>
+			<P>An application can use parameter markers bound to program variables to exchange 
+				data between application variables, parameters, and return codes.</P> <!--RELATEDTOPICSLIST-->
+			<P class="clear-graphic"></P>
+		</DIV>
+	</BODY>
+</HTML>

@@ -1,0 +1,43 @@
+/* CastAndConvert1.sql
+
+Use the conversion functions, CAST and CONVERT, to convert expressions of one data 
+type to another data type whenever these conversions are not performed automatically- see
+Bks Online, Convert, "Cast and Convert" AND "Conversion Functions" for detailed info.
+
+CAST is the ANSI-compliant synonym for CONVERT.
+
+CONVERT can be used anywhere expressions are allowed. Examples: */
+
+USE Pubs --database for these examples
+
+/* first without.. */
+SELECT Title_Id,ytd_sales 'Year to Date Sales' 
+FROM Titles
+go --execute the batch
+
+/* now with.. ytd_sales is an integer data type so if we want to display it as part of 
+a concatenated string, we need to convert it to a string first */
+SELECT Title_Id,'Year to date Sales: ' + CONVERT(char(12),ytd_sales)
+FROM Titles
+GO
+
+/* can do same thing with CAST.. */
+SELECT Title_Id,'Year to date Sales: ' + CAST(ytd_sales AS char(12))
+FROM Titles
+GO
+
+/* next.. an example with "style" specification of 2 - see bks online, Convert, Cast and 
+Convert for a list of sytles */
+SELECT CONVERT(char(8),GETDATE(),2)
+go
+
+/* now try a different style.. */
+SELECT CONVERT(char(8),GETDATE(),1)
+go
+
+/* next.. */
+SELECT Emp_Id,LName + ', ' + SUBSTRING(FName,1,1) + '.' AS Name,
+'Has Been Hired For ' + CONVERT(char(2), (DATEDIFF(year,Hire_Date,getdate()))) + ' years.'
+FROM Employee
+Go
+ 

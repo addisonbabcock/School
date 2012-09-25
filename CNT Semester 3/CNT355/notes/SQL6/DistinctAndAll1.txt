@@ -1,0 +1,31 @@
+/* DistinctAndAll1.sql - DISTINCT and ALL "Predicates"
+
+/* A "Predicate" is an expression that evaluates to TRUE, FALSE, or UNKNOWN. 
+Predicates are used in the search condition of WHERE clauses and HAVING clauses, and the 
+join conditions of FROM clauses */
+
+/* try the following query and look at the results... */
+
+use Northwind
+SELECT SupplierID
+FROM Products
+WHERE UnitsInStock>0
+go
+
+/* clearly there is repeating data present as many records have the same value in the selected
+column; now make a small change, ie:  */
+use Northwind
+SELECT DISTINCT SupplierID
+FROM Products
+WHERE UnitsInStock>0
+go
+
+/* Before going any further, see Books Online - "Distinct Operator" */
+
+/* ALL keyword; this is related to DISTINCT in that ALL is sort of the opposite in that
+it causes ALL rows to be returned under certain conditions.  For more info, see
+"GROUP BY and ALL" in Books Online (best done after GROUP BY has been covered!).
+
+
+
+

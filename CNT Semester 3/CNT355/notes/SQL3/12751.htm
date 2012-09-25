@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<title>12751</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<style> <!-- .Normal {font-size:12.0pt; font-family:"Times New Roman";}
+	--></style>
+		<meta http-equiv="Content-Language" content="en-us">
+	</head>
+	<body lang="EN-US" link="blue" vlink="blue" class="Normal" bgcolor="#ffffff">
+		<!-- W. Wolinski, Computer Engineering - Sep./01 -->
+		<h1 class="Section1">
+			Log Id 12751
+			<hr size="2" width="100%" align="center">
+		</h1>
+		<P><FONT color="#0000ff"><STRONG> <FONT color="#000000"></FONT></STRONG></FONT>
+		</P>
+		<P class="Section1"><STRONG><FONT color="red">More on SELECT...</FONT></STRONG> <STRONG>
+				Feel free to use Books Online&nbsp;in combination with&nbsp;the info 
+				below.&nbsp; As you use Books Online,&nbsp;it is a good idea 
+				to&nbsp;add&nbsp;bookmarks to the favourites collection as you proceed through 
+				the topics in the course.</STRONG>
+			<HR align="center" width="100%" SIZE="2">
+		<P>The <STRONG><FONT color="blue">TOP</FONT></STRONG> clause limits the number of 
+			rows returned in the result set.</P>
+		<P>TOP <I>n</I> [PERCENT]</P>
+		<P><I>n</I> specifies how many rows are returned. If PERCENT is not specified, <I>n</I>
+			is the number of rows to return. If PERCENT is specified, <I>n</I> is the 
+			percentage of the result set rows to return:</P>
+		<PRE><CODE>SELECT TOP 120 * From... /*Return the top 120 rows of <BR>the result set. (note * means all columns here but you <BR> can change this to a column list!) */
+</CODE></PRE>
+		<PRE><CODE><CODE>SELECT </CODE>TOP 15 PERCENT * From...  /* Return the top 15% of the result set. */.
+</CODE></PRE>
+		<P>Usually&nbsp;a SELECT statement that includes TOP also has an ORDER BY 
+			clause.&nbsp; In this case,&nbsp;the rows to be returned are selected from the 
+			ordered result set.
+			<HR align="center" width="100%" SIZE="2">
+		<P>&nbsp;The <STRONG><FONT color="blue">DISTINCT</FONT></STRONG> keyword eliminates 
+			duplicate rows from the results of a SELECT statement. If DISTINCT is not 
+			specified, all rows are returned, including duplicates. For example, select all 
+			the author IDs in <B>titleauthor</B> without DISTINCT &amp; with it to see the 
+			difference:</P>
+		<CODE>
+			<HR width="80%" SIZE="1">
+			<P><BR>
+				USE pubs<BR>
+				<BR>
+				SELECT au_id<BR>
+				FROM titleauthor<BR>
+				<BR>
+				SELECT <STRONG><FONT color="blue">DISTINCT</FONT></STRONG>
+			a</CODE><CODE> u_id<BR>
+			FROM titleauthor<BR>
+			<BR>
+			</P>
+			<HR width="80%" SIZE="1">
+			<P><BR>
+		</CODE><CODE>Note that one row is a duplicate of another only if values in ALL 
+			columns are the same!</CODE> <CODE></P>
+			<HR align="left" width="100%" SIZE="2">
+		</CODE><CODE><FONT face="Times New Roman">
+				<P><STRONG><FONT color="blue">EXISTS</FONT></STRONG> can be quite useful when using 
+					a subquery to test for the existence of rows.
+					<BR>
+					<BR>
+					Syntax: EXISTS <I>subquery</I> <STRONG>Returns TRUE if a subquery contains any 
+						rows. </STRONG>
+				</P>
+				<DIV align="left"><STRONG></STRONG>&nbsp;</DIV>
+				<DIV align="left"><STRONG>Often used with IF structures, ie:</STRONG></DIV>
+				<DIV align="left"><STRONG></STRONG>&nbsp;</DIV>
+				<DIV align="left"><STRONG>IF EXISTS (Select * From Students)&nbsp;</STRONG></DIV>
+				<DIV align="left"><STRONG>BEGIN&nbsp; --if at least 1 row was found</STRONG></DIV>
+				<DIV align="left"><STRONG>.</STRONG></DIV>
+				<DIV align="left"><STRONG>.</STRONG></DIV>
+				<DIV align="left"><STRONG>SQL statements to execute go here...</STRONG></DIV>
+				<DIV align="left"><STRONG>.</STRONG></DIV>
+				<DIV align="left"><STRONG>.</STRONG></DIV>
+				<DIV align="left"><STRONG>.</STRONG></DIV>
+				<DIV align="left"><STRONG>END</STRONG></DIV>
+				<STRONG>
+					<HR align="left" width="100%" SIZE="2">
+				</STRONG></FONT></CODE>
+		<H2>Nested SELECT Statements (also called subqueries)
+		</H2>
+		<FONT face="Times New Roman">
+			<P align="left"><CODE><FONT face="Times New Roman"><STRONG>A subquery is a SELECT query that is 
+							nested inside a SELECT, INSERT, UPDATE, or DELETE statement, or inside another 
+							subquery.</STRONG></FONT></CODE></P>
+			<P align="left"><CODE><FONT face="Times New Roman"><STRONG>A subquery can be used anywhere an 
+							expression is allowed.</STRONG> <STRONG>A subquery is also sometimes called an 
+							inner query or inner select, while the statement containing a subquery is also 
+							called an outer query or outer select.</STRONG> </FONT></CODE>
+			</P>
+			<P align="left"><CODE><FONT face="Times New Roman">Many Transact-SQL statements that 
+						include subqueries can be alternatively formulated as joins which involve 
+						multiple tables (discussed later in the course). In Transact-SQL, there is 
+						usually no performance difference between a statement that includes a subquery 
+						and one that uses a JOIN, however in some cases where existence must be checked 
+						a join yields better performance.</FONT></CODE></P>
+			<P align="left"><CODE><FONT face="Times New Roman"></FONT></CODE>&nbsp;</P>
+			<CODE><FONT face="Times New Roman">
+					<DIV align="center">
+						<DIV align="left" ms_positioning="FlowLayout">
+							<TABLE height="100" cellSpacing="0" cellPadding="0" width="432" border="0" ms_1d_layout="TRUE">
+								<TR>
+									<TD>
+										<P><CODE><FONT face="Times New Roman"><STRONG>/* Example SELECT statement using a subquery. */</STRONG></FONT></CODE></P>
+										<P><CODE><FONT face="Times New Roman"><STRONG>use Northwind<BR>
+														<BR>
+														SELECT ProductName,UnitPrice<BR>
+														FROM Northwind.dbo.Products --database.owner.object format<BR>
+														WHERE UnitPrice =</STRONG></FONT></CODE></P>
+										<BLOCKQUOTE dir="ltr">
+											<P><CODE><STRONG>(SELECT UnitPrice<BR>
+														FROM Northwind.dbo.Products<BR>
+														WHERE ProductName = 'Sir Rodney''s Scones')</STRONG></CODE></P>
+										</BLOCKQUOTE>
+									</TD>
+								</TR>
+							</TABLE>
+						</DIV>
+					</DIV>
+					<DIV align="center">&nbsp;</DIV>
+					<DIV align="left">
+				</FONT></CODE><CODE><FONT face="Times New Roman"></FONT></CODE>&nbsp;</DIV>
+			<DIV align="left"><CODE><FONT face="Times New Roman">The best way to see how the above 
+						example works is to execute<BR>
+						the inner SELECT first to determine the value which is used in the<BR>
+						WHERE clause of the outer SELECT. </FONT></CODE>
+			</DIV>
+			<DIV align="left"><CODE><FONT face="Times New Roman"></FONT></CODE>&nbsp;</DIV>
+			<DIV align="left"><CODE>
+					<HR width="100%" SIZE="1">
+				</CODE>
+			</DIV>
+			<DIV align="left"><CODE><FONT face="Times New Roman"></FONT></CODE>&nbsp;</DIV>
+			<DIV align="left"><CODE><FONT face="Times New Roman" color="#ff3366"><STRONG>Your Instructor 
+							will be discussing many example queries involving subqueries in class.</STRONG></FONT></CODE></DIV>
+			<DIV align="left"><CODE><STRONG><FONT face="Times New Roman" color="#ff3366"></FONT></STRONG></CODE>&nbsp;</DIV>
+			<DIV align="left"><CODE>
+					<HR width="100%" SIZE="1">
+				</CODE>
+			</DIV>
+		</FONT>
+		<P><BR>
+			<BR>
+			&nbsp;</P>
+		<p>&nbsp;</p>
+	</body>
+</html>

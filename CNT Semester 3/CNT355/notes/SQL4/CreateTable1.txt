@@ -1,0 +1,53 @@
+/* CreateTable1.sql */
+--illustrates fundamental concepts; no keys or indexes defined yet! */
+--the data types used below should be discussed in class; see Books Online for 
+--detailed information concerning data types; pay close attention to storage requirements!
+
+use db_n --where n is number assigned to student, ie, user 25 should be using db_25!
+
+--drop tables ONLY if they already exist; this can be done by checking the
+--sysobjects table in the database!
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Employees_Projects')
+   drop table Employees_Projects
+GO
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Employees')
+   drop table Employees
+GO
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Projects')
+   drop table Projects
+GO
+ 
+-------------------------CREATE TABLES NOW: ------------------------------------
+
+Create Table Employees(
+
+	SocialInsuranceNumber	char(9) 	not null,
+	LastName		varchar(100)	not null,
+	FirstName		varchar(100)	not null,
+	MiddleInitial		char(1)		null,
+	BirthDate		smalldatetime	not null,
+	Address			varchar(100)	null,
+	Gender			char(1)		not null,
+	Salary			smallmoney	not null,
+	SupervisorSIN		char(9)		null
+)
+
+Create Table Employees_Projects(
+
+	SocialInsuranceNumber	char(9) 	not null,
+	ProjectNumber		char(2)		not null,
+	WeeklyHrs		smallint	not null
+)
+
+Create Table Projects(
+
+	ProjectNumber		char(2)		not null,
+	ProjectName		varchar(100)	not null,
+	ProjectLocation		varchar(100)	not null
+)
+

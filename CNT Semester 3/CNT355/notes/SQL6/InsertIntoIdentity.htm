@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<H1><FONT color=blue>Inserting Data into a table with an Identity 
+Column</FONT></H1>
+<P>
+<HR>
+<STRONG>DO NOT supply a value for an identity column!&nbsp; SQL Server will 
+create a value automatically!</STRONG>
+<P></P>
+<P><STRONG><FONT color=red>To demonstrate, consider the 
+following table:</FONT></STRONG></P>
+<HR>
+
+<P>Create Table Supplier (<BR><BR>/* create SupplierId col, make it identity col 
+and pri key: */<BR>	SupplierId	 int identity (1, 1)	not null<BR>&nbsp;&nbsp; 
+Constraint PK_Supplier Primary Key clustered,<BR><BR>Name varchar(100)&nbsp; not 
+null,<BR>	Phone char(14)	not null<BR>		Constraint CK_Phone <BR>)</P>
+<HR>
+
+<P>To INSERT DATA, <STRONG>DO NOT SUPPLY A VALUE FOR THE IDENTITY COL</STRONG>, 
+IE:</P>
+<P>INSERT Supplier (Name,Phone)<BR>VALUES&nbsp; ('Smith 
+Supplies','471-7400')</P>
+<P><BR><BR>&nbsp;</P>
+
+</BODY>
+</HTML>

@@ -1,0 +1,202 @@
+/* Insert1.sql
+
+The script in here is very similar to portions of JoinTheory3.sql previously
+covered.  It is important to focus on inserting data now rather than joining
+data.
+
+See Bks Online - 'INSERT, Rows, Adding Rows With Insert' for detailed info.
+Also see your text!
+
+The statement causes the data_values to be inserted as one or more rows into the named table 
+or view. column_list is a comma-separated list of column names that can be used to specify 
+the columns for which data is supplied. If column_list is not specified, all the columns 
+in the table or view receive data and data should be complete and in the correct order 
+according to the columns available in the table.  There should be one value for each
+column in the table but note that several possibilities exist for a 'data value' including
+an expression, DEFAULT (so the default constraint for the col is used), or NULL (col must
+allow nulls to be inserted).
+
+Syntax: INSERT [INTO] table_or_view [(column_list)] data_values
+
+Example: 
+
+INSERT Employees Values('123','Doe','John','K',01/01/00,'11111-12 St.','M',40000.65,NULL,'5')
+*/
+
+/* The following queries are meant for execution prior to using chapter 9 of
+the text; tables are created and populated. */
+
+-----------------IMPORTANT!!!--------------
+use db_n --WHERE n is your assigned number!
+go
+--------------------------------------------
+--first, drop tables for convenience as a developer:
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Reviews')
+Drop TABLE Reviews
+GO
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Reviewers')
+Drop TABLE Reviewers
+GO
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Products')
+Drop TABLE Products
+GO
+
+CREATE TABLE Reviewers (
+	EmployeeId	int	not null --this will identify a reviewer
+		Constraint PK_EmployeeId1 Primary Key,
+	ReviewerAlias	varchar(20) not null,
+	RecordCreationDate	smalldatetime not null
+)
+GO 
+
+/* Now insert some data for practice; this is done using INSERT - 
+
+go to books online, index..INSERT (described) .. BOOKMARK if not already done!  
+Spend a few minutes looking over the info on INSERT before proceeding to the 
+next batch: */
+
+INSERT INTO Reviewers
+	(EmployeeId,ReviewerAlias,RecordCreationDate) --column list for cols we are inserting values into
+VALUES
+	(1,'Wolinski',GetDate())
+go
+
+--note if you try to do this again, you will get an error due to PK constraint
+--which only allows a given value in the EmployeeId col to occur once.. go ahead,
+--run the following batch to see the error message for yourself:
+INSERT INTO Reviewers
+	(EmployeeId,ReviewerAlias,RecordCreationDate) --column list for cols we are inserting values into
+VALUES
+	(1,'Wolinski',GetDate())
+go
+
+--Next, let's populate the Reviewers table with more test data:
+
+INSERT INTO Reviewers
+	(EmployeeId,ReviewerAlias,RecordCreationDate) --column list for cols we are inserting values into
+VALUES
+	(2,'Vanselow',GetDate())
+go
+INSERT INTO Reviewers
+	(EmployeeId,ReviewerAlias,RecordCreationDate) --column list for cols we are inserting values into
+VALUES
+	(3,'Silver',GetDate())
+go
+INSERT INTO Reviewers
+	(EmployeeId,ReviewerAlias,RecordCreationDate) --column list for cols we are inserting values into
+VALUES
+	(4,'Walker',GetDate())
+go
+INSERT INTO Reviewers
+	(EmployeeId,ReviewerAlias,RecordCreationDate) --column list for cols we are inserting values into
+VALUES
+	(5,'McPherson',GetDate())
+go
+INSERT INTO Reviewers
+	(EmployeeId,ReviewerAlias,RecordCreationDate) --column list for cols we are inserting values into
+VALUES
+	(6,'Sinnema',GetDate())
+go
+
+--look at the data so far:
+SELECT * from Reviewers
+go
+
+-- next, make a copy of the 'Products' table structure that exists in the 
+--Northwind database:
+CREATE TABLE Products(
+	ProductID int not null
+		PRIMARY KEY CLUSTERED,
+	ProductName nvarchar(40) not null,
+	SupplierID int null,
+	CategoryID int null,
+	QuantityPerUnit nvarchar(20) null,
+	UnitPrice money	null,
+	UnitsInStock int null,
+	UnitsOnOrder int null,
+	ReorderLevel int null,
+	Discontinued bit not null
+)
+GO
+
+--populate this table with the data in Northwind.Products:
+INSERT INTO Products
+	SELECT * From Northwind.dbo.Products
+GO
+
+SELECT * From Products --have a look at it
+go
+
+--next create a table of Reviews that can be used to store details concerning
+--a particular product review that was done by one of the reviewers:
+CREATE TABLE Reviews (
+	ReviewId	int	not null  --a unique value for identifying product a review
+		CONSTRAINT PK_ReviewId Primary Key clustered,
+
+	EmployeeId int not null  --of the employee who did the product review
+		CONSTRAINT FK_EmployeeId2 Foreign Key References Reviewers(EmployeeId),
+
+	ProductId int not null  --identifies the product that was reviewed
+		CONSTRAINT FK_ProductId Foreign Key References Products(ProductId),
+
+	Date smalldatetime null, --for date when review was done
+	ReviewText varchar(200) null --this should be enough room for a review!
+)
+go
+
+--now insert some test data into Reviews:
+INSERT INTO Reviews
+	(ReviewId,EmployeeId,ProductId,Date,ReviewText)
+VALUES
+	(1,1,1,GetDate(),'Great Product!  Tastes like chicken but much cheaper.')
+GO
+
+INSERT INTO Reviews
+	(ReviewId,EmployeeId,ProductId,Date,ReviewText)
+VALUES
+	(2,1,2,GetDate(),'Tastes like dogfood.')
+GO
+
+INSERT INTO Reviews
+	(ReviewId,EmployeeId,ProductId,Date,ReviewText)
+VALUES
+	(3,2,3,GetDate(),'Good value for the money.')
+GO
+
+INSERT INTO Reviews
+	(EmployeeId,ReviewId,Date,ReviewText,ProductId) --note order of cols does not
+	--have to match order in table; what is important is that the values occur in
+	--the correct positions 
+VALUES
+	(5,4,GetDate(),'Good Product',6)
+GO
+
+--take a look at Reviews:
+SELECT * FROM Reviews
+go
+
+--NEXT: note that we can omit supplying values for columns
+--defined as NULL, for example:
+
+INSERT Reviews
+	(ReviewId,EmployeeId,ProductId)
+VALUES
+	(6,4,6)
+GO
+
+select * from Reviews
+--should see 2 NULLs for last cols; note, if you simply R-click
+--the table and L-click Open using object browser in QA, you
+--only see blanks!  There are really NULLs there!  Can see them using:
+SELECT * FROM Reviews
+
+-----------------------------------------------------------------------------------
+
+
+

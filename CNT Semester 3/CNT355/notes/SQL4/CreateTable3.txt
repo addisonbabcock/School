@@ -1,0 +1,61 @@
+/* CreateTable3.sql - illustrates concepts of:
+Identity columns , Check Constraints, Foreign Keys and Calculated Columns */
+
+use db_n --where n is number assigned to student, ie, user 25 should be using db_25!
+
+--drop tables ONLY if they already exist; this can be done by checking the
+--sysobjects table in the database!
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'PurchaseOrder')
+   drop table PurchaseOrder
+GO
+--PurchaseOrder is a child table of Supplier (has a FK in it) so it MUST be dropped first.
+
+
+IF EXISTS (SELECT name FROM sysobjects
+           WHERE name = 'Supplier')
+   drop table Supplier
+GO
+
+----------------------Create Tables ---------------------------------
+
+Create Table Supplier (
+
+/* create SupplierId col, make it identity col and pri key: */
+	SupplierId		int identity (1, 1)		not null
+Constraint PK_Supplier Primary Key clustered,
+
+/* create remaining cols with CHECK constraint on Phone col
+ensuring that phone number format is correctly entered:  */
+	Name			varchar(100)			not null,
+	Phone			char(14)			not null
+		Constraint CK_Phone Check 
+	(Phone Like '([0-9][0-9][0-9]) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
+)
+
+----------------------------------------------------------------------
+Create Table PurchaseOrder (
+
+	OrderNumber		int identity (1,1)			not null
+		Constraint PK_PurchaseOrder Primary Key clustered,
+	OrderDate		smalldatetime			not null,
+	DateReceived		smalldatetime			not null,
+
+	SupplierId		int				not null
+		Constraint FK_PurchaseOrderToSupplier references Supplier (SupplierId),
+
+/* ensure SubTotal and GST are greater than 0:  */
+
+	SubTotal		money				not null
+		Constraint CK_SubTotalMustBePositive Check (Subtotal > 0),
+
+	GST			money				not null
+		Constraint CK_GSTMustBePositive Check (GST > 0),
+
+/* define Total to be a calculated col:  */
+	Total as Subtotal + GST,
+
+	Constraint CK_DateReceivedMustBeOnOrAfterOrderDate 
+		Check (DateReceived >= OrderDate)
+)

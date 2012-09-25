@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<H1><A name=_combining_results_with_union></A>Combining Results with UNION</H1>
+<HR>
+
+<P>The following information can also be found in Books Online...</P>
+<P>The UNION operator allows you to combine the results of two or more SELECT 
+statements into a single result set. The result sets combined using UNION must 
+all have the same structure. They must have the same number of columns, and the 
+corresponding result set columns must have compatible data types. </P>
+<P>Syntax for UNION is specified as:</P>
+<P><I>select_statement </I>UNION [ALL] <I>select_statement</I></P>
+<P>For example, <B>Table1</B> and <B>Table2</B> have the same two-column 
+structure.</P>
+<P>
+<TABLE cols=5 cellPadding=2 rules=all width=587 border=1 frame=box>
+  
+  <TR vAlign=top>
+    <TD width="23%"><CODE>Table1</CODE></TD>
+    <TD width="24%">&nbsp;</TD>
+    <TD width="8%">&nbsp;</TD>
+    <TD width="24%"><CODE>Table2</CODE></TD>
+    <TD width="21%">&nbsp;</TD></TR>
+  <TR vAlign=top>
+    <TD width="23%"><CODE>ColumnA</CODE></TD>
+    <TD width="24%"><CODE>ColumnB&nbsp; </CODE></TD>
+    <TD width="8%">&nbsp;</TD>
+    <TD width="24%"><CODE>ColumnC</CODE></TD>
+    <TD width="21%"><CODE>ColumnD</CODE></TD></TR>
+  <TR vAlign=top>
+    <TD width="23%"><CODE>char(4)</CODE></TD>
+    <TD width="24%"><CODE>int</CODE></TD>
+    <TD width="8%">&nbsp;</TD>
+    <TD width="24%"><CODE>char(4)</CODE></TD>
+    <TD width="21%"><CODE>int</CODE></TD></TR>
+  <TR vAlign=top>
+    <TD width="23%"><CODE>-------</CODE></TD>
+    <TD width="24%"><CODE>---</CODE></TD>
+    <TD width="8%">&nbsp;</TD>
+    <TD width="24%"><CODE>-------</CODE></TD>
+    <TD width="21%"><CODE>---</CODE></TD></TR>
+  <TR vAlign=top>
+    <TD width="23%"><CODE>abc</CODE></TD>
+    <TD width="24%"><CODE>1</CODE></TD>
+    <TD width="8%">&nbsp;</TD>
+    <TD width="24%"><CODE>ghi</CODE></TD>
+    <TD width="21%"><CODE>3</CODE></TD></TR>
+  <TR vAlign=top>
+    <TD width="23%"><CODE>def</CODE></TD>
+    <TD width="24%"><CODE>2</CODE></TD>
+    <TD width="8%">&nbsp;</TD>
+    <TD width="24%"><CODE>jkl</CODE></TD>
+    <TD width="21%"><CODE>4</CODE></TD></TR>
+  <TR vAlign=top>
+    <TD width="23%"><CODE>ghi</CODE></TD>
+    <TD width="24%"><CODE>3</CODE></TD>
+    <TD width="8%">&nbsp;</TD>
+    <TD width="24%"><CODE>mno</CODE></TD>
+    <TD width="21%"><CODE>5</CODE></TD></TR></TABLE><BR></P><PRE></PRE>
+<P>This query creates a UNION between the tables:</P><PRE><CODE>SELECT * FROM Table1
+UNION
+SELECT * FROM Table2
+</CODE></PRE>
+<P>Here is the result set:</P><PRE><CODE>ColumnA  ColumnB
+-------  --------
+abc      1
+def      2
+ghi      3
+jkl      4
+mno      5
+</CODE></PRE>
+<P>The result set column names of a UNION are the same as the column names in 
+the result set of the first SELECT statement in the UNION. The result set column 
+names of the other SELECT statements are ignored.</P>
+<P><STRONG>By default, the UNION operator removes duplicate rows from the result 
+set. If you use ALL, all rows are included in the results and duplicates are not 
+removed. </STRONG></P>
+<P>The exact results of a UNION operation depend on the collation chosen during 
+installation and the ORDER BY clause. </P>
+<P>Any number of UNION operators can appear in a Transact-SQL statement, for 
+example:</P><PRE><CODE>SELECT * FROM TableA
+UNION
+SELECT * FROM TableB
+UNION
+SELECT * FROM TableC
+UNION
+SELECT * FROM TableD
+</CODE></PRE>
+<P>By default, Microsoft® SQL Server™ 2000 evaluates a statement containing 
+UNION operators from left to right. Use parentheses to specify the order of 
+evaluation. For example, the following statements are not equivalent:</P><PRE><CODE>/* First statement. */
+SELECT * FROM TableA
+UNION ALL
+(   SELECT * FROM TableB
+   UNION
+   SELECT * FROM TableC
+)
+GO
+
+/* Second statement. */
+(SELECT * FROM TableA
+ UNION ALL
+ SELECT * FROM TableB
+)
+UNION
+SELECT * FROM TableC)
+GO
+</CODE></PRE>
+<P>In the first statement, duplicates are eliminated in the union between 
+<B>TableB</B> and <B>TableC</B>. In the union between that set and 
+<B>TableA</B>, duplicates are not eliminated. In the second statement, 
+duplicates are included in the union between <B>TableA</B> and <B>TableB</B> but 
+are eliminated in the subsequent union with <B>TableC</B>. ALL has no effect on 
+the final result of this expression.</P>
+<P><STRONG><FONT color=red>When UNION is used, the individual SELECT statements 
+cannot have their own ORDER BY or COMPUTE clauses. There can be only one ORDER 
+BY or COMPUTE clause after the last SELECT statement; it is applied to the 
+final, combined result set.</FONT></STRONG> </P>
+<P>GROUP BY and HAVING can be specified only in the individual SELECT 
+statements.</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P><!--RELATEDTOPICSLIST-->
+
+</BODY>
+</HTML>

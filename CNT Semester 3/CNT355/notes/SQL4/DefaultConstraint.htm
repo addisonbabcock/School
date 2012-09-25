@@ -1,0 +1,120 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>DEFAULT CONSTRAINT</title>
+<style><!--
+.Normal
+	{font-size:12.0pt;
+	font-family:"Times New Roman";}
+-->
+</style>
+</head>
+<body lang=EN-US class="Normal" bgcolor="#FFFFFF">
+<div class=Section1> 
+  <h1><span style='font-size:14.0pt;'>DEFAULT CONSTRAINTS</span></h1>
+  <p><span style='font-family:Arial'>A default constraint allows you to define 
+    a value that is assigned to a column when a value is not specifically supplied 
+    by the user when a new row is inserted into the table.  A default constraint 
+    can be defined on any column except:</span></p>
+  <ul type=disc>
+    <li><span
+     style='font-family:Arial'>A column with the timestamp data type</span></li>
+    <li><span
+     style='font-family:Arial'>A column with the identity property</span></li>
+  </ul>
+  <p><span style='font-family:Arial'>The value of the default can be supplied 
+    via a constant, a function, or it can be null.  The default constraint name 
+    should use a prefix of DF (indicating this is a default constraint) for convenience 
+    although some designers use other syntax conventions. If you don't supply 
+    a name, the DBMS will assign one for you but it might be ugly!</span></p>
+  <p><span style='font-family:Arial'>Syntax:           <b> <i>[CONSTRAINT constraint 
+    name]</i></b></span></p>
+  <p><i><b><span style='font-family:Arial'>                                    
+    DEFAULT  constant | function | null</span></b></i></p>
+  <p><span style='font-family:Arial'>Examples:</span></p>
+  <table border=1 cellspacing=0 cellpadding=0 width=95%>
+    <tr> 
+      <td width=291 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'><b>Default</b></span></p>
+      </td>
+      <td width=299 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'><b>Constraint Definition</b></span></p>
+      </td>
+    </tr>
+    <tr> 
+      <td width=291 valign=top class="Normal">&nbsp; </td>
+      <td width=299 valign=top class="Normal">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td width=291 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'>Use the current date 
+          as the default for the DateReceived column </span></p>
+      </td>
+      <td width=299 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'>Constraint DF_DateReceived 
+          Default GetDate()</span></p>
+      </td>
+    </tr>
+    <tr> 
+      <td width=291 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'>Use null as the default 
+          for the PostalCode column</span></p>
+      </td>
+      <td width=299 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'>Constraint DF_PostalCode 
+          Default NULL</span></p>
+      </td>
+    </tr>
+    <tr> 
+      <td width=291 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'>Use 5.90 as the default 
+          for the HourlyRate column</span></p>
+      </td>
+      <td width=299 valign=top class="Normal"> 
+        <p><span style='font-size:10.0pt;font-family:Arial'>Constraint DF_HourlyRate 
+          Default 5.90</span></p>
+      </td>
+    </tr>
+  </table>
+  <p><span style='font-family:Arial'>***        GetDate() is a function which 
+    returns the system date<br>
+    </span><span style='font-family:Arial'><br
+clear=all style='page-break-before:always'>
+    The default constraint is defined as part of the column definition.</span></p>
+  <p>Consider the example table creation script below which demonstrates one way 
+    to set a default of the current date for the OrderDate column in the PurchaseOrder 
+    table :</p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>Create Table PurchaseOrder 
+    (</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>            OrderNumber                 
+    int identity (1,1)                          not null<br>
+    </span><span style='font-size:10.0pt;font-family:Arial'>                        
+    Constraint PK_PurchaseOrder Primary Key clustered,</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>           <b> OrderDate  
+    smalldatetime not null &#10; Constraint DF_OrderDate Default GetDate()</b></span><b>,</b></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>            DateReceived                
+    smalldatetime                            not null,</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>            SupplierId                      
+    int                                             not null</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>                        
+    Constraint FK_PurchaseOrderToSupplier references Supplier (SupplierId),</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>            SubTotal                       
+    money                                      not null</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>                        
+    Constraint CK_SubTotalMustBePositive Check (Subtotal &gt; 0),</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>            GST                              
+    money                                      not null</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>                        
+    Constraint CK_GSTMustBePositive Check (GST &gt; 0),</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>            Total as Subtotal 
+    + GST,</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>            Constraint CK_DateReceivedMustBeOnOrAfterOrderDate 
+    </span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>                        
+    Check (DateReceived &gt;= OrderDate)</span></p>
+  <p><span style='font-size:10.0pt;font-family:Arial'>)</span></p>
+  <p>GO</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

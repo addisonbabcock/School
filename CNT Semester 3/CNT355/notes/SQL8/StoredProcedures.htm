@@ -1,0 +1,305 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<DIV class=section id=ch09lev1sec1>
+<H2 class=first-section-title 
+id=nr-title.C73DA3C1-6177-11D5-A2AE-0050DAC37F13><A name=1013></A><A 
+name=ch09lev1sec1></A>The CREATE PROCEDURE Statement</H2>
+<P class=para id=nr-para.C73DA41E-6177-11D5-A2AE-0050DAC37F13><STRONG><EM>...as in Books Online:</EM></STRONG>    
+ </P>
+<DIV class=example id=ch09list01> 
+<DIV class=formalbody id=ch09list01>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="Start example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE><PRE class=literallayout>CREATE PROC[EDURE] [owner_name.]procedure_name [;number]
+    [
+        {@<SPAN class=emphasis><I>parameter data_type</I></SPAN>} [VARYING] [= <SPAN class=emphasis><I>default</I></SPAN>] [OUTPUT]
+    ]
+    [,...<SPAN class=emphasis><I>n</I></SPAN>]
+[WITH
+    {
+        RECOMPILE
+        | ENCRYPTION
+        | RECOMPILE, ENCRYPTION
+    }
+]
+[FOR REPLICATION]
+AS
+    <SPAN class=emphasis><I>sql_statement</I></SPAN> [...<SPAN class=emphasis><I>n</I></SPAN>]<BR>
+</PRE>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="End example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE>
+<TABLE class=BlankSpace cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD height=16></TD></TR></TABLE></DIV></DIV>
+<P class=para id=nr-para.C73DA41F-6177-11D5-A2AE-0050DAC37F13>   
+       The <SPAN class=fixed>CREATE 
+PROCEDURE</SPAN> clause is where you name the procedure. It is also abbreviated 
+<SPAN class=fixed>CREATE PROC</SPAN> (and "proc" is a 
+common abbreviation of "procedure"). The name must 
+be unique to the database and cannot exceed 128 characters in length. It 
+must also follow the rules for identifiers defined in Books Online.</P>
+<P class=para id=nr-para.C73DA421-6177-11D5-A2AE-0050DAC37F13>You can optionally 
+add a number to the end of the procedure name, separated by a semicolon. This 
+allows you to have a number of procedures of the same name that you can drop in 
+a single <SPAN class=fixed>DROP PROCEDURE</SPAN> statement. Although this is a 
+feature, it can lead to confusion because you have a number of procedures all 
+with the <A name=1016></A><A name=IDX-305></A>   
+             
+              
+   same name. As said previously, the name 
+should be descriptive and reflect what the procedure does for 
+you.</P>
+<P class=para id=nr-para.C73DA423-6177-11D5-A2AE-0050DAC37F13>The next clause contains the parameters, if any. You need 
+to specify each parameter with its datatype, a default (if any), and indicate 
+whether or not&nbsp;it is an output parameter. Commas are used to separate each 
+parameter declaration and it is often considered good practice to put each 
+parameter declaration on a separate line.</P>
+<P class=para><SPAN class=example-title 
+id=nr-title.C73DA3C3-6177-11D5-A2AE-0050DAC37F13>      
+Example code:</SPAN></P>
+<DIV class=example id=ch09list02> 
+<DIV class=formalbody id=ch09list02>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="Start example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE><PRE class=literallayout>CREATE PROC sp_DisplayCustomers
+(
+  @Country  AS varchar (15),
+  @Region      varchar (15)
+)
+</PRE></DIV></DIV>
+<P class=para id=nr-para.C73DA426-6177-11D5-A2AE-0050DAC37F13><STRONG>Sometimes people prefer to name their stored 
+procedures using a different prefix from "sp".</STRONG>   
+           
+          
+        </P>
+<P class=para>The code above shows two 
+different ways of declaring the parameters for the stored procedure. The first, 
+for <SPAN class=fixed>@Country</SPAN>, uses the optional <SPAN 
+class=fixed>AS</SPAN> keyword, while the second, for <SPAN 
+class=fixed>@Region</SPAN>, does not. </P>
+<P class=para><STRONG>   
+           
+             
+ To declare output parameters, all you have to do is add the <SPAN 
+class=fixed>OUTPUT</SPAN> 
+keyword to the parameter declaration as shown below:</STRONG>     
+   <SPAN class=example-title 
+id=nr-title.C73DA3C4-6177-11D5-A2AE-0050DAC37F13><SPAN 
+class=example-titlelabel>  </SPAN>      
+ </SPAN></P>
+<P class=para><SPAN class=example-title><SPAN 
+class=example-titlelabel></SPAN>Example of Output Parameter</SPAN> </P>
+<DIV class=example id=ch09list03> 
+<DIV class=formalbody id=ch09list03>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="Start example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE><PRE class=literallayout> CREATE PROC
+sp_LastOrderDate
+  ( @CustomerID int,
+  @OrderDate  smalldatetime     <STRONG>OUTPUT</STRONG>  
+
+    
+         
+)
+</PRE>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="End example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE>
+<TABLE class=BlankSpace cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD height=16></TD></TR></TABLE></DIV></DIV>
+<P class=para id=nr-para.C73DA42B-6177-11D5-A2AE-0050DAC37F13><STRONG>SQL Server allows you to make some or all of the 
+arguments (parameters passed to the stored procedure)&nbsp;optional.</STRONG> To 
+do this, you must specify a default value for each optional parameter. 
+<STRONG>   
+              
+               
+             
+  The default must be a constant or <SPAN 
+class=fixed>NULL</SPAN>. You may not use a function, such as <SPAN 
+class=fixed>GETDATE()</SPAN> .</STRONG>     </P>
+<P class=para id=nr-para.C73DA42D-6177-11D5-A2AE-0050DAC37F13><SPAN class=example-title 
+id=nr-title.C73DA3C5-6177-11D5-A2AE-0050DAC37F13>    Example of 
+a Default</SPAN></P>
+<DIV class=example id=ch09list04> 
+<DIV class=formalbody id=ch09list04>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="Start example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE><PRE class=literallayout> CREATE PROC
+sp_GetOrderDetails
+  (  @CustomerID int,
+  @OrderID     int         = NULL
+)
+</PRE>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="End example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE>
+<TABLE class=BlankSpace cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD height=16></TD></TR></TABLE></DIV></DIV>
+<P class=para id=nr-para.C73DA42E-6177-11D5-A2AE-0050DAC37F13>In this case, the 
+<SPAN class=fixed>@OrderID</SPAN> parameter is set to <SPAN 
+class=fixed>NULL</SPAN> if a value is NOT supplied when you call the stored 
+procedure.</P>
+<P class=para id=nr-para.C73DA42F-6177-11D5-A2AE-0050DAC37F13>The <SPAN 
+class=fixed>WITH</SPAN> clause has two possible options. First, you can specify 
+<SPAN class=fixed>RECOMPILE</SPAN>, which tells the optimizer to recompile the procedure 
+every time it is called (invoked). You would <A name=1021></A><A 
+name=IDX-307></A>do this if the 
+data distribution for the supplied parameters varies substantially every time 
+the procedure is called, meaning that one execution plan would not be efficient 
+for all invocations so the optimizer should look at each invokation on a 
+case-by-case basis. There is a small cost for doing this on each and every 
+occasion, but the payback is that the optimizer is using the right plan every 
+time.</P>
+<P class=para >           
+            
+             
+                
+              
+     If you find that the execution time of a 
+procedure varies depending upon arguments supplied, then it is best to use the <SPAN 
+class=fixed>WITH RECOMPILE</SPAN> option. Some 
+testing may be required to determine this.</P>
+<P class=para >   If the distribution of data 
+is consistent across calls, then do not use the <SPAN class=fixed>WITH 
+RECOMPILE</SPAN> option.</P>
+<P class=para ><SPAN class=example-title 
+id=nr-title.C73DA3C6-6177-11D5-A2AE-0050DAC37F13><SPAN 
+class=example-titlelabel> Example: </SPAN>CREATE PROC Using WITH 
+RECOMPILE</SPAN><A name=1022></A><A name=ch09list05></A> option</P>
+<DIV class=example id=ch09list05> 
+<DIV class=formalbody id=ch09list05>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="Start example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE><PRE class=literallayout> CREATE PROC
+sp_GetOrderDetails
+  (  @CustomerID int,
+  @OrderID     int         = NULL
+)
+WITH RECOMPILE
+</PRE>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="End example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE>
+<TABLE class=BlankSpace cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD height=16></TD></TR></TABLE></DIV></DIV>
+<P class=para id=nr-para.C73DA430-6177-11D5-A2AE-0050DAC37F13>The second 
+possible <SPAN class=fixed>WITH</SPAN> option is <SPAN 
+class=fixed>ENCRYPTION</SPAN>. When you create a procedure, the code that comprises 
+the procedure gets stored in the <SPAN 
+class=emphasis><I>syscomments table</I></SPAN>. If 
+you wish to conceal that code using encryption, you 
+can use the <SPAN class=fixed>WITH ENCRYPTION</SPAN> 
+option.</P>
+<P class=para >Generally, it is not a good idea to use this 
+option unless you are a selling a packaged database solution and you do not want 
+to reveal your intellectual property. Encryption always imposes extra overhead 
+in any computing 
+application.</P>
+<P class=para ><FONT color=blue>If a stored procedure has 
+been created <STRONG>without</STRONG>   
+     the <SPAN class=fixed>ENCRYPTION</SPAN> 
+option, you can use <SPAN class=fixed><STRONG>sp_helptext</STRONG></SPAN> (SEE BOOKS ONLINE) or 
+Enterprise Manager to easily see the code making up a stored 
+procedure.</FONT> 
+</P>
+<P class=para id=nr-para.C73DA433-6177-11D5-A2AE-0050DAC37F13>The final part of 
+the <SPAN class=fixed>CREATE PROCEDURE</SPAN> statement is the optional <SPAN 
+class=fixed>FOR REPLICATION</SPAN> clause. This is beyond the scope 
+of this course so do not concern yourself with it.</P>
+<P class=para id=nr-para.C73DA434-6177-11D5-A2AE-0050DAC37F13>After you have 
+built the <SPAN class=fixed>CREATE PROC</SPAN> statement, the mandatory <SPAN 
+class=fixed>AS</SPAN> keyword is added to designate where the code for the 
+procedure begins. SQL Server will assume that all code following <SPAN 
+class=fixed>AS</SPAN> is part of the stored procedure until it sees the <SPAN 
+class=fixed>GO</SPAN> statement. You can forego the <SPAN class=fixed>GO</SPAN> 
+if you are running the <SPAN class=fixed>CREATE PROC</SPAN> 
+as a single batch inside the Query Analyzer, but generally speaking it is good 
+practice to get into the habit of including it at the end of your stored 
+procedure definition so you can place many stored procedures 
+into one batch file.</P>
+<P class=para ><SPAN class=example-title 
+id=nr-title.C73DA3C7-6177-11D5-A2AE-0050DAC37F13><SPAN 
+class=example-titlelabel> Example: </SPAN>Stored Procedure to Retrieve a 
+Customer's Most Recent Order</SPAN><A name=1024></A><A name=ch09list06></A>     
+   </P>
+<DIV class=example id=ch09list06> 
+<DIV class=formalbody id=ch09list06>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="Start example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE><PRE class=literallayout>  CREATE
+PROC
+  sp_GetMostRecentOrder ( @CustomerID
+int
+AS
+SELECT TOP 1
+  *
+FROM
+  Orders
+WHERE
+    CustomerID = @CustomerID
+ORDER BY
+  OrderDate DESC
+GO
+</PRE>
+<TABLE class=BlueLine cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD class=bluecell bgColor=#000080><FONT face=Arial color=#010100 
+      size=2><B><IMG height=2 alt="End example" src="_.gif" width=1 
+      border=0></B></FONT></TD></TR></TABLE>
+<TABLE class=BlankSpace cellSpacing=0 cellPadding=0 width="100%" border=0>
+  
+  <TR>
+    <TD height=16></TD></TR></TABLE></DIV></DIV><A name=1025></A><A 
+name=IDX-309></A>
+<P class=last-para id=nr-para.C73DA439-6177-11D5-A2AE-0050DAC37F13>In this 
+example, a <SPAN class=fixed>SELECT *</SPAN> statement has been used for 
+brevity. In practice, you should avoid this, since the table could be altered, 
+and you would then get unexpected results. Always state the <SPAN 
+class=fixed>SELECT</SPAN> list explicitly.</P>
+<P class=last-para>&nbsp;</P></DIV>
+
+</BODY>
+</HTML>

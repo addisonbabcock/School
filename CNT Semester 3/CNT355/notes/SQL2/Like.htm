@@ -1,0 +1,197 @@
+<HTML>
+	<HEAD>
+		<TITLE>Like</TITLE>
+		<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+	</HEAD>
+	<BODY>
+		<H1>Pattern Matching in Search Conditions</H1>
+		<DIV id="nstext" valign="top">
+			<P><EM><STRONG><FONT color="blue">From&nbsp;Books Online...</FONT></STRONG></EM>&nbsp;&nbsp;
+			</P>
+			<P>The LIKE keyword searches for character string, date, or time values that match 
+				a specified pattern. The LIKE keyword uses a regular expression to contain the 
+				pattern that the values are matched against. The pattern contains the character 
+				string to search for, which can contain any combination of four wildcards.</P>
+			<TABLE cols="2" cellPadding="2" rules="all" width="587" border="1" frame="box">
+				<TR vAlign="top">
+					<TH class="label" width="26%">
+						Wildcard</TH>
+					<TH class="label" width="74%">
+						Meaning</TH></TR>
+				<TR vAlign="top">
+					<TD width="26%">%</TD>
+					<TD width="74%">Any string of zero or more characters.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="26%">_</TD>
+					<TD width="74%">Any single character.</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="26%">[ ]</TD>
+					<TD width="74%">Any single character within the specified range (for example, 
+						[a-f]) or set (for example, [abcdef]).</TD>
+				</TR>
+				<TR vAlign="top">
+					<TD width="26%">[^]</TD>
+					<TD width="74%">Any single character not within the specified range (for example, 
+						[^a - f]) or set (for example, [^abcdef]).</TD>
+				</TR>
+			</TABLE>
+			<BR>
+			<P>Enclose the wildcard(s) and the character string in single quotation marks, for 
+				example:
+				<UL type="disc">
+					<LI>
+						LIKE 'Mc%' searches for all strings that begin with the letters Mc (McBadden).<BR>
+						<BR>
+					<LI>
+						LIKE '%inger' searches for all strings that end with the letters inger (Ringer, 
+						Stringer).<BR>
+						<BR>
+					<LI>
+						LIKE '%en%' searches for all strings that contain the letters en anywhere in 
+						the string (Bennet, Green, McBadden).<BR>
+						<BR>
+					<LI>
+						LIKE '_heryl' searches for all six-letter names ending with the letters heryl 
+						(Cheryl, Sheryl).<BR>
+						<BR>
+					<LI>
+						LIKE '[CK]ars[eo]n' searches for Carsen, Karsen, Carson, and Karson (Carson).<BR>
+						<BR>
+					<LI>
+						LIKE '[M-Z]inger' searches for all names ending with the letters inger that 
+						begin with any single letter from M through Z (Ringer).<BR>
+						<BR>
+					<LI>
+						LIKE 'M[^c]%' searches for all names beginning with the letter M that do not 
+						have the letter c as the second letter (MacFeather).
+					</LI>
+				</UL>
+			<P>This query finds all phone numbers in the <B>authors</B> table that have area 
+				code 415:</P>
+			<PRE><CODE><STRONG>SELECT phone
+FROM pubs.dbo.authors
+WHERE phone LIKE '415%'</STRONG>
+</CODE></PRE>
+			<P>You can use NOT LIKE with the same wildcards. To find all phone numbers in the <B>authors
+				</B>table that have area codes other than 415, use either of these equivalent 
+				queries:</P>
+			<PRE><CODE><STRONG>SELECT phone
+FROM pubs.dbo.authors
+WHERE phone NOT LIKE '415%'</STRONG>
+
+-- Or
+
+<STRONG>SELECT phone
+FROM pubs.dbo.authors
+WHERE NOT phone LIKE '415%'</STRONG>
+</CODE></PRE>
+			<P>The IS NOT NULL clause can be used with wildcards and the LIKE clause. For 
+				example, this query retrieves telephone numbers from the <B>authors</B> table 
+				in which the telephone number begins with 415 and IS NOT NULL:</P>
+			<PRE><CODE><STRONG>USE pubs
+SELECT phone
+FROM authors
+WHERE phone LIKE '415%' and phone IS NOT NULL</STRONG>
+</CODE></PRE>
+			<P class="indent"><!--IMPORTANT--></P>
+			<IMG style="MARGIN-LEFT: 0em" height="11" alt="" src="mk:@MSITStore:C:\Program%20Files\Microsoft%20SQL%20Server\80\Tools\Books\acdata.chm::/Basics/important.gif"
+				width="12" border="0">
+			<P style="MARGIN-TOP: -1.1em; MARGIN-LEFT: 1.5em"><B class="notes">Important</B>&nbsp;&nbsp;The 
+				output for statements involving the LIKE keyword depends on the sort order 
+				chosen during installation (see Collation).&nbsp; The only WHERE conditions 
+				that you can use on <B>text</B> columns are LIKE, IS NULL, or PATINDEX.</P>
+			<P>Wildcards used without LIKE are interpreted as constants rather than as a 
+				pattern, that is, they represent only their own values. The following query 
+				attempts to find any phone numbers that consist of the four characters 415% 
+				only. It will not find phone numbers that start with 415.
+			</P>
+			<P><CODE><STRONG>SELECT phone<BR>
+						FROM pubs.dbo.authors<BR>
+						WHERE phone = '415%'</STRONG><BR>
+			</P>
+			</CODE>
+			<P>Another important consideration in using wildcards is their effect on 
+				performance. If a wildcard begins the expression, an index cannot be used. 
+				(Just as you wouldn't know where to start in a phone book if given the name 
+				'%mith', not 'Smith'.) A wildcard in or at the end of an expression does not 
+				preclude use of an index (just as in a phone book, you would know where to 
+				search if the name was 'Samuel%', regardless of whether the names Samuels and 
+				Samuelson are both there).</P>
+			<H5>Searching for Wildcard Characters</H5>
+			<P>You can search for wildcard characters. There are two methods for specifying a 
+				character that would ordinarily be a wildcard:
+				<UL type="disc">
+					<LI>
+						Use the ESCAPE keyword to define an escape character. When the escape character 
+						is placed in front of the wildcard in the pattern, the wildcard is interpreted 
+						as a character. For example, to search for the string 5% anywhere in a string, 
+						use:
+						<PRE><CODE>WHERE ColumnA LIKE '%5/%%' ESCAPE '/'
+</CODE></PRE>
+						<P class="tl">In this LIKE clause, the leading and ending percent signs (%) are 
+							interpreted as wildcards, and the percent sign preceded by a slash (/) is 
+							interpreted as the % character.</P>
+					<LI>
+						Use square brackets ([ ]) to enclose the wildcard by itself. To search for a 
+						dash (-), rather than using it to specify a search range, use the dash as the 
+						first character inside a set of brackets:
+						<PRE><CODE>WHERE ColumnA LIKE '9[-]5'
+</CODE></PRE>
+						<P class="tl">The table shows the use of wildcards enclosed in square brackets.</P>
+						<TABLE cols="2" cellPadding="2" rules="all" width="563" border="1" frame="box">
+							<TR vAlign="top">
+								<TH class="label" width="36%">
+									Symbol</TH>
+								<TH class="label" width="64%">
+									Meaning</TH></TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE '5[%]'</TD>
+								<TD width="64%">5%</TD>
+							</TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE '5%'</TD>
+								<TD width="64%">5 followed by any string of 0 or more characters</TD>
+							</TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE '[_]n'</TD>
+								<TD width="64%">_n</TD>
+							</TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE '_n'</TD>
+								<TD width="64%">an, in, on (and so on)</TD>
+							</TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE '[a-cdf]'</TD>
+								<TD width="64%">a, b, c, d, or f</TD>
+							</TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE '[-acdf]'</TD>
+								<TD width="64%">-, a, c, d, or f</TD>
+							</TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE '[ [ ]'</TD>
+								<TD width="64%">[</TD>
+							</TR>
+							<TR vAlign="top">
+								<TD width="36%">LIKE ']'</TD>
+								<TD width="64%">]</TD>
+							</TR>
+						</TABLE>
+						<BR>
+					</LI>
+				</UL>
+			<P>When string comparisons are performed with LIKE, all characters in the pattern 
+				string are significant, including every leading and/or trailing blank (space). 
+				If a comparison to return all rows with a string LIKE 'abc ' (abc followed by a 
+				single space) is requested, a row in which the value of that column is abc (abc 
+				without a space) is not returned. The reverse, however, is not true. Trailing 
+				blanks in the expression to which the pattern is matched are ignored. If a 
+				comparison to return all rows with a string LIKE 'abc' (abc without a space) is 
+				requested, all rows that start with abc and have zero or more trailing blanks 
+				are returned.</P>
+			<H4><A name="feedback"></A></H4>
+			<SPAN id="fb"></SPAN></DIV>
+	</BODY>
+</HTML>

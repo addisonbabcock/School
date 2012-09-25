@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<H1>Temporary Tables</H1>
+<HR>
+
+<P><STRONG>The following comes from books online...</STRONG></P>
+<P>Temporary tables are similar to permanent tables, except temporary tables are 
+stored in <B>tempdb</B> and are deleted automatically when no longer in use.</P>
+<P>The two types of temporary tables, local and global, differ from each other 
+in their names, their visibility, and their availability. Local temporary tables 
+have a single number sign (#) as the first character of their names; they are 
+visible only to the current connection for the user; and they are deleted when 
+the user disconnects from instances of Microsoft® SQL Server™ 2000. Global 
+temporary tables have two number signs (##) as the first characters of their 
+names; they are visible to any user after they are created; and they are deleted 
+when all users referencing the table disconnect from SQL Server.</P>
+<P>For example, if you create a table named <B>employees</B>, the table can be 
+used by any person who has the security permissions in the database to use it, 
+until the table is deleted. If you create a local temporary table named 
+<B>#employees</B>, you are the only person who can work with the table, and it 
+is deleted when you disconnect. If you create a global temporary table named 
+<B>##employees</B>, any user in the database can work with this table. If no 
+other user works with this table after you create it, the table is deleted when 
+you disconnect. If another user works with the table after you create it, SQL 
+Server deletes it when both of you disconnect.</P>
+<H5>Table Properties</H5>
+<P>You can define up to 1,024 columns per table. Table and column names must 
+follow the rules for identifiers; they must be unique within a given table, but 
+you can use the same column name in different tables in the same database. You 
+must also define a data type for each column.</P>
+<P>Although table names must be unique for each owner within a database, you can 
+create multiple tables with the same name if you specify different owners for 
+each. You can create two tables named <B>employees</B> and designate 
+<B>Jonah</B> as the owner of one and <B>Sally </B>as the owner of the other. 
+When you need to work with one of the <B>employees</B> tables, you can 
+distinguish between the two tables by specifying the owner with the name of the 
+table.</P>
+<P class=proclabel>
+<P><A href="JavaScript:hhobj_3.Click()"></A></P><STRONG>Modifying 
+Tables</STRONG></P>
+<P>After a table is created, you can change many of the options that were 
+defined for the table when it was originally created, including: 
+<UL type=disc>
+  <LI>Columns can be added, modified, or deleted. For example, the column name, 
+  length, data type, precision, scale, and nullability can all be changed, 
+  although some restrictions exist. For more information, see books 
+  online.<BR><BR>
+  <LI>PRIMARY KEY and FOREIGN KEY constraints can be added or deleted.<BR><BR>
+  <LI>UNIQUE and CHECK constraints and DEFAULT definitions (and objects) can be 
+  added or deleted.<BR><BR>
+  <LI>An identifier column can be added or deleted using the IDENTITY or 
+  ROWGUIDCOL property. The ROWGUIDCOL property can also be added to or removed 
+  from an existing column, although only one column in a table can have the 
+  ROWGUIDCOL property at any one time.<BR><BR>
+  <LI>A table and selected columns within the table can be registered for 
+  full-text indexing. </LI></UL>
+<P>For more information about the modifications that can be made to a table, see 
+ALTER TABLE in books online.</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+
+</BODY>
+</HTML>

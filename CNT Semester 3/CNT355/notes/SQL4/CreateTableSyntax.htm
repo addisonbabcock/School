@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<TITLE></TITLE>
+</HEAD>
+<BODY>
+<H1>Syntax for CREATE TABLE</H1>
+<P>CREATE 
+TABLE<BR>[<BR>&nbsp;&nbsp;&nbsp;&nbsp;<I>database_name</I><B>.</B>[<I>owner</I>]<B>.</B><BR>&nbsp;&nbsp;&nbsp;&nbsp;| 
+<I>owner</I><B>.</B><BR>] 
+<I>table_name</I><BR><B>(<BR></B>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&lt;column_definition&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+<I>column_name</I> AS 
+<I>computed_column_expression<BR></I>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+&lt;table_constraint&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;} 
+[<B>,</B>...<I>n</I>]<BR>)</P>
+<P>&nbsp;</P>
+<P>....and more... see books online for detailed syntax, but this is adequate 
+for introductory coverage of this stmt.</P>
+<P><STRONG>Explanation... relate this to the Transact-SQL Syntax Conventions 
+info...</STRONG></P>
+<H5>Arguments</H5>
+<DL>
+  <DT><I>database_name</I> 
+  <DD><STRONG>Is the name of the database in which the table is created. 
+  <I>database_name</I> must specify the name of an existing database. 
+  <I>database_name</I> defaults to the current database if it is not specified. 
+  </STRONG>The login for the current connection must be associated with an 
+  existing user ID in the database specified by <I>database_name</I>, and that 
+  user ID must have create table privileges. 
+  <DT><I>owner</I> 
+  <DD><STRONG>Is the name of the user ID that owns the new table. <I>owner</I> 
+  must be an existing user ID in the database specified by <I>database_name</I>. 
+  <I>owner</I> defaults to the user ID associated with the login for the current 
+  connection in the database specified in <I>database_name</I>. </STRONG>
+  <DD>&nbsp;
+  <DD>If the CREATE TABLE statement is executed by a member of the 
+  <B>sysadmin</B> fixed server role, or a member of the <B>db_dbowner</B> or 
+  <B>db_ddladmin</B> fixed database roles in the database specified by 
+  <I>database_name</I>, <I>owner</I> can specify a user ID other than the one 
+  associated with the login of the current connection. If the CREATE TABLE 
+  statement is executed by a login associated with a user ID that has been 
+  granted only create table privileges, <I>owner</I> must specify the user ID 
+  associated with the current login. Members of the <B>sysadmin</B> fixed server 
+  role, the database owner, or logins aliased to the <B>dbo</B> user are 
+  associated with the user ID <B>dbo</B>; therefore, tables created by these 
+  users default to having <B>dbo</B> as the owner. Tables created by any logins 
+  not in either of these two roles have <I>owner</I> default to the user ID 
+  associated with the login.
+  <DD>&nbsp;
+  <DT><I>table_name</I> 
+  <DD><STRONG>Is the name of the new table. Table names must conform to the 
+  rules for identifiers. The combination of <I>owner.table_name</I> must be 
+  unique within the database. </STRONG><I>table_name</I> can contain up to 128 
+  characters, except for local temporary table names (names prefixed with a 
+  single number sign (#)) that cannot exceed 116 characters.
+  <DD>&nbsp;
+  <DT><I>column_name</I> 
+  <DD><STRONG>Is the name of a column in the table. Column names must conform to 
+  the rules for identifiers and must be unique in the table. 
+  </STRONG><I>column_name</I> can be omitted for columns created with a 
+  <B>timestamp</B> data type. The name of a <B>timestamp</B> column defaults to 
+  <B>timestamp</B> if <I>column_name</I> is not specified. 
+  <DD>&nbsp;
+  <DT><I>computed_column_expression</I> 
+  <DD><STRONG>Is an expression defining the value of a computed column. A 
+  computed column is a virtual column not physically stored in the table. It is 
+  computed from an expression using other columns in the same table. 
+  </STRONG>For example, a computed column can have the definition: <B>cost 
+  </B>AS <B>price * qty</B>. The expression can be a noncomputed column name, 
+  constant, function, variable, and any combination of these connected by one or 
+  more operators. The expression cannot be a subquery. 
+  <P>Computed columns can be used in select lists, WHERE clauses, ORDER BY 
+  clauses, or any other locations in which regular expressions can be used, with 
+  the following exceptions: 
+  <UL>
+    <LI><STRONG>A computed column cannot be used as a key column in an index or 
+    as part of any PRIMARY KEY, UNIQUE, FOREIGN KEY, or DEFAULT constraint 
+    definition. </STRONG>
+    <LI><STRONG>A computed column cannot be the target of an INSERT or UPDATE 
+    statement. </STRONG></LI></UL></DD></DL>
+
+</BODY>
+</HTML>

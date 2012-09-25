@@ -1,0 +1,73 @@
+--coalesce.txt  .. the script below should be copied and pasted into
+--query analyzer, then executed.  By observing the source data
+--and result set one can see how the COALESCE function operates
+
+SET NOCOUNT ON --get rid of useless messages!
+GO
+
+use Practice
+go
+
+--here is another way to check for existence of a table (as
+--opposed to checking sysobjects table as done in prior examples)
+IF EXISTS (SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES 
+      WHERE TABLE_NAME = 'wages')
+   DROP TABLE wages
+GO
+
+CREATE TABLE wages
+(
+   emp_id      tinyint    identity,
+   hourly_wage   decimal   NULL,
+   salary      decimal    NULL,
+   commission   decimal   NULL,
+   num_sales   tinyint   NULL
+)
+GO
+INSERT wages VALUES(10.00, NULL, NULL, NULL)
+INSERT wages VALUES(20.00, NULL, NULL, NULL)
+INSERT wages VALUES(30.00, NULL, NULL, NULL)
+INSERT wages VALUES(40.00, NULL, NULL, NULL)
+INSERT wages VALUES(NULL, 10000.00, NULL, NULL)
+INSERT wages VALUES(NULL, 20000.00, NULL, NULL)
+INSERT wages VALUES(NULL, 30000.00, NULL, NULL)
+INSERT wages VALUES(NULL, 40000.00, NULL, NULL)
+INSERT wages VALUES(NULL, NULL, 15000, NULL)
+INSERT wages VALUES(NULL, NULL, 25000, 2)
+INSERT wages VALUES(NULL, NULL, 20000, 6)
+INSERT wages VALUES(NULL, NULL, 14000, 4)
+GO
+
+SET NOCOUNT OFF
+GO
+
+/* OPERATION OF THE COALESCE FUNCTION
+
+
+TRY THE 2 QUERIES BELOW (execute together and view
+results in a grid); the first returns all
+rows, and the second a subset of the data:*/
+
+select * from wages
+go
+
+SELECT COALESCE(hourly_wage, salary, commission * num_sales)
+FROM wages
+go
+
+/*Note the second query should have returned:
+
+i) the non-null values from the hourly_wage col
+ii) the non-null values from the salary col
+iii) calculation results; note if a NULL is present in the calculation, the result of
+that calculation will be NULL which you will see if you run this query! 
+
+taking this one step further, we can use the COALESCE function
+as a parameter for another function as shown below: */
+
+SELECT CAST(COALESCE(hourly_wage * 40 * 52, 
+   salary, 
+   commission * num_sales) AS money) AS 'Total Salary' 
+FROM wages
+GO
+

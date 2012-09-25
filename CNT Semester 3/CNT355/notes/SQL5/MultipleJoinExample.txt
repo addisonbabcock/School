@@ -1,0 +1,46 @@
+--file MultipleJoinExample.txt
+
+--this INCOMPLETE example script demonstrates the concept of gathering data
+--from multiple tables using JOINS; any variables (ie, @FirstIdToExport
+--for example) would be initialized prior to running this segment
+
+
+      SELECT S.LoginId 'Number', S.LegalSurname 'Legal Surname',
+      S.SurNameUsed 'Surname Used', S.MiddleName 'Name (Middle)',
+      S.FirstName 'Name (First)', S.PreferredFirstName 'Preferred First Name', S.Gender, 
+      S.BirthDate, S.HomePh 'Phone Number', S.Fax 'Fax Number', 
+      S.Email 'Email (Other)',R.Description 'S Lives With', 
+      S.SupervisorFname + ' ' + S.SupervisorLname 'Supervisor',
+      S.MedicalInfo 'Medical Alert', C.Description 'Citizenship',
+      P.SchoolName 'Previous School',
+
+      PG.[First Contact (FC)],PG.[FC Hme Phone], 
+      PG.[FC Wk Phone], PG.[FC Fax],PG.[FC Address 1], 
+      PG.[FC Address 2], PG.[FC City], PG.[FC State], 
+      PG.[FC Zip],
+
+      PG2.[Second Contact (SC)],PG2.[SC Hme Phone], 
+      PG2.[SC Wk Phone], PG2.[SC Fax],PG2.[SC Address 1], 
+      PG2.[SC Address 2], PG2.[SC City], PG2.[SC State], 
+      PG2.[SC Zip],
+
+      A.ApartmentOrBoxNum 'Student Mail Adr 1', A.StreetAddress 'Student Mail Adr 2', 
+      A.City 'Student Mail City', A.ProvinceOrState 'Student Prov City', 
+      A.Country 'Student Mail Country', A.PostalCode 'Student Mail Zip'
+
+      FROM Student AS S
+      INNER JOIN ResidesWithDescr AS R
+      ON S.ResidesWithCode=R.ResidesWithCode
+         INNER JOIN CitizenshipDescr AS C
+         ON S.CitizenshipCode=C.CitizenshipCode
+            LEFT JOIN PreviousSchool AS P
+            ON S.LoginId=P.LoginId
+               LEFT JOIN ParentGuardian1_vw AS PG
+               ON S.LoginId=PG.LoginId
+                  LEFT JOIN ParentGuardian2_vw AS PG2
+                  ON S.LoginId=PG2.LoginId
+                     LEFT JOIN StudentMailAdr_vw AS A
+                     ON S.LoginId=a.LoginId
+      WHERE S.LoginId BETWEEN @FirstIdToExport AND @MaxLoginId -- limits previously defined
+      ORDER BY S.LoginId
+

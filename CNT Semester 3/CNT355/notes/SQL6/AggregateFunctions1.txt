@@ -1,0 +1,86 @@
+/* AggregateFunctions1.sql - Aggregate Functions */
+
+/* Functions exist (considered in SQL Server to be "Transact SQL extensions") 
+to return values from queries. There are several kinds of functions including: 
+Aggregate, Date, Mathematical, String, System, Text and Image, and Conversion.  
+SEE Books Online NOW, "Aggregate Functions" for a list of 
+functions and detailed info concerning them.
+
+Aggregate Functions are used to generate a single value, for example, an average, sum, minimum, maximum, and more.  
+
+Note that Null values in a column are ignored while an aggregate function is operating.
+
+Examples...*/
+
+/* first, have a look at the SALES table in PUBS: */
+use pubs
+select * from sales
+go
+
+/* now using the AVG function:  */
+SELECT AVG(Qty) "Average Quantity"
+FROM Sales
+go
+
+/* now using the SUM function:  */
+SELECT SUM(Qty) "Total Quantity"
+FROM Sales
+go
+
+/* a WHERE clause can be used to filter the rows used in the calculation, ie:  */
+
+SELECT AVG(Qty) "Average Quantity for Quantities > 40"
+FROM Sales
+WHERE Qty>40
+go
+
+/* NOW USING THE MIN FUNCTION:  */
+SELECT MIN(QTY) "MINIMUM QUANTITY"
+FROM SALES
+GO
+
+/* NOW USING THE MAX FUNCTION:  */
+SELECT MAX(QTY) "MAXIMUM QUANTITY"
+FROM SALES
+GO
+
+/* NOW USING THE COUNT FUNCTION:  */
+SELECT COUNT(QTY) "Number of Non-Null Values in Qty Column:"
+FROM SALES
+GO
+
+/* The DISTINCT keyword is optional with SUM, AVG, and COUNT. 
+
+When DISTINCT is used, duplicate values are eliminated before the sum, average, or count 
+is calculated.
+
+If you use DISTINCT, the expression must consist of a column name only. It cannot include 
+an arithmetic expression.
+
+This query returns the average prices of business books (without duplicate values): */
+
+USE pubs
+SELECT AVG(DISTINCT price)    
+FROM titles    
+WHERE type = 'business'
+
+/* Without DISTINCT, the AVG function finds the average price of all business titles: */
+
+USE pubs
+SELECT AVG(price)    
+FROM titles    
+WHERE type = 'business'
+
+/* Standard Deviation - STDEV - can be used with numeric columns only. Null values are ignored; 
+example... */
+
+USE pubs
+SELECT STDEV(royalty)
+FROM titles
+
+
+  
+
+
+
+

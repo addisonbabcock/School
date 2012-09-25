@@ -1,0 +1,338 @@
+<html>
+	<head>
+		<title>12748</title>
+		<meta name="Generator" content="Microsoft Office HTML Filter 2.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<meta name="Originator" content="Microsoft Word 9">
+		<style> <!-- p.MsoNormal, li.MsoNormal, div.MsoNormal { margin:0in; margin-bottom:.0001pt; font-size:12.0pt; font-family:"Times New Roman";}
+	p.MsoBodyText, li.MsoBodyText, div.MsoBodyText {margin:0in; margin-bottom:.0001pt; text-autospace:none; font-size:10.0pt; font-family:Times; font-weight:bold;}
+	a:link, span.MsoHyperlink {color:blue; text-decoration:underline;}
+	a:visited, span.MsoHyperlinkFollowed {color:blue; text-decoration:underline;}
+	p {margin-right:0in; margin-left:0in; font-size:12.0pt; font-family:"Times New Roman";}
+	ol {margin-bottom:0in;}
+	ul {margin-bottom:0in;}
+	--></style>
+		<meta http-equiv="Content-Language" content="en-us">
+	</head>
+	<body lang="EN-US" link="blue" vlink="blue"> <!-- W. Wolinski, Computer Engineering - Sep./01 -->
+		<h1 class="Section1">
+			Course Notes for Log Id 12748</h1>
+		<div class="MsoNormal" align="center" style="TEXT-ALIGN: center">
+			<hr size="2" width="100%" align="center">
+			<p><b> </b><strong>Entities and Entity Relationship Models ( 0.25 h)</strong>
+			</p>
+		</div>
+		<p class="MsoNormal">
+		</p>
+		<p class="MsoNormal">
+		</p>
+		<p class="MsoNormal">An ER Model (or diagram) is a graphical representation of the 
+			data structure often used during initial phases of database design.&nbsp; It 
+			can be used for effective communication among stakeholders in a project, and it 
+			is often used as the basis from which normalization is performed leading to a 
+			final database architecture.&nbsp;
+		</p>
+		<ul>
+			<li>
+				<div class="MsoNormal">&nbsp;note<span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">an 
+							entity can be defined as a person, place, event, or ‘thing’ that exists </font>
+					</span>
+				</div>
+			<li>
+				<div class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">
+						</font>
+					</span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">examples:&nbsp; 
+							person, employee, company, publisher, author, patient, book, motherboard, etc.</font></span>
+				</div>
+			<LI>
+				<DIV class="MsoNormal"><SPAN style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><FONT size="3">generally, 
+							we wish to be able to store data that describes an instance of&nbsp;the entity; 
+							tables are used for this<br>
+							<br>
+						</FONT>
+					</SPAN></DIV>
+			</LI>
+		</ul>
+		<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"> 
+ Relationships:</span></font></span></p>
+		<UL>
+			<li>
+				"associations" normally between entities, for example an instance of a customer 
+				might be associated with<BR>
+			0-n instances of an order (as shown in the figure below)
+			<li>
+				this example demonstrates a "one-to-many" relationship (different ways to 
+				illustrate this graphically exist)</li></UL>
+		<p align="center"><br>
+			<IMG height="156" alt="" src="images/12748_1Fig1.gif" width="364"></p>
+		<p align="left">
+			In the diagram above, a customer record is called a "PARENT" record and any 
+			order records are called "CHILD" records.&nbsp; The parent must exist before a 
+			child (as in the case of humans!).&nbsp;&nbsp; Also, the "Customers" table is a 
+			parent table of child table "Orders".&nbsp;</p>
+		<P align="left">Identifying Parent/Child relationships between entities 
+			is&nbsp;very important when designing databases.</P>
+		<HR width="100%" SIZE="1">
+		<P align="left"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font>Attributes<br>
+				</font>
+			</span><font><font><font><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><span style="FONT: 7pt 'Times New Roman'"></span>
+						</span></font></font></font></P>
+		<li>
+			<div class="MsoNormal"><font size="3"><font><font><font><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><span style="FONT: 7pt 'Times New Roman'"></span>
+								</span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">an attribute (property) is something that helps to fully describe an 
+  entity</span></font></font></font></font>
+			</div>
+		<li>
+			<div class="MsoNormal"><font size="3"><font><font><font><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"></span></font></font></font></font><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3"><span style="FONT: 7pt 'Times New Roman'">&nbsp;</span></font></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">for 
+						example, a few attributes of an employee entity could be:&nbsp; <STRONG>name, age, 
+							and salary.&nbsp;</STRONG></font><br>
+				</span>
+				<o:p></o:p>
+			</div>
+			<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><o:p></o:p>
+				</span></p>
+			<p class="MsoNormal" style="MARGIN-LEFT: 0.5in"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">EMPLOYEE<o:p></o:p></span></p>
+			<p align="left">
+				<table class="MsoNormal" style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse; mso-table-layout-alt: fixed; mso-border-alt: solid windowtext .5pt; mso-padding-alt: 0in 5.4pt 0in 5.4pt"
+					cellSpacing="0" cellPadding="0" border="1">
+					<tr>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">Name<o:p></o:p></span></p>
+						</td>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">Age<o:p></o:p></span></p>
+						</td>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">Salary<o:p></o:p></span></p>
+						</td>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">Job<o:p></o:p></span></p>
+						</td>
+					</tr>
+					<tr>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">Mack, 
+      Joe<o:p></o:p></span></p>
+						</td>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">55</span></p>
+						</td>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">375,000<o:p></o:p></span></p>
+						</td>
+						<td vAlign="top" width="160">
+							<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">MLA</span></p>
+						</td>
+					</tr>
+				</table>
+			<p></p>
+			<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"></span>
+				&nbsp;</p>
+			<p class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">Different 
+types of attributes exist:</span>
+			</p>
+			<ul>
+				<li>
+					<div class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">an 
+								atomic attribute is in its simplest form and cannot be divided; i.e. age</font></span>
+					</div>
+				<li>
+					<div class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"></span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">a 
+								composite attribute can be divided into smaller subparts which represent more 
+								basic attributes; i.e. Name could be subdivided into the atomic attributes Last 
+								Name and First Name<o:p></o:p></font></span>
+					</div>
+				<li>
+					<div class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">the 
+								way the user intends to use the data will determine whether to express an 
+								attribute as a composite attribute or to express it in its atomic form; a 
+								normalized database always has data stored in atomic form!</font></span>
+					</div>
+				</li>
+			</ul>
+			<p class="MsoNormal" style="MARGIN-LEFT: 2in"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><o:p></o:p>
+				</span></p>
+			<p class="MsoNormal">
+				<span style="FONT-SIZE: 14pt; FONT-FAMILY: 'Times New Roman'; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+					<br style="PAGE-BREAK-BEFORE: always" clear="all">
+				</span><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US">stored 
+versus derived:</span></p>
+			<ul>
+				<li>
+					<div class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">a 
+								stored attribute has its value physically stored in the database </font>
+						</span></div>
+				<li>
+					<div class="MsoNormal"><span style="FONT-SIZE: 14pt; mso-bidi-font-size: 10.0pt; mso-ansi-language: EN-US"><font size="3">a 
+								derived attribute has its value determined by the DBMS whenever the attribute 
+								is used; i.e. a calculation could be involved that is for example, based on 
+								values drawn from 3 columns in a table
+								<br>
+							</font>
+						</span></div>
+				</li>
+			</ul>
+			<strong>
+				<P align="left"><STRONG>Primary Key (or key attribute):</STRONG></P>
+				<UL>
+					<LI>
+						<DIV align="left">a key attribute (Primary Key)&nbsp;has a unique value for each 
+							individual entity; i.e. the social insurance number attribute would be unique 
+							for each employee entity in an employees table</DIV>
+					<LI>
+						<DIV align="left">sometimes several attributes together form a key, meaning that 
+							the combination of attribute values is unique for each individual entity; this 
+							is called a "<STRONG>composite primary key" </STRONG>
+						</DIV>
+					<LI>
+						<DIV align="left">
+				a key attribute (can be 1 or more attributes)&nbsp;is underlined in the ER 
+				diagram, ie:</strong></DIV></li></UL>
+		<p align="center"><IMG height="212" alt="" src="images/12748_1Fig2.gif" width="430"></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><strong>Degree of a Relationship:</strong></p>
+		<ul>
+			<li>
+				<div align="center">a unary&nbsp;relationship describes a relationship between 2 
+					instances (cases) of the same entity, ie:<IMG height="192" alt="" src="images/12748_1Fig3.gif" width="268"></div>
+			<li>
+				<div align="left">relationship lines on diagrams may have descriptive&nbsp;names as 
+					shown above<BR>
+					<BR>
+				</div>
+			<LI>
+				<DIV align="left">a binary relationship is one between 2 entities; a 1:N 
+					relationship exists below, ie, one computer system can be associated with 0-n 
+					(possibly many) different cards (for example, video card, modem, sound card, 
+					etc.), ie:<br>
+				</DIV>
+			</LI>
+		</ul>
+		<p align="center"><IMG height="192" alt="" src="images/12748_1Fig4.gif" width="465"></p>
+		<p align="left"><strong>Cardinality (or Cardinality Ratio):</strong>
+		</p>
+		<ul>
+			<li>
+				<div align="left">specifies the number of relationships that an entity can 
+					participate in
+				</div>
+			<li>
+				<div align="left">common cardinality ratios for binary relationships include:</div>
+			</li>
+		</ul>
+		<p align="left">
+			<table cellSpacing="1" cellPadding="1" align="center" bgColor="silver" border="1">
+				<tr>
+					<td>one to one (1 : 1)
+					</td>
+				</tr>
+				<tr>
+					<td>one to many (1 : N)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div align="left">many to many (M : N)
+						</div>
+					</td>
+				</tr>
+			</table>
+		<p></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><strong>A "Many-to-many" relationship exists when an one-to-many works 
+				"both ways" ,ie in the diagram below, an instance of an employee can be 
+				associated with 0-n instances of a project (Projects) while an instance of a 
+				project (one project) can be associated with 0-n employees.</strong></p>
+		<P align="center"><IMG height="192" alt="" src="images/12748_1Fig5.gif" width="465"></P>
+		<p>Sometimes the notation can&nbsp;differ on ER diagrams; the above simply 
+			illustrates one way to show cardinality.<br>
+		</p>
+		<P>
+			<hr>
+		<P></P>
+		<p><strong>Primary, Alternate, and Foreign Keys Continued...<br>
+				<br>
+			</strong>"Candidate Keys" are one or more&nbsp;attributes that could possibly 
+			be used to uniquely identify each instance of an entity.&nbsp; One 
+			candidate&nbsp;key in each table is designated as a Primary Key and the others 
+			are known as alternate keys.</p>
+		<li>
+			<p>note that primary key column(s) are underlined on an ER diagram</p>
+		<li>
+			<p>once we transform our logical model (ER model) into a physical model, we 
+				sometimes may decide to&nbsp;switch our primary key for one of the alternates 
+				due to performance and/or storage considerations (this is an advanced topic 
+				beyond the scope of this course)</p>
+		<li>
+			<p>Foreign keys are used to relate child record(s) to a parent record (as the key 
+				originates in the parent entity, it is considered foreign to the child 
+				record).&nbsp; Foreign keys&nbsp;are sometimes indicated on diagrams using 
+				"(FK)" or "(fk)"&nbsp;as shown in the diagram below (also note another way to 
+				indicate cardinality is shown):<br>
+				<br>
+				<IMG height="206" alt="" src="images/12748_1Fig6.gif" width="463"><br>
+				<br>
+				<br>
+				<strong>&nbsp;</strong></p>
+		<li>
+			<strong><font color="blue">When a column or a combination of columns is defined to be a 
+					Foreign Key,&nbsp;child records cannot be created in the child table unless 
+					the&nbsp;parent record already exists in the parent table (your instructor may 
+					wish to expand on this with examples);&nbsp; this restriction is generally 
+					called a "Foreign Key (or Referential Integrity) Constraint".&nbsp; </font></strong>
+			<P>
+				<strong>
+					<hr>
+					<P></P>
+				</strong>
+			<p><strong>Northwind Database Example&nbsp;( 0.25 h)</strong></p>
+		<li>
+			<p><strong>Your</strong> <strong><font color="red">instructor should discuss the design 
+						(schema), with reference to the following terms: Primary and Foreign keys, 
+						composite Primary Key, Tables, Columns (Fields), Rows (Records)</font></strong></p>
+			<strong><font color="black"><strong>
+						<hr>
+					</strong></font></strong>
+			<H2>Designing a Database from Scratch (~2.5 h)</H2>
+			<UL>
+				<LI>
+					<FONT color="blue" size="4"><A href="DatabaseDesignGuide.htm">Database Design Guide</A>&nbsp;-
+						<FONT color="#000000">the first steps...<BR>
+						</FONT></FONT>
+				<LI>
+					<FONT size="4"><A href="NormalizationEssentials.htm" target="_blank">Normalization</A>
+						- evolving your design into one that minimizes redundancy (duplicate data)<BR>
+					</FONT>
+				<LI>
+					<FONT size="4"><STRONG><A href="NormalizationExample.htm" target="_blank">Simple 
+								Normalization Example</A></STRONG></FONT><FONT size="4">
+						<P class="MsoNormal">&nbsp;</P>
+					</FONT>
+				<LI>
+					<FONT size="4">
+						<P class="MsoNormal"><A href="http://www.sqlteam.com/FilterTopics.asp?TopicID=100"><STRONG>Example 
+									Website with Useful Info on Database Design</STRONG></A><STRONG> (many more 
+								can easily be found using a search engine such as </STRONG><A href="http://www.google.com">
+								<STRONG>Google</STRONG></A><STRONG>.&nbsp;<BR>
+							</STRONG>
+					</FONT>
+				</P>
+				<LI>
+					<A href="http://support.microsoft.com/default.aspx?scid=KB;EN-US;q100139&amp;"><STRONG>Database 
+							Normalization Basics (&amp; Webcast) From Microsoft</STRONG></A><STRONG>&nbsp;- 
+						useful information that you may find helpful!<BR>
+					</STRONG>
+				<LI>
+					<STRONG><STRONG><FONT color="#ff0000">your instructor will provide examples for discussion 
+								in class </FONT></STRONG></STRONG>
+				</LI>
+			</UL>
+			<STRONG>
+				<HR width="100%" SIZE="1">
+			</STRONG><STRONG>
+				<P><BR>
+				</P>
+			</STRONG>
+		</li>
+	</body>
+</html>

@@ -1,0 +1,207 @@
+<html>
+	<head>
+		<title>12749_1</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<style> <!-- .Normal {font-size:12.0pt; font-family:"Times New Roman";}
+	--></style>
+		<meta http-equiv="Content-Language" content="en-us">
+	</head>
+	<body lang="EN-US" link="blue" vlink="blue" class="Normal" bgcolor="#ffffff">
+		<!-- W. Wolinski, Computer Engineering - Sep./01 -->
+		<h1 class="Section1">
+			Log Id 12749
+			<hr size="2" width="100%" align="center">
+		</h1>
+		<P><STRONG>1.&nbsp;&nbsp;&nbsp; Transact-SQL Syntax Conventions (&nbsp;15 min)</STRONG></P>
+		<P><FONT color="blue"><STRONG>The following&nbsp;is based largely on info&nbsp;copied from 
+					Books Online installed with SQL Server; students should find this on their own 
+					workstations as an exercise, and the page&nbsp;in BOOKS ONLINE should be 
+					bookmarked (ie, added to "Books Online" favourites).&nbsp; </STRONG></FONT>
+		</P>
+		<P><FONT color="blue"><STRONG><FONT color="red">This information explains how to interpret 
+						important reference information provided in Books Online for the various SQL 
+						statements we will be using in this course!</FONT></STRONG></FONT></P>
+		<TABLE borderColor="blue" cellSpacing="0" cols="2" width="464" align="center" bgColor="silver">
+			<TR vAlign="top">
+				<TH align="left" width="25%">
+					Convention</TH>
+				<TH align="left" width="75%">
+					Used for</TH>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal">UPPERCASE
+				</TD>
+				<TD width="75%" class="Normal">Transact-SQL keywords.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal"><I>italic</I></TD>
+				<TD width="75%" class="Normal">User-supplied parameters of Transact-SQL syntax.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal">| (vertical bar)</TD>
+				<TD width="75%" class="Normal">Separating syntax items within brackets or braces. 
+					You can choose only one of the items.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal">[ ] (brackets)</TD>
+				<TD width="75%" class="Normal">Optional syntax items. Do not type the brackets.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal">{} (braces)</TD>
+				<TD width="75%" class="Normal">Required syntax items. Do not type the braces.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal">[<B>,</B>...<I>n</I>]</TD>
+				<TD width="75%" class="Normal">Indicating that the preceding item can be repeated <I>n</I>
+					number of times. The occurrences are separated by commas.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal">[ ...<I>n</I>]</TD>
+				<TD width="75%" class="Normal">Indicating that the preceding item can be repeated <I>n</I>
+					number of times. The occurrences are separated by blanks.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal"><B>bold</B>
+				</TD>
+				<TD width="75%" class="Normal">Database names, table names, column names, index 
+					names, stored procedures, utilities, data type names, and text that must be 
+					typed exactly as shown.</TD>
+			</TR>
+			<TR vAlign="top">
+				<TD width="25%" class="Normal">&lt;label&gt; ::=</TD>
+				<TD width="75%" class="Normal">The name for a block of syntax. This convention is 
+					used to group and label portions of lengthy syntax or a unit of syntax that can 
+					be used in more than one place within a statement. Each location in which the 
+					block of syntax can be used is indicated with the label enclosed in chevrons: 
+					&lt;label&gt;</TD>
+			</TR>
+		</TABLE>
+		<P>Unless specified otherwise, all Transact-SQL references to the name of a 
+			database object can be a four-part name in the form:</P>
+		<P>[<BR>
+			&nbsp;&nbsp;&nbsp;&nbsp;<I>server_name</I><B>.</B>[<I>database_name</I>]<B>.</B>[<I>owner_name</I>]<B>.<BR>
+				&nbsp;&nbsp;&nbsp;&nbsp;</B>| <I>database_name</I><B>.</B>[<I>owner_name</I>]<B>.<BR>
+			</B>&nbsp;&nbsp;&nbsp;&nbsp;| <I>owner_name</I><B>.</B><BR>
+			&nbsp;&nbsp;&nbsp;&nbsp;]<B><BR>
+			</B>]<BR>
+			<I>object_name</I>
+			<UL>
+				<LI>
+					<I>server_name</I>
+				specifies a linked server name or remote server name.
+				<LI>
+					<I>database_name</I>
+				specifies the name of a Microsoft® SQL Server™ database when the object resides 
+				in a SQL Server database. It specifies an OLE DB catalog when the object is in 
+				a linked server.
+				<LI>
+					<I>owner_name</I>
+				specifies the user that owns the object if the object is in a SQL Server 
+				database. It specifies an OLE DB schema name when the object is in a linked 
+				server.
+				<LI>
+					<I>object_name</I> refers to the name of the object.
+				</LI>
+			</UL>
+		<P><STRONG>When referencing a specific object, you do not always have to specify the 
+				server, database, and owner for SQL Server to identify the object.</STRONG> <STRONG>
+				<FONT color="red"><EM>Intermediate nodes can be omitted, and this is frequently the 
+						case!</EM></FONT></STRONG>
+		</P>
+		<hr size="2" width="100%" align="center">
+		<P>&nbsp;<STRONG> 2.&nbsp;&nbsp;&nbsp; Introduction to&nbsp;SELECT Statement</STRONG>
+		</P>
+		<H3 class="MsoNormal">The "SELECT" Statement is <EM>for retrieving data from a 
+				database!</EM></H3>
+		<P class="MsoNormal"><B>&nbsp;We will use the "Express Manager" Client Access Tool for 
+				executing our SQL against the database engine (SQL Server Express) in this 
+				course.&nbsp;&nbsp; Your instructor will demonstrate use of the application.</B></P>
+		<P class="MsoNormal">
+			<STRONG><font color="red">
+					<HR width="100%" SIZE="1">
+		</P>
+		<P class="Section1">
+			Your instructor will now teach you about SELECT using various examples 
+			executing code against the Northwind and/or Pubs sample databases.&nbsp; Begin 
+			by </FONT></STRONG><STRONG><FONT color="red">looking up the SELECT statement in Books 
+					Online!</FONT></STRONG></FONT></STRONG></P>
+		<P class="Section1"><STRONG><FONT color="red"><FONT color="blue"><STRONG>The following&nbsp;example 
+							scripts contain statements that should be discussed and executed using query 
+							analyzer.&nbsp; Suggested format is to: </STRONG></FONT>
+		</P>
+		<OL>
+			<LI>
+				<STRONG><FONT color="black">launch</FONT></STRONG>"Express Manager"<BR>
+				<BR>
+			<LI>
+				<STRONG>copy the entire script from the example file (from Internet Explorer into a 
+					Query window; save the script locally (ie, as Select1.sql for example) in 
+					C:\Courses\SQL\CNT23\Notes for study purposes.<BR>
+					<BR>
+				</STRONG>
+			<LI>
+				<STRONG>Highlight sections of the SQL script ONE BATCH AT A TIME (batches end with 
+					the "GO" statement) and execute them, ensuring you understand both the SQL 
+					statements and the result set or message returned</STRONG>
+				<BR>
+				<BR>
+			<LI>
+				<STRONG>ASK your instructor about anything you do not understand!</STRONG>
+			</LI>
+		</OL>
+		<P></FONT></STRONG><STRONG><FONT color="navy" size="4">Basic SELECT example scripts... </FONT>
+				(</STRONG><A href="Select1.sql"><STRONG>Select1.sql</STRONG></A><STRONG>, </STRONG>
+			<A href="Select2.sql"><STRONG>Select2.sql</STRONG></A><STRONG> and </STRONG><A href="Select3.sql">
+				<STRONG>Select3.sql</STRONG></A><STRONG>)</STRONG>
+			<BR>
+			<BR>
+		</P>
+		<HR width="100%" SIZE="1">
+		<H2 align="center"><A href="Like.htm">Using LIKE</A>&nbsp;(often used for pattern 
+			matching)</H2>
+		<P></P>
+		<P></P>
+		<FONT color="blue"><STRONG>
+				<HR width="100%" SIZE="1">
+			</STRONG></FONT>
+		<H2>Misc...(~10 min)</H2>
+		<P></P>
+		<P class="MsoNormal">
+			<TABLE class="MsoNormal" id="Table1" cellSpacing="1" cellPadding="1" width="75%" align="center"
+				bgColor="aqua" border="1">
+				<TR>
+					<TD>
+						<P align="center"><STRONG>FYI, more info on SELECT can be found here:&nbsp;<A href="Select.PDF">Select 
+									Basics Document (pdf)</A></STRONG></P>
+					</TD>
+				</TR>
+			</TABLE>
+		</P>
+		<FONT color="blue"><STRONG>
+				<HR width="100%" SIZE="1">
+				<P class="MsoNormal">While this has nothing to do with SELECT, a couple of useful 
+					items are worthy of mention at this point.&nbsp; For instance, look up the 
+					system stored procedure named "<FONT color="red">sp_help</FONT>
+				" in Books Online; try using it in class to determine:</STRONG> </FONT></P>
+		<UL>
+			<LI>
+				<DIV><FONT color="blue"><STRONG>table names within a database</STRONG> </FONT>
+				</DIV>
+			<LI>
+				<DIV><FONT color="blue"><STRONG>column names within a table</STRONG> </FONT>
+				</DIV>
+			</LI>
+		</UL>
+		<P><FONT color="#0000ff"><STRONG>Also, look up "<FONT color="red">Information Schema Views</FONT>" 
+					in Books Online.&nbsp; Note several are available; try this one:&nbsp; <FONT color="#000000">
+						INFORMATION_SCHEMA.COLUMNS </FONT></STRONG></FONT>
+		</P>
+		<HR width="100%" SIZE="1">
+		<P><STRONG><EM><FONT color="red">At this point your instructor may optionally challenge you 
+						with some example problems or demos in class, time permitting.</FONT></EM></STRONG></P>
+		<P><BR>
+			<BR>
+			&nbsp;</P>
+		<p>&nbsp;</p>
+	</body>
+</html>

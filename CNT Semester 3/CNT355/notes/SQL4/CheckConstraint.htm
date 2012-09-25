@@ -1,0 +1,217 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>CHECK CONSTRAINT</title>
+<style><!--
+.Normal
+	{font-size:12.0pt;
+	font-family:"Times New Roman";}
+-->
+</style>
+</head>
+<body lang=EN-US class="Normal" bgcolor="#ffffff">
+<div class=Section1> 
+  <h1><span style="FONT-FAMILY: Arial">CHECK CONSTRAINTS</span></h1>
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">A CHECK constraint enables you to specify the acceptable values 
+    which can be inserted into a column.&nbsp; By using a check constraint you define 
+    a DOMAIN of values for the column.&nbsp;</span></p>
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial"> The check constraint should be given a meaningful name and 
+    consists of an expression that evaluates to true or false.&nbsp; Whenever a new 
+    row of data is added to the table, or an existing column has its value changed 
+    the new data will be evaluated using the expression in the check constraint.&nbsp; 
+    If the expression evaluates to true the DBMS will add the new data to the 
+    table.&nbsp; If the expression evaluates to false an error message is issued and 
+    the new data is rejected.</span></p>
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">Syntax:&nbsp;&nbsp; </span></p>
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">Syntax:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONSTRAINT &nbsp;&nbsp; constraint name</span></p>
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHECK (expression)</span></p>
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">By convention, we recommend naming your check constraints with 
+    the prefix CK (identifies the constraint as a check constraint).&nbsp; <font color="#0000ff">Constraint 
+    names must be unique within the database.</font></span></p>
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">The expression in the check constraint:</span></p>
+  <p><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol">·<span
+ style  ="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </span></span><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">cannot contain a subquery</span></p>
+  <p><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol">·<span
+ style  ="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </span></span><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">must evaluate to true or false</span></p>
+  <p><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol">·<span
+ style  ="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </span></span><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">can be a compound Boolean expression</span></p>
+  <p><span style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol">·<span
+ style  ="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    </span></span><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">can reference another column in the same table</span></p>
+  <span style="FONT-SIZE: 14pt; FONT-FAMILY: Arial"><br clear=all style="PAGE-BREAK-BEFORE: always">
+  </span> 
+  <p><span style="FONT-SIZE:
+ 14pt; FONT-FAMILY: Arial">Examples of check constraints:</span></p>
+  <table border=1 cellspacing=0 cellpadding=0 width="95%" align="center">
+    <tr> 
+      <td width=106 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Column</span></p>
+      </td>
+      <td width=114 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Domain</span></p>
+      </td>
+      <td width=371 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Check Constraint</span></p>
+      </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal">&nbsp; </td>
+      <td width=114 valign=top class="Normal">&nbsp; </td>
+      <td width=371 valign=top class="Normal">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >QuantitySold</span></p>
+      </td>
+      <td width=114 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Must be positive</span></p>
+      </td>
+      <td width=371 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Constraint CK_QuantitySold 
+          </span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Check (QuantitySold 
+          &gt; 0)</span></p>
+      </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal">&nbsp; </td>
+      <td width=114 valign=top class="Normal">&nbsp; </td>
+      <td width=371 valign=top class="Normal">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >DateReceived</span></p>
+      </td>
+      <td width=114 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Must be &gt;= the 
+          DateOrdered</span></p>
+      </td>
+      <td width=371 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Constraint CK_DateReceived</span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >&nbsp;&nbsp;&nbsp;&nbsp; Check (DateReceived &gt;=   
+           DateOrdered)</span></p>
+      </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal">&nbsp; </td>
+      <td width=114 valign=top class="Normal">&nbsp; </td>
+      <td width=371 valign=top class="Normal">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >CourseMark</span></p>
+      </td>
+      <td width=114 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Must be &gt;= 0 and 
+          &lt;= 100</span></p>
+      </td>
+      <td width=371 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Constraint CK_CourseMark</span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >&nbsp;&nbsp;&nbsp;&nbsp; Check (CourseMark 
+          Between 0 and 100)</span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Or</span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Constraint CK_CourseMark</span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >&nbsp;&nbsp;&nbsp;&nbsp; Check (CourseMark 
+          &gt;= 0 and </span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CourseMark 
+          &lt;= 100)</span></p>
+      </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal">&nbsp; </td>
+      <td width=114 valign=top class="Normal">&nbsp; </td>
+      <td width=371 valign=top class="Normal">&nbsp; </td>
+    </tr>
+    <tr> 
+      <td width=106 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >PostalCode</span></p>
+      </td>
+      <td width=114 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Must follow the pattern 
+          </span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >A9A 9A9</span></p>
+      </td>
+      <td width=371 valign=top class="Normal"> 
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >Constraint CK_PostalCode 
+          </span></p>
+        <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+     >&nbsp;&nbsp;&nbsp;&nbsp; Check (PostalCode 
+          Like '[A-Z][0-9][A-Z] [0-9][A-Z][0-9]')</span></p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>EXAMPLE table creation script: </p>
+  <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Create Table Supplier (</span></p>
+</div>
+<blockquote> 
+  <div class=Section1> 
+    <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+ >SupplierId&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  int identity (1, 
+  1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; not null </span></p>
+  </div>
+  <blockquote> 
+    <div class=Section1><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">Constraint 
+      PK_Supplier Primary Key clustered,</span></div>
+  </blockquote>
+</blockquote>
+<div class=Section1> 
+  <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+varchar(100)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; not null,</span></p>
+  <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Phone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+char(14)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; not null</span></p>
+  <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> 
+    Constraint CK_Phone Check </b></span></p>
+</div>
+<blockquote> 
+  <div class=Section1><b><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" 
+ >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    (Phone Like '([0-9][0-9][0-9]) [0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')</span></b></div>
+</blockquote>
+<div class=Section1>
+  <p><span style="FONT-SIZE: 10pt; FONT-FAMILY: Arial">)</span></p>
+  
+  <p>go</p>
+</div>
+</body>
+</html>
