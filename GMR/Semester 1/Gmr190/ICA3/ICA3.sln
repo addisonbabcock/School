@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICA3", "ICA3\ICA3.csproj", "{C8BF4A46-FDD4-4712-AAE7-6FB835DF4D1B}"
 EndProject
 Global
