@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "WindowsGame1\Controls.csproj", "{E6892A98-33FE-4299-992A-8169F554963E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsGame1Content", "WindowsGame1\Content\WindowsGame1Content.contentproj", "{7274037C-F5DF-41B4-8A7A-EB394B1EC4CF}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
