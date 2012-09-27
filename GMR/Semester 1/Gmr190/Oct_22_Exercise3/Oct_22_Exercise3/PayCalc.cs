@@ -7,9 +7,6 @@ namespace Oct_22_Exercise3
 {
     class PayCalc
     {
-        double mHours = 0.0;
-        double mRate = 0.0;
-
         public static double CalculateGrossPay(double hours, double rate)
         {
             double grossPay = 0.0;
