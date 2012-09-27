@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct_22_Exercise1", "Oct_22_Exercise1\Oct_22_Exercise1.csproj", "{5D9EDEAF-A2D9-4D45-98A6-F7CEF65FA352}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{F1047D73-96B2-47FE-B771-260AA46EBAE2}"
