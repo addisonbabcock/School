@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct_29_Exercise1", "Oct_29_Exercise1\Oct_29_Exercise1.csproj", "{1B332D93-0F81-4151-AE7D-6BB4A60AA4CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct_29_Exercise1Content", "Oct_29_Exercise1\Content\Oct_29_Exercise1Content.contentproj", "{EC15EA18-C994-4342-8B83-E400D4A074A1}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution

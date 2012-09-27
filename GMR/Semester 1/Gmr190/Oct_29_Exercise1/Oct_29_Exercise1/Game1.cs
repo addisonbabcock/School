@@ -131,7 +131,7 @@ namespace Oct_29_Exercise1
 		{
 			GraphicsDevice.Clear(Color.Aqua);
 
-			spriteBatch.Begin(SpriteBlendMode.AlphaBlend, SpriteSortMode.FrontToBack, SaveStateMode.SaveState);
+			spriteBatch.Begin (SpriteSortMode.Deferred, BlendState.AlphaBlend);
 			//foreach (Sprite sprite in mSprites)
 			//    sprite.Draw(spriteBatch);
 			foreach (ParticleEffect effect in mParticles)
