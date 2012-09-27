@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oct_22_Exercise4", "Oct_22_Exercise4\Oct_22_Exercise4.csproj", "{56C92998-1146-4289-8850-102E8A48556E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\Utilities\Utilities.csproj", "{F1047D73-96B2-47FE-B771-260AA46EBAE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{F1047D73-96B2-47FE-B771-260AA46EBAE2}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
