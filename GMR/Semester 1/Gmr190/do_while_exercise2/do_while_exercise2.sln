@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "do_while_exercise2", "do_while_exercise2\do_while_exercise2.csproj", "{B51A5514-6833-4EDB-B485-0AB99EBD0EB8}"
 EndProject
 Global
