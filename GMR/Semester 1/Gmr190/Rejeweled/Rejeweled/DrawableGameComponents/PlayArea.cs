@@ -271,7 +271,7 @@ namespace Rejeweled
 		public override void Draw(GameTime gameTime)
 		{
 			base.Draw(gameTime);
-			mSpriteBatch.Begin(SpriteBlendMode.AlphaBlend);
+			mSpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 			foreach (Gem gem in mGems)
 			{
 				gem.Draw(mSpriteBatch);

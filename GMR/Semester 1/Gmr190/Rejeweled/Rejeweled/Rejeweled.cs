@@ -1,16 +1,8 @@
 using System;
 using System.Diagnostics;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using Microsoft.Xna.Framework.Net;
-using Microsoft.Xna.Framework.Storage;
 
 namespace Rejeweled
 {
@@ -36,7 +28,7 @@ namespace Rejeweled
 			graphics.PreferredBackBufferHeight = 768;
 			graphics.IsFullScreen = GlobalVars.StartInFullScreenMode;
 			Window.AllowUserResizing = false; //was planning on supporting this but meh
-			Window.ClientSizeChanged += new EventHandler(Window_ClientSizeChanged);
+			Window.ClientSizeChanged += new EventHandler <EventArgs>(Window_ClientSizeChanged);
 			Window.Title = "Rejeweled";
 			graphics.ApplyChanges();
 

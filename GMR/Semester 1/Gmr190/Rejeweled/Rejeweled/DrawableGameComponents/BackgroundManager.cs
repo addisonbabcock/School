@@ -67,7 +67,7 @@ namespace Rejeweled
 				nextColor = new Color(nextColorVal, nextColorVal, nextColorVal, nextColorVal);
 			}
 
-			mSpriteBatch.Begin(SpriteBlendMode.AlphaBlend);
+			mSpriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 			mSpriteBatch.Draw(mBackgrounds[mCurrentBackground], ScreenArea, currentColor);
 			mSpriteBatch.Draw(mBackgrounds[mNextBackground], ScreenArea, nextColor);
 			mSpriteBatch.End();

@@ -65,11 +65,11 @@ namespace TextureEffectsPipeline
 				{
 					Color pixel = colorBitmap.GetPixel (x, y);
 					Color alphaMapPixel = alphaBitmap.GetPixel (x, y);
-					byte alpha = (byte)((alphaMapPixel.R + alphaMapPixel.G + alphaMapPixel.B) / 3);
+					int alpha = (alphaMapPixel.R + alphaMapPixel.G + alphaMapPixel.B) / 3;
 
 					alphaBitmap.SetPixel (
 						x, y,
-						new Color (pixel, alpha));
+						new Color (pixel.R, pixel.G, pixel.B, alpha));
 				}
 			}
 

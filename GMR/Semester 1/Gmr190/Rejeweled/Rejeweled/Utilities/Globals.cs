@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace Rejeweled
 {
@@ -16,7 +17,7 @@ namespace Rejeweled
 		private static bool mEnforceMoveMustResultInMatch = true;
 		private static bool mEnforceMoveMustBeAdjacent = true;
 		private static Color mClearColor = Color.White;
-		private static bool mStartInFullScreen = true;
+		private static bool mStartInFullScreen = false;
 
 		private static Viewport mViewport;
 

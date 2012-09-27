@@ -1,11 +1,13 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rejeweled", "Rejeweled\Rejeweled.csproj", "{E91E70AC-0152-43AC-BD8C-AFD9434B262D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextureEffectsPipeline", "TextureEffectsPipeline\TextureEffectsPipeline.csproj", "{2BC12F89-FF9C-4DAA-AF3E-F41CFE6ABD8D}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RejeweledSetup", "RejeweledSetup\RejeweledSetup.vdproj", "{17F687F1-7FB4-4F37-BEED-11335AF7DF80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RejeweledContent", "Rejeweled\Content\RejeweledContent.contentproj", "{FC8FEE54-EC4D-4D75-AC17-55B0AD344EEB}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
