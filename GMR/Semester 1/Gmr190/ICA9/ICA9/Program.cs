@@ -13,7 +13,7 @@ namespace ICA9
 
 			try
 			{
-				Console.Write ("Please enter how many times to loop: 9");
+				Console.Write ("Please enter how many times to loop: ");
 				count = Convert.ToInt32 (Console.ReadLine ());
 
 				do
