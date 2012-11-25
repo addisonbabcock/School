@@ -1,0 +1,14 @@
+Result of FLASH operation
+=========================
+
+-----: start bootload external FLASH program loader S19
+OK   : external FLASH program loader transferred
+-----: Attempting to identify FLASH device
+-----: Device ID : manu ID : 20, dev ID : E2
+OK   : Device is STMicroelectronics M29F040B
+-----: Verify device target address range
+OK   : Target address range is OK
+-----: Blank check target device
+OK   : Selected bank of device is blank
+-----: Start Programming...
+OK   : Device programmed OK!

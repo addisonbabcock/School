@@ -1,0 +1,84 @@
+AS68HC11 Assembler - Computer Engineering Tech.  -  Version: 1.56gb    Page 1
+
+
+
+                              1 ;****************************************************************************
+                              2 ;*	adc.asm																	*
+                              3 ;*																			*
+                              4 ;*	Subroutines to be used for sending data to the DAC over the SPI			*
+                              5 ;****************************************************************************
+                              6 
+                              7 ;.--------------------------------------------------------------------------.
+                              8 ;|							Equates											|
+                              9 ;`--------------------------------------------------------------------------'
+                             10 
+   1039                      11 OPTION		=	0x1039			;Option register, contains ADPU and CSEL
+   1030                      12 ADCTL		=	0x1030			;Control register for the A/D subsystem
+   1031                      13 ADR1		=	0x1031			;A/D result register 1
+   1032                      14 ADR2		=	0x1032			;A/D result register 2
+   1033                      15 ADR3		=	0x1033			;A/D result register 3
+   1034                      16 ADR4		=	0x1034			;A/D result register 4
+                             17 
+                             18 ;.--------------------------------------------------------------------------.
+                             19 ;|							Subroutines										|
+                             20 ;`--------------------------------------------------------------------------'
+                             21 
+                             22 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                             23 ; adc_init																	;
+                             24 ;	Purpose		: Initiliazes the A/D converter subsystem					;
+                             25 ;	Modifies	: OPTION, turns on the charge pump and sets the A/D to use	;
+                             26 ;				  ECLK instead of the internal RC clock						;
+                             27 ;	Accepts		: Nothing													;
+                             28 ;	Return		: Nothing													;
+                             29 ;	Last mod	: Oct 4 2007												;
+                             30 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   0000                      31 adc_init:
+   0000 3C                   32 				pshx			;Save x
+   0001 36                   33 				psha
+   0002 37                   34 				pshb
+                             35 				
+   0003 CE 10 39             36 				ldx		#OPTION		;Turn on the A/D
+   0006 1C 00 80             37 				bset	0,x,#0x80
+                             38 				
+                             39 				;Wait at least 100 micro seconds for the charge pump
+                             40 				;to initialize
+   0009 03                   41 				fdiv				;165 cycles
+   000A 03                   42 				fdiv				;need at least 130 or so
+   000B 03                   43 				fdiv
+   000C 03                   44 				fdiv
+   000D 03                   45 				fdiv
+                             46 				
+   000E 33                   47 				pulb
+   000F 32                   48 				pula
+   0010 38                   49 				pulx
+   0011 39                   50 				rts
+                             51 				
+                             52 
+                             53 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+                             54 ; adc_sample																;
+                             55 ;	Purpose		: Samples channel 0 of the ADC and returns the value in	A	;
+                             56 ;	Modifies	: Accumulator A												;
+AS68HC11 Assembler - Computer Engineering Tech.  -  Version: 1.56gb    Page 2
+
+
+
+                             57 ;	Accepts		: Nothing													;
+                             58 ;	Return		: The value sampled in AccA									;
+                             59 ;	Last mod	: Oct 4 2007												;
+                             60 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   0012                      61 adc_sample:
+   0012 86 00                62 				ldaa	#0			;No scanning, no multiple channel
+                             63 									;channel 0
+                             64 									
+   0014 B7 10 30             65 				staa	ADCTL
+   0017                      66 adc_sample_delay:
+   0017 B6 10 30             67 				ldaa	ADCTL		;Wait for the CCF to be set
+   001A 2A FB                68 				bpl		adc_sample_delay
+                             69 				
+   001C B6 10 34             70 				ldaa	ADR4		;return best result
+   001F 39                   71 				rts
+
+   Input File: adc.asm
+   Directory:  C:\DOCUME~1\ABABCO~1\DESKTOP\START_~1
+   Date:       2007/12/12
+   Time:       10:46:19

@@ -1,0 +1,25 @@
+// this is the memory map configuration file for the bootloader
+// C++ style comments are ignored in this file (and so are empty lines...)
+
+// general format for a memory map item is
+// ADDRESS START (hex)-ADDRESS END (hex):TYPE:NAME
+//  where TYPE is one of :
+//		R (internal/external RAM)
+//		I (internal EEPROM)
+//		E (external EEPROM)
+//		F (external FLASH)
+//		O (one-time program EPROM) (not implemented)
+//		X (Restricted (deny))
+
+// Example: 0000-00FF:R:Internal RAM
+
+
+0000-01FF:X:Internal RAM
+0200-0FFF:R:External RAM
+1000-103F:X:Register Block
+1040-7FFF:R:External RAM
+B600-B7FF:I:Internal EEPROM
+C000-FFFF:F:M29F040B FLASH
+
+
+// End Of File...
