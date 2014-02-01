@@ -18,7 +18,7 @@ namespace RandomTranslator
             if (string.IsNullOrWhiteSpace(inputString))
             {
                 Console.WriteLine("Usage: RandomTranslator.exe Some Input Text");
-
+                Console.ReadKey();
                 return;
             }
 

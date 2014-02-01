@@ -5,7 +5,7 @@
         Dim local As com.cdyne.ws.IP2Geo = New com.cdyne.ws.IP2Geo()
         Dim address As com.cdyne.ws.IPInformation
 
-        address = local.ResolveIP("50.63.202.1", "0")
+        address = local.ResolveIP("174.3.136.57", "0")
 
         Response.Write(address.City.ToString() + "<br />")
         Response.Write(address.Country.ToString() + "<br />")
