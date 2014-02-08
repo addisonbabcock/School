@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ViewState2010", "ViewState2010\ViewState2010.vbproj", "{7E8D09B9-37B6-489F-B233-088387338EC8}"
 EndProject
 Global
