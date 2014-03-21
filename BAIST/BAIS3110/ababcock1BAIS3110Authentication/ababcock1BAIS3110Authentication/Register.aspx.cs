@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+using System.Security.Cryptography;
+using System.Web.Security;
+using System.Data.SqlClient;
+
+namespace ababcock1BAIS3110Authentication
+{
+    public partial class Register : System.Web.UI.Page
+    {
+		private static string CreateSalt(int size)
+		{
+			var rng = new RNGCryptoServiceProvider();
+			var buff = new byte[size];
+			rng.GetBytes(buff);
+			return Convert.ToBase64String(buff);
+		}
+
+		private static string CreatePasswordHash(string pwd, string salt)
+		{
+			var saltAndPwd = String.Concat(pwd, salt);
+			var hashedPwd = FormsAuthentication.HashPasswordForStoringInConfigFile(saltAndPwd, "SHA1");
+			return hashedPwd;
+		}
+
+		protected void btnRegister_Click(object sender, EventArgs e)
+		{
+			string salt = CreateSalt(5);
+			string passwordHash = CreatePasswordHash(UserPass.Text, salt);
+
+			try
+			{
+				StoreAccountDetails(UserPass.Text, passwordHash, salt);
+			}
+			catch (Exception ex)
+			{
+				Msg.Text = ex.Message;
+			}
+		}
+
+		private void StoreAccountDetails(string userName, string passwordHash, string salt)
+		{
+			var connection = new SqlConnection(
+				"Server=(local);" +
+				"Integrated Security=SSPI;" +
+				"database=ababcock1BAIS3110Authentication");
+			var command = new SqlCommand("RegisterUser", connection);
+			command.CommandType = System.Data.CommandType.StoredProcedure;
+			SqlParameter sqlParameter = null;
+
+			sqlParameter = command.Parameters.Add("@userName", System.Data.SqlDbType.VarChar, 255);
+			sqlParameter.Value = userName;
+
+			sqlParameter = command.Parameters.Add("@passwordHash", System.Data.SqlDbType.VarChar, 40);
+			sqlParameter.Value = passwordHash;
+
+			sqlParameter = command.Parameters.Add("@salt", System.Data.SqlDbType.VarChar, 10);
+			sqlParameter.Value = salt;
+
+			try
+			{
+				connection.Open();
+				command.ExecuteNonQuery();
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Exception adding account. " + ex.Message);
+			}
+			finally
+			{
+				connection.Close();
+			}
+		}
+
+		protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
