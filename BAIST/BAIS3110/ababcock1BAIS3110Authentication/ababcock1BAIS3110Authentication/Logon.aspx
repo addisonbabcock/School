@@ -25,6 +25,7 @@
             </tr>
         </table>
         <asp:Button ID="Submit" Text="Logon" runat="server" onclick="Submit_Click" />
+        <p><a href="Register.aspx">Register</a></p>
         <p><asp:Label ID="Msg" ForeColor="Red" runat="server" /></p>
     </form>
 </body>
