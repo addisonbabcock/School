@@ -7,12 +7,12 @@ using System.Web.Security;
 
 namespace ababcock1BAIS3110Authentication
 {
-    public partial class _Default : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class _Default : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 			Welcome.Text = "Hello, " + Context.User.Identity.Name;
-        }
+		}
 
 		protected void Signout_Click(object sender, EventArgs e)
 		{
@@ -23,5 +23,5 @@ namespace ababcock1BAIS3110Authentication
 
 			Response.Redirect("Logon.aspx");
 		}
-    }
+	}
 }

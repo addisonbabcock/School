@@ -9,7 +9,7 @@
 	<form id="form1" runat="server">
 	<div>
 		<h3>
-			Logon Page</h3>
+			Register Page</h3>
 		<table>
 			<tr>
 				<td>

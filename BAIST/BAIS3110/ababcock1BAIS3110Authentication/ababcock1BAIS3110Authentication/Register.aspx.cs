@@ -11,8 +11,8 @@ using System.Data.SqlClient;
 
 namespace ababcock1BAIS3110Authentication
 {
-    public partial class Register : System.Web.UI.Page
-    {
+	public partial class Register : System.Web.UI.Page
+	{
 		private static string CreateSalt(int size)
 		{
 			var rng = new RNGCryptoServiceProvider();
@@ -28,7 +28,7 @@ namespace ababcock1BAIS3110Authentication
 			return hashedPwd;
 		}
 
-		protected void btnRegister_Click(object sender, EventArgs e)
+		protected void Submit_Click(object sender, EventArgs e)
 		{
 			string salt = CreateSalt(5);
 			string passwordHash = CreatePasswordHash(UserPass.Text, salt);
@@ -78,8 +78,8 @@ namespace ababcock1BAIS3110Authentication
 		}
 
 		protected void Page_Load(object sender, EventArgs e)
-        {
+		{
 
-        }
-    }
+		}
+	}
 }
