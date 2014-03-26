@@ -60,6 +60,7 @@ namespace ababcock1BAIS3110Authentication
 			{
 				connection.Open();
 				command.ExecuteNonQuery();
+				FormsAuthentication.RedirectFromLoginPage(UserEmail.Text, Persist.Checked);
 			}
 			catch (Exception ex)
 			{
