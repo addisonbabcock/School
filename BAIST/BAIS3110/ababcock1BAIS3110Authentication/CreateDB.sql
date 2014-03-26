@@ -33,7 +33,7 @@ GO
 CREATE PROCEDURE LookupUser
 @userEmail varchar(255)
 AS
-SELECT PasswordHash, salt
+SELECT UserName, PasswordHash, salt
 FROM Users
 WHERE [UserEmail] = @userEmail
 GO

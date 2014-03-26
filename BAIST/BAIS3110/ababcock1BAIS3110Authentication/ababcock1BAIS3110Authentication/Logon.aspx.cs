@@ -25,12 +25,37 @@ namespace ababcock1BAIS3110Authentication
 			}
 		}
 
+		private static string CreatePasswordHash(string pwd, string salt)
+		{
+			var saltAndPwd = String.Concat(pwd, salt);
+			var hashedPwd = FormsAuthentication.HashPasswordForStoringInConfigFile(saltAndPwd, "SHA1");
+			return hashedPwd;
+		}
+
 		private bool SignonSuccessful(string userEmail, string userPass)
 		{
+			var userInfo = RetrieveUserInfo(userEmail);
+			var hashedPassword = CreatePasswordHash(userPass, userInfo.userPasswordSalt);
+
+			return userEmail == userInfo.userEmail && hashedPassword == userInfo.userPasswordHash;
+		}
+
+		private class UserInfo
+		{
+			public string userEmail;
+			public string userPasswordHash;
+			public string userPasswordSalt;
+		};
+
+		private UserInfo RetrieveUserInfo(string userEmail)
+		{
+			var userInfo = new UserInfo();
+			SqlDataReader reader = null;
+
 			var connection = new SqlConnection();
 			connection.ConnectionString = ConfigurationManager.ConnectionStrings["UsersDB"].ConnectionString;
 
-			var command = new SqlCommand("RegisterUser", connection);
+			var command = new SqlCommand("LookupUser", connection);
 			command.CommandType = CommandType.StoredProcedure;
 			SqlParameter sqlParameter = null;
 
@@ -40,18 +65,29 @@ namespace ababcock1BAIS3110Authentication
 			try
 			{
 				connection.Open();
-				command.ExecuteNonQuery();
+				reader = command.ExecuteReader();
+
+				if (reader.Read())
+				{
+					userInfo.userEmail = (string)reader[0];
+					userInfo.userPasswordHash = (string)reader[1];
+					userInfo.userPasswordSalt = (string)reader[2];
+				}
 			}
 			catch (Exception ex)
 			{
-				return false;
+				return null;
 			}
 			finally
 			{
+				if (reader != null)
+				{
+					reader.Close();
+				}
 				connection.Close();
 			}
 
-			return true;
+			return userInfo;
 		}
 	}
 }
