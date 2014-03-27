@@ -8,25 +8,10 @@ namespace ababcock1BAIS3110Authentication
 {
 	public partial class Register : System.Web.UI.Page
 	{
-		private static string CreateSalt(int size)
-		{
-			var rng = new RNGCryptoServiceProvider();
-			var buff = new byte[size];
-			rng.GetBytes(buff);
-			return Convert.ToBase64String(buff);
-		}
-
-		private static string CreatePasswordHash(string pwd, string salt)
-		{
-			var saltAndPwd = String.Concat(pwd, salt);
-			var hashedPwd = FormsAuthentication.HashPasswordForStoringInConfigFile(saltAndPwd, "SHA1");
-			return hashedPwd;
-		}
-
 		protected void Submit_Click(object sender, EventArgs e)
 		{
-			string salt = CreateSalt(5);
-			string passwordHash = CreatePasswordHash(UserPass.Text, salt);
+			string salt = AuthenticationHelpers.CreateSalt(5);
+			string passwordHash = AuthenticationHelpers.CreatePasswordHash(UserPass.Text, salt);
 
 			try
 			{

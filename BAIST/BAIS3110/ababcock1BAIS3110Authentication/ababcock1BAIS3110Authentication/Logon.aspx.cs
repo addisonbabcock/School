@@ -25,13 +25,6 @@ namespace ababcock1BAIS3110Authentication
 			}
 		}
 
-		private static string CreatePasswordHash(string pwd, string salt)
-		{
-			var saltAndPwd = String.Concat(pwd, salt);
-			var hashedPwd = FormsAuthentication.HashPasswordForStoringInConfigFile(saltAndPwd, "SHA1");
-			return hashedPwd;
-		}
-
 		private bool SignonSuccessful(string userEmail, string userPass)
 		{
 			var userInfo = RetrieveUserInfo(userEmail);
@@ -40,7 +33,7 @@ namespace ababcock1BAIS3110Authentication
 				return false;
 			}
 
-			var hashedPassword = CreatePasswordHash(userPass, userInfo.userPasswordSalt);
+			var hashedPassword = AuthenticationHelpers.CreatePasswordHash(userPass, userInfo.userPasswordSalt);
 
 			return userEmail == userInfo.userEmail && hashedPassword == userInfo.userPasswordHash;
 		}
