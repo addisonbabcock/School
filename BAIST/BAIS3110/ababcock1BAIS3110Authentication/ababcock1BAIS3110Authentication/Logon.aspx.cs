@@ -35,6 +35,11 @@ namespace ababcock1BAIS3110Authentication
 		private bool SignonSuccessful(string userEmail, string userPass)
 		{
 			var userInfo = RetrieveUserInfo(userEmail);
+			if (userInfo == null)
+			{
+				return false;
+			}
+
 			var hashedPassword = CreatePasswordHash(userPass, userInfo.userPasswordSalt);
 
 			return userEmail == userInfo.userEmail && hashedPassword == userInfo.userPasswordHash;
