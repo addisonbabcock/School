@@ -13,6 +13,7 @@ CREATE TABLE [Users] (
 [UserEmail] [varchar] (255) NOT NULL ,
 [PasswordHash] [varchar] (40) NOT NULL ,
 [salt] [varchar] (10) NOT NULL,
+[roles] [varchar] (255) NOT NULL,
 CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED
 (
 [UserEmail]
@@ -24,16 +25,17 @@ GO
 CREATE PROCEDURE RegisterUser
 @userEmail varchar(255),
 @passwordHash varchar(40),
-@salt varchar(10)
+@salt varchar(10),
+@roles varchar(255)
 AS
-INSERT INTO Users VALUES(@userEmail, @passwordHash, @salt)
+INSERT INTO Users VALUES(@userEmail, @passwordHash, @salt, @roles)
 GO
 
 -- create stored procedure to retrieve user details
 CREATE PROCEDURE LookupUser
 @userEmail varchar(255)
 AS
-SELECT UserEmail, PasswordHash, salt
+SELECT UserEmail, PasswordHash, salt, roles
 FROM Users
 WHERE [UserEmail] = @userEmail
 GO

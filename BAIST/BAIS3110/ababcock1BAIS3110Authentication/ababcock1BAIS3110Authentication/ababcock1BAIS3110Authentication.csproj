@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="DemonstrateRoles.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Logon.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -72,12 +74,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthenticationHelpers.cs" />
+    <Compile Include="CustomPrincipal.cs" />
+    <Compile Include="DataAccessLayer\Database.cs" />
+    <Compile Include="DataAccessLayer\User.cs" />
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DemonstrateRoles.aspx.cs">
+      <DependentUpon>DemonstrateRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DemonstrateRoles.aspx.designer.cs">
+      <DependentUpon>DemonstrateRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logon.aspx.cs">
       <DependentUpon>Logon.aspx</DependentUpon>

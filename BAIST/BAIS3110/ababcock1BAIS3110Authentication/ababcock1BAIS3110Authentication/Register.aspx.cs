@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Web.Security;
+using ababcock1BAIS3110Authentication.DataAccessLayer;
 
 namespace ababcock1BAIS3110Authentication
 {
@@ -15,45 +16,20 @@ namespace ababcock1BAIS3110Authentication
 
 			try
 			{
-				StoreAccountDetails(UserEmail.Text, passwordHash, salt);
-			}
-			catch (Exception ex)
-			{
-				Msg.Text = ex.Message;
-			}
-		}
+				var userInfo = new UserInfo();
+				userInfo.email = UserEmail.Text;
+				userInfo.passwordHash = passwordHash;
+				userInfo.passwordSalt = salt;
+				userInfo.roles = "User";
 
-		private void StoreAccountDetails(string userName, string passwordHash, string salt)
-		{
-			var connection = new SqlConnection();
-			connection.ConnectionString = ConfigurationManager.ConnectionStrings["UsersDB"].ConnectionString;
-
-			var command = new SqlCommand("RegisterUser", connection);
-			command.CommandType = System.Data.CommandType.StoredProcedure;
-			SqlParameter sqlParameter = null;
-
-			sqlParameter = command.Parameters.Add("@userEmail", System.Data.SqlDbType.VarChar, 255);
-			sqlParameter.Value = userName;
-
-			sqlParameter = command.Parameters.Add("@passwordHash", System.Data.SqlDbType.VarChar, 40);
-			sqlParameter.Value = passwordHash;
-
-			sqlParameter = command.Parameters.Add("@salt", System.Data.SqlDbType.VarChar, 10);
-			sqlParameter.Value = salt;
-
-			try
-			{
-				connection.Open();
-				command.ExecuteNonQuery();
+				UserTable.AddUser(userInfo);
+				Response.Cookies.Add(
+					AuthenticationHelpers.GetAuthCookie(userInfo, Persist.Checked));
 				FormsAuthentication.RedirectFromLoginPage(UserEmail.Text, Persist.Checked);
 			}
 			catch (Exception ex)
 			{
-				throw new Exception("Exception adding account. " + ex.Message);
-			}
-			finally
-			{
-				connection.Close();
+				Msg.Text = ex.Message;
 			}
 		}
 
