@@ -22,27 +22,9 @@ namespace ProtectedData
 
 			Step6();
 
+            Step7();
+
 			Console.ReadLine();
-		}
-
-		private static void Step6()
-		{
-			byte[] numbers = new byte[5];
-			Console.WriteLine();
-			Console.WriteLine(" ====================== Step 6 ====================== ");
-			Console.WriteLine();
-
-			Console.Write("Random class: ");
-			var random = new Random();
-			random.NextBytes(numbers);
-			PrintValues(numbers);
-			Console.WriteLine();
-
-			Console.Write("RNGCryptoServiceProvider: ");
-			var crypto = new RNGCryptoServiceProvider();
-			crypto.GetBytes(numbers);
-			PrintValues(numbers);
-			Console.WriteLine();
 		}
 
 		private static void Step4(byte[] secret, DPAPI dpapi)
@@ -78,7 +60,45 @@ namespace ProtectedData
 			Console.WriteLine();
 		}
 
-		public static void PrintValues(Byte[] myArr)
+		private static void Step6()
+		{
+			byte[] numbers = new byte[5];
+			Console.WriteLine();
+			Console.WriteLine(" ====================== Step 6 ====================== ");
+			Console.WriteLine();
+
+			Console.Write("Random class: ");
+			var random = new Random();
+			random.NextBytes(numbers);
+			PrintValues(numbers);
+			Console.WriteLine();
+
+			Console.Write("RNGCryptoServiceProvider: ");
+			var crypto = new RNGCryptoServiceProvider();
+			crypto.GetBytes(numbers);
+			PrintValues(numbers);
+			Console.WriteLine();
+		}
+
+        private static void Step7()
+        {
+            var helloWorld = GetBytes("Hello world");
+            var md5 = HashAlgorithm.Create("MD5");
+            var md5hash = md5.ComputeHash(helloWorld);
+            Console.WriteLine("MD5: " + Convert.ToBase64String(md5hash));
+
+            var sha1 = HashAlgorithm.Create("SHA1");
+            var sha1hash = sha1.ComputeHash(helloWorld);
+            Console.WriteLine("SHA1: " + Convert.ToBase64String(sha1hash));
+
+            var sha512 = HashAlgorithm.Create("SHA512");
+            var sha512hash = sha512.ComputeHash(helloWorld);
+            Console.WriteLine("SHA512: " + Convert.ToBase64String(sha512hash));
+
+            Console.WriteLine();
+        }
+
+        public static void PrintValues(Byte[] myArr)
 		{
 			foreach (Byte i in myArr)
 			{
@@ -87,5 +107,11 @@ namespace ProtectedData
 			Console.WriteLine();
 		}
 
+        static byte[] GetBytes(string str)
+        {
+            byte[] bytes = new byte[str.Length * sizeof(char)];
+            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
 	}
 }
