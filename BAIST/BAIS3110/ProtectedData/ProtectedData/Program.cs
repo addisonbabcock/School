@@ -82,7 +82,12 @@ namespace ProtectedData
 
         private static void Step7()
         {
-            var helloWorld = GetBytes("Hello world");
+			Console.WriteLine();
+			Console.WriteLine(" ====================== Step 7 ====================== ");
+			Console.WriteLine();
+
+			var helloWorld = GetBytes("Hello world");
+
             var md5 = HashAlgorithm.Create("MD5");
             var md5hash = md5.ComputeHash(helloWorld);
             Console.WriteLine("MD5: " + Convert.ToBase64String(md5hash));
