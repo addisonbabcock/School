@@ -23,8 +23,9 @@ Public Class Jobs
                 insertCommand.Parameters.Add(returnStatusParam)
 
                 dbConnection.Open()
+                insertCommand.ExecuteNonQuery()
 
-                If insertCommand.ExecuteNonQuery() = 1 And CType(returnStatusParam.Value, Integer) = 0 Then
+                If CType(returnStatusParam.Value, Integer) = 0 Then
                     success = True
                 End If
                 dbConnection.Close()
