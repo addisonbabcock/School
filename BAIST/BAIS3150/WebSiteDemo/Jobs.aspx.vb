@@ -17,17 +17,39 @@ Partial Class Jobs
                 Dim allJobsReader = getAllJobsCmd.ExecuteReader()
 
                 If (allJobsReader.HasRows) Then
-                    Response.Write("<h2>All Job Listings</h2>")
-
                     While allJobsReader.Read
-                        Dim jobLine = String.Format("{0}, {1}, {2} <br />", _
-                                                    allJobsReader("JobCode"), _
-                                                    allJobsReader("JobClass"), _
-                                                    allJobsReader("HourlyRate"))
-                        Response.Write(jobLine)
+
+                        Dim jobRow = New TableRow()
+                        If JobListingTable.Rows.Count Mod 2 = 0 Then
+                            jobRow.BackColor = Drawing.Color.AntiqueWhite
+                        Else
+                            jobRow.BackColor = Drawing.Color.White
+                        End If
+
+                        Dim jobCode = New TableCell()
+                        Dim jobClass = New TableCell()
+                        Dim jobHourlyRate = New TableCell()
+
+                        jobCode.Text = allJobsReader.Item("JobCode")
+                        jobClass.Text = allJobsReader.Item("JobClass")
+                        jobClass.Width = 150
+                        jobHourlyRate.Text = String.Format("{0:c}", allJobsReader.Item("HourlyRate"))
+                        jobHourlyRate.HorizontalAlign = HorizontalAlign.Right
+
+                        jobRow.Cells.Add(jobCode)
+                        jobRow.Cells.Add(jobClass)
+                        jobRow.Cells.Add(jobHourlyRate)
+
+                        JobListingTable.Rows.Add(jobRow)
+
                     End While
                 Else
-                    Response.Write("<h2>No jobs</h2>")
+                    Dim mostlyEmptyRow = New TableRow()
+                    Dim mostlyEmptyCell = New TableCell()
+
+                    mostlyEmptyCell.Text = "No jobs found."
+                    mostlyEmptyRow.Cells.Add(mostlyEmptyCell)
+                    JobListingTable.Rows.Add(mostlyEmptyRow)
                 End If
             End Using
         End Using

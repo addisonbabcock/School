@@ -162,4 +162,40 @@ Class Students
         Return success
     End Function
 
+	Function DeleteStudent(StudentID As String) As Boolean
+
+		Dim success = False
+
+		Using sqlConnection = New SqlConnection(New Helpers().GetConnectionString())
+			Using updateCommand = New SqlCommand("DeleteStudent", sqlConnection)
+				updateCommand.CommandType = CommandType.StoredProcedure
+
+				Dim studentIdParam = New SqlParameter()
+				studentIdParam.Direction = ParameterDirection.Input
+				studentIdParam.SqlDbType = SqlDbType.VarChar
+				studentIdParam.ParameterName = "@StudentID"
+				studentIdParam.SqlValue = StudentID
+				updateCommand.Parameters.Add(studentIdParam)
+
+				Dim returnStatusParam = New SqlParameter()
+				returnStatusParam.ParameterName = "@return_status"
+				returnStatusParam.SqlDbType = SqlDbType.Int
+				returnStatusParam.Direction = ParameterDirection.ReturnValue
+				updateCommand.Parameters.Add(returnStatusParam)
+
+				sqlConnection.Open()
+				updateCommand.ExecuteNonQuery()
+
+				If CType(returnStatusParam.Value, Integer) = 0 Then
+					success = True
+				End If
+
+				sqlConnection.Close()
+
+			End Using
+		End Using
+
+		Return success
+	End Function
+
 End Class
