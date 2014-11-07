@@ -1,0 +1,36 @@
+﻿<%@ Master Language="VB" CodeFile="Site.master.vb" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<link href="css/layout.css" rel="stylesheet" type="text/css" />
+	<title></title>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div id="header-container">
+			<div id="header">
+				<asp:Image runat="server" SkinID="LogoImage" />
+				<h1>BAIST3150 Sample Code System</h1>
+				<div>
+					<ul id="nav">
+						<li><a href="Programs.aspx">Programs</a></li>
+						<li><a href="Students.aspx">Students</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="maincontent">
+				<asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+				</asp:ContentPlaceHolder>
+			</div>
+			<div id="footer-container">
+				&copy; 2014. All rights reserved.
+			</div>
+		</div>
+	</form>
+</body>
+</html>
+ 

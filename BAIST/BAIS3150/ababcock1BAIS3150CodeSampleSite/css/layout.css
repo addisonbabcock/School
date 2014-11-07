@@ -1,0 +1,25 @@
+﻿#header-container {
+	background-color: #1D0065;
+	color: #57C5FF;
+}
+
+#footer-container {
+	background: #1D0065;
+	color: #57C5FF;
+	height: 50px;
+	line-height: 50px;
+}
+
+#maincontent {
+	width: 1140px;
+	margin: 0 auto;
+	min-height: 400px;
+}
+
+#header, #footer {
+	margin: 0;
+}
+
+#footer-container {
+	clear: both;
+}

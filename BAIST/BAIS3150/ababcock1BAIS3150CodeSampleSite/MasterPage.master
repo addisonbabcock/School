@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<link href="css/layout.css" rel="stylesheet" type="text/css" />
+	<title>BAIST3150 Sample Code System</title>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div id="header-container">
+			<div id="header">
+				<asp:Image runat="server" SkinID="LogoImage" Width="50px" Height="50px" />
+				<h1>BAIST3150 Sample Code System</h1>
+				<div>
+					<ul id="nav">
+						<li><a href="CreateProgram.aspx">Create Program</a></li>
+						<li><a href="EnrollStudent.aspx">Enroll Student</a></li>
+						<li><a href="FindStudent.aspx">Find Student</a></li>
+						<li><a href="ModifyStudent.aspx">Modify Student</a></li>
+						<li><a href="RemoveStudent.aspx">Remove Student</a></li>
+						<li><a href="FindProgram.aspx">Find Program</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="maincontent">
+				<asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+				</asp:ContentPlaceHolder>
+			</div>
+			<div id="footer-container">
+				&copy; 2014. All rights reserved.
+			</div>
+		</div>
+	</form>
+</body>
+</html>
+ 
