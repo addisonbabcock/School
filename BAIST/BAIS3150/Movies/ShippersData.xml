@@ -1,0 +1,3 @@
+﻿<Shippers xmlns="urn:schemas-microsoft-com:sql:SqlRowSet1" ShipperId="1" CompanyName="Speedy Express" Phone="(503) 555-9831" />
+<Shippers xmlns="urn:schemas-microsoft-com:sql:SqlRowSet1" ShipperId="2" CompanyName="United Package" Phone="(503) 555-3199" />
+<Shippers xmlns="urn:schemas-microsoft-com:sql:SqlRowSet1" ShipperId="3" CompanyName="Federal Shipping" Phone="(503) 555-9931" />

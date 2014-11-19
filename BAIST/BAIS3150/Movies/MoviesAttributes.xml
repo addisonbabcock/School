@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<movies>
+	<movie name="Dirty Dancing" year="2014" rating="10" />
+	<movie name="Roadhouse" year="2013" rating="10" />
+	<movie name="Reveen the Impossiblist" year="2012" rating="5" />
+</movies>
+

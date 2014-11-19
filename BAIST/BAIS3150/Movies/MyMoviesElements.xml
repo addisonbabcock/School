@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<movies>
+	<movie>
+		<name>Dirty Dancing</name>
+		<year>2014</year>
+		<rating>10</rating>
+	</movie>
+	<movie>
+		<name>Roadhouse</name>
+		<year>2013</year>
+		<rating>9</rating>
+	</movie>
+	<movie>
+		<name>Reveen</name>
+		<year>2012</year>
+		<rating>5</rating>
+	</movie>
+</movies>
