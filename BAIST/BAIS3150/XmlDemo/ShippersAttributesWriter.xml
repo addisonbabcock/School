@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Northwind>
+	<Shippers ShipperID="1" CompanyName="Speedy Express" Phone="(503) 555-9831" />
+	<Shippers ShipperID="2" CompanyName="United Package" Phone="(503) 555-3199" />
+	<Shippers ShipperID="3" CompanyName="Federal Shipping" Phone="(503) 555-9931" />
+</Northwind>
