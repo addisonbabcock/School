@@ -1,12 +1,17 @@
 ﻿
 using System.Data.SqlClient;
+using System;
+using System.Configuration;
 
 public class Helpers
 {
-    private const string connectionString = "Server=SERVIN8TOR\\sqlexpress; Database=ababcock1_BAIS3150_StudentsDemo; Integrated Security=SSPI";
-
     public string GetConnectionString()
 	{
-        return connectionString;
+		return ConfigurationManager.ConnectionStrings["Students"].ConnectionString;
+	}
+
+	public string GetNorthwindConnectionString()
+	{
+		return ConfigurationManager.ConnectionStrings["Northwind"].ConnectionString;
 	}
 }

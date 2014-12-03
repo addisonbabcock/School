@@ -23,6 +23,7 @@
 						<li><a href="ModifyStudent.aspx">Modify Student</a></li>
 						<li><a href="RemoveStudent.aspx">Remove Student</a></li>
 						<li><a href="FindProgram.aspx">Find Program</a></li>
+						<li><a href="MyWebServiceTest.aspx">Test Web Service</a></li>
 					</ul>
 				</div>
 			</div>
