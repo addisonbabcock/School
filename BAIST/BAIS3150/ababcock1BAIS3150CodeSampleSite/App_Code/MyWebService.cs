@@ -92,7 +92,11 @@ public class MyWebService : System.Web.Services.WebService {
 	[WebMethod]
 	public int MathematicalMaximum(int a, int b)
 	{
-		return Math.Max(a, b);
+		double da = a;
+		double db = b;
+		double ave = (da + db) / 2;
+		double diff = Math.Abs((da - db) / 2);
+		return (int)(ave + diff);
 	}
 
 	public static string DecimalToArbitrarySystem(long decimalNumber, int radix)
