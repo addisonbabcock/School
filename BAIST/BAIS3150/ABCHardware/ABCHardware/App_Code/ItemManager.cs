@@ -48,6 +48,13 @@ namespace ABCHardware.App_Code
 					deletedParam.ParameterName = "@Deleted";
 					command.Parameters.Add(deletedParam);
 
+					var quantityParam = new SqlParameter();
+					quantityParam.Direction = System.Data.ParameterDirection.Input;
+					quantityParam.SqlDbType = System.Data.SqlDbType.Int;
+					quantityParam.SqlValue = item.InventoryQuantity;
+					quantityParam.ParameterName = "@InventoryQuantity";
+					command.Parameters.Add(quantityParam);
+
 					var retParam = new SqlParameter();
 					retParam.Direction = System.Data.ParameterDirection.ReturnValue;
 					retParam.SqlDbType = System.Data.SqlDbType.Int;
@@ -107,6 +114,13 @@ namespace ABCHardware.App_Code
 					deletedParam.ParameterName = "@Deleted";
 					command.Parameters.Add(deletedParam);
 
+					var quantityParam = new SqlParameter();
+					quantityParam.Direction = System.Data.ParameterDirection.Input;
+					quantityParam.SqlDbType = System.Data.SqlDbType.Int;
+					quantityParam.SqlValue = item.InventoryQuantity;
+					quantityParam.ParameterName = "@InventoryQuantity";
+					command.Parameters.Add(quantityParam);
+
 					var retParam = new SqlParameter();
 					retParam.Direction = System.Data.ParameterDirection.ReturnValue;
 					retParam.SqlDbType = System.Data.SqlDbType.Int;
@@ -151,9 +165,10 @@ namespace ABCHardware.App_Code
 					{
 						item = new Item();
 						item.Code = reader["ItemCode"].ToString();
-						item.Description = reader["ItemDescription"].ToString();
+						item.Description = reader["Description"].ToString();
 						item.Price = double.Parse(reader["UnitPrice"].ToString());
 						item.Deleted = bool.Parse(reader["Deleted"].ToString());
+						item.InventoryQuantity = int.Parse(reader["InventoryQuantity"].ToString());
 					}
 					else
 					{

@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ABCHardware.Master.cs" Inherits="ABCHardware.ABCHardwareMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+	<div id="HeaderDiv">
+		<h1>ABC Hardware - 
+			<asp:ContentPlaceHolder ID="Header" runat="server">
+
+			</asp:ContentPlaceHolder>
+		</h1>
+	</div>
+	<div id="NavigationDiv">
+		<table>
+			<tr>
+				<td><b>Items</b></td>
+				<td><b>Customers</b></td>
+				<td><b>Sales</b></td>
+			</tr>
+			<tr>
+				<td><a href="AddItem.aspx">Add Item</a></td>
+				<td><a href="">Add Customer</a></td>
+				<td><a href="">Add Sale</a></td>
+			</tr>
+			<tr>
+				<td><a href="UpdateItem.aspx">Update Item</a></td>
+				<td><a href="">Update Customer</a></td>
+			</tr>
+			<tr>
+				<td><a href="DeleteItem.aspx">Delete Item</a></td>
+				<td><a href="">Delete Customer</a></td>
+			</tr>
+		</table>
+		<hr />
+		<asp:ContentPlaceHolder ID="Navigation" runat="server">
+
+		</asp:ContentPlaceHolder>
+	</div>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="Content" runat="server">
+			
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+	<div id="FooterDiv">
+		<asp:ContentPlaceHolder ID="Footer" runat="server">
+			
+		</asp:ContentPlaceHolder>
+		<small>&copy; 2014 Addison Babcock</small>
+	</div>
+</body>
+</html>
