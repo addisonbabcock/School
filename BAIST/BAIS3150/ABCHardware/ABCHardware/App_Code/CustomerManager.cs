@@ -96,7 +96,7 @@ namespace ABCHardware.App_Code
 
 			using (var connection = new SqlConnection(connectionString))
 			{
-				using (var command = new SqlCommand("UpdateItem", connection))
+				using (var command = new SqlCommand("UpdateCustomer", connection))
 				{
 					command.CommandType = System.Data.CommandType.StoredProcedure;
 

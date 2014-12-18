@@ -65,8 +65,17 @@
 	<table>
 		<tr>
 			<td><asp:Label runat="server" Text="Item Code" /></td>
-			<td><asp:DropDownList runat="server" ID="ItemCodeDropDown" /></td>
-			<td><asp:Button runat="server" ID="LoadItem" OnClick="LoadItem_Click" Text="Load Item" /></td>
+			<td><asp:DropDownList runat="server" ID="ItemCodeDropDown" OnTextChanged="ItemCodeDropDown_TextChanged" AutoPostBack="true" /></td>
+			<td>
+				<asp:RequiredFieldValidator
+					runat="server"
+					ID="ItemCodeRequiredValidator"
+					ErrorMessage="Item Code is a required field."
+					Display="Dynamic"
+					ForeColor="Red"
+					ControlToValidate="ItemCodeDropDown"
+					ValidationGroup="ItemValidation" />
+			</td>
 		</tr>
 		<tr>
 			<td><asp:Label runat="server">Description</asp:Label></td>
@@ -74,7 +83,7 @@
 		</tr>
 		<tr>
 			<td><asp:Label runat="server">Quantity</asp:Label></td>
-			<td><asp:TextBox runat="server" ID="QuantityTextBox" TextMode="Number">1</asp:TextBox></td>
+			<td><asp:TextBox runat="server" ID="QuantityTextBox" TextMode="Number" OnTextChanged="QuantityTextBox_TextChanged" AutoPostBack="true">1</asp:TextBox></td>
 			<td><asp:RangeValidator 
 				runat="server" 
 				ID="QuantityRange"

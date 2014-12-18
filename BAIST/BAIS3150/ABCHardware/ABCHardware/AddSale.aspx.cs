@@ -172,7 +172,12 @@ namespace ABCHardware
 			}
 		}
 
-		protected void LoadItem_Click(object sender, EventArgs e)
+		protected void ItemCodeDropDown_TextChanged(object sender, EventArgs e)
+		{
+			RefreshSelectedItem();
+		}
+
+		protected void RefreshSelectedItem()
 		{
 			Item selectedItem = allItems.Find(item => item.Code == ItemCodeDropDown.SelectedItem.Text);
 
@@ -181,6 +186,23 @@ namespace ABCHardware
 				QuantityTextBox.Text = "1";
 			PriceLabel.Text = selectedItem.Price.ToString("C2");
 			ItemTotal.Text = (selectedItem.Price * int.Parse(QuantityTextBox.Text)).ToString("C2");
+		}
+
+		protected void QuantityTextBox_TextChanged(object sender, EventArgs e)
+		{
+			RefreshSelectedItem();
+		}
+
+		protected void ItemCodeValidator_Validate(object sender, ServerValidateEventArgs args)
+		{
+			if (string.IsNullOrEmpty(args.Value))
+			{
+				args.IsValid = false;
+			}
+			else
+			{
+				args.IsValid = true;
+			}
 		}
 	}
 }
