@@ -5,6 +5,7 @@ using System.Web;
 
 namespace ABCHardware.App_Code
 {
+	[Serializable]
 	public class SalesItem
 	{
 		public Item Item { get; set; }

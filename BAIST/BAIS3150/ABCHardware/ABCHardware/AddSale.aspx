@@ -60,10 +60,6 @@
 					ValidationGroup="ReceiptValidation" />
 			</td>
 		</tr>
-		<tr>
-			<td><asp:Button runat="server" ID="AddReceipt" Text="Add Sales Receipt" OnClick="AddReceipt_Click" ValidationGroup="ReceiptValidation" /></td>
-			<td><asp:Label runat="server" ID="AddReceiptResults"></asp:Label></td>
-		</tr>
 	</table>
 	<br /><br />
 	<table>
@@ -79,6 +75,16 @@
 		<tr>
 			<td><asp:Label runat="server">Quantity</asp:Label></td>
 			<td><asp:TextBox runat="server" ID="QuantityTextBox" TextMode="Number">1</asp:TextBox></td>
+			<td><asp:RangeValidator 
+				runat="server" 
+				ID="QuantityRange"
+				ErrorMessage="Quantity must be greater than 1."
+				Display="Dynamic"
+				ForeColor="Red"
+				ControlToValidate="QuantityTextBox"
+				MinimumValue="1"
+				MaximumValue="99999999"
+				ValidationGroup="ItemValidation" /></td>
 		</tr>
 		<tr>
 			<td><asp:Label runat="server">Price</asp:Label></td>
@@ -89,15 +95,25 @@
 			<td><asp:Label runat="server" ID="ItemTotal">$0.00</asp:Label></td>
 		</tr>
 		<tr>
-			<td><asp:Button ID="AddSalesItem" runat="server" Text="Add Sales Item" OnClick="AddSalesItem_Click" /></td>
+			<td><asp:Button ID="AddSalesItem" runat="server" Text="Add Sales Item" OnClick="AddSalesItem_Click" ValidationGroup="ItemValidation" /></td>
 			<td><asp:Label ID="AddSalesItemResults" runat="server" Text=""></asp:Label></td>
 		</tr>
 	</table>
 	<br /><br />
+	<asp:Table runat="server" ID="ItemsTable" BorderStyle="Double">
+		<asp:TableHeaderRow>
+			<asp:TableHeaderCell>Item Code</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Item Description</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Quantity</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Price</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Item Total</asp:TableHeaderCell>
+		</asp:TableHeaderRow>
+	</asp:Table>
+	<br /><br />
 	<table>
 		<tr>
 			<td><asp:Label ID="Label5" runat="server">Subtotal</asp:Label></td>
-			<td><asp:TextBox ID="ProvinceTextBox" runat="server" ReadOnly="true"></asp:TextBox></td>
+			<td><asp:TextBox ID="SubtotalTextBox" runat="server" ReadOnly="true"></asp:TextBox></td>
 		</tr>
 		<tr>
 			<td><asp:Label ID="Label6" runat="server">GST</asp:Label></td>
@@ -106,6 +122,10 @@
 		<tr>
 			<td><asp:Label ID="Label7" runat="server">Total</asp:Label></td>
 			<td><asp:TextBox ID="TotalTextBox" runat="server" ReadOnly="true"></asp:TextBox></td>
+		</tr>
+		<tr>
+			<td><asp:Button runat="server" ID="AddReceipt" Text="Add Sales Receipt" OnClick="AddReceipt_Click" ValidationGroup="ReceiptValidation" /></td>
+			<td><asp:Label runat="server" ID="AddReceiptResults"></asp:Label></td>
 		</tr>
 	</table>
 </asp:Content>

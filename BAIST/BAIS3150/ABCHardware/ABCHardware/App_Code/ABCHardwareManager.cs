@@ -90,7 +90,7 @@ namespace ABCHardware.App_Code
 				var manager = new SalesManager();
 				return manager.AddSale(receipt);
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
 				return 0;
 			}

@@ -112,24 +112,6 @@ namespace ABCHardware {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator CustomerIdRequired;
         
         /// <summary>
-        /// AddReceipt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddReceipt;
-        
-        /// <summary>
-        /// AddReceiptResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label AddReceiptResults;
-        
-        /// <summary>
         /// ItemCodeDropDown control.
         /// </summary>
         /// <remarks>
@@ -164,6 +146,15 @@ namespace ABCHardware {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox QuantityTextBox;
+        
+        /// <summary>
+        /// QuantityRange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator QuantityRange;
         
         /// <summary>
         /// PriceLabel control.
@@ -202,6 +193,15 @@ namespace ABCHardware {
         protected global::System.Web.UI.WebControls.Label AddSalesItemResults;
         
         /// <summary>
+        /// ItemsTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ItemsTable;
+        
+        /// <summary>
         /// Label5 control.
         /// </summary>
         /// <remarks>
@@ -211,13 +211,13 @@ namespace ABCHardware {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// ProvinceTextBox control.
+        /// SubtotalTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProvinceTextBox;
+        protected global::System.Web.UI.WebControls.TextBox SubtotalTextBox;
         
         /// <summary>
         /// Label6 control.
@@ -254,5 +254,23 @@ namespace ABCHardware {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TotalTextBox;
+        
+        /// <summary>
+        /// AddReceipt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddReceipt;
+        
+        /// <summary>
+        /// AddReceiptResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AddReceiptResults;
     }
 }

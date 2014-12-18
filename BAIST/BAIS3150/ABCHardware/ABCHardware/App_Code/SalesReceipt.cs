@@ -5,6 +5,7 @@ using System.Web;
 
 namespace ABCHardware.App_Code
 {
+	[Serializable]
 	public class SalesReceipt
 	{
 		public int Id { get; set; }

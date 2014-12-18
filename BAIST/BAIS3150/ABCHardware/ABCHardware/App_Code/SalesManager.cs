@@ -20,47 +20,58 @@ namespace ABCHardware.App_Code
 				{
 					command.CommandType = System.Data.CommandType.StoredProcedure;
 
-					var dateParam = new SqlParameter("@SaleDate", receipt.Date);
+					var dateParam = new SqlParameter();
+					dateParam.ParameterName = "@SaleDate";
+					dateParam.SqlValue = receipt.Date;
 					dateParam.SqlDbType = System.Data.SqlDbType.Date;
 					dateParam.Direction = System.Data.ParameterDirection.Input;
 					command.Parameters.Add(dateParam);
 
-					var salesPersonParam = new SqlParameter("@SalesPerson", receipt.SalesPerson);
+					var salesPersonParam = new SqlParameter();
+					salesPersonParam.ParameterName = "@SalesPerson";
+					salesPersonParam.SqlValue = receipt.SalesPerson;
 					salesPersonParam.SqlDbType = System.Data.SqlDbType.NVarChar;
 					salesPersonParam.Direction = System.Data.ParameterDirection.Input;
 					command.Parameters.Add(salesPersonParam);
 
-					var customerParam = new SqlParameter("@CustomerId", receipt.Customer.Id);
+					var customerParam = new SqlParameter();
+					customerParam.ParameterName = "@CustomerId";
+					customerParam.SqlValue = receipt.Customer.Id;
 					customerParam.SqlDbType = System.Data.SqlDbType.Int;
 					customerParam.Direction = System.Data.ParameterDirection.Input;
 					command.Parameters.Add(customerParam);
 
-					var subtotalParam = new SqlParameter("@Subtotal", receipt.Subtotal);
+					var subtotalParam = new SqlParameter();
+					subtotalParam.ParameterName = "@Subtotal";
+					subtotalParam.SqlValue = receipt.Subtotal;
 					subtotalParam.SqlDbType = System.Data.SqlDbType.Money;
 					subtotalParam.Direction = System.Data.ParameterDirection.Input;
 					command.Parameters.Add(subtotalParam);
 
-					var gstParam = new SqlParameter("@GST", receipt.GST);
+					var gstParam = new SqlParameter();
+					gstParam.ParameterName = "@GST";
+					gstParam.SqlValue = receipt.GST;
 					gstParam.SqlDbType = System.Data.SqlDbType.Money;
 					gstParam.Direction = System.Data.ParameterDirection.Input;
 					command.Parameters.Add(gstParam);
 
-					var totalParam = new SqlParameter("@Total", receipt.Total);
+					var totalParam = new SqlParameter();
+					totalParam.ParameterName = "@Total";
+					totalParam.SqlValue = receipt.Total;
 					totalParam.SqlDbType = System.Data.SqlDbType.Money;
 					totalParam.Direction = System.Data.ParameterDirection.Input;
 					command.Parameters.Add(totalParam);
 
 					connection.Open();
-					var transaction = connection.BeginTransaction();
-
+					command.Transaction = connection.BeginTransaction();
 					saleNumber = int.Parse(command.ExecuteScalar().ToString());
 
 					foreach (var salesItem in receipt.Items)
 					{
-						AddSaleItem(connection, salesItem, saleNumber);
+						AddSaleItem(connection, command.Transaction, salesItem, saleNumber);
 					}
 				
-					transaction.Commit();
+					command.Transaction.Commit();
 					connection.Close();
 				}
 			}
@@ -68,11 +79,12 @@ namespace ABCHardware.App_Code
 			return saleNumber;
 		}
 
-		public void AddSaleItem(SqlConnection connection, SalesItem salesItem, int saleNumber)
+		public void AddSaleItem(SqlConnection connection, SqlTransaction transaction, SalesItem salesItem, int saleNumber)
 		{
 			using (var command = new SqlCommand("AddSalesItem", connection))
 			{
 				command.CommandType = System.Data.CommandType.StoredProcedure;
+				command.Transaction = transaction;
 
 				var saleNumberParam = new SqlParameter("@SalesNumber", saleNumber);
 				saleNumberParam.SqlDbType = System.Data.SqlDbType.Int;

@@ -12,16 +12,20 @@ namespace ABCHardware
 	public partial class AddSale : System.Web.UI.Page
 	{
 		List<Item> allItems;
+		List<SalesItem> saleItems;
 
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			LoadAllItems();
+			LoadSaleItems();
 			SetItemCodesDropDown();
+			RefreshReceiptTable();
+			RefreshTotal();
 		}
 
-		protected void Submit_Click(object sender, EventArgs e)
+		protected void Page_PreRender(object sender, EventArgs e)
 		{
-
+			ViewState.Add("saleItems", saleItems);
 		}
 
 		protected void LoadAllItems()
@@ -30,9 +34,26 @@ namespace ABCHardware
 			allItems = ABCPos.GetAllActiveItems();
 		}
 
+		protected void LoadSaleItems()
+		{
+			if (ViewState["saleItems"] != null)
+			{
+				saleItems = (List<SalesItem>)ViewState["saleItems"];
+			}
+			else
+			{
+				saleItems = new List<SalesItem>();
+			}
+		}
+
 		protected void SetItemCodesDropDown()
 		{
+			if (IsPostBack)
+				return;
+
 			ItemCodeDropDown.Items.Clear();
+			ItemCodeDropDown.Items.Add(new ListItem());
+
 			foreach (Item item in allItems)
 			{
 				ItemCodeDropDown.Items.Add(new ListItem(item.Code));
@@ -56,12 +77,99 @@ namespace ABCHardware
 
 		protected void AddReceipt_Click(object sender, EventArgs e)
 		{
+			var ABCPos = new ABCHardwareManager();
+			var receipt = new SalesReceipt();
 
+			receipt.Customer = ABCPos.GetCustomer(int.Parse(CustomerIdTextBox.Text));
+			receipt.Date = DateTime.Parse(DateTextBox.Text);
+			receipt.SalesPerson = SalesPersonTextBox.Text;
+			receipt.Items = saleItems;
+			receipt.Subtotal = GetSubtotal();
+			receipt.GST = receipt.Subtotal * 0.05;
+			receipt.Total = receipt.Subtotal + receipt.GST;
+
+			var salesId = ABCPos.AddSale(receipt);
+			SalesNumberTextBox.Text = salesId.ToString();
+
+			if (salesId == 0)
+			{
+				AddReceiptResults.Text = "Failed to add receipt.";
+				AddReceiptResults.ForeColor = Color.Red;
+			}
+			else
+			{
+				AddReceiptResults.Text = "Receipt added successfully.";
+				AddReceiptResults.ForeColor = Color.Green;
+			}
 		}
 
 		protected void AddSalesItem_Click(object sender, EventArgs e)
 		{
+			var ABCPos = new ABCHardwareManager();
+			var saleItem = new SalesItem();
+			saleItem.Item = allItems.Find(item => item.Code == ItemCodeDropDown.SelectedItem.Text);
+			saleItem.Quantity = int.Parse(QuantityTextBox.Text);
+			saleItem.ItemTotal = saleItem.Quantity * saleItem.Item.Price;
 
+			saleItems.Add(saleItem);
+
+			RefreshReceiptTable();
+			RefreshTotal();
+		}
+
+		private double GetSubtotal()
+		{
+			var subtotal = 0.0;
+
+			foreach (SalesItem item in saleItems)
+			{
+				subtotal += item.ItemTotal;
+			}
+
+			return subtotal;
+		}
+
+		private void RefreshTotal()
+		{
+			var subtotal = GetSubtotal();
+			SubtotalTextBox.Text = subtotal.ToString("C2");
+			GSTTextBox.Text = (subtotal * 0.05).ToString("C2");
+			TotalTextBox.Text = (subtotal * 1.05).ToString("C2");
+		}
+
+		private void RefreshReceiptTable()
+		{
+			while (ItemsTable.Rows.Count > 1)		//leave the header alone
+			{
+				ItemsTable.Rows.RemoveAt(ItemsTable.Rows.Count - 1);
+			}
+
+			foreach (SalesItem item in saleItems)
+			{
+				var tableRow = new TableRow();
+
+				var codeCell = new TableCell();
+				codeCell.Text = item.Item.Code;
+				tableRow.Cells.Add(codeCell);
+
+				var descCell = new TableCell();
+				descCell.Text = item.Item.Description;
+				tableRow.Cells.Add(descCell);
+
+				var quantityCell = new TableCell();
+				quantityCell.Text = item.Quantity.ToString();
+				tableRow.Cells.Add(quantityCell);
+
+				var priceCell = new TableCell();
+				priceCell.Text = item.Item.Price.ToString("C2");
+				tableRow.Cells.Add(priceCell);
+
+				var totalCell = new TableCell();
+				totalCell.Text = item.ItemTotal.ToString("C2");
+				tableRow.Cells.Add(totalCell);
+
+				ItemsTable.Rows.Add(tableRow);
+			}
 		}
 
 		protected void LoadItem_Click(object sender, EventArgs e)
