@@ -57,7 +57,6 @@ namespace ABCHardware.App_Code
 
 					foreach (var salesItem in receipt.Items)
 					{
-
 						AddSaleItem(connection, salesItem, saleNumber);
 					}
 				

@@ -25,16 +25,16 @@
 			</tr>
 			<tr>
 				<td><a href="AddItem.aspx">Add Item</a></td>
-				<td><a href="">Add Customer</a></td>
-				<td><a href="">Add Sale</a></td>
+				<td><a href="AddCustomer.aspx">Add Customer</a></td>
+				<td><a href="AddSale.aspx">Add Sale</a></td>
 			</tr>
 			<tr>
 				<td><a href="UpdateItem.aspx">Update Item</a></td>
-				<td><a href="">Update Customer</a></td>
+				<td><a href="UpdateCustomer.aspx">Update Customer</a></td>
 			</tr>
 			<tr>
 				<td><a href="DeleteItem.aspx">Delete Item</a></td>
-				<td><a href="">Delete Customer</a></td>
+				<td><a href="DeleteCustomer.aspx">Delete Customer</a></td>
 			</tr>
 		</table>
 		<hr />

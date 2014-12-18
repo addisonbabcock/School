@@ -179,5 +179,67 @@ namespace ABCHardware.App_Code
 
 			return item;
 		}
+
+		public List<Item> GetAllItems()
+		{
+			var items = new List<Item>();
+			var connectionString = ConfigurationManager.ConnectionStrings["ABCHardware"].ConnectionString;
+
+			using (var connection = new SqlConnection(connectionString))
+			{
+				using (var command = new SqlCommand("GetAllItems", connection))
+				{
+					command.CommandType = System.Data.CommandType.StoredProcedure;
+
+					connection.Open();
+					var reader = command.ExecuteReader();
+
+					while (reader.Read())
+					{
+						var item = new Item();
+						item.Code = reader["ItemCode"].ToString();
+						item.Description = reader["Description"].ToString();
+						item.Price = double.Parse(reader["UnitPrice"].ToString());
+						item.Deleted = bool.Parse(reader["Deleted"].ToString());
+						item.InventoryQuantity = int.Parse(reader["InventoryQuantity"].ToString());
+
+						items.Add(item);
+					}
+				}
+			}
+
+			return items;
+		}
+
+		public List<Item> GetAllActiveItems()
+		{
+			var items = new List<Item>();
+			var connectionString = ConfigurationManager.ConnectionStrings["ABCHardware"].ConnectionString;
+
+			using (var connection = new SqlConnection(connectionString))
+			{
+				using (var command = new SqlCommand("GetAllActiveItems", connection))
+				{
+					command.CommandType = System.Data.CommandType.StoredProcedure;
+
+					connection.Open();
+					var reader = command.ExecuteReader();
+
+					while (reader.Read())
+					{
+						var item = new Item();
+						item.Code = reader["ItemCode"].ToString();
+						item.Description = reader["Description"].ToString();
+						item.Price = double.Parse(reader["UnitPrice"].ToString());
+						item.Deleted = bool.Parse(reader["Deleted"].ToString());
+						item.InventoryQuantity = int.Parse(reader["InventoryQuantity"].ToString());
+
+						items.Add(item);
+					}
+				}
+			}
+
+			return items;
+		}
 	}
 }
