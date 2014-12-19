@@ -61,6 +61,7 @@
     <Content Include="AddItem.aspx" />
     <Content Include="AddSale.aspx" />
     <Content Include="App_Themes\Default\Default.css" />
+    <Content Include="Default.aspx" />
     <Content Include="DeleteCustomer.aspx" />
     <Content Include="DeleteItem.aspx" />
     <Content Include="UpdateCustomer.aspx" />
@@ -104,6 +105,12 @@
       <DependentUpon>AddItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\ABCHardwareManager.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DeleteCustomer.aspx.cs">
       <DependentUpon>DeleteCustomer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

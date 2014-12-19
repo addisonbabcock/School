@@ -50,6 +50,7 @@
 			<td><asp:Label ID="Label4" runat="server">Customer Id</asp:Label></td>
 			<td><asp:TextBox ID="CustomerIdTextBox" runat="server" TextMode="Number"></asp:TextBox></td>
 			<td>
+				<asp:Button ID="FindCustomer" runat="server" Text="Find Customer" OnClick="FindCustomer_Click" />
 				<asp:RequiredFieldValidator
 					runat="server"
 					ID="CustomerIdRequired"
@@ -61,6 +62,25 @@
 			</td>
 		</tr>
 	</table>
+	<br /><br />
+	<asp:Table runat="server" ID="CustomerTable">
+		<asp:TableHeaderRow>
+			<asp:TableHeaderCell>Customer Id</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Name</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Address</asp:TableHeaderCell>
+			<asp:TableHeaderCell>City</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Province</asp:TableHeaderCell>
+			<asp:TableHeaderCell>Postal Code</asp:TableHeaderCell>
+		</asp:TableHeaderRow>
+		<asp:TableRow>
+			<asp:TableCell><asp:Label ID="CustomerIdLabel" runat="server" /></asp:TableCell>
+			<asp:TableCell><asp:Label ID="NameLabel" runat="server" /></asp:TableCell>
+			<asp:TableCell><asp:Label ID="AddressLabel" runat="server" /></asp:TableCell>
+			<asp:TableCell><asp:Label ID="CityLabel" runat="server" /></asp:TableCell>
+			<asp:TableCell><asp:Label ID="ProvinceLabel" runat="server" /></asp:TableCell>
+			<asp:TableCell><asp:Label ID="PCLabel" runat="server" /></asp:TableCell>
+		</asp:TableRow>
+	</asp:Table>
 	<br /><br />
 	<table>
 		<tr>

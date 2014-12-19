@@ -19,7 +19,7 @@ namespace ABCHardware
 		{
 			var ABCPos = new ABCHardwareManager();
 			var customer = new Customer(
-				0,
+				int.Parse(CustomerIdTextBox.Text),
 				NameTextBox.Text,
 				AddressTextBox.Text,
 				CityTextBox.Text,
@@ -30,6 +30,13 @@ namespace ABCHardware
 			{
 				Results.Text = "Success!";
 				Results.ForeColor = System.Drawing.Color.Green;
+
+				CustomerIdTextBox.Text = "";
+				NameTextBox.Text = "";
+				AddressTextBox.Text = "";
+				CityTextBox.Text = "";
+				ProvinceTextBox.Text = "";
+				DeletedCheckBox.Checked = false;
 			}
 			else
 			{

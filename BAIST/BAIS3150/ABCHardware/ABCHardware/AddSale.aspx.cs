@@ -23,6 +23,26 @@ namespace ABCHardware
 			RefreshTotal();
 		}
 
+		protected void FindCustomer_Click(object sender, EventArgs e)
+		{
+			var ABCPos = new ABCHardwareManager();
+			var customer = ABCPos.GetCustomer(int.Parse(CustomerIdTextBox.Text));
+
+			if (customer == null)
+			{
+				NameLabel.Text = "Customer not found.";
+			}
+			else
+			{
+				CustomerIdLabel.Text = customer.Id.ToString();
+				NameLabel.Text = customer.Name;
+				AddressLabel.Text = customer.Address;
+				CityLabel.Text = customer.City;
+				ProvinceLabel.Text = customer.Province;
+				PCLabel.Text = customer.PC;
+			}
+		}
+
 		protected void Page_PreRender(object sender, EventArgs e)
 		{
 			ViewState.Add("saleItems", saleItems);

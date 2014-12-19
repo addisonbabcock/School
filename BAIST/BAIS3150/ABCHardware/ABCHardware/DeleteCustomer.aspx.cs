@@ -30,7 +30,13 @@ namespace ABCHardware
 			{
 				Results.Text = "Success!";
 				Results.ForeColor = System.Drawing.Color.Green;
-				DeletedCheckBox.Checked = true;
+
+				CustomerIdTextBox.Text = "";
+				NameTextBox.Text = "";
+				AddressTextBox.Text = "";
+				CityTextBox.Text = "";
+				ProvinceTextBox.Text = "";
+				DeletedCheckBox.Checked = false;
 			}
 			else
 			{

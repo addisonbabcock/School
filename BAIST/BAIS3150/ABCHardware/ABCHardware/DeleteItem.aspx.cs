@@ -28,7 +28,12 @@ namespace ABCHardware
 			{
 				Results.Text = "Success!";
 				Results.ForeColor = System.Drawing.Color.Green;
-				DeletedCheckBox.Checked = true;
+
+				ItemCodeTextBox.Text = "";
+				DescriptionTextBox.Text = "";
+				UnitPriceTextBox.Text = "";
+				DeletedCheckBox.Checked = false;
+				InventoryQuantityTextBox.Text = "";
 			}
 			else
 			{

@@ -103,6 +103,15 @@ namespace ABCHardware {
         protected global::System.Web.UI.WebControls.TextBox CustomerIdTextBox;
         
         /// <summary>
+        /// FindCustomer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FindCustomer;
+        
+        /// <summary>
         /// CustomerIdRequired control.
         /// </summary>
         /// <remarks>
@@ -110,6 +119,69 @@ namespace ABCHardware {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator CustomerIdRequired;
+        
+        /// <summary>
+        /// CustomerTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table CustomerTable;
+        
+        /// <summary>
+        /// CustomerIdLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CustomerIdLabel;
+        
+        /// <summary>
+        /// NameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NameLabel;
+        
+        /// <summary>
+        /// AddressLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AddressLabel;
+        
+        /// <summary>
+        /// CityLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CityLabel;
+        
+        /// <summary>
+        /// ProvinceLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ProvinceLabel;
+        
+        /// <summary>
+        /// PCLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PCLabel;
         
         /// <summary>
         /// ItemCodeDropDown control.

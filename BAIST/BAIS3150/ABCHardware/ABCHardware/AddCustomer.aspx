@@ -15,8 +15,16 @@
 		</tr>
 		<tr>
 			<td><asp:Label runat="server">Customer Id</asp:Label></td>
-			<td><asp:TextBox ID="CustomerIdTextBox" runat="server" ReadOnly="true"></asp:TextBox></td>
-			<td></td>
+			<td><asp:TextBox ID="CustomerIdTextBox" runat="server"></asp:TextBox></td>
+			<td>
+				<asp:RequiredFieldValidator
+					runat="server"
+					ID="CustomerIdRequired"
+					ErrorMessage="Customer Id required."
+					Display="Dynamic"
+					ForeColor="Red"
+					ControlToValidate="CustomerIdTextBox" />
+			</td>
 		</tr>
 		<tr>
 			<td><asp:Label runat="server">Full Name</asp:Label></td>

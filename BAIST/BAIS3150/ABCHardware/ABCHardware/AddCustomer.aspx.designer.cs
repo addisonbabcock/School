@@ -22,6 +22,15 @@ namespace ABCHardware {
         protected global::System.Web.UI.WebControls.TextBox CustomerIdTextBox;
         
         /// <summary>
+        /// CustomerIdRequired control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator CustomerIdRequired;
+        
+        /// <summary>
         /// NameTextBox control.
         /// </summary>
         /// <remarks>
