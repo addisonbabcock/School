@@ -77,7 +77,9 @@ create table PayrollStatement
 	constraint FK_PayrollStatement_EmployeeNumber foreign key (EmployeeNumber)
 		references Employee (EmployeeNumber),
 	constraint CK_PayrollStatement_StartDate_EndDate check
-		(StartDate <= EndDate)
+		(StartDate <= EndDate),
+	constraint CK_PayrollStatement_NetPay check
+		(NetPay >= 0)
 )
 
 create table Earnings
@@ -93,7 +95,11 @@ create table Earnings
 	constraint FK_Earnings_EndDate_EmployeeNumber foreign key (EndDate, EmployeeNumber)
 		references PayrollStatement (EndDate, EmployeeNumber),
 	constraint CK_Earnings_Type check
-		([Type] in ('Regular', 'Overtime', 'Overtime2', 'Total'))
+		([Type] in ('Regular', 'Overtime', 'Overtime2', 'Total')),
+	constraint CK_Earnings_CurrentAmount check
+		(CurrentAmount >= 0),
+	constraint CK_Earnings_YTDAmount check
+		(YTDAmount >= 0)
 )
 
 create table Deductions
@@ -109,7 +115,11 @@ create table Deductions
 	constraint FK_Deductions_EndDate_EmployeeNumber foreign key (EndDate, EmployeeNumber)
 		references PayrollStatement (EndDate, EmployeeNumber),
 	constraint CK_Deductions_Type check
-		([Type] in ('Income Tax', 'CPP', 'EI', 'Pension Plan', 'Alberta Health Care', 'Total'))
+		([Type] in ('Income Tax', 'CPP', 'EI', 'Pension Plan', 'Alberta Health Care', 'Total')),
+	constraint CK_Deductions_CurrentAmount check
+		(CurrentAmount <= 0),
+	constraint CK_Deductions_YTDAmount check
+		(YTDAmount <= 0)
 )
 
 create table Benefits
@@ -125,7 +135,11 @@ create table Benefits
 	constraint FK_Benefits_EndDate_EmployeeNumber foreign key (EndDate, EmployeeNumber)
 		references PayrollStatement (EndDate, EmployeeNumber),
 	constraint CK_Benefits_Type check
-		([Type] in ('Pension Plan', 'Blue Cross', 'Dental', 'Life Insurance', 'Disability'))
+		([Type] in ('Pension Plan', 'Blue Cross', 'Dental', 'Life Insurance', 'Disability')),
+	constraint CK_Benefits_CurrentAmount check
+		(CurrentAmount >= 0),
+	constraint CK_Benefits_YTDAmount check
+		(YTDAmount >= 0)
 )
 
 
@@ -287,6 +301,8 @@ as
 		AlbertaHealthCareDeductions.YTDAmount		as 'Deductions Alberta Health Care YTD',
 		TotalDeductions.CurrentAmount		as 'Deductions Total Current',
 		TotalDeductions.YTDAmount			as 'Deductions Total YTD',
+
+		PayrollStatement.NetPay				as 'Net Pay',
 
 		PensionPlanBenefits.CurrentAmount	as 'Benefits Pension Plan Current',
 		PensionPlanBenefits.YTDAmount		as 'Benefits Pension Plan YTD',
