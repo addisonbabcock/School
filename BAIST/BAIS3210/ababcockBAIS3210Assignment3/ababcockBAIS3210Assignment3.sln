@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ababcockBAIS3210Assignment3", "ababcockBAIS3210Assignment3\ababcockBAIS3210Assignment3.dtproj", "{89F1D1C5-810F-40F7-A3E4-A62AF23501D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C55F790C-BD83-4911-9953-0AEE7F7D4955}"
+	ProjectSection(SolutionItems) = preProject
+		ababcock1ShipperData.txt = ababcock1ShipperData.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89F1D1C5-810F-40F7-A3E4-A62AF23501D3}.Development|Default.ActiveCfg = Development
+		{89F1D1C5-810F-40F7-A3E4-A62AF23501D3}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

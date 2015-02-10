@@ -66,7 +66,7 @@ create table TimeDimension
 	[Year]					int					not null,
 	[Quarter]				int					not null,
 	[DayOfYear]				int					not null,
-	[Weekday]				nchar(1)			not null,
+	[Weekday]				int					not null,
 	[WeekOfYear]			int					not null,
 
 
@@ -86,7 +86,7 @@ create table TimeDimension
 	constraint CK_TimeDimension_DayOfYear check
 		([DayOfYear] >= 1 and [DayOfYear] <= 366),
 	constraint CK_TimeDimension_Weekday check
-		([Weekday] in ('Y', 'N')),
+		([Weekday] in (0, 1)),
 	constraint CK_TimeDimension_WeekOfYear check
 		([WeekOfYear] >= 1),
 )
@@ -166,7 +166,7 @@ create table SaleFact
 	LineItemTotal			money				not null,
 
 
-	constraint PK_SaleFact primary key clustered
+	constraint PK_SaleFact primary key nonclustered
 		(CustomerKey, EmployeeKey, ProductKey, ShipperKey, TimeKey),
 	constraint FK_SaleFact_CustomerKey foreign key
 		(CustomerKey) references CustomerDimension (CustomerKey),
