@@ -60,13 +60,13 @@ create table TimeDimension
 	TimeKey					int identity(1,1)	not null,
 	TheDate					datetime,
 	[DayOfWeek]				int,
-	DayOfWeekName			nvarchar(9),
+	DayOfWeekName			nvarchar(30),
 	[Month]					int,
-	[MonthName]				nvarchar(11),
+	[MonthName]				nvarchar(30),
 	[Year]					int,
 	[Quarter]				int,
 	[DayOfYear]				int,
-	[Weekday]				int,
+	[Weekday]				nvarchar(3),
 	[WeekOfYear]			int,
 
 
@@ -86,7 +86,7 @@ create table TimeDimension
 	constraint CK_TimeDimension_DayOfYear check
 		([DayOfYear] >= 1 and [DayOfYear] <= 366),
 	constraint CK_TimeDimension_Weekday check
-		([Weekday] in (0, 1)),
+		([Weekday] in ('No', 'Yes')),
 	constraint CK_TimeDimension_WeekOfYear check
 		([WeekOfYear] >= 1),
 )
@@ -122,7 +122,7 @@ create table ShipperDimension
 create table EmployeeDimension
 (
 	EmployeeKey				int identity(1,1)	not null,
-	EmployeeName			nvarchar(30)		not null,
+	EmployeeName			nvarchar(31)		not null,
 	EmployeeID				int					not null,
 	HireDate				datetime,
 
