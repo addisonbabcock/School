@@ -164,6 +164,7 @@ create table SaleFact
 	LineItemDiscount		money				not null,
 	LineItemFreight			money				not null,
 	LineItemTotal			money				not null,
+	RequiredDate			datetime			not null,
 
 
 	constraint PK_SaleFact primary key nonclustered

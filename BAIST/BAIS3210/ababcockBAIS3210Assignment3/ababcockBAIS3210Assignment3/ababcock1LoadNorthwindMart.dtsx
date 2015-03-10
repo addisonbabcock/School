@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ababcock1LoadNorthwindMart"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{252ACBA1-4142-4335-9F8B-E9D6383C83BD}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{46693BDF-FE22-47FF-98F6-678F71FE254B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3027,7 +3027,8 @@ inner join Categories on Categories.CategoryID = Products.CategoryID</property>
 	(Orders.Freight / (select sum (OD.Quantity) from [Order Details] as OD where OD.OrderID = Orders.OrderID))
 		as 'LineItemFreight',
 	Orders.Freight + (select sum (OD.Quantity * OD.UnitPrice * (1 - OD.Discount)) from [Order Details] as OD where OD.OrderID = Orders.OrderID)
-		as 'LineItemTotal'
+		as 'LineItemTotal',
+	Orders.RequiredDate
 from Orders
 inner join [Order Details] on Orders.OrderID = [Order Details].OrderID
 where Orders.ShippedDate is not null</property>
@@ -3149,6 +3150,15 @@ where Orders.ShippedDate is not null</property>
                       lineageId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[LineItemTotal]"
                       name="LineItemTotal"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]"
+                      name="RequiredDate"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3189,6 +3199,10 @@ where Orders.ShippedDate is not null</property>
                       refId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LineItemTotal]"
                       dataType="r8"
                       name="LineItemTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      name="RequiredDate" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3242,6 +3256,11 @@ where Orders.ShippedDate is not null</property>
                       dataType="r8"
                       lineageId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LineItemTotal]"
                       name="LineItemTotal" />
+                    <outputColumn
+                      refId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RequiredDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[RequiredDate]"
+                      name="RequiredDate" />
                     <outputColumn
                       refId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -3316,7 +3335,7 @@ where [refTable].[CustomerID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\16:invalid};</property>
+                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CustomerID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3475,7 +3494,7 @@ where [refTable].[EmployeeID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\19:invalid};</property>
+                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CustomerID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3633,7 +3652,7 @@ where [refTable].[ProductID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\22:invalid};</property>
+                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CustomerID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3791,7 +3810,7 @@ where [refTable].[ShipperID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\25:invalid};</property>
+                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[EmployeeID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3949,7 +3968,7 @@ where [refTable].[TheDate] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\28:invalid};</property>
+                  name="ParameterMap">#{Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[EmployeeID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4176,6 +4195,12 @@ where [refTable].[TheDate] = ?</property>
                       cachedName="TimeKey"
                       externalMetadataColumnId="Package\Load NorthwindMart SaleFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TimeKey]"
                       lineageId="Package\Load NorthwindMart SaleFact\Lookup TimeKey.Outputs[Lookup Match Output].Columns[TimeKey]" />
+                    <inputColumn
+                      refId="Package\Load NorthwindMart SaleFact\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RequiredDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RequiredDate"
+                      externalMetadataColumnId="Package\Load NorthwindMart SaleFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDate]"
+                      lineageId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output].Columns[RequiredDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4215,6 +4240,10 @@ where [refTable].[TheDate] = ?</property>
                       refId="Package\Load NorthwindMart SaleFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineItemTotal]"
                       dataType="cy"
                       name="LineItemTotal" />
+                    <externalMetadataColumn
+                      refId="Package\Load NorthwindMart SaleFact\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RequiredDate]"
+                      dataType="dbDate"
+                      name="RequiredDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4252,14 +4281,14 @@ where [refTable].[TheDate] = ?</property>
               startId="Package\Load NorthwindMart SaleFact\ADO NET Source.Outputs[ADO NET Source Output]" />
             <path
               refId="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output3]"
-              endId="Package\Load NorthwindMart SaleFact\Lookup TimeKey.Inputs[Lookup Input]"
+              endId="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Load NorthwindMart SaleFact\Lookup ShipperKey.Outputs[Lookup Match Output]" />
+              startId="Package\Load NorthwindMart SaleFact\Lookup CustomerKey.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output4]"
-              endId="Package\Load NorthwindMart SaleFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Load NorthwindMart SaleFact\Lookup ProductKey.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Load NorthwindMart SaleFact\Lookup TimeKey.Outputs[Lookup Match Output]" />
+              startId="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output2]"
               endId="Package\Load NorthwindMart SaleFact\Lookup ShipperKey.Inputs[Lookup Input]"
@@ -4267,14 +4296,14 @@ where [refTable].[TheDate] = ?</property>
               startId="Package\Load NorthwindMart SaleFact\Lookup ProductKey.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output]"
-              endId="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey.Inputs[Lookup Input]"
+              endId="Package\Load NorthwindMart SaleFact\Lookup TimeKey.Inputs[Lookup Input]"
               name="Lookup Match Output"
-              startId="Package\Load NorthwindMart SaleFact\Lookup CustomerKey.Outputs[Lookup Match Output]" />
+              startId="Package\Load NorthwindMart SaleFact\Lookup ShipperKey.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output1]"
-              endId="Package\Load NorthwindMart SaleFact\Lookup ProductKey.Inputs[Lookup Input]"
+              endId="Package\Load NorthwindMart SaleFact\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
-              startId="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey.Outputs[Lookup Match Output]" />
+              startId="Package\Load NorthwindMart SaleFact\Lookup TimeKey.Outputs[Lookup Match Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -4788,14 +4817,14 @@ where [refTable].[TheDate] = ?</property>
               startId="Package\Load NorthwindMart ShipperDimension\Convert to Unicode.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Load NorthwindMart ShipperDimension.Paths[Derived Column Output1]"
-              endId="Package\Load NorthwindMart ShipperDimension\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Load NorthwindMart ShipperDimension\Trim Right Quote.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Load NorthwindMart ShipperDimension.Paths[Derived Column Output]"
               endId="Package\Load NorthwindMart ShipperDimension\Trim Right Quote.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\Load NorthwindMart ShipperDimension\Trim Left Quote.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load NorthwindMart ShipperDimension.Paths[Derived Column Output]"
+              endId="Package\Load NorthwindMart ShipperDimension\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load NorthwindMart ShipperDimension\Trim Right Quote.Outputs[Derived Column Output]" />
             <path
               refId="Package\Load NorthwindMart ShipperDimension.Paths[Flat File Source Output]"
               endId="Package\Load NorthwindMart ShipperDimension\Convert to Unicode.Inputs[Data Conversion Input]"
@@ -5976,19 +6005,108 @@ order by TheDate asc</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart ProductDimension\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart ProductDimension\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load NorthwindMart SaleFact">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="159,42"
-          Id="Package\Load NorthwindMart SaleFact\ADO NET Source"
-          TopLeft="302,26" />
+          Size="180,42"
+          Id="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey"
+          TopLeft="289,216" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Load NorthwindMart SaleFact\Lookup ShipperKey"
+          TopLeft="297,392" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Load NorthwindMart SaleFact\OLE DB Destination"
+          TopLeft="300,593" />
         <NodeLayout
           Size="179,42"
           Id="Package\Load NorthwindMart SaleFact\Lookup CustomerKey"
           TopLeft="291,124" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Load NorthwindMart SaleFact\Lookup ProductKey"
+          TopLeft="295,308" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load NorthwindMart SaleFact\Lookup TimeKey"
+          TopLeft="306,480" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load NorthwindMart SaleFact\ADO NET Source"
+          TopLeft="302,26" />
+        <EdgeLayout
+          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output1]"
+          TopLeft="385.5,522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,25.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output]"
+          TopLeft="383.5,434">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,13.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load NorthwindMart SaleFact.Paths[ADO NET Source Output]"
           TopLeft="381,68">
@@ -6011,40 +6129,8 @@ order by TheDate asc</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey"
-          TopLeft="289,216" />
         <EdgeLayout
-          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output]"
-          TopLeft="379.75,166">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,15.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Load NorthwindMart SaleFact\Lookup ProductKey"
-          TopLeft="295,308" />
-        <EdgeLayout
-          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output1]"
+          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output4]"
           TopLeft="379.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6067,10 +6153,30 @@ order by TheDate asc</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Load NorthwindMart SaleFact\Lookup ShipperKey"
-          TopLeft="297,392" />
+        <EdgeLayout
+          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output3]"
+          TopLeft="379.75,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,15.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output2]"
           TopLeft="381,350">
@@ -6095,65 +6201,145 @@ order by TheDate asc</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Load NorthwindMart SaleFact\Lookup TimeKey"
-          TopLeft="306,480" />
-        <EdgeLayout
-          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output3]"
-          TopLeft="383.5,434">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,13.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42"
-          Id="Package\Load NorthwindMart SaleFact\OLE DB Destination"
-          TopLeft="300,593" />
-        <EdgeLayout
-          Id="Package\Load NorthwindMart SaleFact.Paths[Lookup Match Output4]"
-          TopLeft="385.5,522">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71"
-              Start="0,0"
-              End="0,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,25.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[EmployeeDimension]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart SaleFact\Lookup ShipperKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ShipperDimension]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart SaleFact\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart SaleFact\Lookup CustomerKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart SaleFact\Lookup ProductKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ProductDimension]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart SaleFact\Lookup TimeKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[TimeDimension]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NorthwindMart SaleFact\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load NorthwindMart ShipperDimension">
     <LayoutInfo>
@@ -6202,7 +6388,7 @@ order by TheDate asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load NorthwindMart ShipperDimension.Paths[Derived Column Output1]"
+          Id="Package\Load NorthwindMart ShipperDimension.Paths[Derived Column Output]"
           TopLeft="402.75,495">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6224,7 +6410,7 @@ order by TheDate asc</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load NorthwindMart ShipperDimension.Paths[Derived Column Output]"
+          Id="Package\Load NorthwindMart ShipperDimension.Paths[Derived Column Output1]"
           TopLeft="400,377.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -6322,27 +6508,6 @@ order by TheDate asc</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart ProductDimension\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart ProductDimension\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load NorthwindMart TimeDimension\ADO NET Source">
     <Properties>
       <Property>
@@ -6352,142 +6517,6 @@ order by TheDate asc</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load NorthwindMart TimeDimension\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart SaleFact\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart SaleFact\Lookup CustomerKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart SaleFact\Lookup EmployeeKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[EmployeeDimension]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart SaleFact\Lookup ProductKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[ProductDimension]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart SaleFact\Lookup ShipperKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[ShipperDimension]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart SaleFact\Lookup TimeKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[TimeDimension]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NorthwindMart SaleFact\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

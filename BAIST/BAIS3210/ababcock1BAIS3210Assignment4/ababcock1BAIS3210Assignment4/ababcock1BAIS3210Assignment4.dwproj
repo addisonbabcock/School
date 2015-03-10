@@ -17,6 +17,16 @@
         </ProjectItem>
       </Dependencies>
     </ProjectItem>
+    <ProjectItem>
+      <Name>Shipping.cube</Name>
+      <FullPath>Shipping.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Shipping.partitions</Name>
+          <FullPath>Shipping.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
   </Cubes>
   <Dimensions>
     <ProjectItem>
