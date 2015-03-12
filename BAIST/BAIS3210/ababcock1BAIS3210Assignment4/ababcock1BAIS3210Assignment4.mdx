@@ -1,0 +1,140 @@
+
+
+
+--BASICS--
+select from [Max Min Manufacturing DM];
+
+
+select {[Guiding Lights], [Mythic World], [Warriors Of Yore], [Woodland Creatures]} 
+on columns
+from [Max Min Manufacturing DM];
+
+
+select [Product Type].Members on columns
+from [Max Min Manufacturing DM];
+
+
+select [Product Type].Members on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM];
+
+
+select {[Measures].[Accepted Products], [Measures].[Total Products]} on columns,
+[year].Members on rows
+from [Max Min Manufacturing DM];
+
+
+select [Product Type].Members on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM]
+where [MEasures].[Total Products];
+
+
+select [Product Type].Members on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM]
+where ([Measures].[Total Products], [Plant].&[3]);
+
+
+--FILTER--
+select filter([Product].Members,
+	([Month].[201112], [Measures].[Number On Backorder]) <
+	([Month].[201111], [Measures].[Number On Backorder])) on columns,
+[Month].[201112] on rows
+from [Max Min Manufacturing DM]
+where ([Measures].[Accepted Products]);
+
+
+select non empty filter([Product].Members,
+	([Month].[201112], [Measures].[Number On Backorder]) <
+	([Month].[201111], [Measures].[Number On Backorder])) on columns,
+[Month].[201112] on rows
+from [Max Min Manufacturing DM]
+where ([Measures].[Accepted Products]);
+
+
+--WITH--
+with set [American WWII Figures] as
+{[American GI], [US Army Pilot], [US Navy Gunner's Mate]}
+
+select {[American WWII Figures]} on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM]
+where [Measures].[Total Products];
+
+
+with
+	member [World War II].[American Figures] as
+		[American GI]+[US Army Pilot]+[US Navy Gunner's Mate]
+	member [World War II].[British Figures] as
+		[British Tank Commander]+[RAF Pilot]
+	member [World War II].[Russian Figures] as
+		[Russian Infantry]+[Russian Tank Commander]
+	member [World War II].[German Figures] as
+		[German Panzer Driver]
+
+select {[American Figures], [British Figures], [Russian Figures], [German Figures]} on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM]
+where [MEasures].[Total Products];
+
+
+with
+	member [Measures].[Percent Of Parent] as
+		CStr(round(([Product Hierarchy].CurrentMember,
+			[Measures].[Total Products]) * 100 / ([Product Hierarchy].CurrentMember.Parent,
+			[Measures].[Total Products]), 2)) + "%"
+
+select [Product Type].Members on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM]
+where [Measures].[Percent Of Parent];
+
+
+--CROSSJOINS--
+select crossjoin([Product Type].Members, [Plant].Members) on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM]
+where [Measures].[Total Products];
+
+
+select non empty crossjoin([Product Type].Members, [Plant].Members) on columns,
+[Year].Members on rows
+from [Max Min Manufacturing DM]
+where [Measures].[Total Products];
+
+
+--topcount / bottomcount--
+select topcount([Product].Members, 5, [MEasures].[Total Products]) on columns
+from [Max Min Manufacturing DM];
+
+
+select bottomcount([Machine].Members, 3, [Measures].[Total Products]) on columns
+from [Max Min Manufacturing DM];
+
+
+select topcount([Product].Members, 5, [MEasures].[Total Products]) on columns,
+[Year].[2010] on rows
+from [Max Min Manufacturing DM];
+
+
+--aggregates--
+with
+	member [Measures].[Avg Per Month] as
+	round(sum(descendants([Date Hierarchy].CurrentMember, [Date]),
+	[Measures].[Total Products]) / 
+	count(descendants([Date Hierarchy].CurrentMember, [Date])), 0)
+
+select [year].Members on columns,
+[Product Type].Members on rows
+from [Max Min Manufacturing DM]
+where [Measures].[Avg Per Month];
+
+
+--axis(n)--
+select [Product Type].members on axis(0),
+[year].members on axis(1)
+from [max min manufacturing dm]
+where [measures].[total products];
+
+
