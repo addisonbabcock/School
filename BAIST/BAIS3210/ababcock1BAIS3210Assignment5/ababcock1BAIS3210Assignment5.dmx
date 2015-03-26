@@ -1,0 +1,57 @@
+
+SELECT
+  [Decision Trees - Children At Home].[Num Children At Home],
+  ('Homeowner = Y; Martial Status = N; Num Cars Owned = 2') as [Input Criteria]
+From
+  [Decision Trees - Children At Home]
+NATURAL PREDICTION JOIN
+(SELECT 'Y' AS [Homeowner],
+  'N' AS [Marital Status],
+  2 AS [Num Cars Owned]) AS t;
+
+
+
+SELECT
+  t.[Customer_Name],
+  t.[Address],
+  t.[City],
+  t.[State],
+  t.[ZipCode]
+From
+  [Decision Trees - Children At Home]
+PREDICTION JOIN
+  OPENQUERY([Max Min Sales DM],
+    'SELECT
+      [Customer_Name],
+      [Address],
+      [City],
+      [State],
+      [ZipCode],
+      [Homeowner],
+      [MaritalStatus],
+      [NumCarsOwned]
+    FROM
+      [dbo].[Customer]
+    ') AS t
+ON
+  [Decision Trees - Children At Home].[Homeowner] = t.[Homeowner] AND
+  [Decision Trees - Children At Home].[Marital Status] = t.[MaritalStatus] AND
+  [Decision Trees - Children At Home].[Num Cars Owned] = t.[NumCarsOwned]
+WHERE
+  [Decision Trees - Children At Home].[Num Children At Home] = 0;
+
+
+
+
+
+select [Num Children At Home]
+from [Decision Trees - Children At Home];
+
+
+select [Decision Trees - Children At Home].[Num Children At Home]
+from [Decision Trees - Children At Home]
+natural prediction join
+ (select 'Y' as [Homeowner],
+  'N' as [Marital Status],
+  '2' as [Num Cars Owned]) as t;
+
