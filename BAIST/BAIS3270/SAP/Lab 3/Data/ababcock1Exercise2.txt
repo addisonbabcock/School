@@ -1,0 +1,21 @@
+KxIndex	id	Gender	Salary	Marital	CheckingAccount	NumberOfSavingsAccounts	PersonalAccount	Mortgage	PensionPlan	Region	Status	rr_Status
+1		Female	35092	Single	"No Checking Account"	1	"No Personal Account"	"No Mortgage"	"No Penson Plan 3"	City	0	0.46406929509725969
+2		Male	60170.199999999997	Married	"No Checking Account"	3	"Personal Account"	"Variable Mortgage"	"Pension Plan 3"	Village	1	-0.18886387340223582
+3		Female	33150.800000000003	Married	"Checking Account"	0	"Personal Account 60 plus"	"No Mortgage"	"Pension Plan 3"	City	1	-0.22163678639531731
+4		Female	40750.800000000003	Married	"No Checking Account"	3	"Personal Account"	"No Mortgage"	"No Pension Plan 3"	Village	1	-0.22183505891543207
+5		Female	101152.60000000001	Married	"Checking Account"	0	"No Personal Account"	"No Mortgage"	"No Pension Plan 3"	Land	1	0.018283233522391432
+6		Female	75739.199999999997	Married	"Checking Account"	2	"Personal Account"	"No Mortgage"	"No Pension Plan 3"	Village	0	-0.059957794479754592
+7		Male	17754.139999999999	Single	"No Checking Account"	0	"Personal Account"	"No Mortgage"	"No Pension Plan 3"	Land	0	-0.020942926014103719
+8		Male	49893.199999999997	Married	"Checking Account"	0	"Personal Account"	"No Mortgage"	"Pension Plan 3"	Village	1	-0.20576003197163142
+9		Female	50608.599999999999	Married	"No Checking Account"	2	"No Personal Account"	"No Mortgage"	"Pension Plan 3"	Suburban	1	0.0011107629938431063
+10		Male	48424.199999999997	Married	"Checking Account"	2	"Personal Account"	"No Mortgage"	"Pension Plan 3"	Village	1	-0.17170679982903328
+11		Female	119607.8	Married	"Checking Account"	0	"Personal Account 60 plus"	"No Mortgage"	"No Pension Plan 3"	Village	1	0.16850108510422335
+12		Female	53317.599999999999	Single	"Checking Account"	0	"Personal Account"	Mortgage	"Pension Plan 3"	City	1	-0.1083619563002087
+13		Female	31471.599999999999	Married	"Checking Account"	1	"Personal Account"	"Variable Mortgage"	"No Pension Plan 3"	Village	0	0.12182321121049658
+14		Female	110409.39999999999	Married	"Checking Account"	1	"Personal Account"	"Variable Mortgage"	"Pension Plan 3"	Village	0	0.52466881265237031
+15		Male	38949.199999999997	Married	"Checking Account"	0	"Personal Account"	"Variable Mortgage"	"No Pension Plan 3"	Land	1	-0.094982874041349655
+16		Female	44684.199999999997	Married	"Checking Account"	0	"Personal Account"	Mortgage	"Pension Plan 3"	City	1	-0.20619782435142703
+17		Female	35459.599999999999	Married	"No Checking Account"	2	"No Personal Account"	Mortgage	"No Pension Plan 3"	Village	1	-0.076185659193217861
+18		Female	82032	Married	"Checking Account"	0	"No Personal Account"	Mortgage	"No Pension Plan 3"	Suburban	1	-0.03701789178534963
+19		Female	53818.400000000001	Married	"Checking Account"	0	"No Personal Account"	"No Mortgage"	"No Pension Plan 3"	City	0	-0.25111818286713272
+20		Male	45045.599999999999	Married	"Checking Account"	0	"Personal Account"	"No Mortgage"	"Pension Plan 3"	Village	1	-0.17805364851548908

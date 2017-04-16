@@ -1,0 +1,2 @@
+Name	Version	InfoName	InfoType	InfoStorage	InfoValue
+Claim_AutoInsuranceRisk_training	1	ExtName1	ExternalSpace	string	KxOlapCube1.txt

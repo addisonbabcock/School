@@ -1,0 +1,1201 @@
+id,Gender,Salary,Marital,CheckingAccount,NumberOfSavingsAccounts,PersonalAccount,Mortgage,PensionPlan,Region,Status
+13101,Female,38962.6,Single,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,0
+13102,Male,39127.6,Single,No Checking Account,3,No Personal Account,Mortgage,Pension Plan 3,Land,1
+13103,Male,77196.8,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13104,Male,41508.6,Single,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+13105,Female,27729.2,Married,Checking Account,3,Personal Account 60 plus,No Mortgage,No Pension Plan 3,City,0
+13106,Male,73198,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+13107,Male,91712.2,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13108,Male,44724.6,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13109,Female,43968,Married,No Checking Account,1,Personal Account 60 plus,No Mortgage,Pension Plan 3,Suburban,0
+13110,Male,22146,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13111,Female,36317,Single,No Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+13112,Male,14608.4,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+13113,Female,116184,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+13114,Female,33037.2,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+13115,Female,92923,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Suburban,1
+13116,Male,40117.4,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,1
+13117,Male,25066.4,Single,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,1
+13118,Male,45697,Married,No Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+13119,Female,51398.8,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+13120,Male,43225.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+13121,Male,97901.8,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+13122,Male,82876,Single,Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+13123,Male,22822,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,1
+13124,Female,87881.2,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,1
+13125,Male,34479,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13126,Female,60977.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+13127,Female,59732.6,Married,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13128,Female,64368.8,Married,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,0
+13129,Female,34617.4,Married,No Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+13130,Male,55727.8,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Land,1
+13131,Male,57841.2,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+13132,Female,116734.6,Married,Checking Account,1,Personal Account 60 plus,No Mortgage,Pension Plan 3,Village,0
+13133,Male,33698.6,Single,Checking Account,0,Personal Account 60 plus,Mortgage,Pension Plan 3,Village,1
+13134,Female,56277,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,0
+13135,Male,46076.4,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,1
+13136,Male,23473.8,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,1
+13137,Male,32959,Married,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,City,0
+13138,Female,62831.4,Single,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,0
+13139,Female,24234.6,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13140,Male,30834.2,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,1
+13141,Male,58829.2,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,0
+13142,Male,89364.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13143,Female,72562,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13144,Male,66605.6,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,0
+13145,Female,31594.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+13146,Male,63729.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13147,Female,87439,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13148,Female,61599,Married,No Checking Account,2,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Village,0
+13149,Male,97943.2,Married,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+13150,Female,68122.8,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+13151,Male,57877.2,Married,No Checking Account,3,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,1
+13152,Male,77080,Single,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Village,1
+13153,Female,54090.2,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13154,Female,102568.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,1
+13155,Male,32704.4,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+13156,Female,23732.8,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13157,Female,26535.2,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+13158,Female,123109.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13159,Male,27400.4,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13160,Male,93927.8,Married,Checking Account,1,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Village,0
+13161,Male,46951.2,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+13162,Female,49108.2,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,1
+13163,Female,36100,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+13164,Female,30475.2,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13165,Male,41110,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13166,Female,56843.4,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,1
+13167,Male,43753,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13168,Female,25620.4,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13169,Male,30218.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13170,Male,74829.4,Single,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+13171,Female,83043.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+13172,Female,50745.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13173,Male,42279.6,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,1
+13174,Female,55515.2,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+13175,Female,45356.2,Single,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+13176,Female,24357,Married,Checking Account,2,Personal Account 60 plus,Mortgage,No Pension Plan 3,Village,1
+13177,Male,52213.4,Single,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+13178,Male,54835.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+13179,Male,46674.4,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Village,1
+13180,Male,86791,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13181,Male,23072.4,Married,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Land,1
+13182,Male,89317.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+13183,Male,65525,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,1
+13184,Male,32807.6,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+13185,Female,42369.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+13186,Female,99834.6,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+13187,Female,43247.6,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+13188,Male,33251.8,Married,No Checking Account,1,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Land,0
+13189,Female,28029,Married,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13190,Male,40818.6,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+13191,Female,63342.6,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,0
+13192,Female,34298.4,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13193,Female,55512.6,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Village,0
+13194,Male,81899.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13195,Female,87486.4,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+13196,Male,76919.8,Married,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+13197,Male,81945.8,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,0
+13198,Male,93175.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13199,Female,87599.2,Single,Checking Account,0,Personal Account 60 plus,Mortgage,No Pension Plan 3,Village,1
+13200,Female,37824.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13201,Female,55531.6,Married,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,City,1
+13202,Female,66014.6,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+13203,Female,52650.6,Married,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+13204,Female,30616.4,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+13205,Female,119611.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+13206,Female,57316.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+13207,Female,46350,Married,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+13208,Female,23190.8,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+13209,Male,100819.8,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+13210,Female,22430.6,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,0
+13211,Female,26655.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13212,Male,32177.6,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13213,Female,87886,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+13214,Female,29010.6,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+13215,Male,67772.8,Single,Checking Account,0,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,0
+13216,Female,33325,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13217,Female,40525.2,Single,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,0
+13218,Male,67230.8,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+13219,Female,44014.2,Single,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13220,Female,57962.2,Married,Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+13221,Female,24327.8,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+13222,Female,34495.4,Married,Checking Account,2,Personal Account 60 plus,No Mortgage,Pension Plan 3,Village,1
+13223,Male,25367.2,Single,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Suburban,1
+13224,Female,32582,Married,Checking Account,0,No Personal Account,Variable Mortgage,Pension Plan 3,Village,1
+13225,Male,37414.6,Married,Checking Account,0,Personal Account 60 plus,Mortgage,Pension Plan 3,Suburban,0
+13226,Female,38653.8,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13227,Male,29023.6,Single,Checking Account,2,No Personal Account,Variable Mortgage,No Pension Plan 3,City,1
+13228,Female,21344,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,1
+13229,Female,51661,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13230,Male,86999,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13231,Male,118350.2,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13232,Female,55285.8,Single,No Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+13233,Male,60135,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13234,Male,59428.8,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+13235,Female,27900.8,Single,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,1
+13236,Male,20145.2,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13237,Female,75701.2,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13238,Female,114352.8,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+13239,Female,77568,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13240,Male,20383.6,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+13241,Female,43642.8,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,0
+13242,Male,74778,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+13243,Male,29255.8,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+13244,Male,97541,Married,Checking Account,1,Personal Account 60 plus,Mortgage,Pension Plan 3,Suburban,0
+13245,Male,42192.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+13246,Male,72513.8,Single,No Checking Account,0,Personal Account,Variable Mortgage,No Pension Plan 3,City,0
+13247,Female,30563.6,Single,No Checking Account,0,No Personal Account,Variable Mortgage,Pension Plan 3,City,0
+13248,Male,18633.96,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+13249,Male,41472.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+13250,Female,105325,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+13251,Female,16040.38,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,1
+13252,Male,64490.8,Married,No Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13253,Male,82214.4,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+13254,Female,78716.6,Married,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,1
+13255,Female,72191.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+13256,Female,15447.86,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+13257,Female,37131.6,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Land,0
+13258,Male,50265.8,Married,No Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Land,1
+13259,Female,62581.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13260,Female,49716.8,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+13261,Male,32797.6,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13262,Female,46575.8,Single,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+13263,Female,101795.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+13264,Female,44893,Single,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+13265,Male,46184.2,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,0
+13266,Male,49735.2,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+13267,Male,44469.4,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+13268,Female,34742.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+13269,Female,59148,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+13270,Male,35888.4,Single,Checking Account,1,Personal Account,Variable Mortgage,Pension Plan 3,City,0
+13271,Female,67331,Single,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13272,Male,72332.4,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+13273,Female,55425.8,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13274,Male,44801.4,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+13275,Female,56939.8,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13276,Male,60976,Married,Checking Account,0,Personal Account,Variable Mortgage,No Pension Plan 3,Village,1
+13277,Female,38320.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13278,Male,90685,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+13279,Male,12588.42,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+13280,Female,50255.4,Married,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+13281,Male,103758.6,Married,Checking Account,2,No Personal Account,Mortgage,Pension Plan 3,Suburban,0
+13282,Male,25289.8,Married,No Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,1
+13283,Female,43968.8,Single,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13284,Female,58186.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13285,Male,47056.8,Married,Checking Account,1,Personal Account 60 plus,Variable Mortgage,No Pension Plan 3,Village,0
+13286,Male,19033.82,Single,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+13287,Male,36729.8,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13288,Female,62547.6,Single,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+13289,Male,99347.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+13290,Male,25246.8,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+13291,Male,47637.2,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+13292,Female,62947.8,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,0
+13293,Male,40536,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13294,Male,102834,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13295,Female,61943.6,Married,Checking Account,3,Personal Account,Variable Mortgage,Pension Plan 3,Land,1
+13296,Female,94050,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+13297,Female,19344.5,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13298,Female,31952.6,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+13299,Male,29423.6,Married,Checking Account,0,No Personal Account,Variable Mortgage,No Pension Plan 3,City,1
+13300,Male,53343.2,Single,No Checking Account,0,Personal Account,Variable Mortgage,Pension Plan 3,Village,0
+12101,Female,35092,Single,No Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12102,Male,60170.2,Married,No Checking Account,3,Personal Account,Variable Mortgage,Pension Plan 3,Village,1
+12103,Female,33150.8,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,1
+12104,Female,40750.8,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12105,Female,101152.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12106,Female,75739.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12107,Male,17754.14,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12108,Male,49893.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12109,Female,50608.6,Married,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12110,Male,48424.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12111,Female,119607.8,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Village,1
+12112,Female,53317.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12113,Female,31471.6,Married,Checking Account,1,Personal Account,Variable Mortgage,No Pension Plan 3,Village,0
+12114,Female,110409.4,Married,Checking Account,1,Personal Account,Variable Mortgage,Pension Plan 3,Village,0
+12115,Male,38949.2,Married,Checking Account,0,Personal Account,Variable Mortgage,No Pension Plan 3,Land,1
+12116,Female,44684.2,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12117,Female,35459.6,Married,No Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+12118,Female,82032,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Suburban,1
+12119,Female,53818.4,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12120,Male,45045.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12121,Male,115761.4,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12122,Male,32994.6,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12123,Male,76893.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12124,Female,31077.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12125,Male,25280.6,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12126,Male,82068,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12127,Male,41619.4,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12128,Female,40228,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12129,Female,58718.2,Single,No Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+12130,Male,48540.2,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12131,Female,45885.8,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12132,Female,32651.6,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12133,Male,46886.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12134,Female,59842.6,Single,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12135,Male,75043.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12136,Female,39736,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12137,Male,21906,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12138,Female,26762,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12139,Female,37008.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12140,Female,50783,Single,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12141,Male,53548.4,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,0
+12142,Female,53905.2,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12143,Male,111433,Single,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12144,Female,55143,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12145,Male,27480,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12146,Male,105341.2,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,0
+12147,Female,26567.8,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12148,Male,26213.2,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,0
+12149,Male,79095.6,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12150,Female,35734.6,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12151,Male,28619.4,Single,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+12152,Male,47789.6,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12153,Male,32519.4,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12154,Male,59588.2,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12155,Male,113685,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12156,Female,95671.6,Single,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12157,Female,49955,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12158,Male,46249.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12159,Female,30287.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12160,Male,50668.6,Single,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12161,Female,49526.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12162,Female,73178,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12163,Male,54045.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12164,Male,23400.8,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12165,Male,10028.42,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12166,Male,34780.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12167,Male,21722,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12168,Female,69785.8,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12169,Male,38806.2,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12170,Female,20883.8,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12171,Male,28129.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12172,Male,16125.46,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12173,Male,63964,Married,Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,0
+12174,Female,46395,Married,Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12175,Female,105348,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12176,Female,71221,Single,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+12177,Female,53896,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12178,Male,98913.4,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12179,Female,29449,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12180,Female,69049.8,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12181,Female,44104.2,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12182,Male,55616.2,Single,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12183,Female,25182.8,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12184,Male,32788.8,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12185,Male,48052.2,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+12186,Male,63366.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12187,Female,31050,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12188,Female,45124.4,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12189,Male,31697.4,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,1
+12190,Female,62191.2,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12191,Male,49629,Married,No Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+12192,Female,50858.6,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12193,Female,69733,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12194,Male,85158.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12195,Female,82254.8,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12196,Female,19980.22,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12197,Male,15897.24,Married,No Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12198,Male,61741.6,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,0
+12199,Female,24251.6,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12200,Female,30697.8,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12201,Male,53415.8,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12202,Female,23208.8,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12203,Male,30999.8,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12204,Male,66177,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12205,Female,69027.2,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12206,Male,64791,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12207,Male,93266,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12208,Male,26079.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12209,Male,25363.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12210,Female,48063,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12211,Male,74661,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12212,Male,50666.4,Married,No Checking Account,3,No Personal Account,Mortgage,Pension Plan 3,City,1
+12213,Female,74188.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12214,Male,67261.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12215,Male,86456.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12216,Female,95593.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12217,Female,43460.6,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12218,Male,20088.2,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,City,1
+12219,Male,34540.2,Single,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12220,Female,91530,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12221,Male,59051,Single,Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,Land,1
+12222,Female,109727.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12223,Female,41598,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+12224,Female,66056.6,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12225,Male,90063.8,Single,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+12226,Male,78021.6,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12227,Female,50515.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12228,Female,85207.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12229,Male,28185.4,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12230,Female,42700.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12231,Male,46492.8,Single,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12232,Male,83219,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12233,Female,33432.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12234,Female,72872.8,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12235,Female,119007.6,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,0
+12236,Female,62669.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12237,Female,28097.8,Married,No Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12238,Female,78410.6,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12239,Female,84347.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12240,Female,110526,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12241,Male,74190.4,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12242,Female,45582.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12243,Female,34481.2,Married,No Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,Village,1
+12244,Male,97949.6,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12245,Male,37846,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12246,Male,102408.4,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12247,Male,40472.4,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12248,Female,37720.6,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12249,Male,51465,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12250,Female,56480.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12251,Male,56387.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12252,Male,72865.6,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12253,Male,109237.6,Married,Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+12254,Male,49521.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12255,Male,46712.2,Single,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12256,Female,16287.5,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12257,Male,52925,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12258,Male,40934.6,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12259,Female,43012.4,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12260,Female,30630.6,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12261,Male,37751.4,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12262,Female,25954.4,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12263,Female,41417,Single,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12264,Female,15098.76,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12265,Female,49808,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12266,Male,48143.6,Married,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Land,0
+12267,Male,19179.82,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12268,Male,17125.72,Single,No Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12269,Female,53415,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12270,Male,68041,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12271,Male,98351.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12272,Male,39452.6,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12273,Male,48693.2,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12274,Male,53998.8,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12275,Female,83116.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12276,Female,112680.6,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12277,Male,75117,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12278,Female,60198.6,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12279,Male,30509.6,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12280,Male,72172.2,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12281,Female,35310,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12282,Male,113317.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12283,Female,75413,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12284,Female,37032,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12285,Female,59244,Single,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,City,1
+12286,Male,65339.8,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Land,0
+12287,Female,36551,Married,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12288,Female,68820,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12289,Male,69733.8,Married,No Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12290,Female,43593.2,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12291,Female,126260.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12292,Male,29992.8,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12293,Female,98049.8,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12294,Male,32499.6,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12295,Male,72384.2,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12296,Male,35679.8,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12297,Female,37604.8,Single,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+12298,Male,97440.6,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12299,Male,29171.8,Single,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12300,Female,41638,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12301,Male,52155.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12302,Female,83254.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12303,Male,33954.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12304,Male,38025.6,Single,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12305,Male,25529.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12306,Male,28777.2,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12307,Male,118818.2,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12308,Female,29920.4,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12309,Male,79333.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12310,Male,41543.8,Single,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12311,Male,48948.2,Single,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12312,Male,66247.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12313,Male,28866.8,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12314,Male,26351,Single,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12315,Male,19648.74,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12316,Male,35220.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12317,Female,30312.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12318,Female,63548.2,Married,Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+12319,Male,63387,Single,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12320,Female,57197.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12321,Female,52523.4,Single,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12322,Male,84248.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12323,Female,78617.4,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12324,Female,87060,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12325,Male,99748.8,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12326,Female,54869.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12327,Male,100949.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12328,Male,49776.4,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12329,Male,56043.2,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,0
+12330,Male,24559,Single,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12331,Female,60378.8,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12332,Male,57938.8,Single,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,1
+12333,Male,28117,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12334,Female,60808.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12335,Female,82876.4,Single,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12336,Female,33422.6,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12337,Male,104511.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12338,Female,35733.8,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12339,Female,36135,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12340,Male,25647.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12341,Female,22598.6,Married,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12342,Female,112062.2,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12343,Male,70527,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12344,Female,39936.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12345,Male,55651,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12346,Male,75547.8,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,1
+12347,Female,15212.5,Single,No Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12348,Male,42768.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12349,Male,40694,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12350,Male,42664.6,Married,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12351,Male,115343.4,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12352,Female,72115.6,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+12353,Male,28581,Married,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12354,Female,35765.8,Married,No Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12355,Female,21258.2,Single,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12356,Female,48525.6,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12357,Female,52195.8,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12358,Female,46742,Married,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12359,Female,42991.2,Single,No Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12360,Male,24333.8,Single,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12361,Male,34360.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12362,Female,57764.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,0
+12363,Female,43224.4,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12364,Female,92716.8,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12365,Male,38332,Single,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12366,Male,35843.6,Married,No Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12367,Male,66458,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12368,Female,60792.2,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12369,Female,69250.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12370,Male,33345.6,Single,No Checking Account,3,Personal Account,Mortgage,Pension Plan 3,Village,1
+12371,Female,121495,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12372,Female,112788.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12373,Male,26472.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12374,Male,56818.8,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12375,Female,54113,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12376,Male,18725.16,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,0
+12377,Female,57405.4,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12378,Male,44732.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12379,Female,48955,Single,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Land,1
+12380,Male,73944.8,Married,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,0
+12381,Male,44655.6,Married,No Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12382,Female,31220.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12383,Male,108629,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12384,Female,78351.6,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,City,1
+12385,Female,27478,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12386,Male,18971.68,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12387,Male,49351.4,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12388,Female,56507.2,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12389,Male,28273,Married,Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12390,Female,74324.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12391,Male,27038.4,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12392,Female,78507.2,Single,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12393,Male,92647.6,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Land,0
+12394,Female,41901.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12395,Male,44991.4,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+12396,Male,65097.8,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12397,Female,49166.8,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Land,1
+12398,Male,17278.48,Married,No Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12399,Female,34279,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12400,Female,27335.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12401,Female,16324.84,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,1
+12402,Female,30699.2,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12403,Female,58462.8,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12404,Male,82924.6,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12405,Female,114796.2,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12406,Female,23041.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12407,Male,104234.6,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12408,Male,52562.8,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12409,Male,51366.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12410,Female,23841.4,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12411,Male,61317.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12412,Male,73292.8,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12413,Female,61520.8,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12414,Female,32219.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12415,Female,36073.4,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+12416,Male,85256.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,1
+12417,Male,44220.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12418,Female,75378.2,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,0
+12419,Female,46343.6,Single,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12420,Male,43902.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,1
+12421,Male,76206.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12422,Male,45765.8,Married,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Land,0
+12423,Female,22087.4,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,Village,1
+12424,Male,48055.2,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12425,Male,56990.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12426,Female,18930.42,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12427,Male,69704.6,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12428,Male,42536.8,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+12429,Female,101698.4,Single,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Land,0
+12430,Female,37111.8,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12431,Female,105539.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12432,Female,23202.8,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12433,Female,59083.4,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12434,Male,35722,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12435,Female,42084,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12436,Male,53376.2,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+12437,Male,53801.2,Married,No Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12438,Male,76161.8,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,1
+12439,Male,75108.2,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Suburban,0
+12440,Male,36369.2,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+12441,Female,57729.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12442,Male,96692.2,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+12443,Male,106208.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12444,Female,38833.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12445,Male,47276.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12446,Female,84756.4,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12447,Male,79490.6,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Land,1
+12448,Female,90379.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12449,Male,75861.8,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12450,Female,48084,Single,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12451,Female,62414.2,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12452,Male,48848.6,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12453,Female,49215.6,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12454,Male,86114,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12455,Female,60397,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,0
+12456,Female,100372.2,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Land,0
+12457,Female,45832.2,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12458,Male,19185.46,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12459,Female,68507.2,Single,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12460,Female,45584.6,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12461,Female,103241.6,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12462,Male,39837.8,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12463,Male,59250.2,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12464,Female,25098,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12465,Female,102598.6,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12466,Male,34729.6,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12467,Female,59733.8,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12468,Male,95500.4,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12469,Male,22563,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12470,Male,68147.6,Married,Checking Account,3,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12471,Male,93740.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12472,Female,76907.4,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12473,Female,15512.72,Single,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12474,Female,56827.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12475,Female,94397.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12476,Male,41732.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12477,Female,66408.6,Single,No Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+12478,Male,49647,Single,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12479,Male,35973.6,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12480,Female,19819.64,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12481,Female,53085.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12482,Female,65167,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12483,Male,29213.2,Married,No Checking Account,1,Personal Account 60 plus,No Mortgage,No Pension Plan 3,City,1
+12484,Female,69673.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12485,Female,53841.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12486,Female,76496.6,Single,No Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+12487,Male,31378.2,Single,No Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,City,1
+12488,Male,60315.4,Single,No Checking Account,1,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,0
+12489,Male,29284.4,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12490,Female,31866.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12491,Female,88576.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12492,Male,44394.2,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12493,Female,76496.6,Married,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+12494,Female,44106.4,Married,Checking Account,2,Personal Account 60 plus,Mortgage,Pension Plan 3,City,1
+12495,Female,50937,Single,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,0
+12496,Female,46971.8,Married,No Checking Account,3,Personal Account 60 plus,Mortgage,Pension Plan 3,Village,1
+12497,Male,51537.2,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12498,Male,68364.4,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12499,Female,114889,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12500,Male,76119.6,Married,Checking Account,0,Personal Account 60 plus,Mortgage,Pension Plan 3,Village,1
+12501,Female,38962.6,Single,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,0
+12502,Male,39127.6,Single,No Checking Account,3,No Personal Account,Mortgage,Pension Plan 3,Land,1
+12503,Male,77196.8,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12504,Male,41508.6,Single,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12505,Female,27729.2,Married,Checking Account,3,Personal Account 60 plus,No Mortgage,No Pension Plan 3,City,0
+12506,Male,73198,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12507,Male,91712.2,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12508,Male,44724.6,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12509,Female,43968,Married,No Checking Account,1,Personal Account 60 plus,No Mortgage,Pension Plan 3,Suburban,0
+12510,Male,22146,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12511,Female,36317,Single,No Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12512,Male,14608.4,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12513,Female,116184,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12514,Female,33037.2,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12515,Female,92923,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Suburban,1
+12516,Male,40117.4,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12517,Male,25066.4,Single,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12518,Male,45697,Married,No Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+12519,Female,51398.8,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12520,Male,43225.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12521,Male,97901.8,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12522,Male,82876,Single,Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12523,Male,22822,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,1
+12524,Female,87881.2,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,1
+12525,Male,34479,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12526,Female,60977.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12527,Female,59732.6,Married,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12528,Female,64368.8,Married,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12529,Female,34617.4,Married,No Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12530,Male,55727.8,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12531,Male,57841.2,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+12532,Female,116734.6,Married,Checking Account,1,Personal Account 60 plus,No Mortgage,Pension Plan 3,Village,0
+12533,Male,33698.6,Single,Checking Account,0,Personal Account 60 plus,Mortgage,Pension Plan 3,Village,1
+12534,Female,56277,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,0
+12535,Male,46076.4,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12536,Male,23473.8,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,1
+12537,Male,32959,Married,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,City,0
+12538,Female,62831.4,Single,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,0
+12539,Female,24234.6,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12540,Male,30834.2,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,1
+12541,Male,58829.2,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12542,Male,89364.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12543,Female,72562,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12544,Male,66605.6,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,0
+12545,Female,31594.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12546,Male,63729.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12547,Female,87439,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12548,Female,61599,Married,No Checking Account,2,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Village,0
+12549,Male,97943.2,Married,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+12550,Female,68122.8,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12551,Male,57877.2,Married,No Checking Account,3,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,1
+12552,Male,77080,Single,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Village,1
+12553,Female,54090.2,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12554,Female,102568.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,1
+12555,Male,32704.4,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12556,Female,23732.8,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12557,Female,26535.2,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12558,Female,123109.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12559,Male,27400.4,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12560,Male,93927.8,Married,Checking Account,1,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Village,0
+12561,Male,46951.2,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12562,Female,49108.2,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,1
+12563,Female,36100,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12564,Female,30475.2,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12565,Male,41110,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12566,Female,56843.4,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,1
+12567,Male,43753,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12568,Female,25620.4,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12569,Male,30218.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12570,Male,74829.4,Single,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12571,Female,83043.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12572,Female,50745.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12573,Male,42279.6,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12574,Female,55515.2,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12575,Female,45356.2,Single,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+12576,Female,24357,Married,Checking Account,2,Personal Account 60 plus,Mortgage,No Pension Plan 3,Village,1
+12577,Male,52213.4,Single,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12578,Male,54835.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12579,Male,46674.4,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12580,Male,86791,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12581,Male,23072.4,Married,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12582,Male,89317.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12583,Male,65525,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12584,Male,32807.6,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12585,Female,42369.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12586,Female,99834.6,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12587,Female,43247.6,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+12588,Male,33251.8,Married,No Checking Account,1,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Land,0
+12589,Female,28029,Married,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12590,Male,40818.6,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12591,Female,63342.6,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,0
+12592,Female,34298.4,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12593,Female,55512.6,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Village,0
+12594,Male,81899.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12595,Female,87486.4,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12596,Male,76919.8,Married,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12597,Male,81945.8,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,0
+12598,Male,93175.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12599,Female,87599.2,Single,Checking Account,0,Personal Account 60 plus,Mortgage,No Pension Plan 3,Village,1
+12600,Female,37824.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12601,Female,55531.6,Married,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12602,Female,66014.6,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12603,Female,52650.6,Married,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+12604,Female,30616.4,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12605,Female,119611.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12606,Female,57316.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12607,Female,46350,Married,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12608,Female,23190.8,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12609,Male,100819.8,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12610,Female,22430.6,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12611,Female,26655.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12612,Male,32177.6,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12613,Female,87886,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12614,Female,29010.6,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12615,Male,67772.8,Single,Checking Account,0,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,0
+12616,Female,33325,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12617,Female,40525.2,Single,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12618,Male,67230.8,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+12619,Female,44014.2,Single,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12620,Female,57962.2,Married,Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+12621,Female,24327.8,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12622,Female,34495.4,Married,Checking Account,2,Personal Account 60 plus,No Mortgage,Pension Plan 3,Village,1
+12623,Male,25367.2,Single,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Suburban,1
+12624,Female,32582,Married,Checking Account,0,No Personal Account,Variable Mortgage,Pension Plan 3,Village,1
+12625,Male,37414.6,Married,Checking Account,0,Personal Account 60 plus,Mortgage,Pension Plan 3,Suburban,0
+12626,Female,38653.8,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12627,Male,29023.6,Single,Checking Account,2,No Personal Account,Variable Mortgage,No Pension Plan 3,City,1
+12628,Female,21344,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12629,Female,51661,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12630,Male,86999,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12631,Male,118350.2,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12632,Female,55285.8,Single,No Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12633,Male,60135,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12634,Male,59428.8,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12635,Female,27900.8,Single,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,1
+12636,Male,20145.2,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12637,Female,75701.2,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12638,Female,114352.8,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12639,Female,77568,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12640,Male,20383.6,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+12641,Female,43642.8,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,0
+12642,Male,74778,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12643,Male,29255.8,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12644,Male,97541,Married,Checking Account,1,Personal Account 60 plus,Mortgage,Pension Plan 3,Suburban,0
+12645,Male,42192.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12646,Male,72513.8,Single,No Checking Account,0,Personal Account,Variable Mortgage,No Pension Plan 3,City,0
+12647,Female,30563.6,Single,No Checking Account,0,No Personal Account,Variable Mortgage,Pension Plan 3,City,0
+12648,Male,18633.96,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12649,Male,41472.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12650,Female,105325,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+12651,Female,16040.38,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,1
+12652,Male,64490.8,Married,No Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12653,Male,82214.4,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12654,Female,78716.6,Married,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,1
+12655,Female,72191.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12656,Female,15447.86,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12657,Female,37131.6,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Land,0
+12658,Male,50265.8,Married,No Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Land,1
+12659,Female,62581.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12660,Female,49716.8,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12661,Male,32797.6,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12662,Female,46575.8,Single,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12663,Female,101795.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12664,Female,44893,Single,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12665,Male,46184.2,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,0
+12666,Male,49735.2,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+12667,Male,44469.4,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12668,Female,34742.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12669,Female,59148,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12670,Male,35888.4,Single,Checking Account,1,Personal Account,Variable Mortgage,Pension Plan 3,City,0
+12671,Female,67331,Single,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12672,Male,72332.4,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12673,Female,55425.8,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12674,Male,44801.4,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12675,Female,56939.8,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12676,Male,60976,Married,Checking Account,0,Personal Account,Variable Mortgage,No Pension Plan 3,Village,1
+12677,Female,38320.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12678,Male,90685,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12679,Male,12588.42,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12680,Female,50255.4,Married,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+12681,Male,103758.6,Married,Checking Account,2,No Personal Account,Mortgage,Pension Plan 3,Suburban,0
+12682,Male,25289.8,Married,No Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,1
+12683,Female,43968.8,Single,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12684,Female,58186.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12685,Male,47056.8,Married,Checking Account,1,Personal Account 60 plus,Variable Mortgage,No Pension Plan 3,Village,0
+12686,Male,19033.82,Single,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12687,Male,36729.8,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12688,Female,62547.6,Single,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12689,Male,99347.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12690,Male,25246.8,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12691,Male,47637.2,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12692,Female,62947.8,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,0
+12693,Male,40536,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12694,Male,102834,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12695,Female,61943.6,Married,Checking Account,3,Personal Account,Variable Mortgage,Pension Plan 3,Land,1
+12696,Female,94050,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12697,Female,19344.5,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12698,Female,31952.6,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12699,Male,29423.6,Married,Checking Account,0,No Personal Account,Variable Mortgage,No Pension Plan 3,City,1
+12700,Male,53343.2,Single,No Checking Account,0,Personal Account,Variable Mortgage,Pension Plan 3,Village,0
+12701,Female,35092,Single,No Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12702,Male,60170.2,Married,No Checking Account,3,Personal Account,Variable Mortgage,Pension Plan 3,Village,1
+12703,Female,33150.8,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,1
+12704,Female,40750.8,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12705,Female,101152.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12706,Female,75739.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12707,Male,17754.14,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12708,Male,49893.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12709,Female,50608.6,Married,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12710,Male,48424.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12711,Female,119607.8,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Village,1
+12712,Female,53317.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12713,Female,31471.6,Married,Checking Account,1,Personal Account,Variable Mortgage,No Pension Plan 3,Village,0
+12714,Female,110409.4,Married,Checking Account,1,Personal Account,Variable Mortgage,Pension Plan 3,Village,0
+12715,Male,38949.2,Married,Checking Account,0,Personal Account,Variable Mortgage,No Pension Plan 3,Land,1
+12716,Female,44684.2,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12717,Female,35459.6,Married,No Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+12718,Female,82032,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Suburban,1
+12719,Female,53818.4,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12720,Male,45045.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12721,Male,115761.4,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12722,Male,32994.6,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12723,Male,76893.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12724,Female,31077.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12725,Male,25280.6,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12726,Male,82068,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12727,Male,41619.4,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12728,Female,40228,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12729,Female,58718.2,Single,No Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+12730,Male,48540.2,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12731,Female,45885.8,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12732,Female,32651.6,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12733,Male,46886.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12734,Female,59842.6,Single,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12735,Male,75043.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12736,Female,39736,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12737,Male,21906,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12738,Female,26762,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12739,Female,37008.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12740,Female,50783,Single,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12741,Male,53548.4,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,0
+12742,Female,53905.2,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12743,Male,111433,Single,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12744,Female,55143,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12745,Male,27480,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12746,Male,105341.2,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,0
+12747,Female,26567.8,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12748,Male,26213.2,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,0
+12749,Male,79095.6,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12750,Female,35734.6,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12751,Male,28619.4,Single,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+12752,Male,47789.6,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12753,Male,32519.4,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12754,Male,59588.2,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12755,Male,113685,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12756,Female,95671.6,Single,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12757,Female,49955,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12758,Male,46249.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12759,Female,30287.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12760,Male,50668.6,Single,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12761,Female,49526.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12762,Female,73178,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12763,Male,54045.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12764,Male,23400.8,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12765,Male,10028.42,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12766,Male,34780.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12767,Male,21722,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12768,Female,69785.8,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12769,Male,38806.2,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12770,Female,20883.8,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12771,Male,28129.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12772,Male,16125.46,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12773,Male,63964,Married,Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,0
+12774,Female,46395,Married,Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12775,Female,105348,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12776,Female,71221,Single,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+12777,Female,53896,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12778,Male,98913.4,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12779,Female,29449,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12780,Female,69049.8,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12781,Female,44104.2,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12782,Male,55616.2,Single,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12783,Female,25182.8,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12784,Male,32788.8,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12785,Male,48052.2,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+12786,Male,63366.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12787,Female,31050,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12788,Female,45124.4,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12789,Male,31697.4,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,1
+12790,Female,62191.2,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12791,Male,49629,Married,No Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+12792,Female,50858.6,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12793,Female,69733,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12794,Male,85158.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12795,Female,82254.8,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12796,Female,19980.22,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12797,Male,15897.24,Married,No Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12798,Male,61741.6,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,0
+12799,Female,24251.6,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12800,Female,30697.8,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12801,Male,53415.8,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12802,Female,23208.8,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12803,Male,30999.8,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12804,Male,66177,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12805,Female,69027.2,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12806,Male,64791,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12807,Male,93266,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12808,Male,26079.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12809,Male,25363.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12810,Female,48063,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12811,Male,74661,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12812,Male,50666.4,Married,No Checking Account,3,No Personal Account,Mortgage,Pension Plan 3,City,1
+12813,Female,74188.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12814,Male,67261.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12815,Male,86456.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12816,Female,95593.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12817,Female,43460.6,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12818,Male,20088.2,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,City,1
+12819,Male,34540.2,Single,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12820,Female,91530,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12821,Male,59051,Single,Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,Land,1
+12822,Female,109727.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12823,Female,41598,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+12824,Female,66056.6,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12825,Male,90063.8,Single,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+12826,Male,78021.6,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12827,Female,50515.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12828,Female,85207.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12829,Male,28185.4,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12830,Female,42700.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12831,Male,46492.8,Single,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12832,Male,83219,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12833,Female,33432.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12834,Female,72872.8,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12835,Female,119007.6,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Village,0
+12836,Female,62669.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12837,Female,28097.8,Married,No Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12838,Female,78410.6,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12839,Female,84347.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12840,Female,110526,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12841,Male,74190.4,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12842,Female,45582.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12843,Female,34481.2,Married,No Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,Village,1
+12844,Male,97949.6,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12845,Male,37846,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12846,Male,102408.4,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12847,Male,40472.4,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12848,Female,37720.6,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12849,Male,51465,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12850,Female,56480.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12851,Male,56387.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12852,Male,72865.6,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12853,Male,109237.6,Married,Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+12854,Male,49521.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12855,Male,46712.2,Single,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12856,Female,16287.5,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12857,Male,52925,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12858,Male,40934.6,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+12859,Female,43012.4,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12860,Female,30630.6,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12861,Male,37751.4,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+12862,Female,25954.4,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12863,Female,41417,Single,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12864,Female,15098.76,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12865,Female,49808,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12866,Male,48143.6,Married,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Land,0
+12867,Male,19179.82,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12868,Male,17125.72,Single,No Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,1
+12869,Female,53415,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12870,Male,68041,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12871,Male,98351.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12872,Male,39452.6,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12873,Male,48693.2,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12874,Male,53998.8,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12875,Female,83116.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12876,Female,112680.6,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12877,Male,75117,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12878,Female,60198.6,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12879,Male,30509.6,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12880,Male,72172.2,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12881,Female,35310,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12882,Male,113317.8,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12883,Female,75413,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12884,Female,37032,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12885,Female,59244,Single,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,City,1
+12886,Male,65339.8,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Land,0
+12887,Female,36551,Married,No Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12888,Female,68820,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12889,Male,69733.8,Married,No Checking Account,2,Personal Account,Mortgage,Pension Plan 3,City,1
+12890,Female,43593.2,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12891,Female,126260.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12892,Male,29992.8,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12893,Female,98049.8,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12894,Male,32499.6,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12895,Male,72384.2,Married,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Suburban,0
+12896,Male,35679.8,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,0
+12897,Female,37604.8,Single,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+12898,Male,97440.6,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12899,Male,29171.8,Single,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12900,Female,41638,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12901,Male,52155.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12902,Female,83254.2,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12903,Male,33954.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12904,Male,38025.6,Single,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+12905,Male,25529.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12906,Male,28777.2,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12907,Male,118818.2,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12908,Female,29920.4,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12909,Male,79333.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12910,Male,41543.8,Single,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12911,Male,48948.2,Single,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12912,Male,66247.4,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12913,Male,28866.8,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12914,Male,26351,Single,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12915,Male,19648.74,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12916,Male,35220.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12917,Female,30312.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+12918,Female,63548.2,Married,Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+12919,Male,63387,Single,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+12920,Female,57197.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12921,Female,52523.4,Single,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12922,Male,84248.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12923,Female,78617.4,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12924,Female,87060,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12925,Male,99748.8,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+12926,Female,54869.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12927,Male,100949.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+12928,Male,49776.4,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12929,Male,56043.2,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,0
+12930,Male,24559,Single,No Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12931,Female,60378.8,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+12932,Male,57938.8,Single,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,1
+12933,Male,28117,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12934,Female,60808.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12935,Female,82876.4,Single,Checking Account,3,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12936,Female,33422.6,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,City,0
+12937,Male,104511.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12938,Female,35733.8,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12939,Female,36135,Married,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12940,Male,25647.4,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12941,Female,22598.6,Married,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12942,Female,112062.2,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12943,Male,70527,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12944,Female,39936.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12945,Male,55651,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+12946,Male,75547.8,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,1
+12947,Female,15212.5,Single,No Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,City,1
+12948,Male,42768.8,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12949,Male,40694,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12950,Male,42664.6,Married,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12951,Male,115343.4,Single,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,1
+12952,Female,72115.6,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,Village,0
+12953,Male,28581,Married,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+12954,Female,35765.8,Married,No Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,Village,0
+12955,Female,21258.2,Single,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Land,1
+12956,Female,48525.6,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12957,Female,52195.8,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12958,Female,46742,Married,No Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12959,Female,42991.2,Single,No Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Village,1
+12960,Male,24333.8,Single,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12961,Male,34360.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+12962,Female,57764.6,Married,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,0
+12963,Female,43224.4,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12964,Female,92716.8,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+12965,Male,38332,Single,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12966,Male,35843.6,Married,No Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12967,Male,66458,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12968,Female,60792.2,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+12969,Female,69250.4,Married,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+12970,Male,33345.6,Single,No Checking Account,3,Personal Account,Mortgage,Pension Plan 3,Village,1
+12971,Female,121495,Single,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12972,Female,112788.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+12973,Male,26472.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12974,Male,56818.8,Married,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+12975,Female,54113,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+12976,Male,18725.16,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,0
+12977,Female,57405.4,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+12978,Male,44732.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+12979,Female,48955,Single,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Land,1
+12980,Male,73944.8,Married,No Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,0
+12981,Male,44655.6,Married,No Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+12982,Female,31220.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12983,Male,108629,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12984,Female,78351.6,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,City,1
+12985,Female,27478,Married,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12986,Male,18971.68,Married,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12987,Male,49351.4,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,0
+12988,Female,56507.2,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+12989,Male,28273,Married,Checking Account,1,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+12990,Female,74324.2,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Land,0
+12991,Male,27038.4,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,0
+12992,Female,78507.2,Single,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,City,0
+12993,Male,92647.6,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Land,0
+12994,Female,41901.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+12995,Male,44991.4,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+12996,Male,65097.8,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Village,1
+12997,Female,49166.8,Single,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Land,1
+12998,Male,17278.48,Married,No Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+12999,Female,34279,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+13000,Female,27335.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13001,Female,16324.84,Married,Checking Account,1,Personal Account,Mortgage,Pension Plan 3,City,1
+13002,Female,30699.2,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13003,Female,58462.8,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13004,Male,82924.6,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Land,1
+13005,Female,114796.2,Single,Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+13006,Female,23041.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,1
+13007,Male,104234.6,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+13008,Male,52562.8,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Land,0
+13009,Male,51366.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+13010,Female,23841.4,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13011,Male,61317.4,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13012,Male,73292.8,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13013,Female,61520.8,Single,No Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13014,Female,32219.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13015,Female,36073.4,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+13016,Male,85256.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Land,1
+13017,Male,44220.2,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+13018,Female,75378.2,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Village,0
+13019,Female,46343.6,Single,Checking Account,2,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+13020,Male,43902.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,1
+13021,Male,76206.8,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,0
+13022,Male,45765.8,Married,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Land,0
+13023,Female,22087.4,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,Village,1
+13024,Male,48055.2,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+13025,Male,56990.2,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13026,Female,18930.42,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+13027,Male,69704.6,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,City,0
+13028,Male,42536.8,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+13029,Female,101698.4,Single,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Land,0
+13030,Female,37111.8,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13031,Female,105539.8,Married,Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,Land,0
+13032,Female,23202.8,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,City,1
+13033,Female,59083.4,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13034,Male,35722,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13035,Female,42084,Married,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13036,Male,53376.2,Married,Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+13037,Male,53801.2,Married,No Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,City,1
+13038,Male,76161.8,Married,Checking Account,1,No Personal Account,Mortgage,Pension Plan 3,City,1
+13039,Male,75108.2,Married,Checking Account,2,Personal Account,Mortgage,Pension Plan 3,Suburban,0
+13040,Male,36369.2,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,City,0
+13041,Female,57729.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13042,Male,96692.2,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Land,0
+13043,Male,106208.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13044,Female,38833.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13045,Male,47276.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Land,1
+13046,Female,84756.4,Married,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+13047,Male,79490.6,Married,Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Land,1
+13048,Female,90379.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+13049,Male,75861.8,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,City,1
+13050,Female,48084,Single,No Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13051,Female,62414.2,Single,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,0
+13052,Male,48848.6,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+13053,Female,49215.6,Single,Checking Account,1,Personal Account,Mortgage,No Pension Plan 3,Land,1
+13054,Male,86114,Single,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13055,Female,60397,Married,No Checking Account,0,Personal Account,Mortgage,Pension Plan 3,Suburban,0
+13056,Female,100372.2,Married,Checking Account,2,Personal Account,Mortgage,No Pension Plan 3,Land,0
+13057,Female,45832.2,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Suburban,1
+13058,Male,19185.46,Single,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+13059,Female,68507.2,Single,No Checking Account,3,Personal Account,No Mortgage,Pension Plan 3,City,1
+13060,Female,45584.6,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,City,0
+13061,Female,103241.6,Single,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13062,Male,39837.8,Married,Checking Account,3,Personal Account,Mortgage,No Pension Plan 3,Village,1
+13063,Male,59250.2,Married,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13064,Female,25098,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13065,Female,102598.6,Married,Checking Account,1,No Personal Account,No Mortgage,Pension Plan 3,Village,0
+13066,Male,34729.6,Married,Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,City,0
+13067,Female,59733.8,Single,No Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,City,0
+13068,Male,95500.4,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+13069,Male,22563,Married,Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Village,1
+13070,Male,68147.6,Married,Checking Account,3,No Personal Account,Mortgage,No Pension Plan 3,City,1
+13071,Male,93740.8,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13072,Female,76907.4,Single,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13073,Female,15512.72,Single,No Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+13074,Female,56827.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13075,Female,94397.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Suburban,0
+13076,Male,41732.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,1
+13077,Female,66408.6,Single,No Checking Account,1,No Personal Account,Mortgage,No Pension Plan 3,Village,0
+13078,Male,49647,Single,No Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13079,Male,35973.6,Married,No Checking Account,0,Personal Account,Mortgage,No Pension Plan 3,Suburban,0
+13080,Female,19819.64,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13081,Female,53085.6,Single,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13082,Female,65167,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,City,1
+13083,Male,29213.2,Married,No Checking Account,1,Personal Account 60 plus,No Mortgage,No Pension Plan 3,City,1
+13084,Female,69673.6,Married,Checking Account,1,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13085,Female,53841.6,Married,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+13086,Female,76496.6,Single,No Checking Account,3,Personal Account,Mortgage,Pension Plan 3,City,1
+13087,Male,31378.2,Single,No Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,City,1
+13088,Male,60315.4,Single,No Checking Account,1,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,0
+13089,Male,29284.4,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,City,0
+13090,Female,31866.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,1
+13091,Female,88576.6,Married,Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,City,1
+13092,Male,44394.2,Single,No Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,0
+13093,Female,76496.6,Married,Checking Account,3,No Personal Account,No Mortgage,Pension Plan 3,Village,1
+13094,Female,44106.4,Married,Checking Account,2,Personal Account 60 plus,Mortgage,Pension Plan 3,City,1
+13095,Female,50937,Single,No Checking Account,0,No Personal Account,Mortgage,Pension Plan 3,Suburban,0
+13096,Female,46971.8,Married,No Checking Account,3,Personal Account 60 plus,Mortgage,Pension Plan 3,Village,1
+13097,Male,51537.2,Married,Checking Account,0,No Personal Account,No Mortgage,Pension Plan 3,Land,1
+13098,Male,68364.4,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13099,Female,114889,Single,Checking Account,1,Personal Account,No Mortgage,No Pension Plan 3,City,0
+13100,Male,76119.6,Married,Checking Account,0,Personal Account 60 plus,Mortgage,Pension Plan 3,Village,1

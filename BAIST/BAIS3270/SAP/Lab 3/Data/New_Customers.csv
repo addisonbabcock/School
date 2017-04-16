@@ -1,0 +1,21 @@
+Gender,Salary,Marital,CheckingAccount,NumberOfSavingsAccounts,PersonalAccount,Mortgage,PensionPlan,Region,Status
+Female,35092,Single,No Checking Account,1,No Personal Account,No Mortgage,No Penson Plan 3,City,0
+Male,60170.2,Married,No Checking Account,3,Personal Account,Variable Mortgage,Pension Plan 3,Village,1
+Female,33150.8,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,Pension Plan 3,City,1
+Female,40750.8,Married,No Checking Account,3,Personal Account,No Mortgage,No Pension Plan 3,Village,1
+Female,101152.6,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,Land,1
+Female,75739.2,Married,Checking Account,2,Personal Account,No Mortgage,No Pension Plan 3,Village,0
+Male,17754.14,Single,No Checking Account,0,Personal Account,No Mortgage,No Pension Plan 3,Land,0
+Male,49893.2,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1
+Female,50608.6,Married,No Checking Account,2,No Personal Account,No Mortgage,Pension Plan 3,Suburban,1
+Male,48424.2,Married,Checking Account,2,Personal Account,No Mortgage,Pension Plan 3,Village,1
+Female,119607.8,Married,Checking Account,0,Personal Account 60 plus,No Mortgage,No Pension Plan 3,Village,1
+Female,53317.6,Single,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+Female,31471.6,Married,Checking Account,1,Personal Account,Variable Mortgage,No Pension Plan 3,Village,0
+Female,110409.4,Married,Checking Account,1,Personal Account,Variable Mortgage,Pension Plan 3,Village,0
+Male,38949.2,Married,Checking Account,0,Personal Account,Variable Mortgage,No Pension Plan 3,Land,1
+Female,44684.2,Married,Checking Account,0,Personal Account,Mortgage,Pension Plan 3,City,1
+Female,35459.6,Married,No Checking Account,2,No Personal Account,Mortgage,No Pension Plan 3,Village,1
+Female,82032,Married,Checking Account,0,No Personal Account,Mortgage,No Pension Plan 3,Suburban,1
+Female,53818.4,Married,Checking Account,0,No Personal Account,No Mortgage,No Pension Plan 3,City,0
+Male,45045.6,Married,Checking Account,0,Personal Account,No Mortgage,Pension Plan 3,Village,1

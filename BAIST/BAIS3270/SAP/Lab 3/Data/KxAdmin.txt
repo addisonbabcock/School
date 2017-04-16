@@ -1,0 +1,2 @@
+Name	Class	ClassVersion	SpaceName	Version	CreationDate	Comment
+Claim_AutoInsuranceRisk_training	Kxen.Classification	3	"Exercise 1 Model.txt"	1	2017-04-11 18:34:42	
